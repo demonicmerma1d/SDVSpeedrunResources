@@ -36,3 +36,7 @@ Notes:[expand this]
 - other things of note that also use a similar RNG(eg quests on 1.5)
 - silver quality crops are different and use 2nd rng call
 - iridium fertilliser makes a difference too as adds an rng call for iridium before the gold check, so iridium is the 1st call, and gold is the 2nd call, and silver is the 3rd call.
+
+### Giant crop manip!!!!
+- yippee funny -1.3 tech
+-ig mention 1.6 stuff sure
