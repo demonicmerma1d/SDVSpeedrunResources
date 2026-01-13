@@ -34,9 +34,18 @@ Note there are other replacements, but no other player inputtable ones, and real
 
 ## Flag Injection
 ### Overview:
-In versions 1.0-1.5, the game stored viewed seen mail flags as strings. One way of getting a mail flag marked as seen is by formatting it in dialogue, and the game will split the dialogue while processing by `}` symbols. As a result formatting part of a player name including `}FLAG}` means that `FLAG` is added to the list of seen mails. The reason this is useful is that almost everything under the hood is stored as a mail flag, and sent as an invisible letter, so this enables us to lie to the game and say "yeah this has happened, we can do this dont worry about it". 
-### Dialogue box flag limits:
-A better way to do flag injection, if you are playing as female, is format the injection as `¦FLAG}`, since `¦` is a character that makes the game split text by player gender and the female selection is to the right, so it removes any text before this. `^` also works, however this is a larger character in limited width lines. Using this method actually allows us to get up to 2 flags per text box in some variation that reduces to the form `¦FLAG1}FLAG2}`, since the game will only process looking for `}` 2 or 3 times depending on if there is an additional textbox afterwards or not , and in the case of `example dialogue}FLAG}`, the first mail the game adds is `example dialogue` which is completely useless, and in the case with the gender switch character, we void any dialogue before our desired flag, so the first flag inputted to the file is `FLAG1`. These injection limits are irrelevent if you are using [WSC](Window%Shift%Cancel.md) since the game will infinitely keep processing the dialogue, but otherwise you are subject to these limits.
+
+A lot of variables are secretly controlled by “invisible” pieces of mail (such as being able to read junimo text), and these invisible pieces are called Flags. In versions 1.0-1.5, whenever the game seeds a } in dialogue, it thinks all text before it is a flag it should send to the player. We can abuse this by including `FLAG}` in our name.
+
+Notably, however, it does *all* text previously. As such, if we want it to be a simple string and not an entire sentence, we need to make it so that our FLAG are the first characters in the text box.
+
+There are two main ways to do this. The historical way has been to name the player `}FLAG}`, as this causes the game to see the first } as a flag, send that, and then on a second pass notice our FLAG. 
+
+The second (and better) way is to name ourselves `¦FLAG}` while playing as a girl. The `¦` (or `^`, but that's wider) is read as a gender switch to consider all dialogue to the left of it male-exclusive, causing all text to the left of it being deleted without using up a flag-pass.
+
+The reason we are concerned about the extra `}` is because, just as for [ID], the game will only process 2-3 flag injections per text box. By using a gender switch rather than a `}`, we can inject an extra flag.
+
+(It also means that if you're using [WSC](Window%Shift%Cancel.md) there's no point to using `¦` - as you aren't subject to the injection per box limit)
 
 ### Useful flag names and how to implement longer flags:
 
