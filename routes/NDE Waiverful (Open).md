@@ -50,13 +50,13 @@ Purchase 2 more chickens, and then warp home. You should have approximately 576 
 
 Go to Marnie for the final time, and name them `[288][689][279]`, `[TentKit][TentKit]`, `#gotMaxStamina}`, and `#$v 6497421 false ` (important, there is a space after false). This will give you a Mega Bomb, a Warp Totem: Mountain, a Magic Rock Candy, 2 Tent Kits, and will put you in an Island North Cutscene.
 
-Skip this cutscene immidiately, and run down to the bridge. Put your bench out of bounds, and sit on it to get out of bounds. Place the bench again to re-enter bounds.
+Skip this cutscene immidiately, and run down to the bridge. Put your bench out of bounds, and sit on it to get out of bounds. Place the bench again to re-enter bounds. There are multiple working spots, but here are two.
 
-(Insert Image of Bench Spot 1) (Insert Image of Bench Spot 2)
+![Going out of bounds](Images/bridgeGoOob.png) ![Going back in bounds](Images/bridgeLeaveOob.png)
 
 Place the Mega Bomb (valid tiles shown below), and skip the cutscene. Put your tent down, and go to sleep.
 
-![](Images/caveRange.png)
+![Anywhere with blue is bombable](Images/caveRange.png)
 
 ### Day 7
 
