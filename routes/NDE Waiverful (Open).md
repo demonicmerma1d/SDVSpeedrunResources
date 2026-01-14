@@ -54,9 +54,9 @@ Skip this cutscene immidiately, and run down to the bridge. Put your bench out o
 
 (Insert Image of Bench Spot 1) (Insert Image of Bench Spot 2)
 
-Place the Mega Bomb, and skip the cutscene. Put your tent down, and go to sleep.
+Place the Mega Bomb (valid tiles shown below), and skip the cutscene. Put your tent down, and go to sleep.
 
-(Insert Image of Close-Enough-To-Mega-Bomb)
+![](Images/caveRange.png)
 
 ### Day 7
 
