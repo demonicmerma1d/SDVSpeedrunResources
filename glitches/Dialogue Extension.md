@@ -6,7 +6,7 @@ The main limitation behind this, however, is that the newline character is still
 
 ### Gender Switch Blocks
 
-In normal dialogue, when an NPC wishes to say "boy/girl" depending on the player's gender, the game uses a gender switch block. The format for such a block is `${boy text^girl text}$` or `${boy text¦girl text}$`. This can be exploited to get around the newline issue; because gender switch blocks will be filtered before the name gets evaluated, you can hide any text you don't want in the gender you aren't in - critically, the new line character (symbolized as `\n` here). This means that a powerful tactic is to have `${\n¦}$` or `${¦\n}$` whenever a newline character is needed, as this allows for arbitrary sized text with no restrictions. In addition, you could do `${¦¦\n}$` to make the name function for both genders, but that increases name size and thus lag significantly, as processing a name of length N takes the game O(N^2) time. 
+In normal dialogue, when an NPC wishes to say "boy/girl" depending on the player's gender, the game uses a gender switch block. The format for such a block is `${boy text^girl text}$` or `${boy text¦girl text}$`. This can be exploited to get around the newline issue; because gender switch blocks will be filtered before the name gets evaluated, you can hide any text you don't want in the gender you aren't in - critically, the new line character (symbolized as `\n` here). This means that a powerful tactic is to have `${\n¦}$` or `${¦\n}$` whenever a newline character is needed, as this allows for arbitrary sized text with no restrictions. In addition, you could do `${¦¦\n}$` to make the name function for both genders, though that adds additional characters for marginal utility.
 
 ### Additional Tech
 
