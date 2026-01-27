@@ -44,7 +44,7 @@ This read will fill up your inventory for various tasks. These are:
 - Gift the wizard 4 Stardrop Teas (do not talk).
 - Construct every obelisk (ensuring that they're all reachable) and the Golden Clock.
 - Run to the wizard's trapdoor, step on the warp to Witch's Hut, and use the hammer special to kill the doved kids to complete the Bat eradication goal.
-- Warp to the beach, run to Marnie, and purchase a chicken named `#$v 691039 false i`. This warps you the Sewers, at which point you let the cutscene play until the Dwarf dialogue shows up and you immidiately skip and then say hi to Krobus. You may also just run to Krobus and then warp to the Dwarf.
+- Warp to the beach, run to Marnie, and purchase a chicken named `#$v 691039 false i`. This warps you the Sewers, at which point you let the cutscene play until the Dwarf dialogue shows up and you immidiately skip and then say hi to Krobus. You may also just run to Krobus and then warp to the Dwarf, and you have to if you picked English.
 - Island warp and run to Leo's house, skipping the cutscene (which counts as meeting).
 - Mountain warp and run to Robin's house, and order a Fish Pond.
 - Warp home, and put the bait/tackles on the rod.
@@ -4033,7 +4033,7 @@ increMentstat
 [GoldCoin]
 ```
 
-
+Here, below, is the unformatted paste. You can use (note: I should upload my formatting program) to automatically turn the below text into the above text.
 
 
 ```
