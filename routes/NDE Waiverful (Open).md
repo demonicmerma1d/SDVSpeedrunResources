@@ -1,26 +1,5 @@
-# Pastes
-```
-Player:%farm%farm[73]
-Farm:%favorite%favorite
-Favourite:%pet%pet%pet[74]
-Pet:[857][857][857]
-
-[279][253][253]@
-[Book_Speed]@@
-[(BC)238][(BC)238]
-[(T)ReturnScepter]
-
-[Book_Speed2]@
-@#Farm_Eternal}
-@@@@#FizzIntro}
-@@@@@@@@@
-
-[288][689][279]
-[TentKit][TentKit]
-#gotMaxStamina}
-#$v 6497421 false 
-```
-(important: space character at the end of ^)
+# Paste
+Can be found at [this link](/routes/Pastes/NDEWaiverful2026v1.txt)
 
 # Route
 

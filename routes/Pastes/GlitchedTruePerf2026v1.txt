@@ -1,0 +1,3917 @@
+%actionaddMail all
+ dad1 Now%%
+%actionaddMail all
+ dad1 Now%%
+%action
+reMoveiteM (T)Axe
+%%%action
+reMoveiteM (T)Hoe
+%%%action
+reMoveiteM (T)Pic${
+¦}$kaxe%%%action
+if player_stat all 
+: 0 1 ## 
+reMoveiteM (T)Wa${
+¦}$teringCan%%
+%action
+reMoveiteM (W)47
+%%%action
+reMoveiteM 388 999
+%%%action
+reMoveiteM 390 999
+%%%action
+reMoveiteM 770 999
+%%%action
+reMoveiteM 771 999
+%%%action
+reMoveiteM 92 999
+%%%action
+reMoveiteM 382 999
+%%%action
+reMoveiteM 535 999
+%%%action
+reMoveiteM 288 9${
+¦}$9999%%%action
+reMoveiteM 337%%
+%action
+reMoveiteM 87%%
+%action
+reMoveiteM 372%%
+%action
+reMoveiteM 393%%
+%action
+reMoveiteM 90%%
+%action
+reMoveiteM 852%%
+%action
+reMoveiteM 91%%
+%action
+reMoveiteM 88%%
+%action
+reMoveiteM Stard${
+¦}$ropTea%%
+%action
+reMoveiteM 128%%
+%action
+reMoveiteM 129%%
+%action
+reMoveiteM 130%%
+%action
+reMoveiteM 131%%
+%action
+reMoveiteM 132%%
+%action
+reMoveiteM 136%%
+%action
+reMoveiteM 137%%
+%action
+reMoveiteM 138%%
+%action
+reMoveiteM 139%%
+%action
+reMoveiteM 140%%
+%action
+reMoveiteM 141%%
+%action
+reMoveiteM 142%%
+%action
+reMoveiteM 143%%
+%action
+reMoveiteM 144%%
+%action
+reMoveiteM 145%%
+%action
+reMoveiteM 146%%
+%action
+reMoveiteM 147%%
+%action
+reMoveiteM 148%%
+%action
+reMoveiteM 149%%
+%action
+reMoveiteM 150%%
+%action
+reMoveiteM 151%%
+%action
+reMoveiteM 154%%
+%action
+reMoveiteM 155%%
+%action
+reMoveiteM 156%%
+%action
+reMoveiteM 158%%
+%action
+reMoveiteM 159%%
+%action
+reMoveiteM 160%%
+%action
+reMoveiteM 161%%
+%action
+reMoveiteM 162%%
+%action
+reMoveiteM 163%%
+%action
+reMoveiteM 775%%
+%action
+reMoveiteM 682%%
+%action
+reMoveiteM 164%%
+%action
+reMoveiteM 165%%
+%action
+reMoveiteM 687%%
+%action
+reMoveiteM 687%%
+%action
+reMoveiteM 267%%
+%action
+reMoveiteM 269%%
+%action
+reMoveiteM 715%%
+%action
+reMoveiteM 717%%
+%action
+reMoveiteM 723%%
+%action
+reMoveiteM 372%%
+%action
+reMoveiteM 720%%
+%action
+reMoveiteM 718%%
+%action
+reMoveiteM 719%%
+%action
+reMoveiteM 721%%
+%action
+reMoveiteM 716%%
+%action
+reMoveiteM 722%%
+%action
+reMoveiteM 698%%
+%action
+reMoveiteM 699%%
+%action
+reMoveiteM 700%%
+%action
+reMoveiteM 701%%
+%action
+reMoveiteM 702%%
+%action
+reMoveiteM 704%%
+%action
+reMoveiteM 705%%
+%action
+reMoveiteM 706%%
+%action
+reMoveiteM 707%%
+%action
+reMoveiteM 708%%
+%action
+reMoveiteM 734%%
+%action
+reMoveiteM 795%%
+%action
+reMoveiteM 796%%
+%action
+reMoveiteM 798%%
+%action
+reMoveiteM 799%%
+%action
+reMoveiteM 800%%
+%action
+reMoveiteM 836%%
+%action
+reMoveiteM 837%%
+%action
+reMoveiteM 838%%
+%action
+reMoveiteM Goby
+%%%action
+addMail all
+ ccDoorUnlock 
+Received%%
+%actionaddMail all
+ canReadJunimoT${
+¦}$ext Received%%
+%actionaddMail all
+ ccBoilerRoom 
+Received%%
+%actionaddMail all
+ ccBulletin Received
+%%%action
+addMail all
+ ccCraftsRoom 
+Received%%
+%actionaddMail all
+ ccFishTank 
+Received%%
+%actionaddMail all
+ ccPantry Received
+%%%action
+addMail all ccVault 
+Received%%
+%actionaddMail all
+ ccIsComplete 
+Received%%
+%actionaddMail all
+ ccMovieTheater 
+Received%%
+%actionaddMail all
+ abandonedJojaM${
+¦}$artAccessible 
+Received%%
+%actionaddMail all
+ henchmanGone 
+Received%%
+%actionaddMail all
+ ccMovieTheater 
+Received%%
+%actionaddMail all
+ OpenedSewer 
+Received%%
+%actionaddMail all
+ sawQiPlane 
+Received%%
+%actionaddMail all
+ gotMaxStamina 
+Received%%
+%actionaddMail all
+ willyBoatFixed 
+Received%%
+%actionaddMail all
+ willyBackRoomIn${
+¦}$vitation Received
+%%%action
+addMail all
+ wizardJunimoNote 
+Received%%
+%actionaddMail all
+ artifactFound 
+Received%%
+%actionaddMail all
+ witchStatueGone 
+Received%%
+%actionaddMail all
+ Visited_Island 
+Received%%
+%actionaddMail all
+ Island_FirstParrot 
+Received%%
+%actionaddMail all
+ reachedCaldera 
+Received%%
+%actionaddMail all
+ Island_UpgradeH${
+¦}$ouse Received
+%%%action
+addMail all
+ geodeFound 
+Received%%
+%actionaddMail all
+ BackpackTip 
+Received%%
+%actionaddMail all
+ ISLAND_NORTH_${
+¦}$DIGSITE_LOAD 
+Received%%
+%actionaddMail all
+ lostWalnutFound 
+Received%%
+%actionaddMail all
+ seenBoatJourney 
+Received%%
+%actionaddMail all
+ Island_VolcanoBr${
+¦}$idge Received
+%%%action
+addMail all
+ Island_VolcanoSh${
+¦}$ortcutOut 
+Received%%
+%actionaddMail all
+ krobusUnseal 
+Received%%
+%actionaddMail all
+ communityUpgra${
+¦}$deShortcuts 
+Received%%
+%actionaddMail all
+ hasPickedUpMagi${
+¦}$cInk Received%%
+%actionaddMail all
+ HasUnlockedSkul${
+¦}$lDoor Received
+%%%action
+addMail all
+ HasSkullKey 
+Received%%
+%actionaddMail all
+ HasTownKey 
+Received%%
+%actionaddMail all
+ HasSpecialCharm 
+Received%%
+%actionaddMail all
+ HasDwarvishTran${
+¦}$slationGuide 
+Received%%
+%actionaddMail all
+ raccoonTreeFallen 
+Received%%
+%actionaddMail all
+ reachedBottomO${
+¦}$fHardMines 
+Received%%
+%actionaddMail all
+ guildMember 
+Received%%
+%actionaddMail all
+ cursed_doll 
+Received%%
+%actionaddMail all
+ Henchman1 
+Received%%
+%action
+reMoveMail all
+ volcanoShortcut${
+¦}$Unlocked%%
+%action
+addbuff 20 -2%%
+%action
+addbuff 21 -2%%
+%action
+addbuff 22 -2%%
+%action
+addbuff 24 -2%%
+%action
+addbuff 28 -2%%
+%action
+addbuff statue_of${
+¦}$_blessings_0 -2
+%%%action
+addbuff statue_of${
+¦}$_blessings_1 -2
+%%%action
+addbuff statue_of${
+¦}$_blessings_2 -2
+%%%action
+addbuff statue_of${
+¦}$_blessings_5 -2
+%%%action
+increMentstat Boo${
+¦}$k_Speed%%
+%action
+increMentstat Boo${
+¦}$k_Speed2%%
+%action
+increMentstat Boo${
+¦}$k_AnimalCatalo${
+¦}$gue%%%action
+increMentstat bles${
+¦}$singOfWaters 999
+%%%action
+increMentstat Boo${
+¦}$k_Grass%%
+%action
+increMentstat trin${
+¦}$ketSlots 1%%
+%action
+increMentstat chil${
+¦}$drenTurnedTo${
+¦}$Doves 18%%
+%action
+if player_stat all 
+: 0 17 ## 
+increMentstat 
+:%%%action
+if days_played 0 9 
+ ## 
+increMentstat Day${
+¦}$sPlayed 123456${
+¦}$789%%%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton 8 ## 
+increMentstat 
+: -8%%%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton 8 ## 
+reMoveiteM (O)Un${
+¦}$doButton 8%%
+%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton 4 ## 
+increMentstat 
+: -4%%%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton 4 ## 
+reMoveiteM (O)Un${
+¦}$doButton 4%%
+%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton 2 ## 
+increMentstat 
+: -2%%%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton 2 ## 
+reMoveiteM (O)Un${
+¦}$doButton 2%%
+%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton ## 
+increMentstat 
+: -1%%%action
+if player_has_ite${
+¦}$m all (O)UndoB${
+¦}$utton ## 
+reMoveiteM (O)Un${
+¦}$doButton%%
+%action
+if !farM_type Mea${
+¦}$dowlandsFarm 
+ ## additeM Wrong
+Farm%%%action
+if !farM_type Mea${
+¦}$dowlandsFarm 
+ ## increMentstat 
+: -1%%%action
+If !player_gender all 
+x ## additeM Wrong
+Gender%%%action
+Markeventseen all
+ 318560%%%action
+Markeventseen all
+ 992553%%%action
+Markeventseen all
+ 900553%%%action
+Markeventseen all
+ 65%%%action
+Markeventseen all
+ 1590166%%
+%action
+Markeventseen all
+ 897405%%%action
+Markeventseen all
+ 3102768%%
+%action
+Markeventseen all
+ 67%%%action
+Markeventseen all
+ 992559%%%action
+Markeventseen all
+ 100162%%%action
+Markeventseen all
+ 404798%%%action
+Markeventseen all
+ 529952%%%action
+Markeventseen all
+ 191393%%%action
+Markeventseen all
+ 15389722%%
+%action
+Markeventseen all
+ 112%%%action
+Markeventseen all
+ 418172%%%action
+Markeventseen all 2
+%%%action
+Markeventseen all 8
+%%%action
+Markeventseen all
+ 26%%%action
+Markeventseen all
+ 384883%%%action
+Markeventseen all
+ 371652%%%action
+Markeventseen all
+ 8959199%%
+%item money 111${
+¦}$1111%%
+%item id 73 11%%
+%item cookingRe${
+¦}$cipe Omelet%%
+%item cookingRe${
+¦}$cipe Salad%%
+%item cookingRe${
+¦}$cipe Cheese Cau${
+¦}$li.%%
+%item cookingRe${
+¦}$cipe Baked Fish${
+¦}$%%
+%item cookingRe${
+¦}$cipe Parsnip So${
+¦}$up%%
+%item cookingRe${
+¦}$cipe Vegetable ${
+¦}$Stew%%
+%item cookingRe${
+¦}$cipe Complete ${
+¦}$Breakfast%%
+%item cookingRe${
+¦}$cipe Fried Cala${
+¦}$mari%%
+%item cookingRe${
+¦}$cipe Strange Bu${
+¦}$n%%
+%item cookingRe${
+¦}$cipe Lucky Lunc${
+¦}$h%%
+%item cookingRe${
+¦}$cipe Fried Mush${
+¦}$room%%
+%item cookingRe${
+¦}$cipe Pizza%%
+%item cookingRe${
+¦}$cipe Bean Hotp${
+¦}$ot%%
+%item cookingRe${
+¦}$cipe Glazed Ya${
+¦}$ms%%
+%item cookingRe${
+¦}$cipe Carp Surpri${
+¦}$se%%
+%item cookingRe${
+¦}$cipe Hashbrow${
+¦}$ns%%
+%item cookingRe${
+¦}$cipe Pancakes${
+¦}$%%
+%item cookingRe${
+¦}$cipe Salmon Di${
+¦}$nner%%
+%item cookingRe${
+¦}$cipe Fish Taco%${
+¦}$%
+%item cookingRe${
+¦}$cipe Crispy Bass${
+¦}$%%
+%item cookingRe${
+¦}$cipe Pepper Po${
+¦}$ppers%%
+%item cookingRe${
+¦}$cipe Bread%%
+%item cookingRe${
+¦}$cipe Tom Kha S${
+¦}$oup%%
+%item cookingRe${
+¦}$cipe Trout Soup${
+¦}$%%
+%item cookingRe${
+¦}$cipe Chocolate ${
+¦}$Cake%%
+%item cookingRe${
+¦}$cipe Pink Cake${
+¦}$%%
+%item cookingRe${
+¦}$cipe Rhubarb Pi${
+¦}$e%%
+%item cookingRe${
+¦}$cipe Cookies%%
+%item cookingRe${
+¦}$cipe Spaghetti${
+¦}$%%
+%item cookingRe${
+¦}$cipe Fried Eel%%
+%item cookingRe${
+¦}$cipe Spicy Eel%%
+%item cookingRe${
+¦}$cipe Sashimi%%
+%item cookingRe${
+¦}$cipe Maki Roll%%
+%item cookingRe${
+¦}$cipe Tortilla%%
+%item cookingRe${
+¦}$cipe Red Plate${
+¦}$%%
+%item cookingRe${
+¦}$cipe Eggplant P${
+¦}$arm.%%
+%item cookingRe${
+¦}$cipe Rice Puddi${
+¦}$ng%%
+%item cookingRe${
+¦}$cipe Ice Cream${
+¦}$%%
+%item cookingRe${
+¦}$cipe Blueberry ${
+¦}$Tart%%
+%item cookingRe${
+¦}$cipe Autumn's ${
+¦}$Bounty%%
+%item cookingRe${
+¦}$cipe Pumpkin S${
+¦}$oup%%
+%item cookingRe${
+¦}$cipe Super Meal${
+¦}$%%
+%item cookingRe${
+¦}$cipe Cran. Sauc${
+¦}$e%%
+%item cookingRe${
+¦}$cipe Stuffing%%
+%item cookingRe${
+¦}$cipe Farmer's L${
+¦}$unch%%
+%item cookingRe${
+¦}$cipe Survival Bu${
+¦}$rger%%
+%item cookingRe${
+¦}$cipe Dish o' The ${
+¦}$Sea%%
+%item cookingRe${
+¦}$cipe Miner's Tre${
+¦}$at%%
+%item cookingRe${
+¦}$cipe Roots Platt${
+¦}$er%%
+%item cookingRe${
+¦}$cipe Algae Soup${
+¦}$%%
+%item cookingRe${
+¦}$cipe Pale Broth${
+¦}$%%
+%item cookingRe${
+¦}$cipe Plum Pudd${
+¦}$ing%%
+%item cookingRe${
+¦}$cipe Artichoke ${
+¦}$Dip%%
+%item cookingRe${
+¦}$cipe Stir Fry%%
+%item cookingRe${
+¦}$cipe Roasted Ha${
+¦}$zelnuts%%
+%item cookingRe${
+¦}$cipe Pumpkin P${
+¦}$ie%%
+%item cookingRe${
+¦}$cipe Radish Sal${
+¦}$ad%%
+%item cookingRe${
+¦}$cipe Fruit Salad${
+¦}$%%
+%item cookingRe${
+¦}$cipe Blackberry ${
+¦}$Cobbler%%
+%item cookingRe${
+¦}$cipe Cranberry ${
+¦}$Candy%%
+%item cookingRe${
+¦}$cipe Bruschetta${
+¦}$%%
+%item cookingRe${
+¦}$cipe Coleslaw%%
+%item cookingRe${
+¦}$cipe Fiddlehead${
+¦}$ Risotto%%
+%item cookingRe${
+¦}$cipe Poppyseed${
+¦}$ Muffin%%
+%item cookingRe${
+¦}$cipe Chowder%%
+%item cookingRe${
+¦}$cipe Lobster Bis${
+¦}$que%%
+%item cookingRe${
+¦}$cipe Fish Stew${
+¦}$%%
+%item cookingRe${
+¦}$cipe Escargot%%
+%item cookingRe${
+¦}$cipe Maple Bar${
+¦}$%%
+%item cookingRe${
+¦}$cipe Crab Cakes${
+¦}$%%
+%item cookingRe${
+¦}$cipe Triple Shot ${
+¦}$Espresso%%
+%item cookingRe${
+¦}$cipe Shrimp Co${
+¦}$cktail%%
+%item cookingRe${
+¦}$cipe Seafoam P${
+¦}$udding%%
+%item cookingRe${
+¦}$cipe Ginger Ale${
+¦}$%%
+%item cookingRe${
+¦}$cipe Banana Pu${
+¦}$dding%%
+%item cookingRe${
+¦}$cipe Mango Stic${
+¦}$ky Rice%%
+%item cookingRe${
+¦}$cipe Poi%%
+%item cookingRe${
+¦}$cipe Tropical Cu${
+¦}$rry%%
+%item cookingRe${
+¦}$cipe Squid Ink R${
+¦}$avioli%%
+%item cookingRe${
+¦}$cipe Moss Soup${
+¦}$%%
+%item craftingRe${
+¦}$cipe Stone_Fen${
+¦}$ce%%
+%item craftingRe${
+¦}$cipe Iron_Fence${
+¦}$%%
+%item craftingRe${
+¦}$cipe Hardwood${
+¦}$_Fence%%
+%item craftingRe${
+¦}$cipe Grass_Star${
+¦}$ter%%
+%item craftingRe${
+¦}$cipe Blue_Grass${
+¦}$_Starter%%
+%item craftingRe${
+¦}$cipe Big_Chest${
+¦}$%%
+%item craftingRe${
+¦}$cipe Stone_Che${
+¦}$st%%
+%item craftingRe${
+¦}$cipe Big_Stone${
+¦}$_Chest%%
+%item craftingRe${
+¦}$cipe Scarecrow${
+¦}$%%
+%item craftingRe${
+¦}$cipe Deluxe_Sc${
+¦}$arecrow%%
+%item craftingRe${
+¦}$cipe Bee_House${
+¦}$%%
+%item craftingRe${
+¦}$cipe Keg%%
+%item craftingRe${
+¦}$cipe Cask%%
+%item craftingRe${
+¦}$cipe Dehydrato${
+¦}$r%%
+%item craftingRe${
+¦}$cipe Furnace%%
+%item craftingRe${
+¦}$cipe Heavy_Fur${
+¦}$nace%%
+%item craftingRe${
+¦}$cipe Anvil%%
+%item craftingRe${
+¦}$cipe Mini-Forge${
+¦}$%%
+%item craftingRe${
+¦}$cipe Garden_Po${
+¦}$t%%
+%item craftingRe${
+¦}$cipe Dark_Sign${
+¦}$%%
+%item craftingRe${
+¦}$cipe Cheese_Pr${
+¦}$ess%%
+%item craftingRe${
+¦}$cipe Mayonnais${
+¦}$e_Machine%%
+%item craftingRe${
+¦}$cipe Seed_Mak${
+¦}$er%%
+%item craftingRe${
+¦}$cipe Loom%%
+%item craftingRe${
+¦}$cipe Oil_Maker${
+¦}$%%
+%item craftingRe${
+¦}$cipe Recycling_${
+¦}$Machine%%
+%item craftingRe${
+¦}$cipe Worm_Bin${
+¦}$%%
+%item craftingRe${
+¦}$cipe Deluxe_W${
+¦}$orm_Bin%%
+%item craftingRe${
+¦}$cipe Bait_Make${
+¦}$r%%
+%item craftingRe${
+¦}$cipe Fish_Smok${
+¦}$er%%
+%item craftingRe${
+¦}$cipe Preserves_${
+¦}$Jar%%
+%item craftingRe${
+¦}$cipe Charcoal_${
+¦}$Kiln%%
+%item craftingRe${
+¦}$cipe Tapper%%
+%item craftingRe${
+¦}$cipe Mushroom${
+¦}$_Log%%
+%item craftingRe${
+¦}$cipe Lightning_${
+¦}$Rod%%
+%item craftingRe${
+¦}$cipe Slime_Incu${
+¦}$bator%%
+%item craftingRe${
+¦}$cipe Slime_Egg-${
+¦}$Press%%
+%item craftingRe${
+¦}$cipe Crystalariu${
+¦}$m%%
+%item craftingRe${
+¦}$cipe Mini-Jukeb${
+¦}$ox%%
+%item craftingRe${
+¦}$cipe Sprinkler%%
+%item craftingRe${
+¦}$cipe Quality_Sp${
+¦}$rinkler%%
+%item craftingRe${
+¦}$cipe Iridium_Sp${
+¦}$rinkler%%
+%item craftingRe${
+¦}$cipe Staircase%%
+%item craftingRe${
+¦}$cipe Flute_Bloc${
+¦}$k%%
+%item craftingRe${
+¦}$cipe Drum_Bloc${
+¦}$k%%
+%item craftingRe${
+¦}$cipe Basic_Ferti${
+¦}$lizer%%
+%item craftingRe${
+¦}$cipe Tree_Fertil${
+¦}$izer%%
+%item craftingRe${
+¦}$cipe Mystic_Tre${
+¦}$e_Seed%%
+%item craftingRe${
+¦}$cipe Quality_Fe${
+¦}$rtilizer%%
+%item craftingRe${
+¦}$cipe Basic_Reta${
+¦}$ining_Soil%%
+%item craftingRe${
+¦}$cipe Quality_Re${
+¦}$taining_Soil%%
+%item craftingRe${
+¦}$cipe Speed-Gro${
+¦}$%%
+%item craftingRe${
+¦}$cipe Deluxe_Sp${
+¦}$eed-Gro%%
+%item craftingRe${
+¦}$cipe Hyper_Spe${
+¦}$ed-Gro%%
+%item craftingRe${
+¦}$cipe Deluxe_Fe${
+¦}$rtilizer%%
+%item craftingRe${
+¦}$cipe Deluxe_Re${
+¦}$taining_Soil%%
+%item craftingRe${
+¦}$cipe Cherry_Bo${
+¦}$mb%%
+%item craftingRe${
+¦}$cipe Bomb%%
+%item craftingRe${
+¦}$cipe Mega_Bom${
+¦}$b%%
+%item craftingRe${
+¦}$cipe Explosive_${
+¦}$Ammo%%
+%item craftingRe${
+¦}$cipe Transmute${
+¦}$_(Fe)%%
+%item craftingRe${
+¦}$cipe Transmute${
+¦}$_(Au)%%
+%item craftingRe${
+¦}$cipe Ancient_Se${
+¦}$eds%%
+%item craftingRe${
+¦}$cipe Wild_Seed${
+¦}$s_(Sp)%%
+%item craftingRe${
+¦}$cipe Wild_Seed${
+¦}$s_(Su)%%
+%item craftingRe${
+¦}$cipe Wild_Seed${
+¦}$s_(Fa)%%
+%item craftingRe${
+¦}$cipe Wild_Seed${
+¦}$s_(Wi)%%
+%item craftingRe${
+¦}$cipe Fiber_Seed${
+¦}$s%%
+%item craftingRe${
+¦}$cipe Tea_Saplin${
+¦}$g%%
+%item craftingRe${
+¦}$cipe Warp_Tote${
+¦}$m:_Farm%%
+%item craftingRe${
+¦}$cipe Warp_Tote${
+¦}$m:_Mountains${
+¦}$%%
+%item craftingRe${
+¦}$cipe Warp_Tote${
+¦}$m:_Beach%%
+%item craftingRe${
+¦}$cipe Warp_Tote${
+¦}$m:_Desert%%
+%item craftingRe${
+¦}$cipe Warp_Tote${
+¦}$m:_Island%%
+%item craftingRe${
+¦}$cipe Rain_Tote${
+¦}$m%%
+%item craftingRe${
+¦}$cipe Treasure_T${
+¦}$otem%%
+%item craftingRe${
+¦}$cipe Cookout_K${
+¦}$it%%
+%item craftingRe${
+¦}$cipe Tent_Kit%%
+%item craftingRe${
+¦}$cipe Field_Snac${
+¦}$k%%
+%item craftingRe${
+¦}$cipe Statue_Of${
+¦}$_Blessings%%
+%item craftingRe${
+¦}$cipe Statue_Of${
+¦}$_The_Dwarf_Ki${
+¦}$ng%%
+%item craftingRe${
+¦}$cipe Jack-O-La${
+¦}$ntern%%
+%item craftingRe${
+¦}$cipe Wood_Flo${
+¦}$or%%
+%item craftingRe${
+¦}$cipe Straw_Flo${
+¦}$or%%
+%item craftingRe${
+¦}$cipe Weathered${
+¦}$_Floor%%
+%item craftingRe${
+¦}$cipe Rustic_Pla${
+¦}$nk_Floor%%
+%item craftingRe${
+¦}$cipe Crystal_Flo${
+¦}$or%%
+%item craftingRe${
+¦}$cipe Stone_Flo${
+¦}$or%%
+%item craftingRe${
+¦}$cipe Stone_Wal${
+¦}$kway_Floor%%
+%item craftingRe${
+¦}$cipe Brick_Floo${
+¦}$r%%
+%item craftingRe${
+¦}$cipe Stepping_${
+¦}$Stone_Path%%
+%item craftingRe${
+¦}$cipe Crystal_Pa${
+¦}$th%%
+%item craftingRe${
+¦}$cipe Bait%%
+%item craftingRe${
+¦}$cipe Deluxe_Ba${
+¦}$it%%
+%item craftingRe${
+¦}$cipe Wild_Bait${
+¦}$%%
+%item craftingRe${
+¦}$cipe Challenge_${
+¦}$Bait%%
+%item craftingRe${
+¦}$cipe Magnet%%
+%item craftingRe${
+¦}$cipe Spinner%%
+%item craftingRe${
+¦}$cipe Dressed_S${
+¦}$pinner%%
+%item craftingRe${
+¦}$cipe Trap_Bobb${
+¦}$er%%
+%item craftingRe${
+¦}$cipe Sonar_Bob${
+¦}$ber%%
+%item craftingRe${
+¦}$cipe Cork_Bobb${
+¦}$er%%
+%item craftingRe${
+¦}$cipe Treasure_${
+¦}$Hunter%%
+%item craftingRe${
+¦}$cipe Barbed_Ho${
+¦}$ok%%
+%item craftingRe${
+¦}$cipe Oil_Of_Gar${
+¦}$lic%%
+%item craftingRe${
+¦}$cipe Life_Elixir${
+¦}$%%
+%item craftingRe${
+¦}$cipe Crab_Pot${
+¦}$%%
+%item craftingRe${
+¦}$cipe Iridium_Ba${
+¦}$nd%%
+%item craftingRe${
+¦}$cipe Ring_of_Y${
+¦}$oba%%
+%item craftingRe${
+¦}$cipe Sturdy_Rin${
+¦}$g%%
+%item craftingRe${
+¦}$cipe Warrior_Ri${
+¦}$ng%%
+%item craftingRe${
+¦}$cipe Tub_o'_Flo${
+¦}$wers%%
+%item craftingRe${
+¦}$cipe Wooden_B${
+¦}$razier%%
+%item craftingRe${
+¦}$cipe Wicked_St${
+¦}$atue%%
+%item craftingRe${
+¦}$cipe Stone_Bra${
+¦}$zier%%
+%item craftingRe${
+¦}$cipe Gold_Brazi${
+¦}$er%%
+%item craftingRe${
+¦}$cipe Stump_Br${
+¦}$azier%%
+%item craftingRe${
+¦}$cipe Carved_Br${
+¦}$azier%%
+%item craftingRe${
+¦}$cipe Skull_Brazi${
+¦}$er%%
+%item craftingRe${
+¦}$cipe Barrel_Bra${
+¦}$zier%%
+%item craftingRe${
+¦}$cipe Marble_Br${
+¦}$azier%%
+%item craftingRe${
+¦}$cipe Wood_La${
+¦}$mp-post%%
+%item craftingRe${
+¦}$cipe Iron_Lamp${
+¦}$-post%%
+%item craftingRe${
+¦}$cipe Fairy_Dust${
+¦}$%%
+%item craftingRe${
+¦}$cipe Bug_Steak${
+¦}$%%
+%item craftingRe${
+¦}$cipe Quality_Bo${
+¦}$bber%%
+%item craftingRe${
+¦}$cipe Monster_M${
+¦}$usk%%
+%item craftingRe${
+¦}$cipe Mini-Obelis${
+¦}$k%%
+%item craftingRe${
+¦}$cipe Farm_Com${
+¦}$puter%%
+%item craftingRe${
+¦}$cipe Ostrich_In${
+¦}$cubator%%
+%item craftingRe${
+¦}$cipe Geode_Cru${
+¦}$sher%%
+%item craftingRe${
+¦}$cipe Solar_Pan${
+¦}$el%%
+%item craftingRe${
+¦}$cipe Bone_Mill${
+¦}$%%
+%item craftingRe${
+¦}$cipe Thorns_Ri${
+¦}$ng%%
+%item craftingRe${
+¦}$cipe Glowstone${
+¦}$_Ring%%
+%item craftingRe${
+¦}$cipe Heavy_Tap${
+¦}$per%%
+%item craftingRe${
+¦}$cipe Hopper%%
+%item craftingRe${
+¦}$cipe Magic_Bait${
+¦}$%%%action
+if player_has_met ${
+¦}$all Kent ## 
+increMentstat 
+i%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Alex 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Elliott 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Harvey 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Sam 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Sebastian 2${
+¦}$500%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Shane 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Abigail 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Emily 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Haley 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Leah 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Maru 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Penny 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Caroline 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Clint 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Demetrius 2${
+¦}$500%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Dwarf 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Evelyn 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts George 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Gus 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Jas 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Jodi 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Kent 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Krobus 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Leo 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Lewis 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Linus 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Marnie 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Pam 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Pierre 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Robin 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Sandy 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Vincent 2500
+%%%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Willy 2500%%
+%action
+if player_stat all 
+i 1 ## 
+AddFriendshipPoi${
+¦}$nts Wizard 2500
+%%%action
+if player_stat all 
+: 1 1 ## 
+additeM (T)Return${
+¦}$Scepter%%
+%action
+if player_stat all 
+: 1 1 ## 
+additeM 288 999 4
+%%%action
+if player_stat all 
+: 1 1 ## 
+additeM (TR)Magi${
+¦}$cHairDye 1 4%%
+%action
+if player_stat all 
+: 1 1 ## 
+additeM PurpleBo${
+¦}$ok 60 4%%
+%action
+if player_stat all 
+: 1 1 ## 
+additeM (O)Undo${
+¦}$Button 999%%
+%action
+if player_stat all 
+: 1 1 ## 
+additeM (BC)256
+%%%action
+if player_stat all 
+: 2 2 ## 
+reMoveiteM (T)Re${
+¦}$turnScepter%%
+%action
+if player_stat all 
+: 2 2 ## additeM 16
+%%%action
+if player_stat all 
+: 2 2 ## additeM 18
+%%%action
+if player_stat all 
+: 2 2 ## additeM 20
+%%%action
+if player_stat all 
+: 2 2 ## additeM 22
+%%%action
+if player_stat all 
+: 2 2 ## additeM 24
+%%%action
+if player_stat all 
+: 2 2 ## additeM 78
+%%%action
+if player_stat all 
+: 2 2 ## additeM 88
+%%%action
+if player_stat all 
+: 2 2 ## additeM 90
+%%%action
+if player_stat all 
+: 2 2 ## additeM 92
+%%%action
+if player_stat all 
+: 2 2 ## additeM 176
+%%%action
+if player_stat all 
+: 2 2 ## additeM 174
+%%%action
+if player_stat all 
+: 2 2 ## additeM 180
+%%%action
+if player_stat all 
+: 2 2 ## additeM 182
+%%%action
+if player_stat all 
+: 2 2 ## additeM 184
+%%%action
+if player_stat all 
+: 2 2 ## additeM 186
+%%%action
+if player_stat all 
+: 2 2 ## additeM 188
+%%%action
+if player_stat all 
+: 2 2 ## additeM 190
+%%%action
+if player_stat all 
+: 2 2 ## additeM 192
+%%%action
+if player_stat all 
+: 2 2 ## additeM 248
+%%%action
+if player_stat all 
+: 2 2 ## additeM 250
+%%%action
+if player_stat all 
+: 2 2 ## additeM 252
+%%%action
+if player_stat all 
+: 2 2 ## additeM 254
+%%%action
+if player_stat all 
+: 2 2 ## additeM 256
+%%%action
+if player_stat all 
+: 2 2 ## additeM 257
+%%%action
+if player_stat all 
+: 2 2 ## additeM 258
+%%%action
+if player_stat all 
+: 2 2 ## additeM 259
+%%%action
+if player_stat all 
+: 2 2 ## additeM 260
+%%%action
+if player_stat all 
+: 2 2 ## additeM 262
+%%%action
+if player_stat all 
+: 2 2 ## additeM 264
+%%%action
+if player_stat all 
+: 2 2 ## additeM 266
+%%%action
+if player_stat all 
+: 2 2 ## additeM 268
+%%%action
+if player_stat all 
+: 2 2 ## additeM 270
+%%%action
+if player_stat all 
+: 2 2 ## additeM 271
+%%%action
+if player_stat all 
+: 2 2 ## additeM 272
+%%%action
+if player_stat all 
+: 2 2 ## additeM 274
+%%%action
+if player_stat all 
+: 2 2 ## additeM 276
+%%%action
+if player_stat all 
+: 3 3 ## additeM 278
+%%%action
+if player_stat all 
+: 3 3 ## additeM 280
+%%%action
+if player_stat all 
+: 3 3 ## additeM 281
+%%%action
+if player_stat all 
+: 3 3 ## additeM 282
+%%%action
+if player_stat all 
+: 3 3 ## additeM 283
+%%%action
+if player_stat all 
+: 3 3 ## additeM 284
+%%%action
+if player_stat all 
+: 3 3 ## additeM 296
+%%%action
+if player_stat all 
+: 3 3 ## additeM 300
+%%%action
+if player_stat all 
+: 3 3 ## additeM 303
+%%%action
+if player_stat all 
+: 3 3 ## additeM 304
+%%%action
+if player_stat all 
+: 3 3 ## additeM 305
+%%%action
+if player_stat all 
+: 3 3 ## additeM 306
+%%%action
+if player_stat all 
+: 3 3 ## additeM 307
+%%%action
+if player_stat all 
+: 3 3 ## additeM 308
+%%%action
+if player_stat all 
+: 3 3 ## additeM 330
+%%%action
+if player_stat all 
+: 3 3 ## additeM 334
+%%%action
+if player_stat all 
+: 3 3 ## additeM 335
+%%%action
+if player_stat all 
+: 3 3 ## additeM 336
+%%%action
+if player_stat all 
+: 3 3 ## additeM 337
+%%%action
+if player_stat all 
+: 3 3 ## additeM 338
+%%%action
+if player_stat all 
+: 3 3 ## additeM 340
+%%%action
+if player_stat all 
+: 3 3 ## additeM 342
+%%%action
+if player_stat all 
+: 3 3 ## additeM 344
+%%%action
+if player_stat all 
+: 3 3 ## additeM 346
+%%%action
+if player_stat all 
+: 3 3 ## additeM 348
+%%%action
+if player_stat all 
+: 3 3 ## additeM 350
+%%%action
+if player_stat all 
+: 3 3 ## additeM 378
+%%%action
+if player_stat all 
+: 3 3 ## additeM 380
+%%%action
+if player_stat all 
+: 3 3 ## additeM 382
+%%%action
+if player_stat all 
+: 3 3 ## additeM 384
+%%%action
+if player_stat all 
+: 3 3 ## additeM 386
+%%%action
+if player_stat all 
+: 3 3 ## additeM 388
+%%%action
+if player_stat all 
+: 3 3 ## additeM 390
+%%%action
+if player_stat all 
+: 3 3 ## additeM 392
+%%%action
+if player_stat all 
+: 3 3 ## additeM 393
+%%%action
+if player_stat all 
+: 3 3 ## additeM 394
+%%%action
+if player_stat all 
+: 4 4 ## additeM 396
+%%%action
+if player_stat all 
+: 4 4 ## additeM 397
+%%%action
+if player_stat all 
+: 4 4 ## additeM 398
+%%%action
+if player_stat all 
+: 4 4 ## additeM 399
+%%%action
+if player_stat all 
+: 4 4 ## additeM 400
+%%%action
+if player_stat all 
+: 4 4 ## additeM 402
+%%%action
+if player_stat all 
+: 4 4 ## additeM 404
+%%%action
+if player_stat all 
+: 4 4 ## additeM 406
+%%%action
+if player_stat all 
+: 4 4 ## additeM 408
+%%%action
+if player_stat all 
+: 4 4 ## additeM 410
+%%%action
+if player_stat all 
+: 4 4 ## additeM 412
+%%%action
+if player_stat all 
+: 4 4 ## additeM 414
+%%%action
+if player_stat all 
+: 4 4 ## additeM 416
+%%%action
+if player_stat all 
+: 4 4 ## additeM 417
+%%%action
+if player_stat all 
+: 4 4 ## additeM 418
+%%%action
+if player_stat all 
+: 4 4 ## additeM 420
+%%%action
+if player_stat all 
+: 4 4 ## additeM 421
+%%%action
+if player_stat all 
+: 4 4 ## additeM 422
+%%%action
+if player_stat all 
+: 4 4 ## additeM 424
+%%%action
+if player_stat all 
+: 4 4 ## additeM 426
+%%%action
+if player_stat all 
+: 4 4 ## additeM 428
+%%%action
+if player_stat all 
+: 4 4 ## additeM 430
+%%%action
+if player_stat all 
+: 4 4 ## additeM 432
+%%%action
+if player_stat all 
+: 4 4 ## additeM 433
+%%%action
+if player_stat all 
+: 4 4 ## additeM 436
+%%%action
+if player_stat all 
+: 4 4 ## additeM 438
+%%%action
+if player_stat all 
+: 4 4 ## additeM 440
+%%%action
+if player_stat all 
+: 4 4 ## additeM 442
+%%%action
+if player_stat all 
+: 4 4 ## additeM 444
+%%%action
+if player_stat all 
+: 4 4 ## additeM 446
+%%%action
+if player_stat all 
+: 4 4 ## additeM 447
+%%%action
+if player_stat all 
+: 4 4 ## additeM 454
+%%%action
+if player_stat all 
+: 4 4 ## additeM 459
+%%%action
+if player_stat all 
+: 4 4 ## additeM 591
+%%%action
+if player_stat all 
+: 4 4 ## additeM 593
+%%%action
+if player_stat all 
+: 4 4 ## additeM 595
+%%%action
+if player_stat all 
+: 5 5 ## additeM 597
+%%%action
+if player_stat all 
+: 5 5 ## additeM 376
+%%%action
+if player_stat all 
+: 5 5 ## additeM 613
+%%%action
+if player_stat all 
+: 5 5 ## additeM 614
+%%%action
+if player_stat all 
+: 5 5 ## additeM 634
+%%%action
+if player_stat all 
+: 5 5 ## additeM 635
+%%%action
+if player_stat all 
+: 5 5 ## additeM 636
+%%%action
+if player_stat all 
+: 5 5 ## additeM 637
+%%%action
+if player_stat all 
+: 5 5 ## additeM 638
+%%%action
+if player_stat all 
+: 5 5 ## additeM 684
+%%%action
+if player_stat all 
+: 5 5 ## additeM 709
+%%%action
+if player_stat all 
+: 5 5 ## additeM 724
+%%%action
+if player_stat all 
+: 5 5 ## additeM 725
+%%%action
+if player_stat all 
+: 5 5 ## additeM 726
+%%%action
+if player_stat all 
+: 5 5 ## additeM 766
+%%%action
+if player_stat all 
+: 5 5 ## additeM 767
+%%%action
+if player_stat all 
+: 5 5 ## additeM 768
+%%%action
+if player_stat all 
+: 5 5 ## additeM 769
+%%%action
+if player_stat all 
+: 5 5 ## additeM 771
+%%%action
+if player_stat all 
+: 5 5 ## additeM 787
+%%%action
+if player_stat all 
+: 5 5 ## additeM 807
+%%%action
+if player_stat all 
+: 5 5 ## additeM 812
+%%%action
+if player_stat all 
+: 5 5 ## additeM 445
+%%%action
+if player_stat all 
+: 5 5 ## additeM 814
+%%%action
+if player_stat all 
+: 5 5 ## additeM 815
+%%%action
+if player_stat all 
+: 5 5 ## additeM 289
+%%%action
+if player_stat all 
+: 5 5 ## additeM 91
+%%%action
+if player_stat all 
+: 5 5 ## additeM 829
+%%%action
+if player_stat all 
+: 5 5 ## additeM 830
+%%%action
+if player_stat all 
+: 5 5 ## additeM 832
+%%%action
+if player_stat all 
+: 5 5 ## additeM 834
+%%%action
+if player_stat all 
+: 5 5 ## additeM 848
+%%%action
+if player_stat all 
+: 5 5 ## additeM 851
+%%%action
+if player_stat all 
+: 5 5 ## additeM 881
+%%%action
+if player_stat all 
+: 5 5 ## additeM 909
+%%%action
+if player_stat all 
+: 5 5 ## additeM 910
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM Moss%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM MysticSyr${
+¦}$up%%%action
+if player_stat all 
+: 6 6 ## 
+additeM Raisins%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM DriedFruit
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM DriedMus${
+¦}$hrooms%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM Carrot%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM Summer${
+¦}$Squash%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM Broccoli
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM Powder${
+¦}$melon%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM SmokedF${
+¦}$ish%%%action
+if player_stat all 
+: 6 6 ## 
+additeM (BC)BigC${
+¦}$hest%%%action
+if player_stat all 
+: 6 6 ## 
+additeM (BC)208 1
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM (BC)13 2
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM (BC)154 1
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM 719 1%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 309 6%%
+%action
+if player_stat all 
+: 6 6 ## additeM 114
+%%%action
+if player_stat all 
+: 6 6 ## additeM 62
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM 685 5%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 767 40%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 787 7%%
+%action
+if player_stat all 
+: 6 6 ## additeM 410
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM 881 138%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 684 44%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM CaveJelly
+%%%action
+if player_stat all 
+: 6 6 ## additeM 281
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM 848 20%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 330 11%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 428 2%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 382 95%%
+%action
+if player_stat all 
+: 6 6 ## additeM 88
+%%%action
+if player_stat all 
+: 6 6 ## additeM 404
+%%%action
+if player_stat all 
+: 6 6 ## 
+additeM 334 18%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 378 28%%
+%action
+if player_stat all 
+: 6 6 ## 
+additeM 393 5%%
+%action
+if player_stat all 
+: 6 6 ## additeM 418
+%%%action
+if player_stat all 
+: 7 7 ## additeM 414
+%%%action
+if player_stat all 
+: 7 7 ## additeM 18
+%%%action
+if player_stat all 
+: 7 7 ## additeM 22
+%%%action
+if player_stat all 
+: 7 7 ## additeM 72 3
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 852 6%%
+%action
+if player_stat all 
+: 7 7 ## additeM 122
+%%%action
+if player_stat all 
+: 7 7 ## additeM 86
+%%%action
+if player_stat all 
+: 7 7 ## additeM 595
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 771 999%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 771 329%%
+%action
+if player_stat all 
+: 7 7 ## additeM 82 2
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 84 10%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 248 10%%
+%action
+if player_stat all 
+: 7 7 ## additeM 829
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 336 40%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 384 4%%
+%action
+if player_stat all 
+: 7 7 ## additeM 398
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 709 233%%
+%action
+if player_stat all 
+: 7 7 ## additeM 408
+%%%action
+if player_stat all 
+: 7 7 ## additeM 340
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 337 37%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 386 5%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 335 116%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 380 4%%
+%action
+if player_stat all 
+: 7 7 ## additeM 429
+%%%action
+if player_stat all 
+: 7 7 ## additeM 20
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM 292 5%%
+%action
+if player_stat all 
+: 7 7 ## 
+additeM 310 6%%
+%action
+if player_stat all 
+: 7 7 ## additeM 724
+%%%action
+if player_stat all 
+: 7 7 ## additeM 567
+%%%action
+if player_stat all 
+: 7 7 ## additeM 770
+%%%action
+if player_stat all 
+: 7 7 ## additeM 257
+%%%action
+if player_stat all 
+: 7 7 ## 
+additeM Moss 402
+%%%action
+if player_stat all 
+: 8 8 ## additeM 926
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM MysticSyr${
+¦}$up 2%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 725 2%%
+%action
+if player_stat all 
+: 8 8 ## additeM 247
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 311 6%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM 726 7%%
+%action
+if player_stat all 
+: 8 8 ## additeM 453
+%%%action
+if player_stat all 
+: 8 8 ## additeM 276
+%%%action
+if player_stat all 
+: 8 8 ## additeM 422
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 910 2%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM 909 2%%
+%action
+if player_stat all 
+: 8 8 ## additeM 420
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 338 27%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM RiverJelly
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 92 999%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM 92 83%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM SeaJelly
+%%%action
+if player_stat all 
+: 8 8 ## additeM 397
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 766 220%%
+%action
+if player_stat all 
+: 8 8 ## additeM 416
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 768 83%%
+%action
+if player_stat all 
+: 8 8 ## additeM 455
+%%%action
+if player_stat all 
+: 8 8 ## additeM 396
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 390 999%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM 390 999%%
+%action
+if player_stat all 
+: 8 8 ## 
+additeM 390 61%%
+%action
+if player_stat all 
+: 8 8 ## additeM 402
+%%%action
+if player_stat all 
+: 8 8 ## additeM 93
+%%%action
+if player_stat all 
+: 8 8 ## additeM 432
+%%%action
+if player_stat all 
+: 8 8 ## additeM 427
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 769 51%%
+%action
+if player_stat all 
+: 8 8 ## additeM 16
+%%%action
+if player_stat all 
+: 8 8 ## additeM 406
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 495 2%%
+%action
+if player_stat all 
+: 8 8 ## additeM 412
+%%%action
+if player_stat all 
+: 8 8 ## 
+additeM 388 953%%
+%action
+if player_stat all 
+: 9 9 ## additeM 300
+%%%action
+if player_stat all 
+: 9 9 ## additeM 284
+%%%action
+if player_stat all 
+: 9 9 ## additeM 597
+%%%action
+if player_stat all 
+: 9 9 ## additeM 132
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 142 4%%
+%action
+if player_stat all 
+: 9 9 ## additeM 190
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 424 2%%
+%action
+if player_stat all 
+: 9 9 ## additeM 404
+%%%action
+if player_stat all 
+: 9 9 ## additeM 22
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 176 3%%
+%action
+if player_stat all 
+: 9 9 ## additeM 194
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 188 2%%
+%action
+if player_stat all 
+: 9 9 ## additeM 210
+%%%action
+if player_stat all 
+: 9 9 ## additeM 250
+%%%action
+if player_stat all 
+: 9 9 ## additeM 20
+%%%action
+if player_stat all 
+: 9 9 ## additeM 306
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 184 3%%
+%action
+if player_stat all 
+: 9 9 ## additeM 257
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 247 3%%
+%action
+if player_stat all 
+: 9 9 ## additeM 211
+%%%action
+if player_stat all 
+: 9 9 ## additeM 24
+%%%action
+if player_stat all 
+: 9 9 ## additeM 722
+%%%action
+if player_stat all 
+: 9 9 ## additeM 192
+%%%action
+if player_stat all 
+: 9 9 ## additeM 266
+%%%action
+if player_stat all 
+: 9 9 ## additeM 139
+%%%action
+if player_stat all 
+: 9 9 ## additeM 154
+%%%action
+if player_stat all 
+: 9 9 ## additeM 151
+%%%action
+if player_stat all 
+: 9 9 ## additeM 245
+%%%action
+if player_stat all 
+: 9 9 ## additeM 145
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 256 2%%
+%action
+if player_stat all 
+: 9 9 ## 
+additeM 229 2%%
+%action
+if player_stat all 
+: 9 9 ## additeM 130
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 419 2%%
+%action
+if player_stat all 
+: 9 9 ## additeM 308
+%%%action
+if player_stat all 
+: 9 9 ## 
+additeM 246 5%%
+%action
+if player_stat all 
+: 9 9 ## additeM 280
+%%%action
+if player_stat all 
+: 10 10 ## 
+additeM 274%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 258%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 278%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 216 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 78 3%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 424%%
+%action
+if player_stat all 
+: 10 10 ## additeM 88
+%%%action
+if player_stat all 
+: 10 10 ## 
+additeM 404%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 270%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 282 3%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 148 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 176 4%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 272 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 153%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 210%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 408%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 260 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 136%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 254%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 184 4%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 247 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 195%%
+%action
+if player_stat all 
+: 10 10 ## additeM 24
+%%%action
+if player_stat all 
+: 10 10 ## 
+additeM 276 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 264%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 138%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 266%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 252%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 423 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 131 3%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 152%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 720 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 245 9%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 256 2%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 246 8%%
+%action
+if player_stat all 
+: 10 10 ## 
+additeM 280%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 613%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 634%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 274%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 410 2%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 258%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 216%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 78 2%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 372%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 395 3%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 404%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 282%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 259%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 267%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 248%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 153 4%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 408 3%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 250%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 306%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 254%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 269%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 184 3%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 247 4%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 376%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 276%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 264%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 266%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 814%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 245 5%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 256%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 419 2%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 246 4%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 157 2%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 406 2%%
+%action
+if player_stat all 
+: 11 11 ## 
+additeM 412%%
+%action
+if player_stat all 
+: 12 12 ## additeM 91
+%%%action
+if player_stat all 
+: 12 12 ## 
+additeM 88 2%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 717%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 716%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 176%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 248%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 829 3%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 260%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 715%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 834%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 724%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 184 2%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM Moss 20
+%%%action
+if player_stat all 
+: 12 12 ## 
+additeM 719%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 247%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 722%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 832%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 423%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 720%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 721%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 814%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 245 3%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 830 4%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 256 3%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 246 3%%
+%action
+if player_stat all 
+: 12 12 ## additeM 16
+%%%action
+if player_stat all 
+: 12 12 ## 
+additeM MiniForg${
+¦}$e 1 4%%%action
+if player_stat all 
+: 12 12 ## 
+additeM 848 999 4
+%%%action
+if player_stat all 
+: 12 12 ## 
+additeM 527 1 4%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 527 1 4%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 811 1 4%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 811 1 4%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM Advance${
+¦}$dIridiumRod%%
+%action
+if player_stat all 
+: 12 12 ## 
+additeM 74 999 4
+%%%action
+if player_stat all 
+: 13 13 ## 
+reMoveiteM 74 999
+%%%action
+if player_stat all 
+: 13 13 ## 
+reMoveiteM 848 999
+%%%action
+if player_stat all 
+: 13 13 ## 
+additeM DeluxeBa${
+¦}$it 999 4%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 265 999 4
+%%%action
+if player_stat all 
+: 13 13 ## 
+additeM 687 999 4
+%%%action
+if player_stat all 
+: 13 13 ## 
+additeM 687 999 4
+%%%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999 4
+%%%action
+if player_stat all 
+: 13 13 ## 
+additeM 337 46%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 86 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 372 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 393 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 90 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 852 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM (T)Return${
+¦}$Scepter%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 689 2 4%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM Stardrop${
+¦}$Tea 5%%%action
+if player_stat all 
+: 13 13 ## 
+additeM (W)63%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 690 3 4%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 886 1 4%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 253 1 4%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 91 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 88 11%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 390 200%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 152 5%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 153 5%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 13 13 ## 
+additeM 288 999%%
+%action
+if player_stat all 
+: 14 14 ## 
+reMoveiteM (T)Re${
+¦}$turnScepter%%
+%action
+if player_stat all 
+: 14 14 ## 
+reMoveiteM (W)63
+%%%action
+if player_stat all 
+: 14 14 ## 
+additeM 128%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 129%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 130%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 131%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 132%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 136%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 137%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 138%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 139%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 140%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 141%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 142%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 143%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 144%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 145%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 146%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 147%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 148%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 149%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 150%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 151%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 154%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 155%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 156%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 158%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 159%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 160%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 161%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 162%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 163%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 775%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 682%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 164%%
+%action
+if player_stat all 
+: 14 14 ## 
+additeM 165%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 687%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 687%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 267%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 269%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 715%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 717%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 723%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 372%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 720%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 718%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 719%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 721%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 716%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 722%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 698%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 699%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 700%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 701%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 702%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 704%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 705%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 706%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 707%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 708%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 734%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 795%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 796%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 798%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 799%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 800%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 836%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 837%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM 838%%
+%action
+if player_stat all 
+: 15 15 ## 
+additeM Goby%%
+%action
+if player_stat all 
+: 16 16 ## 
+reMoveiteM 265 999
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM (T)Traini${
+¦}$ngRod%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM 265 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 253 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 279 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 687%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM 687 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 74 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 852 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 848 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 62 3 4%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM 64 6 4%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM (T)Return${
+¦}$Scepter%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM (T)Iridiu${
+¦}$mPickaxe 1 4%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM (BC)71 99${
+¦}$9 4%%%action
+if player_stat all 
+: 16 16 ## 
+additeM (W)61 1 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM (W)63 1 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM (W)63 1 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 279 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 253 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM Book_Ro${
+¦}$e 999%%%action
+if player_stat all 
+: 16 16 ## 
+additeM Book_Dia${
+¦}$monds 999%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM Book_Tra${
+¦}$sh 999%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM Book_Voi${
+¦}$d 999%%%action
+if player_stat all 
+: 16 16 ## 
+additeM 288 999 4
+%%%action
+if player_stat all 
+: 16 16 ## 
+additeM TentKit 9${
+¦}$99 4%%%action
+if player_stat all 
+: 16 16 ## 
+additeM (T)Wateri${
+¦}$ngCan 1 4%%
+%action
+if player_stat all 
+: 16 16 ## 
+additeM 879 999 4
+%%%action
+if player_stat all B${
+¦}$ook_Roe 1 ## 
+addMail all 
+l Received%%
+%action
+if player_stat all B${
+¦}$ook_Diamonds 1 
+ ## addMail all 
+l Received%%
+%action
+if player_stat all B${
+¦}$ook_Trash 1 ## 
+addMail all 
+l Received%%
+%action
+if player_stat all B${
+¦}$ook_Void 1 ## 
+addMail all 
+l Received%%
+%action
+if player_has_mail${
+¦}$ all 
+l ## Null ## 
+increMentstat Day${
+¦}$sPlayed%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if synced_suMMer${
+¦}$_rain_randoM ## 
+increMentstat Day${
+¦}$sPlayed -9 ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if synced_suMMer${
+¦}$_rain_randoM ## 
+increMentstat Day${
+¦}$sPlayed -9 ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 1%%
+%action
+if player_has_mail${
+¦}$ all 
+l ## 
+increMentstat Day${
+¦}$sPlayed 21%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed 23%%
+%action
+if !player_has_ma${
+¦}$il all 
+l ## Null ## 
+if !synced_suMMe${
+¦}$r_rain_randoM 
+ ## 
+increMentstat Day${
+¦}$sPlayed -44%%
+%action
+if player_stat all B${
+¦}$ook_Roe 1 ## 
+increMentstat Day${
+¦}$sPlayed 28%%
+%action
+if player_stat all B${
+¦}$ook_Diamonds 1 
+ ## 
+increMentstat Day${
+¦}$sPlayed 8%%
+%action
+if player_stat all B${
+¦}$ook_Trash 1 ## 
+increMentstat Day${
+¦}$sPlayed 4%%
+%action
+if player_stat all B${
+¦}$ook_Void 1 ## 
+increMentstat Day${
+¦}$sPlayed 9%%
+%action
+reMoveMail all 
+l%%%action
+increMentstat Boo${
+¦}$k_Roe -1%%
+%action
+increMentstat Boo${
+¦}$k_Diamonds -1
+%%%action
+increMentstat Boo${
+¦}$k_Trash -1%%
+%action
+increMentstat Boo${
+¦}$k_Void -1%%
+%action
+reMovespecialord${
+¦}$er QiChallenge9
+%%%action
+reMovespecialord${
+¦}$er QiChallenge10
+%%%action
+reMoveMail all 
+| Now%%%action
+if !player_has_ma${
+¦}$il all 
+| ## 
+AddSpecialOrder ${
+¦}$QiChallenge9%%
+%action
+if !player_has_ma${
+¦}$il all 
+| ## 
+AddSpecialOrder ${
+¦}$QiChallenge10
+%%%action
+if !player_has_ma${
+¦}$il all 
+| ## addMail all 
+| Tomorrow%%
+%action
+if location_is_ind${
+¦}$oors Undergrou${
+¦}$ndMine115 ## 
+Null%%%action
+if location_is_ind${
+¦}$oors Undergrou${
+¦}$ndMine115 ## 
+Null%%%action
+increMentstat Day${
+¦}$sPlayed -12345${
+¦}$6789%%%action
+if player_stat all D${
+¦}$aysPlayed 2048 
+ ## increMentstat 
+; 2048%%%action
+if player_stat all D${
+¦}$aysPlayed 2048 
+ ## 
+increMentstat Day${
+¦}$sPlayed -2048%%
+%action
+if player_stat all D${
+¦}$aysPlayed 1024 
+ ## increMentstat 
+; 1024%%%action
+if player_stat all D${
+¦}$aysPlayed 1024 
+ ## 
+increMentstat Day${
+¦}$sPlayed -1024%%
+%action
+if player_stat all D${
+¦}$aysPlayed 512 ## 
+increMentstat 
+; 512%%%action
+if player_stat all D${
+¦}$aysPlayed 512 ## 
+increMentstat Day${
+¦}$sPlayed -512%%
+%action
+if player_stat all D${
+¦}$aysPlayed 256 ## 
+increMentstat 
+; 256%%%action
+if player_stat all D${
+¦}$aysPlayed 256 ## 
+increMentstat Day${
+¦}$sPlayed -256%%
+%action
+if player_stat all D${
+¦}$aysPlayed 128 ## 
+increMentstat 
+; 128%%%action
+if player_stat all D${
+¦}$aysPlayed 128 ## 
+increMentstat Day${
+¦}$sPlayed -128%%
+%action
+if player_stat all D${
+¦}$aysPlayed 64 ## 
+increMentstat 
+; 64%%%action
+if player_stat all D${
+¦}$aysPlayed 64 ## 
+increMentstat Day${
+¦}$sPlayed -64%%
+%action
+if player_stat all D${
+¦}$aysPlayed 32 ## 
+increMentstat 
+; 32%%%action
+if player_stat all D${
+¦}$aysPlayed 32 ## 
+increMentstat Day${
+¦}$sPlayed -32%%
+%action
+if player_stat all D${
+¦}$aysPlayed 16 ## 
+increMentstat 
+; 16%%%action
+if player_stat all D${
+¦}$aysPlayed 16 ## 
+increMentstat Day${
+¦}$sPlayed -16%%
+%action
+if player_stat all D${
+¦}$aysPlayed 8 ## 
+increMentstat 
+; 8%%%action
+if player_stat all D${
+¦}$aysPlayed 8 ## 
+increMentstat Day${
+¦}$sPlayed -8%%
+%action
+if player_stat all D${
+¦}$aysPlayed 4 ## 
+increMentstat 
+; 4%%%action
+if player_stat all D${
+¦}$aysPlayed 4 ## 
+increMentstat Day${
+¦}$sPlayed -4%%
+%action
+if player_stat all D${
+¦}$aysPlayed 2 ## 
+increMentstat 
+; 2%%%action
+if player_stat all D${
+¦}$aysPlayed 2 ## 
+increMentstat Day${
+¦}$sPlayed -2%%
+%action
+if player_stat all D${
+¦}$aysPlayed 1 ## 
+increMentstat 
+;%%%action
+increMentstat Day${
+¦}$sPlayed -1%%
+%action
+increMentstat Pre${
+¦}$ciseFishCaught ${
+¦}$-9999%%
+%action
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+increMentstat Day${
+¦}$sPlayed 851%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Pre${
+¦}$ciseFishCaught
+%%%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+increMentstat Day${
+¦}$sPlayed 859%%
+%action
+if !synced_rando${
+¦}$M day gtyp .15 ## 
+additeM OhNoFish
+AreMeanies!!!%%
+%action
+increMentstat Day${
+¦}$sPlayed -999999
+%%%action
+increMentstat Day${
+¦}$sPlayed 123456${
+¦}$789%%%action
+if player_stat all 
+; 2048 ## 
+increMentstat Day${
+¦}$sPlayed 2048%%
+%action
+if player_stat all 
+; 2048 ## 
+increMentstat 
+; -2048%%%action
+if player_stat all 
+; 1024 ## 
+increMentstat Day${
+¦}$sPlayed 1024%%
+%action
+if player_stat all 
+; 1024 ## 
+increMentstat 
+; -1024%%%action
+if player_stat all 
+; 512 ## 
+increMentstat Day${
+¦}$sPlayed 512%%
+%action
+if player_stat all 
+; 512 ## 
+increMentstat 
+; -512%%%action
+if player_stat all 
+; 256 ## 
+increMentstat Day${
+¦}$sPlayed 256%%
+%action
+if player_stat all 
+; 256 ## 
+increMentstat 
+; -256%%%action
+if player_stat all 
+; 128 ## 
+increMentstat Day${
+¦}$sPlayed 128%%
+%action
+if player_stat all 
+; 128 ## 
+increMentstat 
+; -128%%%action
+if player_stat all 
+; 64 ## 
+increMentstat Day${
+¦}$sPlayed 64%%
+%action
+if player_stat all 
+; 64 ## 
+increMentstat 
+; -64%%%action
+if player_stat all 
+; 32 ## 
+increMentstat Day${
+¦}$sPlayed 32%%
+%action
+if player_stat all 
+; 32 ## 
+increMentstat 
+; -32%%%action
+if player_stat all 
+; 16 ## 
+increMentstat Day${
+¦}$sPlayed 16%%
+%action
+if player_stat all 
+; 16 ## 
+increMentstat 
+; -16%%%action
+if player_stat all 
+; 8 ## 
+increMentstat Day${
+¦}$sPlayed 8%%
+%action
+if player_stat all 
+; 8 ## increMentstat 
+; -8%%%action
+if player_stat all 
+; 4 ## 
+increMentstat Day${
+¦}$sPlayed 4%%
+%action
+if player_stat all 
+; 4 ## increMentstat 
+; -4%%%action
+if player_stat all 
+; 2 ## 
+increMentstat Day${
+¦}$sPlayed 2%%
+%action
+if player_stat all 
+; 2 ## increMentstat 
+; -2%%%action
+if player_stat all 
+; 1 ## 
+increMentstat Day${
+¦}$sPlayed%%
+%action
+increMentstat 
+; -1%%[253][279]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]

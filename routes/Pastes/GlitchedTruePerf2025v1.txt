@@ -1,0 +1,3278 @@
+%actionAddMail All
+ dad1 Now%%
+%actionAddMail All
+ dad1 Now%%
+%actionAddMail All
+ dad1 Now%%
+%actionAddMail All
+ dad1 Now%%
+%actionAddMail All
+ dad1 Now%%
+%actionAddMail All
+ dad1 Now%%
+%actionAddMail All
+ dad1 Now%%
+%action
+RemoveItem 38${
+^}$8 999%% 
+%action
+RemoveItem 39${
+^}$0 999%% 
+%action
+RemoveItem 77${
+^}$0 999%% 
+%action
+RemoveItem 77${
+^}$1 999%% 
+%action
+RemoveItem 92${
+^}$ 999%% %action
+RemoveItem 38${
+^}$2 999%% 
+%action
+RemoveItem 53${
+^}$5 999%% 
+%actionAddMail All
+ ccDoorUnlock 
+Received%%
+%actionAddMail All
+ canReadJunim${
+^}$oText Received
+%%%action
+AddMail All
+ ccBoilerRoom 
+Received%%
+%actionAddMail All
+ ccBulletin Received
+%%%action
+AddMail All
+ ccCraftsRoom 
+Received%%
+%actionAddMail All
+ ccFishTank 
+Received%%
+%actionAddMail All
+ ccPantry Received
+%%%action
+AddMail All ccVault 
+Received%%
+%actionAddMail All
+ ccIsComplete 
+Received%%
+%actionAddMail All
+ ccMovieTheater 
+Received%%
+%actionAddMail All
+ abandonedJoj${
+^}$aMartAccess${
+^}$ible Received
+%%%action
+AddMail All
+ henchmanGone 
+Received%%
+%actionAddMail All
+ ccMovieTheater 
+Received%%
+%actionAddMail All
+ FirstPurchase_${
+^}$Dining Received
+%%%action
+AddMail All
+ OpenedSewer 
+Received%%
+%actionAddMail All
+ willyHours 
+Received%%
+%actionAddMail All
+ sawQiPlane 
+Received%%
+%actionAddMail All
+ gotMaxStamina 
+Received%%
+%actionAddMail All
+ willyBoatFixed 
+Received%%
+%actionAddMail All
+ willyBackRoo${
+^}$mInvitation 
+Received%%
+%actionAddMail All
+ wizardJunimo${
+^}$Note Received
+%%%action
+AddMail All
+ artifactFound 
+Received%%
+%actionAddMail All
+ witchStatueGo${
+^}$ne Received%%
+%actionAddMail All
+ Visited_Island 
+Received%%
+%actionAddMail All
+ Island_FirstPar${
+^}$rot Received%%
+%actionAddMail All
+ reachedCaldera 
+Received%%
+%actionAddMail All
+ Island_Upgrad${
+^}$eHouse Received
+%%%action
+AddMail All
+ geodeFound 
+Received%%
+%actionAddMail All
+ BackpackTip 
+Received%%
+%actionAddMail All
+ ISLAND_NORT${
+^}$H_DIGSITE_${
+^}$LOAD Received
+%%%action
+AddMail All
+ lostWalnutFou${
+^}$nd Received%%
+%actionAddMail All
+ seenBoatJourn${
+^}$ey Received%%
+%actionAddMail All
+ Island_Volcano${
+^}$Bridge Received
+%%%action
+AddMail All
+ Island_Volcano${
+^}$ShortcutOut 
+Received%%
+%actionAddMail All
+ krobusUnseal 
+Received%%
+%actionAddMail All
+ communityUp${
+^}$gradeShortc${
+^}$uts Received%%
+%actionAddMail All
+ hasPickedUpM${
+^}$agicInk Received
+%%%action
+AddMail All
+ HasUnlockedS${
+^}$kullDoor 
+Received%%
+%actionAddMail All
+ HasSkullKey 
+Received%%
+%actionAddMail All
+ HasTownKey 
+Received%%
+%actionAddMail All
+ HasSpecialChar${
+^}$m Received%%
+%actionAddMail All
+ HasDwarvishTr${
+^}$anslationGui${
+^}$de Received%%
+%actionAddMail All
+ raccoonTreeFal${
+^}$len Received%%
+%actionAddMail All
+ reachedBotto${
+^}$mOfHardMi${
+^}$nes Received%%
+%actionAddMail All
+ guildMember 
+Received%%
+%action
+AddBuff 20 -2%%
+%action
+AddBuff 21 -2%%
+%action
+AddBuff 22 -2%%
+%action
+AddBuff 24 -2%%
+%action
+AddBuff 28 -2%%
+%action
+AddBuff statue${
+^}$_of_blessing${
+^}$s_0 -2%%
+%action
+AddBuff statue${
+^}$_of_blessing${
+^}$s_1 -2%%
+%action
+AddBuff statue${
+^}$_of_blessing${
+^}$s_2 -2%%
+%action
+AddBuff statue${
+^}$_of_blessing${
+^}$s_5 -2%%
+%action
+IncrementStat ${
+^}$boatRidesTo${
+^}$Island%%
+%action
+IncrementStat ${
+^}$Book_Speed${
+^}$%%%action
+IncrementStat ${
+^}$Book_Speed${
+^}$2%%%action
+IncrementStat ${
+^}$blessingOfW${
+^}$aters 999%%
+%action
+IncrementStat ${
+^}$Book_Grass${
+^}$%%%action
+IncrementStat ${
+^}$Book_Anima${
+^}$lCatalogue%%
+%action
+IncrementStat t${
+^}$rinketSlots 1${
+^}$%%%action
+IncrementStat c${
+^}$hildrenTurn${
+^}$edToDoves 1${
+^}$0%%%action
+IncrementStat 
+i%%%action
+If days_played 0${
+^}$ 1000 ## Incr${
+^}$ementStat d${
+^}$aysPlayed 1${
+^}$23456789%%
+%action
+MarkEventSeen All
+ 739330%%%action
+MarkEventSeen All
+ 980559%%%action
+MarkEventSeen All
+ 318560%%%action
+MarkEventSeen All
+ 992553%%%action
+MarkEventSeen All
+ 900553%%%action
+MarkEventSeen All
+ 65%%%action
+MarkEventSeen All
+ 1590166%%
+%action
+MarkEventSeen All
+ 897405%%%action
+MarkEventSeen All
+ 102%%%action
+MarkEventSeen All
+ 3102768%%
+%action
+MarkEventSeen All
+ 67%%%action
+MarkEventSeen All
+ 992559%%%action
+MarkEventSeen All
+ 100162%%%action
+MarkEventSeen All
+ 404798%%%action
+MarkEventSeen All
+ 529952%%%action
+MarkEventSeen All
+ 191393%%%action
+MarkEventSeen All
+ 15389722%%
+%action
+MarkEventSeen All
+ 112%%%action
+MarkEventSeen All
+ 418172%%%action
+MarkEventSeen All
+ 13%%%action
+MarkEventSeen All
+ 20%%%action
+MarkEventSeen All
+ 288847%%%action
+MarkEventSeen All
+ 29%%%action
+MarkEventSeen All
+ 733330%%%action
+MarkEventSeen All
+ 711130%%%action
+MarkEventSeen All
+ 4081148%%
+%action
+MarkEventSeen All
+ 14%%%action
+MarkEventSeen All
+ 52%%%action
+MarkEventSeen All
+ 181928%%%action
+MarkEventSeen All
+ 611944%%%action
+MarkEventSeen All
+ 3910975%%
+%action
+MarkEventSeen All
+ 3910979%%
+%action
+MarkEventSeen All
+ 5%%%action
+MarkEventSeen All
+ 47%%%action
+MarkEventSeen All
+ 55%%%action
+MarkEventSeen All
+ 992253%%%action
+MarkEventSeen All
+ 91%%%action
+MarkEventSeen All
+ 93%%%action
+MarkEventSeen All
+ 2118991%%
+%action
+MarkEventSeen All
+ 980558%%%action
+MarkEventSeen All
+ 6497423%%
+%action
+MarkEventSeen All
+ 6497421%%
+%action
+MarkEventSeen All
+ 6497428%%
+%action
+MarkEventSeen All
+ 2%%%action
+MarkEventSeen All
+ 8%%%action
+MarkEventSeen All
+ 26%%%action
+MarkEventSeen All
+ 384883%%%action
+MarkEventSeen All
+ 371652%%%action
+MarkEventSeen All
+ 8959199%%
+%action
+MarkEventSeen All
+ 691039%%%action
+MarkEventSeen All
+ 4%%%action
+MarkEventSeen All
+ 831125%%%action
+MarkEventSeen All
+ 2481135%%
+%action
+MarkEventSeen All
+ 34%%%action
+MarkEventSeen All
+ 45%%%action
+MarkEventSeen All
+ 53%%%action
+MarkEventSeen All
+ 639373%%%action
+MarkEventSeen All
+ 101%%%action
+MarkEventSeen All
+ 502969%%%action
+MarkEventSeen All
+ 463391%%
+%item money 1${
+^}$111111%%
+%item id 73 11${
+^}$%%
+%item cooking${
+^}$Recipe Omel${
+^}$et%%
+%item cooking${
+^}$Recipe Salad${
+^}$%%
+%item cooking${
+^}$Recipe Chee${
+^}$se Cauli.%%
+%item cooking${
+^}$Recipe Bake${
+^}$d Fish%%
+%item cooking${
+^}$Recipe Parsn${
+^}$ip Soup%%
+%item cooking${
+^}$Recipe Veget${
+^}$able Stew%%
+%item cooking${
+^}$Recipe Com${
+^}$plete Breakf${
+^}$ast%%
+%item cooking${
+^}$Recipe Fried ${
+^}$Calamari%%
+%item cooking${
+^}$Recipe Stran${
+^}$ge Bun%%
+%item cooking${
+^}$Recipe Luck${
+^}$y Lunch%%
+%item cooking${
+^}$Recipe Fried ${
+^}$Mushroom%${
+^}$%
+%item cooking${
+^}$Recipe Pizza${
+^}$%%
+%item cooking${
+^}$Recipe Bean ${
+^}$Hotpot%%
+%item cooking${
+^}$Recipe Glaze${
+^}$d Yams%%
+%item cooking${
+^}$Recipe Carp ${
+^}$Surprise%%
+%item cooking${
+^}$Recipe Hash${
+^}$browns%%
+%item cooking${
+^}$Recipe Panc${
+^}$akes%%
+%item cooking${
+^}$Recipe Salm${
+^}$on Dinner%%
+%item cooking${
+^}$Recipe Fish T${
+^}$aco%%
+%item cooking${
+^}$Recipe Crisp${
+^}$y Bass%%
+%item cooking${
+^}$Recipe Pepp${
+^}$er Poppers%%
+%item cooking${
+^}$Recipe Brea${
+^}$d%%
+%item cooking${
+^}$Recipe Tom ${
+^}$Kha Soup%%
+%item cooking${
+^}$Recipe Trout${
+^}$ Soup%%
+%item cooking${
+^}$Recipe Choc${
+^}$olate Cake%%
+%item cooking${
+^}$Recipe Pink ${
+^}$Cake%%
+%item cooking${
+^}$Recipe Rhub${
+^}$arb Pie%%
+%item cooking${
+^}$Recipe Cooki${
+^}$es%%
+%item cooking${
+^}$Recipe Spag${
+^}$hetti%%
+%item cooking${
+^}$Recipe Fried ${
+^}$Eel%%
+%item cooking${
+^}$Recipe Spicy${
+^}$ Eel%%
+%item cooking${
+^}$Recipe Sashi${
+^}$mi%%
+%item cooking${
+^}$Recipe Maki ${
+^}$Roll%%
+%item cooking${
+^}$Recipe Tortil${
+^}$la%%
+%item cooking${
+^}$Recipe Red P${
+^}$late%%
+%item cooking${
+^}$Recipe Eggpl${
+^}$ant Parm.%%
+%item cooking${
+^}$Recipe Rice ${
+^}$Pudding%%
+%item cooking${
+^}$Recipe Ice Cr${
+^}$eam%%
+%item cooking${
+^}$Recipe Blue${
+^}$berry Tart%%
+%item cooking${
+^}$Recipe Autu${
+^}$mn's Bounty${
+^}$%%
+%item cooking${
+^}$Recipe Pum${
+^}$pkin Soup%%
+%item cooking${
+^}$Recipe Supe${
+^}$r Meal%%
+%item cooking${
+^}$Recipe Cran. ${
+^}$Sauce%%
+%item cooking${
+^}$Recipe Stuffi${
+^}$ng%%
+%item cooking${
+^}$Recipe Farm${
+^}$er's Lunch%%
+%item cooking${
+^}$Recipe Survi${
+^}$val Burger%%
+%item cooking${
+^}$Recipe Dish ${
+^}$o' The Sea%%
+%item cooking${
+^}$Recipe Miner${
+^}$'s Treat%%
+%item cooking${
+^}$Recipe Root${
+^}$s Platter%%
+%item cooking${
+^}$Recipe Algae${
+^}$ Soup%%
+%item cooking${
+^}$Recipe Pale ${
+^}$Broth%%
+%item cooking${
+^}$Recipe Plum ${
+^}$Pudding%%
+%item cooking${
+^}$Recipe Artic${
+^}$hoke Dip%%
+%item cooking${
+^}$Recipe Stir F${
+^}$ry%%
+%item cooking${
+^}$Recipe Roast${
+^}$ed Hazelnuts${
+^}$%%
+%item cooking${
+^}$Recipe Pum${
+^}$pkin Pie%%
+%item cooking${
+^}$Recipe Radis${
+^}$h Salad%%
+%item cooking${
+^}$Recipe Fruit ${
+^}$Salad%%
+%item cooking${
+^}$Recipe Black${
+^}$berry Cobble${
+^}$r%%
+%item cooking${
+^}$Recipe Cran${
+^}$berry Candy${
+^}$%%
+%item cooking${
+^}$Recipe Brusc${
+^}$hetta%%
+%item cooking${
+^}$Recipe Coles${
+^}$law%%
+%item cooking${
+^}$Recipe Fiddl${
+^}$ehead Risott${
+^}$o%%
+%item cooking${
+^}$Recipe Popp${
+^}$yseed Muffin${
+^}$%%
+%item cooking${
+^}$Recipe Chow${
+^}$der%%
+%item cooking${
+^}$Recipe Lobst${
+^}$er Bisque%%
+%item cooking${
+^}$Recipe Fish S${
+^}$tew%%
+%item cooking${
+^}$Recipe Escar${
+^}$got%%
+%item cooking${
+^}$Recipe Mapl${
+^}$e Bar%%
+%item cooking${
+^}$Recipe Crab ${
+^}$Cakes%%
+%item cooking${
+^}$Recipe Tripl${
+^}$e Shot Espre${
+^}$sso%%
+%item cooking${
+^}$Recipe Shri${
+^}$mp Cocktail${
+^}$%%
+%item cooking${
+^}$Recipe Seaf${
+^}$oam Puddin${
+^}$g%%
+%item cooking${
+^}$Recipe Ging${
+^}$er Ale%%
+%item cooking${
+^}$Recipe Bana${
+^}$na Pudding${
+^}$%%
+%item cooking${
+^}$Recipe Mang${
+^}$o Sticky Rice${
+^}$%%
+%item cooking${
+^}$Recipe Poi%%
+%item cooking${
+^}$Recipe Tropi${
+^}$cal Curry%%
+%item cooking${
+^}$Recipe Squi${
+^}$d Ink Ravioli${
+^}$%%
+%item cooking${
+^}$Recipe Moss ${
+^}$Soup%%
+%item crafting${
+^}$Recipe Ston${
+^}$e_Fence%%
+%item crafting${
+^}$Recipe Iron_${
+^}$Fence%%
+%item crafting${
+^}$Recipe Hard${
+^}$wood_Fence${
+^}$%%
+%item crafting${
+^}$Recipe Grass${
+^}$_Starter%%
+%item crafting${
+^}$Recipe Blue_${
+^}$Grass_Starte${
+^}$r%%
+%item crafting${
+^}$Recipe Big_C${
+^}$hest%%
+%item crafting${
+^}$Recipe Ston${
+^}$e_Chest%%
+%item crafting${
+^}$Recipe Big_S${
+^}$tone_Chest${
+^}$%%
+%item crafting${
+^}$Recipe Scare${
+^}$crow%%
+%item crafting${
+^}$Recipe Delu${
+^}$xe_Scarecro${
+^}$w%%
+%item crafting${
+^}$Recipe Bee_${
+^}$House%%
+%item crafting${
+^}$Recipe Keg${
+^}$%%
+%item crafting${
+^}$Recipe Cask${
+^}$%%
+%item crafting${
+^}$Recipe Dehy${
+^}$drator%%
+%item crafting${
+^}$Recipe Furn${
+^}$ace%%
+%item crafting${
+^}$Recipe Heav${
+^}$y_Furnace%%
+%item crafting${
+^}$Recipe Anvil${
+^}$%%
+%item crafting${
+^}$Recipe Mini-${
+^}$Forge%%
+%item crafting${
+^}$Recipe Gard${
+^}$en_Pot%%
+%item crafting${
+^}$Recipe Dark${
+^}$_Sign%%
+%item crafting${
+^}$Recipe Chee${
+^}$se_Press%%
+%item crafting${
+^}$Recipe Mayo${
+^}$nnaise_Mac${
+^}$hine%%
+%item crafting${
+^}$Recipe Seed${
+^}$_Maker%%
+%item crafting${
+^}$Recipe Loo${
+^}$m%%
+%item crafting${
+^}$Recipe Oil_${
+^}$Maker%%
+%item crafting${
+^}$Recipe Recy${
+^}$cling_Machi${
+^}$ne%%
+%item crafting${
+^}$Recipe Wor${
+^}$m_Bin%%
+%item crafting${
+^}$Recipe Delu${
+^}$xe_Worm_Bi${
+^}$n%%
+%item crafting${
+^}$Recipe Bait_${
+^}$Maker%%
+%item crafting${
+^}$Recipe Fish_${
+^}$Smoker%%
+%item crafting${
+^}$Recipe Prese${
+^}$rves_Jar%%
+%item crafting${
+^}$Recipe Charc${
+^}$oal_Kiln%%
+%item crafting${
+^}$Recipe Tapp${
+^}$er%%
+%item crafting${
+^}$Recipe Mush${
+^}$room_Log%%
+%item crafting${
+^}$Recipe Light${
+^}$ning_Rod%%
+%item crafting${
+^}$Recipe Slime${
+^}$_Incubator${
+^}$%%
+%item crafting${
+^}$Recipe Slime${
+^}$_Egg-Press${
+^}$%%
+%item crafting${
+^}$Recipe Cryst${
+^}$alarium%%
+%item crafting${
+^}$Recipe Mini-${
+^}$Jukebox%%
+%item crafting${
+^}$Recipe Sprin${
+^}$kler%%
+%item crafting${
+^}$Recipe Quali${
+^}$ty_Sprinkler${
+^}$%%
+%item crafting${
+^}$Recipe Iridiu${
+^}$m_Sprinkler${
+^}$%%
+%item crafting${
+^}$Recipe Stair${
+^}$case%%
+%item crafting${
+^}$Recipe Flute${
+^}$_Block%%
+%item crafting${
+^}$Recipe Drum${
+^}$_Block%%
+%item crafting${
+^}$Recipe Basic${
+^}$_Fertilizer%%
+%item crafting${
+^}$Recipe Tree_${
+^}$Fertilizer%%
+%item crafting${
+^}$Recipe Mysti${
+^}$c_Tree_See${
+^}$d%%
+%item crafting${
+^}$Recipe Quali${
+^}$ty_Fertilizer${
+^}$%%
+%item crafting${
+^}$Recipe Basic${
+^}$_Retaining_${
+^}$Soil%%
+%item crafting${
+^}$Recipe Quali${
+^}$ty_Retaining${
+^}$_Soil%%
+%item crafting${
+^}$Recipe Spee${
+^}$d-Gro%%
+%item crafting${
+^}$Recipe Delu${
+^}$xe_Speed-G${
+^}$ro%%
+%item crafting${
+^}$Recipe Hype${
+^}$r_Speed-Gro${
+^}$%%
+%item crafting${
+^}$Recipe Delu${
+^}$xe_Fertilizer${
+^}$%%
+%item crafting${
+^}$Recipe Delu${
+^}$xe_Retainin${
+^}$g_Soil%%
+%item crafting${
+^}$Recipe Cherr${
+^}$y_Bomb%%
+%item crafting${
+^}$Recipe Bom${
+^}$b%%
+%item crafting${
+^}$Recipe Mega${
+^}$_Bomb%%
+%item crafting${
+^}$Recipe Explo${
+^}$sive_Ammo${
+^}$%%
+%item crafting${
+^}$Recipe Trans${
+^}$mute_(Fe)%%
+%item crafting${
+^}$Recipe Trans${
+^}$mute_(Au)%%
+%item crafting${
+^}$Recipe Ancie${
+^}$nt_Seeds%%
+%item crafting${
+^}$Recipe Wild_${
+^}$Seeds_(Sp)${
+^}$%%
+%item crafting${
+^}$Recipe Wild_${
+^}$Seeds_(Su)${
+^}$%%
+%item crafting${
+^}$Recipe Wild_${
+^}$Seeds_(Fa)${
+^}$%%
+%item crafting${
+^}$Recipe Wild_${
+^}$Seeds_(Wi)${
+^}$%%
+%item crafting${
+^}$Recipe Fiber${
+^}$_Seeds%%
+%item crafting${
+^}$Recipe Tea_${
+^}$Sapling%%
+%item crafting${
+^}$Recipe Warp${
+^}$_Totem:_Far${
+^}$m%%
+%item crafting${
+^}$Recipe Warp${
+^}$_Totem:_Mo${
+^}$untains%%
+%item crafting${
+^}$Recipe Warp${
+^}$_Totem:_Be${
+^}$ach%%
+%item crafting${
+^}$Recipe Warp${
+^}$_Totem:_De${
+^}$sert%%
+%item crafting${
+^}$Recipe Warp${
+^}$_Totem:_Isl${
+^}$and%%
+%item crafting${
+^}$Recipe Rain_${
+^}$Totem%%
+%item crafting${
+^}$Recipe Treas${
+^}$ure_Totem${
+^}$%%
+%item crafting${
+^}$Recipe Cook${
+^}$out_Kit%%
+%item crafting${
+^}$Recipe Tent${
+^}$_Kit%%
+%item crafting${
+^}$Recipe Field${
+^}$_Snack%%
+%item crafting${
+^}$Recipe Statu${
+^}$e_Of_Blessi${
+^}$ngs%%
+%item crafting${
+^}$Recipe Statu${
+^}$e_Of_The_D${
+^}$warf_King%%
+%item crafting${
+^}$Recipe Jack-${
+^}$O-Lantern%%
+%item crafting${
+^}$Recipe Woo${
+^}$d_Floor%%
+%item crafting${
+^}$Recipe Stra${
+^}$w_Floor%%
+%item crafting${
+^}$Recipe Weat${
+^}$hered_Floor${
+^}$%%
+%item crafting${
+^}$Recipe Rusti${
+^}$c_Plank_Flo${
+^}$or%%
+%item crafting${
+^}$Recipe Cryst${
+^}$al_Floor%%
+%item crafting${
+^}$Recipe Ston${
+^}$e_Floor%%
+%item crafting${
+^}$Recipe Ston${
+^}$e_Walkway_${
+^}$Floor%%
+%item crafting${
+^}$Recipe Brick${
+^}$_Floor%%
+%item crafting${
+^}$Recipe Step${
+^}$ping_Stone_${
+^}$Path%%
+%item crafting${
+^}$Recipe Cryst${
+^}$al_Path%%
+%item crafting${
+^}$Recipe Bait${
+^}$%%
+%item crafting${
+^}$Recipe Delu${
+^}$xe_Bait%%
+%item crafting${
+^}$Recipe Wild_${
+^}$Bait%%
+%item crafting${
+^}$Recipe Chall${
+^}$enge_Bait%%
+%item crafting${
+^}$Recipe Magn${
+^}$et%%
+%item crafting${
+^}$Recipe Spin${
+^}$ner%%
+%item crafting${
+^}$Recipe Dress${
+^}$ed_Spinner${
+^}$%%
+%item crafting${
+^}$Recipe Trap${
+^}$_Bobber%%
+%item crafting${
+^}$Recipe Sona${
+^}$r_Bobber%%
+%item crafting${
+^}$Recipe Cork${
+^}$_Bobber%%
+%item crafting${
+^}$Recipe Treas${
+^}$ure_Hunter${
+^}$%%
+%item crafting${
+^}$Recipe Barb${
+^}$ed_Hook%%
+%item crafting${
+^}$Recipe Oil_O${
+^}$f_Garlic%%
+%item crafting${
+^}$Recipe Life_${
+^}$Elixir%%
+%item crafting${
+^}$Recipe Crab${
+^}$_Pot%%
+%item crafting${
+^}$Recipe Iridiu${
+^}$m_Band%%
+%item crafting${
+^}$Recipe Ring_${
+^}$of_Yoba%%
+%item crafting${
+^}$Recipe Sturd${
+^}$y_Ring%%
+%item crafting${
+^}$Recipe Warri${
+^}$or_Ring%%
+%item crafting${
+^}$Recipe Tub_${
+^}$o'_Flowers${
+^}$%%
+%item crafting${
+^}$Recipe Woo${
+^}$den_Brazier${
+^}$%%
+%item crafting${
+^}$Recipe Wick${
+^}$ed_Statue%%
+%item crafting${
+^}$Recipe Ston${
+^}$e_Brazier%%
+%item crafting${
+^}$Recipe Gold${
+^}$_Brazier%%
+%item crafting${
+^}$Recipe Stum${
+^}$p_Brazier%%
+%item crafting${
+^}$Recipe Carve${
+^}$d_Brazier%%
+%item crafting${
+^}$Recipe Skull${
+^}$_Brazier%%
+%item crafting${
+^}$Recipe Barre${
+^}$l_Brazier%%
+%item crafting${
+^}$Recipe Marbl${
+^}$e_Brazier%%
+%item crafting${
+^}$Recipe Woo${
+^}$d_Lamp-pos${
+^}$t%%
+%item crafting${
+^}$Recipe Iron_${
+^}$Lamp-post%${
+^}$%
+%item crafting${
+^}$Recipe Fairy${
+^}$_Dust%%
+%item crafting${
+^}$Recipe Bug_${
+^}$Steak%%
+%item crafting${
+^}$Recipe Quali${
+^}$ty_Bobber%%
+%item crafting${
+^}$Recipe Mons${
+^}$ter_Musk%%
+%item crafting${
+^}$Recipe Mini-${
+^}$Obelisk%%
+%item crafting${
+^}$Recipe Farm${
+^}$_Computer${
+^}$%%
+%item crafting${
+^}$Recipe Ostri${
+^}$ch_Incubato${
+^}$r%%
+%item crafting${
+^}$Recipe Geod${
+^}$e_Crusher%%
+%item crafting${
+^}$Recipe Solar${
+^}$_Panel%%
+%item crafting${
+^}$Recipe Bone${
+^}$_Mill%%
+%item crafting${
+^}$Recipe Thor${
+^}$ns_Ring%%
+%item crafting${
+^}$Recipe Glow${
+^}$stone_Ring${
+^}$%%
+%item crafting${
+^}$Recipe Heav${
+^}$y_Tapper%%
+%item crafting${
+^}$Recipe Hopp${
+^}$er%%
+%item crafting${
+^}$Recipe Magi${
+^}$c_Bait%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Ale${
+^}$x 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Elli${
+^}$ott 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Har${
+^}$vey 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Sa${
+^}$m 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Seb${
+^}$astian 2500${
+^}$%%%action
+If year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Sha${
+^}$ne 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Abi${
+^}$gail 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Emi${
+^}$ly 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Hal${
+^}$ey 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Lea${
+^}$h 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Mar${
+^}$u 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Pen${
+^}$ny 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Car${
+^}$oline 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Clin${
+^}$t 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints De${
+^}$metrius 2500${
+^}$%%%action
+If year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Dw${
+^}$arf 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Eve${
+^}$lyn 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Geo${
+^}$rge 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Gus ${
+^}$2500%%%action
+If year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Jas ${
+^}$2500%%%action
+If year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Jod${
+^}$i 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Ken${
+^}$t 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Kro${
+^}$bus 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Leo ${
+^}$2500%%%action
+If year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Lew${
+^}$is 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Lin${
+^}$us 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Mar${
+^}$nie 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Pa${
+^}$m 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Pier${
+^}$re 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Rob${
+^}$in 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints San${
+^}$dy 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Vin${
+^}$cent 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Will${
+^}$y 2500%%
+%actionIf year 2 2 
+ ## AddFriendsh${
+^}$ipPoints Wiz${
+^}$ard 2500%%
+%action
+SetNpcVisible ${
+^}$Willy%%
+%action
+If player_stat Any 
+i 1 1  ## RemoveIte${
+^}$m (T)Axe%%
+%action
+If player_stat Any 
+i 1 1  ## RemoveIte${
+^}$m (T)Hoe%%
+%action
+If player_stat Any 
+i 1 1  ## RemoveIte${
+^}$m (T)Pickax${
+^}$e%%%action
+If player_stat Any 
+i 1 1  ## RemoveIte${
+^}$m (T)Wateri${
+^}$ngCan%%
+%action
+If player_stat Any 
+i 1 1  ## RemoveIte${
+^}$m (W)47%%
+%action
+If player_stat Any 
+i 1 1 
+ ## AddItem (T)${
+^}$ReturnScept${
+^}$er%%%action
+If player_stat Any 
+i 1 1  ## AddItem (
+)288 999 4%%
+%action
+If player_stat Any 
+i 1 1 
+ ## AddItem (TR${
+^}$)MagicHairD${
+^}$ye 1 4%%
+%action
+If player_stat Any 
+i 2 2  ## RemoveIte${
+^}$m 288 999%%
+%action
+If player_stat Any 
+i 2 2  ## RemoveIte${
+^}$m (T)Return${
+^}$Scepter%%
+If player_stat Any 
+i 2 2 
+ ## IncrementSt${
+^}$at 
+i 10%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)16%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)18%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)20%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)22%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)24%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)78%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)88%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)90%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)92%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)176%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)174%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)180%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)182%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)184%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)186%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)188%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)190%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)192%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)248%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)250%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)252%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)254%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)256%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)257%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)258%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)259%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)260%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)262%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)264%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)266%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)268%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)270%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)271%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)272%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)274%%%action
+If player_stat Any 
+i 2 2  ## AddItem (
+)276%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)278%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)280%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)281%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)282%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)283%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)284%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)296%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)300%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)303%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)304%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)305%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)306%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)307%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)308%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)330%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)334%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)335%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)336%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)337%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)338%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)340%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)342%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)344%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)346%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)348%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)350%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)378%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)380%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)382%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)384%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)386%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)388%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)390%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)392%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)393%%%action
+If player_stat Any 
+i 3 3  ## AddItem (
+)394%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)396%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)397%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)398%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)399%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)400%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)402%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)404%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)406%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)408%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)410%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)412%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)414%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)416%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)417%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)418%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)420%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)421%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)422%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)424%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)426%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)428%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)430%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)432%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)433%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)436%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)438%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)440%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)442%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)444%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)446%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)447%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)454%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)459%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)591%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)593%%%action
+If player_stat Any 
+i 4 4  ## AddItem (
+)595%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)597%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)376%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)613%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)614%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)634%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)635%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)636%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)637%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)638%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)684%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)709%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)724%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)725%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)726%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)766%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)767%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)768%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)769%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)771%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)787%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)807%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)812%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)445%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)814%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)815%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)289%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)91%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)829%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)830%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)832%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)834%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)848%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)851%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)881%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)909%%%action
+If player_stat Any 
+i 5 5  ## AddItem (
+)910%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)Moss%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)MysticSyrup%%
+%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)Raisins%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)DriedFruit%%
+%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)DriedMushroo${
+^}$ms%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)Carrot%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)SummerSquas${
+^}$h%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)Broccoli%%
+%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)Powdermelon${
+^}$%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)SmokedFish%%
+%action
+If player_stat Any 
+i 6 6 
+ ## AddItem (BC${
+^}$)BigChest%%
+%action
+If player_stat Any 
+i 6 6 
+ ## AddItem (BC${
+^}$)208 1%%
+%action
+If player_stat Any 
+i 6 6 
+ ## AddItem (BC${
+^}$)13 2%%%action
+If player_stat Any 
+i 6 6 
+ ## AddItem (BC${
+^}$)154 1%%
+%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)719 1%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)309 6%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)114%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)62%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)685 5%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)767 40%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)787 7%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)410%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)881 138%%
+%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)684 44%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)CaveJelly%%
+%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)281%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)848 20%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)330 11%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)428 2%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)382 95%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)88%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)404%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)334 18%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)378 28%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)393 5%%%action
+If player_stat Any 
+i 6 6  ## AddItem (
+)418%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)414%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)18%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)22%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)72 3%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)852 6%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)122%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)86%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)595%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)771 999%%
+%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)771 329%%
+%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)82 2%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)84 10%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)248 10%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)829%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)336 40%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)384 4%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)398%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)709 233%%
+%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)408%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)340%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)337 37%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)386 5%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)335 116%%
+%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)380 4%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)429%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)20%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)292 5%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)310 6%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)724%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)567%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)770%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)257%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)Moss 402%%
+%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)MysticSyrup 2${
+^}$%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)725 2%%%action
+If player_stat Any 
+i 7 7  ## AddItem (
+)247%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)311 6%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)726 7%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)453%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)276%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)422%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)910 2%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)909 2%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)420%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)338 27%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)RiverJelly%%
+%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)92 999%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)92 83%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)SeaJelly%%
+%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)397%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)766 220%%
+%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)416%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)768 83%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)455%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)396%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)390 999%%
+%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)390 999%%
+%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)390 61%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)402%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)93%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)432%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)427%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)769 51%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)16%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)406%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)495 2%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)412%%%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)388 953%%
+%action
+If player_stat Any 
+i 8 8  ## AddItem (
+)926%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)300%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)284%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)597%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)132%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)142 4%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)190%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)424 2%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)404%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)22%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)176 3%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)194%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)188 2%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)210%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)250%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)20%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)306%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)184 3%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)257%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)247 3%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)211%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)24%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)722%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)192%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)266%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)139%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)154%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)151%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)245%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)145%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)256 2%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)229 2%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)130%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)419 2%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)308%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)246 5%%%action
+If player_stat Any 
+i 9 9  ## AddItem (
+)280%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)274%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)258%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)278%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)216 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)78 3%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)424%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)88%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)404%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)270%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)282 3%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)148 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)176 4%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)272 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)153%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)210%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)408%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)260 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)136%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)254%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)184 4%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)247 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)195%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)24%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)276 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)264%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)138%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)266%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)252%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)423 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)131 3%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)152%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)720 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)245 9%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)256 2%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)246 8%%%action
+If player_stat Any 
+i 10 10  ## AddItem (
+)280%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)613%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)634%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)274%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)410 2%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)258%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)216%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)78 2%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)372%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)395 3%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)404%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)282%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)259%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)267%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)248%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)153 4%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)408 3%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)250%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)306%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)254%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)269%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)184 3%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)247 4%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)376%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)276%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)264%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)266%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)814%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)245 5%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)256%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)419 2%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)246 4%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)157 2%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)406 2%%%action
+If player_stat Any 
+i 11 11  ## AddItem (
+)412%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)91%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)88 2%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)717%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)716%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)176%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)248%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)829 3%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)260%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)715%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)834%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)724%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)184 2%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)Moss 20%%
+%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)719%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)247%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)722%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)832%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)423%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)720%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)721%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)814%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)245 3%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)830 4%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)256 3%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)246 3%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)16%%%action
+If player_stat Any 
+i 12 12 
+ ## AddItem Min${
+^}$iForge 1 4%%
+%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)848 999 4%%
+%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)527 1 4%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)527 1 4%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)811 1 4%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)534 1 4%%%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)PurpleBook 60 ${
+^}$4%%%action
+If player_stat Any 
+i 12 12 
+ ## AddItem Adv${
+^}$ancedIridiu${
+^}$mRod%%
+%action
+If player_stat Any 
+i 12 12  ## AddItem (
+)74 999 4%%
+%action
+If player_stat Any 
+i 13 13 
+ ## RemoveIte${
+^}$m 74 999%%
+%action
+If player_stat Any 
+i 13 13 
+ ## RemoveIte${
+^}$m 848 999%%
+%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)DeluxeBait 999${
+^}$ 4%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)265 999 4%%
+%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)687 999 4%%
+%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)687 999 4%%
+%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)288 999 4%%
+%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)337 45%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)86 10%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)372 10%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)393 10%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)90 10%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)852 10%%%action
+If player_stat Any 
+i 13 13 
+ ## AddItem (T)${
+^}$ReturnScept${
+^}$er%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)261 1 4%% %action
+If player_stat Any 
+i 13 13  ## AddItem (
+)689 2 4%% %action
+If player_stat Any 
+i 13 13  ## AddItem (
+)690 2 4%% %action
+If player_stat Any 
+i 13 13  ## AddItem (
+)886 1 4%% %action
+If player_stat Any 
+i 13 13  ## AddItem (
+)253 1 4%% %action
+If player_stat Any 
+i 13 13  ## AddItem (
+)91 10%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)88 10%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)390 200%%
+%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)152 5%%%action
+If player_stat Any 
+i 13 13  ## AddItem (
+)153 5%%%action
+If player_stat Any 
+i 14 14 
+ ## RemoveIte${
+^}$m 288 999%%
+%action
+If player_stat Any 
+i 14 14 
+ ## RemoveIte${
+^}$m (T)Return${
+^}$Scepter%%
+%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)128%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)129%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)130%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)131%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)132%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)136%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)137%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)138%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)139%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)140%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)141%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)142%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)143%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)144%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)145%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)146%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)147%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)148%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)149%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)150%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)151%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)154%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)155%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)156%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)158%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)159%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)160%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)161%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)162%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)163%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)775%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)682%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)164%%%action
+If player_stat Any 
+i 14 14  ## AddItem (
+)165%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)687%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)687%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)267%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)269%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)715%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)717%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)723%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)372%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)720%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)718%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)719%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)721%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)716%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)722%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)698%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)699%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)700%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)701%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)702%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)704%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)705%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)706%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)707%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)708%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)734%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)795%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)796%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)798%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)799%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)800%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)836%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)837%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)838%%%action
+If player_stat Any 
+i 15 15  ## AddItem (
+)Goby%%%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (T)${
+^}$ReturnScept${
+^}$er%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)279 999 4%% 
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)253 999 4%% 
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)Book_Roe 999${
+^}$%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)Book_Diamon${
+^}$ds 999%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)Book_Trash 99${
+^}$9%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)Book_Void 999${
+^}$%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)848 999 4%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)62 3 4%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)64 6 4%%%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (W)${
+^}$61 1 4%%
+%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (W)${
+^}$63 1 4%%
+%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (W)${
+^}$63 1 4%%
+%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (BC${
+^}$)71 999 4%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)288 999 4%%
+%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (T)I${
+^}$ridiumPicka${
+^}$xe 1 4%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)TentKit 999 4%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)279 999 4%% 
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)253 999 4%% 
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)879 999 4%% 
+%action
+If player_stat Any 
+i 16 16 
+ ## AddItem (T)${
+^}$WateringCan${
+^}$ 1 4%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)74 999 4%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)852 999 4%%
+%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)687%%%action
+If player_stat Any 
+i 16 16  ## AddItem (
+)687 999 4%%
+%action
+If player_has_m${
+^}$ail Any su13 ${
+^}$## Null 
+ ## If season_da${
+^}$y Summer 1${
+^}$3 ## Increme${
+^}$ntStat I
+i 2%%%action
+If season_day S${
+^}$ummer 13 ##${
+^}$ AddMail All su13 
+Received%%
+%action
+If player_has_m${
+^}$ail Any fa13 #${
+^}$# Null 
+ ## If season_da${
+^}$y Fall 13 ## In${
+^}$crementStat I
+I 2%%%action
+If season_day F${
+^}$all 13 ## Add${
+^}$Mail All fa13 
+Received%%
+%action
+If season_day W${
+^}$inter 13 ## In${
+^}$crementStat I
+I 99%%%action
+If player_stat A${
+^}$ny Book_Ro${
+^}$e 1 ## AddMail All
+ i
+I Received%%
+%action
+If player_stat A${
+^}$ny Book_Dia${
+^}$monds 1 ## A${
+^}$ddMail All i
+I Received%%
+%action
+If player_stat A${
+^}$ny Book_Tra${
+^}$sh 1 ## AddM${
+^}$ail All i
+I Received%%
+%action
+If player_stat A${
+^}$ny Book_Voi${
+^}$d 1 ## AddMail All
+ i
+I Received%%
+%action
+If player_has_m${
+^}$ail Any i
+I ## Null 
+ ## IncrementSt${
+^}$at daysPlaye${
+^}$d%%%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If SYNCED_S${
+^}$UMMER_RAI${
+^}$N_RANDOM ${
+^}$## Incremen${
+^}$tStat daysPl${
+^}$ayed -9 ## In${
+^}$crementStat${
+^}$ daysPlayed ${
+^}$1%%%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If SYNCED_S${
+^}$UMMER_RAI${
+^}$N_RANDOM ${
+^}$## Incremen${
+^}$tStat daysPl${
+^}$ayed -9 ## In${
+^}$crementStat${
+^}$ daysPlayed ${
+^}$1%%%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 1%%
+%action
+If player_has_m${
+^}$ail Any i
+I ## IncrementS${
+^}$tat daysPlay${
+^}$ed 6%%%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played 44%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## Increm${
+^}$entStat days${
+^}$Played -23%%
+%action
+If !player_has_${
+^}$mail Any i
+I ## Null 
+ ## If !SYNCED_${
+^}$SUMMER_R${
+^}$AIN_RANDO${
+^}$M ## AddItem (
+)isItThe12TH%%
+%action
+If player_stat A${
+^}$ny Book_Ro${
+^}$e 1 ## Increm${
+^}$entStat days${
+^}$Played 22%% 
+%action
+If player_stat A${
+^}$ny Book_Dia${
+^}$monds 1 ## I${
+^}$ncrementSt${
+^}$at daysPlaye${
+^}$d 2%% %action
+If player_stat A${
+^}$ny Book_Tra${
+^}$sh 1 ## Incre${
+^}$mentStat da${
+^}$ysPlayed 65${
+^}$%% %action
+If player_stat A${
+^}$ny Book_Voi${
+^}$d 1 ## Incre${
+^}$mentStat da${
+^}$ysPlayed 47${
+^}$%% %action
+RemoveMail All i
+I%%%action
+IncrementStat ${
+^}$Book_Roe -1${
+^}$%%%action
+IncrementStat ${
+^}$Book_Diam${
+^}$onds -1%%
+%action
+IncrementStat ${
+^}$Book_Trash ${
+^}$-1%%%action
+IncrementStat ${
+^}$Book_Void -${
+^}$1%%%action
+RemoveSpecial${
+^}$Order QiChal${
+^}$lenge9%%
+%action
+RemoveSpecial${
+^}$Order QiChal${
+^}$lenge10%%
+%action
+If player_stat A${
+^}$ny I
+i 1 ## AddSpecia${
+^}$lOrder QiCha${
+^}$llenge9%%
+%action
+If player_stat A${
+^}$ny I
+I 1 ## AddSpecia${
+^}$lOrder QiCha${
+^}$llenge10%%
+%action
+IncrementStat I
+i -1%%%action
+IncrementStat I
+I -1%%[253][279]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
