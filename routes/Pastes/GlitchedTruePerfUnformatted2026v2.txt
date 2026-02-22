@@ -1,0 +1,1258 @@
+///START
+///Variable MAILREAD
+///Variable fwiends
+///Variable MinesManip
+///Variable OnlyOnce
+///Variable storedDP
+
+//Ensure unlimited mails that say my name and nothing else
+%action AddMail All dad1 Now%%
+%action AddMail All dad1 Now%%
+%action AddMail All dad1 Now%%
+
+//Remove random garbage from inventory
+%action RemoveItem (T)Axe%%
+%action RemoveItem (T)Hoe%%
+%action RemoveItem (T)Pickaxe%%
+%action If player_stat Any MAILREAD 0 1 ## RemoveItem (T)WateringCan%%
+%action RemoveItem (W)47%%
+%action RemoveItem 388 999%% //Wood
+%action RemoveItem 390 999%% //Stone
+%action RemoveItem 770 999%% //Mixed Seed
+%action RemoveItem 771 999%% //Fiber
+%action RemoveItem 92 999%% //Sap
+%action RemoveItem 382 999%% //Coal
+%action RemoveItem 535 999%% //Geode
+
+//Remove any leftover fishies [intended for reads 14+1,15+1]
+%action RemoveItem 128%%
+%action RemoveItem 129%%
+%action RemoveItem 130%%
+%action RemoveItem 131%%
+%action RemoveItem 132%%
+%action RemoveItem 136%%
+%action RemoveItem 137%%
+%action RemoveItem 138%%
+%action RemoveItem 139%%
+%action RemoveItem 140%%
+%action RemoveItem 141%%
+%action RemoveItem 142%%
+%action RemoveItem 143%%
+%action RemoveItem 144%%
+%action RemoveItem 145%%
+%action RemoveItem 146%%
+%action RemoveItem 147%%
+%action RemoveItem 148%%
+%action RemoveItem 149%%
+%action RemoveItem 150%%
+%action RemoveItem 151%%
+%action RemoveItem 154%%
+%action RemoveItem 155%%
+%action RemoveItem 156%%
+%action RemoveItem 158%%
+%action RemoveItem 159%%
+%action RemoveItem 160%%
+%action RemoveItem 161%%
+%action RemoveItem 162%%
+%action RemoveItem 163%%
+%action RemoveItem 775%%
+%action RemoveItem 682%%
+%action RemoveItem 164%%
+%action RemoveItem 165%%
+%action RemoveItem 267%%
+%action RemoveItem 269%%
+%action RemoveItem 715%%
+%action RemoveItem 717%%
+%action RemoveItem 723%%
+%action RemoveItem 372%%
+%action RemoveItem 720%%
+%action RemoveItem 718%%
+%action RemoveItem 719%%
+%action RemoveItem 721%%
+%action RemoveItem 716%%
+%action RemoveItem 722%%
+%action RemoveItem 698%%
+%action RemoveItem 699%%
+%action RemoveItem 700%%
+%action RemoveItem 701%%
+%action RemoveItem 702%%
+%action RemoveItem 704%%
+%action RemoveItem 705%%
+%action RemoveItem 706%%
+%action RemoveItem 707%%
+%action RemoveItem 708%%
+%action RemoveItem 734%%
+%action RemoveItem 795%%
+%action RemoveItem 796%%
+%action RemoveItem 798%%
+%action RemoveItem 799%%
+%action RemoveItem 800%%
+%action RemoveItem 836%%
+%action RemoveItem 837%%
+%action RemoveItem 838%%
+%action RemoveItem Goby%%
+
+//Add a couple of mail flags that are needed ASAP, the rest of the mail flags are done via a chicken from Marnie
+%action AddMail All HasTownKey Received%%
+%action AddMail All communityUpgradeShortcuts Received%%
+%action AddMail All lostWalnutFound Received%%
+
+//Add every buff that's useful
+%action AddBuff 20 -2%%
+%action AddBuff 21 -2%%
+%action AddBuff 22 -2%%
+%action AddBuff 24 -2%%
+%action AddBuff 28 -2%%
+%action AddBuff statue_of_blessings_0 -2%%
+%action AddBuff statue_of_blessings_1 -2%%
+%action AddBuff statue_of_blessings_2 -2%%
+%action AddBuff statue_of_blessings_5 -2%%
+
+//Give all important books + increment MAILREAD and increment DaysPlayed. Some of these could be moved to marnie but eh.
+%action IncrementStat Book_Speed%%
+%action IncrementStat Book_Speed2%%
+%action IncrementStat Book_AnimalCatalogue%%
+%action IncrementStat blessingOfWaters 999%%
+%action IncrementStat Book_Grass%%
+%action IncrementStat trinketSlots%%
+%action IncrementStat childrenTurnedToDoves 22%% //At minimum 200/12
+%action If player_stat Any MAILREAD 0 17 ## IncrementStat MAILREAD%%
+%action If days_played 0 9 ## IncrementStat DaysPlayed 123456789%%
+
+
+//Execute undo-buttons [up to 15]
+%action If player_has_item all (O)UndoButton 8 ## IncrementStat MAILREAD -8%%
+%action If player_has_item all (O)UndoButton 8 ## RemoveItem (O)UndoButton 8%%
+%action If player_has_item all (O)UndoButton 4 ## IncrementStat MAILREAD -4%%
+%action If player_has_item all (O)UndoButton 4 ## RemoveItem (O)UndoButton 4%%
+%action If player_has_item all (O)UndoButton 2 ## IncrementStat MAILREAD -2%%
+%action If player_has_item all (O)UndoButton 2 ## RemoveItem (O)UndoButton 2%%
+%action If player_has_item all (O)UndoButton ## IncrementStat MAILREAD -1%%
+%action If player_has_item all (O)UndoButton ## RemoveItem (O)UndoButton%%
+
+
+//Because we need a coop for Kent, disable the name if you don't select Meadowlands
+//Additionally, add a warning for if the player accidentally selects Male instead of Female.
+%action If !FARM_TYPE MeadowlandsFarm ## AddItem Wrong
+Farm%%
+%action If !FARM_TYPE MeadowlandsFarm ## IncrementStat MAILREAD -1%%
+%action 
+If !player_gender all 
+x ## AddItem Wrong
+Gender%%
+
+
+//Mark events as seen to avoid having to watch them. Most are done via Marnie but the ones that you encounter on the way to Marnie on Day 1 need to be skipped
+%action MarkEventSeen All 3102768%%//Morris advertising in Pierre's shop
+%action MarkEventSeen All 15389722%%//Special Orders
+
+//Add money + golden walnuts
+%item money 1111111%%
+%item id 73 11%%
+
+//All crafting/cooking recipes used to be here, but are now in Marnie.
+
+//Chosen trigger to start friendship. Doing a YEAR 2 check instead of a fwiends variable is reasonable but this is more dynamic for other uses.
+%action If player_has_met all Kent ## IncrementStat fwiends%%
+//Gives friendship with every NPC
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Alex 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Elliott 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Harvey 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Sam 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Sebastian 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Shane 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Abigail 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Emily 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Haley 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Leah 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Maru 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Penny 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Caroline 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Clint 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Demetrius 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Dwarf 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Evelyn 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints George 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Gus 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Jas 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Jodi 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Kent 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Krobus 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Leo 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Lewis 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Linus 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Marnie 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Pam 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Pierre 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Robin 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Sandy 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Vincent 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Willy 2500%%
+%action If player_stat all fwiends 1 ## AddFriendshipPoints Wizard 2500%%
+
+//Make inventory nothing but return scepter + bombs to clear front yard
+%action If player_stat Any MAILREAD 1 1 ## AddItem (T)ReturnScepter%%
+%action If player_stat Any MAILREAD 1 1 ## AddItem 288 999 4%%
+%action If player_stat Any MAILREAD 1 1 ## AddItem (TR)IridiumSpur 1 4%%
+%action If player_stat Any MAILREAD 1 1 ## AddItem PurpleBook 60 4%%
+
+%action If player_stat Any MAILREAD 1 1 ## AddItem (O)UndoButton 999%%
+%action If player_stat Any MAILREAD 1 1 ## AddItem (BC)256%% //Junimo chest to put the undo buttons inside [because they can't stay in the inventory]
+%action If player_stat Any MAILREAD 1 1 ## AddItem 690%% //Beach warp to go to Marnie for recipies + dwarf + krobus
+%action If player_stat Any MAILREAD 1 1 ## AddItem (H)32 1 4%%
+
+%action If player_stat Any MAILREAD 2 2 ## RemoveItem (T)ReturnScepter%%
+
+
+//Shipping collection - bit over 4 inventories. The first inventory of shipping is given by Marnie
+
+%action If player_stat Any MAILREAD 2 2 ## IncrementStat MAILREAD%% //To not have to decrease all numbers by 1 after implementing Marnie lol
+
+%action If player_stat Any MAILREAD 3 3 ## AddItem 276%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 278%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 280%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 281%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 282%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 283%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 284%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 296%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 300%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 303%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 304%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 305%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 306%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 307%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 308%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 330%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 334%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 335%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 336%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 337%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 338%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 340%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 342%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 344%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 346%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 348%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 350%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 378%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 380%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 382%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 384%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 386%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 388%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 390%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 392%%
+%action If player_stat Any MAILREAD 3 3 ## AddItem 393%%
+
+%action If player_stat Any MAILREAD 4 4 ## AddItem 394%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 396%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 397%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 398%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 399%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 400%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 402%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 404%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 406%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 408%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 410%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 412%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 414%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 416%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 417%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 418%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 420%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 421%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 422%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 424%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 426%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 428%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 430%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 432%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 433%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 436%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 438%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 440%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 442%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 444%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 446%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 447%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 454%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 459%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 591%%
+%action If player_stat Any MAILREAD 4 4 ## AddItem 593%%
+
+%action If player_stat Any MAILREAD 5 5 ## AddItem 595%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 597%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 376%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 613%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 614%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 634%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 635%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 636%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 637%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 638%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 684%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 709%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 724%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 725%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 726%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 766%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 767%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 768%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 769%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 771%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 787%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 807%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 812%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 445%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 814%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 815%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 289%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 91%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 829%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 830%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 832%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 834%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 848%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 851%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 881%%
+%action If player_stat Any MAILREAD 5 5 ## AddItem 909%%
+
+%action If player_stat Any MAILREAD 6 6 ## AddItem 910%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem Moss%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem MysticSyrup%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem Raisins%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem DriedFruit%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem DriedMushrooms%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem Carrot%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem SummerSquash%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem Broccoli%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem Powdermelon%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem SmokedFish%%
+
+
+//All crafting - gives chests and workbench and then 3 inventories of ingredients
+%action If player_stat Any MAILREAD 6 6 ## AddItem (BC)BigChest%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem (BC)208%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem (BC)13 2%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 82 2%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 428 2%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 72 3%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 393 5%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 685 5%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 852 6%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 309 6%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 787 7%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 84 10%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 248 10%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 330 11%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 334 18%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 848 20%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 378 28%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 767 40%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 336 40%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 684 44%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 382 95%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 881 138%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 709 233%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 771 999%%
+%action If player_stat Any MAILREAD 6 6 ## AddItem 771 329%%
+
+%action If player_stat Any MAILREAD 7 7 ## AddItem 418%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 414%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 18%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 22%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 122%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 86%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 595%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem (BC)154%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 719%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 88%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 404%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 829%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem RiverJelly%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem CaveJelly%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem SeaJelly%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 114%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 247%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 410%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 281%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 62%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 398%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 408%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 340%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 402%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 93%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 432%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 427%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 429%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 20%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 453%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 276%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 724%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 567%%
+%action If player_stat Any MAILREAD 7 7 ## AddItem 770%%
+
+//Intentionally making inventory 7 slightly emptier, 2 empty slots
+%action If player_stat Any MAILREAD 8 8 ## AddItem 926%% //Cookout kit for cooking
+%action If player_stat Any MAILREAD 8 8 ## AddItem 257%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 422%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 420%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 16%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 406%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 412%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 455%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 396%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 397%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 416%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 725 2%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem MysticSyrup 2%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 910 2%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 909 2%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 495 2%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 380 4%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 384 4%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 292 5%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 386 5%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 310 6%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 311 6%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 726 7%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 338 27%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 337 37%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 769 51%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 768 83%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 335 116%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 766 220%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem Moss 402%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 388 953%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 92 999%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 92 83%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 390 999%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 390 999%%
+%action If player_stat Any MAILREAD 8 8 ## AddItem 390 61%%
+
+
+//All cooking - requires using cookout kit, and 4 inventories of items [would be 3 without inventory limits]
+%action If player_stat Any MAILREAD 9 9 ## AddItem 300%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 284%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 597%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 132%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 142 4%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 190%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 424 2%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 404%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 22%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 176 3%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 194%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 188 2%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 210%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 250%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 20%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 306%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 184 3%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 257%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 247 3%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 211%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 24%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 722%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 192%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 266%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 139%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 154%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 151%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 245%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 145%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 256 2%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 229 2%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 130%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 419 2%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 308%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 246 5%%
+%action If player_stat Any MAILREAD 9 9 ## AddItem 280%%
+
+%action If player_stat Any MAILREAD 10 10 ## AddItem 274%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 258%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 278%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 216 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 78 3%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 424%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 88%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 404%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 270%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 282 3%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 148 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 176 4%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 272 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 153%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 210%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 408%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 260 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 136%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 254%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 184 4%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 247 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 195%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 24%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 276 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 264%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 138%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 266%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 252%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 423 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 131 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 152%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 720 3%% //+2 to get the any fish
+%action If player_stat Any MAILREAD 10 10 ## AddItem 245 9%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 256 2%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 246 8%%
+%action If player_stat Any MAILREAD 10 10 ## AddItem 280%%
+
+%action If player_stat Any MAILREAD 11 11 ## AddItem 613%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 634%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 274%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 410 2%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 258%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 216%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 78 2%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 372%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 395 3%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 404%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 282%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 259%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 267%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 248%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 153 4%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 408 3%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 250%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 306%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 254%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 269%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 184 3%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 247 4%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 376%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 276%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 264%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 266%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 814%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 245 5%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 256%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 419 2%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 246 4%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 157 2%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 406 2%%
+%action If player_stat Any MAILREAD 11 11 ## AddItem 412%%
+
+//Prepare inventory for final. Begin off with mini forge, rings, cinder shards, and fishing rod. Put before rest of cooking to avoid having to switch pages.
+%action If player_stat Any MAILREAD 12 12 ## AddItem AdvancedIridiumRod%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem MiniForge 1 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 848 999 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 527 1 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 527 1 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 811 1 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 811 1 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 74 999 4%% //Prismatic shards, if you want to enchant your rod. Not recommended tbh but there's the inventory for it
+
+//Rest of cooking
+%action If player_stat Any MAILREAD 12 12 ## AddItem 91%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 88 2%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 717%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 716%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 176%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 248%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 829 3%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 260%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 715%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 834%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 724%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 184 2%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem Moss 20%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 719%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 247%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 722%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 832%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 423%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 720%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 721%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 814%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 245 3%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 830 4%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 256 3%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 246 3%%
+%action If player_stat Any MAILREAD 12 12 ## AddItem 16%%
+
+
+
+//Give items for obelisks, give warps, give fish pond items.
+%action If player_stat Any MAILREAD 13 13 ## RemoveItem 74 999%%
+%action If player_stat Any MAILREAD 13 13 ## RemoveItem 848 999%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 265 999 4%%//Seafoam pudding
+%action If player_stat Any MAILREAD 13 13 ## AddItem 288 999 4%%//In case there wasn't enough space made earlier for obelisks/fish pond
+%action If player_stat Any MAILREAD 13 13 ## AddItem 690 1 4%% //Beach
+%action If player_stat Any MAILREAD 13 13 ## AddItem StardropTea 4%% //For the wizard
+%action If player_stat Any MAILREAD 13 13 ## AddItem (W)63%% //For the wizard's kids. Make sure to drop their loot
+%action If player_stat Any MAILREAD 13 13 ## AddItem 886 1 2%% //Island
+%action If player_stat Any MAILREAD 13 13 ## AddItem 689 1 1%% //Mountain
+%action If player_stat Any MAILREAD 13 13 ## AddItem (T)ReturnScepter%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem (F)0%% //Add filler to make the rest of this hotbar empty - makes it easier to drop any loot from the dolls if its in your hotbar
+%action If player_stat Any MAILREAD 13 13 ## AddItem (F)0%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem (F)0%%
+
+%action If player_stat Any MAILREAD 13 13 ## AddItem 337 45%% //Obelisk components
+%action If player_stat Any MAILREAD 13 13 ## AddItem 86 10%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 372 10%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 393 10%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 90 10%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 852 10%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 91 10%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 88 10%%
+
+%action If player_stat Any MAILREAD 13 13 ## AddItem 390 200%% //Fish pond components
+%action If player_stat Any MAILREAD 13 13 ## AddItem 152 5%%
+%action If player_stat Any MAILREAD 13 13 ## AddItem 153 5%%
+%action If player_stat Any MAILREAD 13 13 ## RemoveItem (F)0%%
+%action If player_stat Any MAILREAD 13 13 ## RemoveItem (F)0%%
+%action If player_stat Any MAILREAD 13 13 ## RemoveItem (F)0%%
+
+//Start giving fishies!
+%action If player_stat Any MAILREAD 14 14 ## RemoveItem (T)ReturnScepter%%
+%action If player_stat Any MAILREAD 14 14 ## RemoveItem 288 999%%
+%action If player_stat Any MAILREAD 14 14 ## RemoveItem (W)63%%
+%action If player_stat Any MAILREAD 14 14 ## AddItem (F)9%% // Chair to use to setup good positioning [chair facing up placed 1 tile below top, get in, get out, face towards pond]
+%action If player_stat Any MAILREAD 14 14 ## AddItem 128%% // Pufferfish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 129%% // Anchovy
+%action If player_stat Any MAILREAD 14 14 ## AddItem 130%% // Tuna
+%action If player_stat Any MAILREAD 14 14 ## AddItem 131%% // Sardine
+%action If player_stat Any MAILREAD 14 14 ## AddItem 132%% // Bream
+%action If player_stat Any MAILREAD 14 14 ## AddItem 136%% // Largemouth Bass
+%action If player_stat Any MAILREAD 14 14 ## AddItem 137%% // Smallmouth Bass
+%action If player_stat Any MAILREAD 14 14 ## AddItem 138%% // Rainbow Trout
+%action If player_stat Any MAILREAD 14 14 ## AddItem 139%% // Salmon
+%action If player_stat Any MAILREAD 14 14 ## AddItem 140%% // Walleye
+%action If player_stat Any MAILREAD 14 14 ## AddItem 141%% // Perch
+%action If player_stat Any MAILREAD 14 14 ## AddItem 142%% // Carp
+%action If player_stat Any MAILREAD 14 14 ## AddItem 143%% // Catfish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 144%% // Pike
+%action If player_stat Any MAILREAD 14 14 ## AddItem 145%% // Sunfish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 146%% // Red Mullet
+%action If player_stat Any MAILREAD 14 14 ## AddItem 147%% // Herring
+%action If player_stat Any MAILREAD 14 14 ## AddItem 148%% // Eel
+%action If player_stat Any MAILREAD 14 14 ## AddItem 149%% // Octopus
+%action If player_stat Any MAILREAD 14 14 ## AddItem 150%% // Red Snapper
+%action If player_stat Any MAILREAD 14 14 ## AddItem 151%% // Squid
+%action If player_stat Any MAILREAD 14 14 ## AddItem 154%% // Sea Cucumber
+%action If player_stat Any MAILREAD 14 14 ## AddItem 155%% // Super Cucumber
+%action If player_stat Any MAILREAD 14 14 ## AddItem 156%% // Ghostfish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 158%% // Stonefish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 159%% // Crimsonfish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 160%% // Angler
+%action If player_stat Any MAILREAD 14 14 ## AddItem 161%% // Ice Pip
+%action If player_stat Any MAILREAD 14 14 ## AddItem 162%% // Lava Eel
+%action If player_stat Any MAILREAD 14 14 ## AddItem 163%% // Legend
+%action If player_stat Any MAILREAD 14 14 ## AddItem 164%% // Sandfish
+%action If player_stat Any MAILREAD 14 14 ## AddItem 165%% // Scorpion Carp
+%action If player_stat Any MAILREAD 14 14 ## AddItem 267%% // Flounder
+
+
+%action If player_stat Any MAILREAD 15 15 ## AddItem 269%% // Midnight Carp
+%action If player_stat Any MAILREAD 15 15 ## AddItem 682%% // Mutant Carp
+%action If player_stat Any MAILREAD 15 15 ## AddItem 698%% // Sturgeon
+%action If player_stat Any MAILREAD 15 15 ## AddItem 699%% // Tiger Trout
+%action If player_stat Any MAILREAD 15 15 ## AddItem 700%% // Bullhead
+%action If player_stat Any MAILREAD 15 15 ## AddItem 701%% // Tilapia
+%action If player_stat Any MAILREAD 15 15 ## AddItem 702%% // Chub
+%action If player_stat Any MAILREAD 15 15 ## AddItem 704%% // Dorado
+%action If player_stat Any MAILREAD 15 15 ## AddItem 705%% // Albacore
+%action If player_stat Any MAILREAD 15 15 ## AddItem 706%% // Shad
+%action If player_stat Any MAILREAD 15 15 ## AddItem 707%% // Lingcod
+%action If player_stat Any MAILREAD 15 15 ## AddItem 708%% // Halibut
+%action If player_stat Any MAILREAD 15 15 ## AddItem 372%% // Clam
+%action If player_stat Any MAILREAD 15 15 ## AddItem 715%% // Lobster
+%action If player_stat Any MAILREAD 15 15 ## AddItem 716%% // Crayfish
+%action If player_stat Any MAILREAD 15 15 ## AddItem 717%% // Crab
+%action If player_stat Any MAILREAD 15 15 ## AddItem 718%% // Cockle
+%action If player_stat Any MAILREAD 15 15 ## AddItem 719%% // Mussel
+%action If player_stat Any MAILREAD 15 15 ## AddItem 720%% // Shrimp
+%action If player_stat Any MAILREAD 15 15 ## AddItem 721%% // Snail
+%action If player_stat Any MAILREAD 15 15 ## AddItem 722%% // Periwinkle
+%action If player_stat Any MAILREAD 15 15 ## AddItem 723%% // Oyster
+%action If player_stat Any MAILREAD 15 15 ## AddItem 734%% // Woodskip
+%action If player_stat Any MAILREAD 15 15 ## AddItem 775%% // Glacierfish
+%action If player_stat Any MAILREAD 15 15 ## AddItem 795%% // Void Salmon
+%action If player_stat Any MAILREAD 15 15 ## AddItem 796%% // Slimejack
+%action If player_stat Any MAILREAD 15 15 ## AddItem 798%% // Midnight Squid
+%action If player_stat Any MAILREAD 15 15 ## AddItem 799%% // Spook Fish
+%action If player_stat Any MAILREAD 15 15 ## AddItem 800%% // Blobfish
+%action If player_stat Any MAILREAD 15 15 ## AddItem 836%% // Stingray
+%action If player_stat Any MAILREAD 15 15 ## AddItem 837%% // Lionfish
+%action If player_stat Any MAILREAD 15 15 ## AddItem 838%% // Blue Discus
+%action If player_stat Any MAILREAD 15 15 ## AddItem Goby%% // Goby
+
+// Final inventory for everything. There's several unnecessary duplicates of items, but there's no real reason not to give them.
+%action If player_stat Any MAILREAD 16 16 ## RemoveItem 265 999%% //Seafoam pudding, removed and readded to ensure consistent inventory positioning
+%action If player_stat Any MAILREAD 16 16 ## AddItem (T)TrainingRod%% //Training rod
+%action If player_stat Any MAILREAD 16 16 ## AddItem 265 999 4%% //Seafoam pudding
+%action If player_stat Any MAILREAD 16 16 ## AddItem DeluxeBait 999 4%%
+%action If player_stat Any MAILREAD 16 16 ## AddItem 687 1 4%% //Dressed spinner
+%action If player_stat Any MAILREAD 16 16 ## AddItem 687 1 4%%
+%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If player_stat Any MAILREAD 16 16 ## AddItem 74 999 4%% //Prismatic Shard
+%action If player_stat Any MAILREAD 16 16 ## AddItem 852 999 4%% //Dragon tooth
+%action If player_stat Any MAILREAD 16 16 ## AddItem 848 999 4%% //Cinder Shard
+%action If player_stat Any MAILREAD 16 16 ## AddItem 62 3 4%% //Aquamarine
+%action If player_stat Any MAILREAD 16 16 ## AddItem 64 3 4%% //Ruby
+//Ensure ^ is 12 items.
+
+%action If player_stat Any MAILREAD 16 16 ## AddItem (T)IridiumPickaxe 1 4%%
+%action If player_stat Any MAILREAD 16 16 ## AddItem (BC)71 999 4%%
+%action If player_stat Any MAILREAD 16 16 ## AddItem (T)WateringCan 1 4%%
+%action If player_stat Any MAILREAD 16 16 ## AddItem (W)63 1 4%% //Infinity Gavel
+%action If player_stat Any MAILREAD 16 16 ## AddItem (W)61 1 4%% //Iridium Needle
+%action If player_stat Any MAILREAD 16 16 ## AddItem 279 999 4%% //MRC
+%action If player_stat Any MAILREAD 16 16 ## AddItem 253 999 4%% //Triple shot
+%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb. I have the inventory to put return scepter on this row but ngl I like the fact that I can't accidentally use it
+%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If player_stat Any MAILREAD 16 ## AddItem 288 999 4%% //Mega Bomb
+//^Gives 999 every read to keep stocking up the ones in the inventory; as in 1.6.15 there still exists the bug where the first item added to an overflow menu gets voided, and thus this doesn't cause any popup if run with a full inventory.
+
+%action If player_stat Any MAILREAD 16 16 ## AddItem (T)ReturnScepter%%
+%action If player_stat Any MAILREAD 16 16 ## AddItem 279 999 4%% //MRC
+%action If player_stat Any MAILREAD 16 16 ## AddItem 253 999 4%% //Triple shot
+%action If player_stat Any MAILREAD 16 16 ## AddItem Book_Roe 999%% //SC 1
+%action If player_stat Any MAILREAD 16 16 ## AddItem Book_Diamonds 999%% //SC 7
+%action If player_stat Any MAILREAD 16 16 ## AddItem Book_Trash 999%% //DM 49
+%action If player_stat Any MAILREAD 16 16 ## AddItem Book_Void 999%% //DM 96
+
+%action If player_stat Any MAILREAD 16 16 ## AddItem TentKit 999 4%% //
+%action If player_stat Any MAILREAD 16 16 ## AddItem (BC)29 999 4%% //The OBELISK in case you want to crash the game after reaching the summit (about a 1/22k chance every frame to crash the game when standing next to it). Sorry I just love this object
+
+//We want to regularize to the first day of summer rain if we're changing to any mail so
+%action If player_stat Any Book_Roe 1 ## AddMail All MinesManip Received%%
+%action If player_stat Any Book_Diamonds 1 ## AddMail All MinesManip Received%%
+%action If player_stat Any Book_Trash 1 ## AddMail All MinesManip Received%%
+%action If player_stat Any Book_Void 1 ## AddMail All MinesManip Received%%
+%action If player_has_mail Any MinesManip ## Null ## IncrementStat DaysPlayed%%
+
+//First check that we're not halfway through summer rain [could be -8, is -9 because why not]
+%action If !player_has_mail Any MinesManip ## Null ## If SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed -9 ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed -9 ## IncrementStat DaysPlayed%%
+
+//Now that we know for sure the first summer rain day will be new rain, increment until we get our first day of rain [could be only 16, but doing 18 to be safe]
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed%%
+
+//Normalize into the rng ranges
+%action If player_has_mail Any MinesManip ## IncrementStat DaysPlayed 21%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed 23%%
+%action If !player_has_mail Any MinesManip ## Null ## If !SYNCED_SUMMER_RAIN_RANDOM ## IncrementStat DaysPlayed -44%%
+
+//We now know for sure that it currently is a starting summer rain day, and it is the leftmost ~0.16 of that range.
+//We transform it to the appropriate day to ensure infested mines.
+%action If player_stat Any Book_Roe 1 ## IncrementStat DaysPlayed 28%% //SC 1
+%action If player_stat Any Book_Diamonds 1 ## IncrementStat DaysPlayed 8%% //SC 7
+%action If player_stat Any Book_Trash 1 ## IncrementStat DaysPlayed 4%% //Floor 49
+%action If player_stat Any Book_Void 1 ## IncrementStat DaysPlayed 9%% //Floor 96
+
+//Now we clear our tracks
+%action RemoveMail All MinesManip%%
+%action IncrementStat Book_Roe -1%%
+%action IncrementStat Book_Diamonds -1%%
+%action IncrementStat Book_Trash -1%%
+%action IncrementStat Book_Void -1%%
+
+//Unlock every elevator floor
+%action If LOCATION_IS_INDOORS UndergroundMine115 ## Null%%
+
+// Increment the dangerous level once per day (overnight caps it to 1, so this just guarantees 2 every day)
+// Theoretically, if you read your mail exactly once each day, this would raise it over a week I believe
+%action RemoveSpecialOrder QiChallenge9%%
+%action RemoveSpecialOrder QiChallenge10%%
+%action RemoveMail All OnlyOnce Now%%
+%action If !player_has_mail Any OnlyOnce ## AddSpecialOrder QiChallenge9%%
+%action If !player_has_mail Any OnlyOnce ## AddSpecialOrder QiChallenge10%%
+%action If !player_has_mail Any OnlyOnce ## AddMail All OnlyOnce Tomorrow%%
+
+//Unlock again for good measure. You might still have to read the mail multiple times sometimes it's a pain.
+%action If LOCATION_IS_INDOORS UndergroundMine115 ## Null%%
+
+//Ensure that you're on a good rng-level for jellies
+//First off, save the value of DaysPlayed
+%action IncrementStat DaysPlayed -123456789%%
+%action If player_stat all DaysPlayed 2048 ## IncrementStat storedDP 2048%%
+%action If player_stat all DaysPlayed 2048 ## IncrementStat DaysPlayed -2048%%
+%action If player_stat all DaysPlayed 1024 ## IncrementStat storedDP 1024%%
+%action If player_stat all DaysPlayed 1024 ## IncrementStat DaysPlayed -1024%%
+%action If player_stat all DaysPlayed 512 ## IncrementStat storedDP 512%%
+%action If player_stat all DaysPlayed 512 ## IncrementStat DaysPlayed -512%%
+%action If player_stat all DaysPlayed 256 ## IncrementStat storedDP 256%%
+%action If player_stat all DaysPlayed 256 ## IncrementStat DaysPlayed -256%%
+%action If player_stat all DaysPlayed 128 ## IncrementStat storedDP 128%%
+%action If player_stat all DaysPlayed 128 ## IncrementStat DaysPlayed -128%%
+%action If player_stat all DaysPlayed 64 ## IncrementStat storedDP 64%%
+%action If player_stat all DaysPlayed 64 ## IncrementStat DaysPlayed -64%%
+%action If player_stat all DaysPlayed 32 ## IncrementStat storedDP 32%%
+%action If player_stat all DaysPlayed 32 ## IncrementStat DaysPlayed -32%%
+%action If player_stat all DaysPlayed 16 ## IncrementStat storedDP 16%%
+%action If player_stat all DaysPlayed 16 ## IncrementStat DaysPlayed -16%%
+%action If player_stat all DaysPlayed 8 ## IncrementStat storedDP 8%%
+%action If player_stat all DaysPlayed 8 ## IncrementStat DaysPlayed -8%%
+%action If player_stat all DaysPlayed 4 ## IncrementStat storedDP 4%%
+%action If player_stat all DaysPlayed 4 ## IncrementStat DaysPlayed -4%%
+%action If player_stat all DaysPlayed 2 ## IncrementStat storedDP 2%%
+%action If player_stat all DaysPlayed 2 ## IncrementStat DaysPlayed -2%%
+%action If player_stat all DaysPlayed 1 ## IncrementStat storedDP%%
+%action IncrementStat DaysPlayed -1%%
+
+//Next, prepare PreciseFishCaught
+%action IncrementStat PreciseFishCaught -9999%%
+%action IncrementStat PreciseFishCaught%%
+%action IncrementStat DaysPlayed 851%%
+//The 851 above is 859-8; 8 being the hashcode for "gtyp" which is the seed used for the synced random below.
+
+//Now, search for the good rng. Just brute forces it; .15 is the odds with 1 luck buff so this works even without MRC
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
+%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
+
+//Should now be guaranteed to be in the correct position. (Needs 12, put 14 to be safe)
+//Warns if fails.
+%action If !SYNCED_RANDOM day gtyp .15 ## AddItem Oh
+No
+Fish
+Are
+Meanies!!!
+(Are you
+Legacy?)%%
+
+//Finally, restore DaysPlayed to previous value
+%action IncrementStat DaysPlayed -999999%%
+%action IncrementStat DaysPlayed 123456789%%
+%action If player_stat all storedDP 2048 ## IncrementStat DaysPlayed 2048%%
+%action If player_stat all storedDP 2048 ## IncrementStat storedDP -2048%%
+%action If player_stat all storedDP 1024 ## IncrementStat DaysPlayed 1024%%
+%action If player_stat all storedDP 1024 ## IncrementStat storedDP -1024%%
+%action If player_stat all storedDP 512 ## IncrementStat DaysPlayed 512%%
+%action If player_stat all storedDP 512 ## IncrementStat storedDP -512%%
+%action If player_stat all storedDP 256 ## IncrementStat DaysPlayed 256%%
+%action If player_stat all storedDP 256 ## IncrementStat storedDP -256%%
+%action If player_stat all storedDP 128 ## IncrementStat DaysPlayed 128%%
+%action If player_stat all storedDP 128 ## IncrementStat storedDP -128%%
+%action If player_stat all storedDP 64 ## IncrementStat DaysPlayed 64%%
+%action If player_stat all storedDP 64 ## IncrementStat storedDP -64%%
+%action If player_stat all storedDP 32 ## IncrementStat DaysPlayed 32%%
+%action If player_stat all storedDP 32 ## IncrementStat storedDP -32%%
+%action If player_stat all storedDP 16 ## IncrementStat DaysPlayed 16%%
+%action If player_stat all storedDP 16 ## IncrementStat storedDP -16%%
+%action If player_stat all storedDP 8 ## IncrementStat DaysPlayed 8%%
+%action If player_stat all storedDP 8 ## IncrementStat storedDP -8%%
+%action If player_stat all storedDP 4 ## IncrementStat DaysPlayed 4%%
+%action If player_stat all storedDP 4 ## IncrementStat storedDP -4%%
+%action If player_stat all storedDP 2 ## IncrementStat DaysPlayed 2%%
+%action If player_stat all storedDP 2 ## IncrementStat storedDP -2%%
+%action If player_stat all storedDP 1 ## IncrementStat DaysPlayed%%
+%action IncrementStat storedDP -1%%
+
+
+[253][279]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+
+///MARNIE
+
+ø
+ø//Internal symbol that indicates "this newline is functional don't remove it"; gets removed in processing
+[18]
+[20]
+[22]
+[24]
+[78]
+[88]
+[90]
+[92]
+[176]
+[174]
+[180]
+[182]
+[184]
+[186]
+[188]
+[190]
+[192]
+[248]
+[250]
+[252]
+[254]
+[256]
+[257]
+[258]
+[259]
+[260]
+[262]
+[264]
+[266]
+[268]
+[270]
+[271]
+[272]
+[274]
+#$action RemoveItem 288 999
+#$action AddItem 16
+#$action MarkCookingRecipeKnown All Omelet
+#$action MarkCookingRecipeKnown All Salad
+#$action MarkCookingRecipeKnown All "Cheese Cauli."
+#$action MarkCookingRecipeKnown All "Baked Fish"
+#$action MarkCookingRecipeKnown All "Parsnip Soup"
+#$action MarkCookingRecipeKnown All "Vegetable Stew"
+#$action MarkCookingRecipeKnown All "Complete Breakfast"
+#$action MarkCookingRecipeKnown All "Fried Calamari"
+#$action MarkCookingRecipeKnown All "Strange Bun"
+#$action MarkCookingRecipeKnown All "Lucky Lunch"
+#$action MarkCookingRecipeKnown All "Fried Mushroom"
+#$action MarkCookingRecipeKnown All Pizza
+#$action MarkCookingRecipeKnown All "Bean Hotpot"
+#$action MarkCookingRecipeKnown All "Glazed Yams"
+#$action MarkCookingRecipeKnown All "Carp Surprise"
+#$action MarkCookingRecipeKnown All Hashbrowns
+#$action MarkCookingRecipeKnown All Pancakes
+#$action MarkCookingRecipeKnown All "Salmon Dinner"
+#$action MarkCookingRecipeKnown All "Fish Taco"
+#$action MarkCookingRecipeKnown All "Crispy Bass"
+#$action MarkCookingRecipeKnown All "Pepper Poppers"
+#$action MarkCookingRecipeKnown All Bread
+#$action MarkCookingRecipeKnown All "Tom Kha Soup"
+#$action MarkCookingRecipeKnown All "Trout Soup"
+#$action MarkCookingRecipeKnown All "Chocolate Cake"
+#$action MarkCookingRecipeKnown All "Pink Cake"
+#$action MarkCookingRecipeKnown All "Rhubarb Pie"
+#$action MarkCookingRecipeKnown All Cookies
+#$action MarkCookingRecipeKnown All Spaghetti
+#$action MarkCookingRecipeKnown All "Fried Eel"
+#$action MarkCookingRecipeKnown All "Spicy Eel"
+#$action MarkCookingRecipeKnown All Sashimi
+#$action MarkCookingRecipeKnown All "Maki Roll"
+#$action MarkCookingRecipeKnown All Tortilla
+#$action MarkCookingRecipeKnown All "Red Plate"
+#$action MarkCookingRecipeKnown All "Eggplant Parm."
+#$action MarkCookingRecipeKnown All "Rice Pudding"
+#$action MarkCookingRecipeKnown All "Ice Cream"
+#$action MarkCookingRecipeKnown All "Blueberry Tart"
+#$action MarkCookingRecipeKnown All "Autumn's Bounty"
+#$action MarkCookingRecipeKnown All "Pumpkin Soup"
+#$action MarkCookingRecipeKnown All "Super Meal"
+#$action MarkCookingRecipeKnown All "Cran. Sauce"
+#$action MarkCookingRecipeKnown All Stuffing
+#$action MarkCookingRecipeKnown All "Farmer's Lunch"
+#$action MarkCookingRecipeKnown All "Survival Burger"
+#$action MarkCookingRecipeKnown All "Dish o' The Sea"
+#$action MarkCookingRecipeKnown All "Miner's Treat"
+#$action MarkCookingRecipeKnown All "Roots Platter"
+#$action MarkCookingRecipeKnown All "Algae Soup"
+#$action MarkCookingRecipeKnown All "Pale Broth"
+#$action MarkCookingRecipeKnown All "Plum Pudding"
+#$action MarkCookingRecipeKnown All "Artichoke Dip"
+#$action MarkCookingRecipeKnown All "Stir Fry"
+#$action MarkCookingRecipeKnown All "Roasted Hazelnuts"
+#$action MarkCookingRecipeKnown All "Pumpkin Pie"
+#$action MarkCookingRecipeKnown All "Radish Salad"
+#$action MarkCookingRecipeKnown All "Fruit Salad"
+#$action MarkCookingRecipeKnown All "Blackberry Cobbler"
+#$action MarkCookingRecipeKnown All "Cranberry Candy"
+#$action MarkCookingRecipeKnown All Bruschetta
+#$action MarkCookingRecipeKnown All Coleslaw
+#$action MarkCookingRecipeKnown All "Fiddlehead Risotto"
+#$action MarkCookingRecipeKnown All "Poppyseed Muffin"
+#$action MarkCookingRecipeKnown All Chowder
+#$action MarkCookingRecipeKnown All "Lobster Bisque"
+#$action MarkCookingRecipeKnown All "Fish Stew"
+#$action MarkCookingRecipeKnown All Escargot
+#$action MarkCookingRecipeKnown All "Maple Bar"
+#$action MarkCookingRecipeKnown All "Crab Cakes"
+#$action MarkCookingRecipeKnown All "Triple Shot Espresso"
+#$action MarkCookingRecipeKnown All "Shrimp Cocktail"
+#$action MarkCookingRecipeKnown All "Seafoam Pudding"
+#$action MarkCookingRecipeKnown All "Ginger Ale"
+#$action MarkCookingRecipeKnown All "Banana Pudding"
+#$action MarkCookingRecipeKnown All "Mango Sticky Rice"
+#$action MarkCookingRecipeKnown All Poi
+#$action MarkCookingRecipeKnown All "Tropical Curry"
+#$action MarkCookingRecipeKnown All "Squid Ink Ravioli"
+#$action MarkCookingRecipeKnown All "Moss Soup"
+
+
+#$action MarkCraftingRecipeKnown All "Stone Fence"
+#$action MarkCraftingRecipeKnown All "Iron Fence"
+#$action MarkCraftingRecipeKnown All "Hardwood Fence"
+#$action MarkCraftingRecipeKnown All "Grass Starter"
+#$action MarkCraftingRecipeKnown All "Blue Grass Starter"
+#$action MarkCraftingRecipeKnown All "Big Chest"
+#$action MarkCraftingRecipeKnown All "Stone Chest"
+#$action MarkCraftingRecipeKnown All "Big Stone Chest"
+#$action MarkCraftingRecipeKnown All Scarecrow
+#$action MarkCraftingRecipeKnown All "Deluxe Scarecrow"
+#$action MarkCraftingRecipeKnown All "Bee House"
+#$action MarkCraftingRecipeKnown All Keg
+#$action MarkCraftingRecipeKnown All Cask
+#$action MarkCraftingRecipeKnown All Dehydrator
+#$action MarkCraftingRecipeKnown All Furnace
+#$action MarkCraftingRecipeKnown All "Heavy Furnace"
+#$action MarkCraftingRecipeKnown All Anvil
+#$action MarkCraftingRecipeKnown All Mini-Forge
+#$action MarkCraftingRecipeKnown All "Garden Pot"
+#$action MarkCraftingRecipeKnown All "Dark Sign"
+#$action MarkCraftingRecipeKnown All "Cheese Press"
+#$action MarkCraftingRecipeKnown All "Mayonnaise Machine"
+#$action MarkCraftingRecipeKnown All "Seed Maker"
+#$action MarkCraftingRecipeKnown All Loom
+#$action MarkCraftingRecipeKnown All "Oil Maker"
+#$action MarkCraftingRecipeKnown All "Recycling Machine"
+#$action MarkCraftingRecipeKnown All "Worm Bin"
+#$action MarkCraftingRecipeKnown All "Deluxe Worm Bin"
+#$action MarkCraftingRecipeKnown All "Bait Maker"
+#$action MarkCraftingRecipeKnown All "Fish Smoker"
+#$action MarkCraftingRecipeKnown All "Preserves Jar"
+#$action MarkCraftingRecipeKnown All "Charcoal Kiln"
+#$action MarkCraftingRecipeKnown All Tapper
+#$action MarkCraftingRecipeKnown All "Mushroom Log"
+#$action MarkCraftingRecipeKnown All "Lightning Rod"
+#$action MarkCraftingRecipeKnown All "Slime Incubator"
+#$action MarkCraftingRecipeKnown All "Slime Egg-Press"
+#$action MarkCraftingRecipeKnown All Crystalarium
+#$action MarkCraftingRecipeKnown All Mini-Jukebox
+#$action MarkCraftingRecipeKnown All Sprinkler
+#$action MarkCraftingRecipeKnown All "Quality Sprinkler"
+#$action MarkCraftingRecipeKnown All "Iridium Sprinkler"
+#$action MarkCraftingRecipeKnown All Staircase
+#$action MarkCraftingRecipeKnown All "Flute Block"
+#$action MarkCraftingRecipeKnown All "Drum Block"
+#$action MarkCraftingRecipeKnown All "Basic Fertilizer"
+#$action MarkCraftingRecipeKnown All "Tree Fertilizer"
+#$action MarkCraftingRecipeKnown All "Mystic Tree Seed"
+#$action MarkCraftingRecipeKnown All "Quality Fertilizer"
+#$action MarkCraftingRecipeKnown All "Basic Retaining Soil"
+#$action MarkCraftingRecipeKnown All "Quality Retaining Soil"
+#$action MarkCraftingRecipeKnown All Speed-Gro
+#$action MarkCraftingRecipeKnown All "Deluxe Speed-Gro"
+#$action MarkCraftingRecipeKnown All "Hyper Speed-Gro"
+#$action MarkCraftingRecipeKnown All "Deluxe Fertilizer"
+#$action MarkCraftingRecipeKnown All "Deluxe Retaining Soil"
+#$action MarkCraftingRecipeKnown All "Cherry Bomb"
+#$action MarkCraftingRecipeKnown All Bomb
+#$action MarkCraftingRecipeKnown All "Mega Bomb"
+#$action MarkCraftingRecipeKnown All "Explosive Ammo"
+#$action MarkCraftingRecipeKnown All "Transmute (Fe)"
+#$action MarkCraftingRecipeKnown All "Transmute (Au)"
+#$action MarkCraftingRecipeKnown All "Ancient Seeds"
+#$action MarkCraftingRecipeKnown All "Wild Seeds (Sp)"
+#$action MarkCraftingRecipeKnown All "Wild Seeds (Su)"
+#$action MarkCraftingRecipeKnown All "Wild Seeds (Fa)"
+#$action MarkCraftingRecipeKnown All "Wild Seeds (Wi)"
+#$action MarkCraftingRecipeKnown All "Fiber Seeds"
+#$action MarkCraftingRecipeKnown All "Tea Sapling"
+#$action MarkCraftingRecipeKnown All "Warp Totem: Farm"
+#$action MarkCraftingRecipeKnown All "Warp Totem: Mountains"
+#$action MarkCraftingRecipeKnown All "Warp Totem: Beach"
+#$action MarkCraftingRecipeKnown All "Warp Totem: Desert"
+#$action MarkCraftingRecipeKnown All "Warp Totem: Island"
+#$action MarkCraftingRecipeKnown All "Rain Totem"
+#$action MarkCraftingRecipeKnown All "Treasure Totem"
+#$action MarkCraftingRecipeKnown All "Cookout Kit"
+#$action MarkCraftingRecipeKnown All "Tent Kit"
+#$action MarkCraftingRecipeKnown All "Field Snack"
+#$action MarkCraftingRecipeKnown All "Statue Of Blessings"
+#$action MarkCraftingRecipeKnown All "Statue Of The Dwarf King"
+#$action MarkCraftingRecipeKnown All Jack-O-Lantern
+#$action MarkCraftingRecipeKnown All "Wood Floor"
+#$action MarkCraftingRecipeKnown All "Straw Floor"
+#$action MarkCraftingRecipeKnown All "Weathered Floor"
+#$action MarkCraftingRecipeKnown All "Rustic Plank Floor"
+#$action MarkCraftingRecipeKnown All "Crystal Floor"
+#$action MarkCraftingRecipeKnown All "Stone Floor"
+#$action MarkCraftingRecipeKnown All "Stone Walkway Floor"
+#$action MarkCraftingRecipeKnown All "Brick Floor"
+#$action MarkCraftingRecipeKnown All "Stepping Stone Path"
+#$action MarkCraftingRecipeKnown All "Crystal Path"
+#$action MarkCraftingRecipeKnown All Bait
+#$action MarkCraftingRecipeKnown All "Deluxe Bait"
+#$action MarkCraftingRecipeKnown All "Wild Bait"
+#$action MarkCraftingRecipeKnown All "Challenge Bait"
+#$action MarkCraftingRecipeKnown All Magnet
+#$action MarkCraftingRecipeKnown All Spinner
+#$action MarkCraftingRecipeKnown All "Dressed Spinner"
+#$action MarkCraftingRecipeKnown All "Trap Bobber"
+#$action MarkCraftingRecipeKnown All "Sonar Bobber"
+#$action MarkCraftingRecipeKnown All "Cork Bobber"
+#$action MarkCraftingRecipeKnown All "Treasure Hunter"
+#$action MarkCraftingRecipeKnown All "Barbed Hook"
+#$action MarkCraftingRecipeKnown All "Oil Of Garlic"
+#$action MarkCraftingRecipeKnown All "Life Elixir"
+#$action MarkCraftingRecipeKnown All "Crab Pot"
+#$action MarkCraftingRecipeKnown All "Iridium Band"
+#$action MarkCraftingRecipeKnown All "Ring of Yoba"
+#$action MarkCraftingRecipeKnown All "Sturdy Ring"
+#$action MarkCraftingRecipeKnown All "Warrior Ring"
+#$action MarkCraftingRecipeKnown All "Tub o' Flowers"
+#$action MarkCraftingRecipeKnown All "Wooden Brazier"
+#$action MarkCraftingRecipeKnown All "Wicked Statue"
+#$action MarkCraftingRecipeKnown All "Stone Brazier"
+#$action MarkCraftingRecipeKnown All "Gold Brazier"
+#$action MarkCraftingRecipeKnown All "Stump Brazier"
+#$action MarkCraftingRecipeKnown All "Carved Brazier"
+#$action MarkCraftingRecipeKnown All "Skull Brazier"
+#$action MarkCraftingRecipeKnown All "Barrel Brazier"
+#$action MarkCraftingRecipeKnown All "Marble Brazier"
+#$action MarkCraftingRecipeKnown All "Wood Lamp-post"
+#$action MarkCraftingRecipeKnown All "Iron Lamp-post"
+#$action MarkCraftingRecipeKnown All "Fairy Dust"
+#$action MarkCraftingRecipeKnown All "Bug Steak"
+#$action MarkCraftingRecipeKnown All "Quality Bobber"
+#$action MarkCraftingRecipeKnown All "Monster Musk"
+#$action MarkCraftingRecipeKnown All Mini-Obelisk
+#$action MarkCraftingRecipeKnown All "Farm Computer"
+#$action MarkCraftingRecipeKnown All "Ostrich Incubator"
+#$action MarkCraftingRecipeKnown All "Geode Crusher"
+#$action MarkCraftingRecipeKnown All "Solar Panel"
+#$action MarkCraftingRecipeKnown All "Bone Mill"
+#$action MarkCraftingRecipeKnown All "Thorns Ring"
+#$action MarkCraftingRecipeKnown All "Glowstone Ring"
+#$action MarkCraftingRecipeKnown All "Heavy Tapper"
+#$action MarkCraftingRecipeKnown All Hopper
+#$action MarkCraftingRecipeKnown All "Magic Bait"
+
+//Mail flags that didn't need to be added in the first mail and thus, to avoid lag, moved to Marnie.
+#$action AddMail All ccBoilerRoom Received
+#$action AddMail All ccBulletin Received
+#$action AddMail All ccCraftsRoom Received
+#$action AddMail All ccFishTank Received
+#$action AddMail All ccPantry Received
+#$action AddMail All ccVault Received
+#$action AddMail All ccIsComplete Received
+#$action AddMail All ccMovieTheater Received
+#$action AddMail All sawQiPlane Received
+#$action AddMail All gotMaxStamina Received
+#$action AddMail All willyBoatFixed Received
+#$action AddMail All willyBackRoomInvitation Received
+#$action AddMail All wizardJunimoNote Received
+#$action AddMail All artifactFound Received
+#$action AddMail All Visited_Island Received
+#$action AddMail All Island_FirstParrot Received
+#$action AddMail All reachedCaldera Received
+#$action AddMail All Island_UpgradeHouse Received
+#$action AddMail All geodeFound Received
+#$action AddMail All BackpackTip Received
+#$action AddMail All seenBoatJourney Received
+#$action AddMail All Island_VolcanoBridge Received
+#$action AddMail All Island_VolcanoShortcutOut Received
+#$action AddMail All krobusUnseal Received
+#$action AddMail All hasPickedUpMagicInk Received
+#$action AddMail All HasUnlockedSkullDoor Received
+#$action AddMail All HasSkullKey Received
+#$action AddMail All HasSpecialCharm Received
+#$action AddMail All HasDwarvishTranslationGuide Received
+#$action AddMail All raccoonTreeFallen Received
+#$action AddMail All reachedBottomOfHardMines Received
+#$action AddMail All guildMember Received
+#$action AddMail All cursed_doll Received
+#$action AddMail All Farm_Eternal Received
+#$action AddMail All henchmanGone Received
+
+//Ditto with events seen
+#$action MarkEventSeen All 318560//Jas and Vincent forest
+#$action MarkEventSeen All 992553//Clint furnace
+#$action MarkEventSeen All 900553//Evelyn garden
+#$action MarkEventSeen All 65//Demetrius
+#$action MarkEventSeen All 1590166//Marnie cat
+#$action MarkEventSeen All 897405//Marnie dog
+#$action MarkEventSeen All 67//Sandy introduction
+#$action MarkEventSeen All 992559//Sewing Machine
+#$action MarkEventSeen All 100162//Marlon rusty sword
+#$action MarkEventSeen All 404798//Willy copper pan
+#$action MarkEventSeen All 529952//Wizard railroad
+#$action MarkEventSeen All 191393//Pierre Town
+#$action MarkEventSeen All 112//Wizard event
+#$action MarkEventSeen All 418172//Unlock wizard building
+//Now, friendship events
+#$action MarkEventSeen All 2//Mountain
+#$action MarkEventSeen All 8
+#$action MarkEventSeen All 26
+#$action MarkEventSeen All 384883
+#$action MarkEventSeen All 371652
+#$action MarkEventSeen All 8959199
+
+//Krobus cutscene
+#$v 691039 false false 
+i//i here to ensure the 
