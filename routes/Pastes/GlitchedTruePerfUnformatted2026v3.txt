@@ -1,4 +1,4 @@
-G///PASTE
+///PASTE
 ///BOY
 ///NAME Starting Name:
 %action AddMail All HasTownKey All%%
