@@ -1,6 +1,9 @@
 # Kent Friendship
 For glitched speedruns where you need to become friends with Kent (notably True Perfection), it is bothersome to have to sleep to Year 2 to meet him. As such, there have been 2 ways discovered to become friends with Kent in year 1.
 
+## Version Limits
+Due to #$v only being added in 1.6, and the Event.currentCommand functionality being overhauled in 1.6.16, Kent PTSD is 1.6.0 -> 1.6.15 exclusive. Baby Kent with an NPC works from 1.0 -> 1.5.0 (patched in 1.5.1), and with a player from 1.3.27 (when multiplayer got added) onwards.
+
 ## The Problem
 
 The main issue with gaining friendship with Kent in year one is the lack of an NPC called "Kent". Commands that give friendship almost always search the map for an NPC that IsVillager named Kent and that isn't EventActor, and only gives friendship to that NPC. One exception, however, is things that already have an NPC onhand. There are two ways to cause a friendship change with an NPC named Kent that already has that NPC onhand. 
@@ -36,7 +39,10 @@ The 5th, 7th, 9th, and 11th commands all are move farmer commands. (The 6th/8th/
 
 ## Performing Accelerated Kent PTSD
 
-First, we buy a chicken. This chicken has `#$v 100 false false # `at the end of it, to play the Kent cutscene. In addition, this chicken gives you 3420 stacks of items that don't fit in your inventory (from my current experiments, the best way to do this is repeat `[79]` 3312 times, as SecretNotes are unstackable but also very easy to give. I don't know of any way to give more than one stack of an item in one command in 1.6, but it's possible I've missed something). You click through Marnie's dialogue, and then you get the overflow menus and the event starts.
+First, we buy a chicken. This chicken has `#$v 100 false false # `at the end of it, to play the Kent cutscene. 
+
+### Move Breaking (Consistent) Accelerated Kent PTSD
+For this, the chicken gives you 95 overflow menus. From my current experiments, the best way to do this is repeat `[79]` 3312 times, as SecretNotes are unstackable but also very easy to give. You click through Marnie's dialogue, and then you get the overflow menus and the event starts.
 
 Wait until the event has started. This happens a couple frames before the fade to black starts to fade away, but let's imagine we wait until we see something. At that point, running timings with 2.5 speed, we can count the frames of timing window (at 60fps).
 
@@ -50,6 +56,17 @@ Wait until the event has started. This happens a couple frames before the fade t
 
 We need to reach anywhere between CurrentCommand 99 and CurrentCommand 106 with our ItemGrabMenus, as there's a +1 when you move into position, with 99 is a dialogue that would stop it from working and 107 being the goal. This means you want 95 ItemGrabMenus (which is where 95 * 36 = 3420 came from; as long as your inventory isn't max upgraded and entirely empty, this will cause 95 overflow menus), and as long as you do your first click within that ~88 frame = 1.5 second window, it's guaranteed to make it to the correct command. If you're not going to press too late, you could give slightly more to hit 106 more precisely, as there are some pause commands between 100 and 106 that extra menus could skip. Only a matter of perhaps a second, though. If you press later too late, you will need to skip cutscene and try again. Beware pressing too early, as you can make the cutscene unskippable.
 
-When every ItemGrabMenu is closed, walk up. This will allow the move command to finally finish, and soon you will be asked a question. The correct choice is the middle of the 3 options, i.e. "I know you're hurting... but don't blame your wife" if you're in English. Just keep clicking in that location (both to select that answer and to advance dialogue) until you reach 10 hearts. You can see the current progress by hovering over the blue/green/yellow/red/purple/stardrop circle in the corner. Once you're at 10 hearts, you can exit the cutscene by skipping (or using a warp totem, or walking out of the house, though these will activate the event again if you walk back in). 
+When every ItemGrabMenu is closed, walk up. This will allow the move command to finally finish, and soon you will be asked a question. 
 
-At that point, you have reached 10 hearts with Kent, and the Perfection Tracker will smile upon you. If you didn't spawn in the cooking recipes, Kent will send you the cooking recipes! The fact that even Baby Kent is capable of sending you bombs in the mail is, perhaps, concerning.
+### Regular (Inconsistent, slightly quicker) Accelerated Kent PTSD
+For this, you need approximately 63 overflow menus, though the amount for best consistency depends on how fast you click. If the overflow menus are all gone, and Jodi is asking you a question, you need more (and means you click faster, as that indicates the cutscene had less time to perform its own incrementing). If the overflow menus are all gone, and Kent is talking, you need less (and means you click slower. It's also possible that the question gets asked once, and then goes past it. Also means you need less).
+
+Wait until the Farmer has arrived at the fridge (so after the window for the Move Breaking version). Click as fast as you can at a relatively consistent pace, and hopefully that leads to being asked the question.
+
+### Question Popped
+
+The correct choice is the middle of the 3 options, i.e. "I know you're hurting... but don't blame your wife" if you're in English. Just keep clicking in that location (both to select that answer and to advance dialogue) until you reach 10 hearts. You can see the current progress by hovering over the blue/green/yellow/red/purple/stardrop circle in the corner. Once you're at 10 hearts, you can exit the cutscene by skipping (or using a warp totem, or walking out of the house, though these will activate the event again if you walk back in). 
+
+During this questioning, it is possible to perform other actions. Reading an experience book will still function, and the question overwrites the animation meaning no time is lost to the Kent PTSD while enabling free book reading. You can also speak to the other NPC's without breaking the loop.
+
+After repeating 46 times, you have reached 10 hearts with Kent, and the Perfection Tracker will smile upon you. If you didn't spawn in the cooking recipes, Kent will even send you the cooking recipes! The fact that even Baby Kent is capable of sending you bombs in the mail is, perhaps, concerning.

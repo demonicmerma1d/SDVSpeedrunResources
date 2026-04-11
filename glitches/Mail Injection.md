@@ -1,4 +1,10 @@
 # Mail Injection
+This bug enables powerful effects to occur open reading a mail containing the farmer's name.
+
+## Version Limits
+
+In versions 1.0 -> 1.5, you are limited to a single %item command. In 1.6 onwards, you can start using %action commands and in unlimited quantities.
+
 ## Mechanism
 On 1.6, when the player opens their mailbox, the game does the following actions:
 
