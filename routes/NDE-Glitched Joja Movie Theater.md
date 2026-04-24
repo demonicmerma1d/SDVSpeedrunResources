@@ -11,9 +11,9 @@ Note the only difference between the pastes is that the glitched one deliberatel
 
 ### The Run
 1) Setup the file.
-2) Skip through intro(press Esc 2x)
-3) Time ends when the cutscene crashes, this is best timed using a day 0 end autosplit
-4) Verify that the movie theater exists(this is what the magic rock candy is for)
+2) Skip through intro(press Esc 2x).
+3) Time ends when the cutscene crashes, this is best timed using a day 0 end autosplit.
+4) Verify that the movie theater exists(this is what the magic rock candy is for).
 
 ### Paste explaination
 Since the only difference between the NDE and glitched pastes is for technicalities, we will be focusing on the NDE paste.
@@ -25,13 +25,13 @@ The Dialogue string:
 `blah¦%favorite}%farm ][ blah` 
 2) The game substitutes the farm name `%favoriteJoja}[279]` into `%farm`.
 `blah¦%favorite}%favoriteJoja}[279] ][ blah`
-3) The game substitutes the favourite thing `ccMovieTheater` into `%favorite`
+3) The game substitutes the favourite thing `ccMovieTheater` into each instance of `%favorite`
 `blah ¦ccMovieTheater}ccMovieTheaterJoja}[279] ][ blah`
-4) Being female -> Game deletes all previous text in the dialogue box due to the gender switch statement `¦`
+4) Being female -> Game deletes all previous text in the dialogue box due to the gender switch statement `¦`.
 `ccMovieTheater}ccMovieTheaterJoja}[279] ][ blah`
 5) The game parses `ccMovieTheater` as a mail flag.
 `ccMovieTheaterJoja}[279] ][ blah`
-6) The game parses `[279]` as an item to inject
+6) The game parses `[279]` as an item to inject.
 `ccMovieTheaterJoja} ][ blah`
 7) The game parses `ccMovieTheaterJoja` as a mail flag.
 ` ][ blah`
