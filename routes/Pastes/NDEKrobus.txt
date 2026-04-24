@@ -1,0 +1,12 @@
+Player:
+%farm%farm[446]
+Farm:
+%favorite%favorite
+Favorite:
+[StardropTea][446]
+
+Chickens:
+}[688]@@@@@@¦
+}[690]¦
+#OpenedSewer}
+[808]#$v 6 false 

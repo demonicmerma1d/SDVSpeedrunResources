@@ -4,7 +4,6 @@ All referenced pastes can be found [here](/routes/Pastes/NDEmarriageAll.txt).
 # Route
 ### Important Notes
 - Run on version 1.6
-- Play as a male character.
 - Chinese
 - Exact details of which days you are active, and which farm paste to use depend on the NPC.
 

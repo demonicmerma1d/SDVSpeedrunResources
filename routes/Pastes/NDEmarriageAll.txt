@@ -1,5 +1,5 @@
 player:
-}%farm%farm[460]¦
+%farm%farm[460]
 
 farm(mountain warp):
 %favorite[458][689]
