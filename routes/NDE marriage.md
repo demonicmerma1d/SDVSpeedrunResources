@@ -1,5 +1,5 @@
 # Pastes
-All referenced pastes can be found [here](/routes/Pastes/NDEmarriageAll.txt)
+All referenced pastes can be found [here](/routes/Pastes/NDEmarriageAll.txt).
 
 # Route
 ### Important Notes
