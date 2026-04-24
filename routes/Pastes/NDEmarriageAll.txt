@@ -1,0 +1,11 @@
+player:
+}%farm%farm[460]¦
+
+farm(mountain warp):
+%favorite[458][689]
+
+farm(beach warp):
+%favorite[458][690]
+
+favorite:
+[StardropTea][279]
