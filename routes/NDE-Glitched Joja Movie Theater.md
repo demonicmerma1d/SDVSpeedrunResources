@@ -21,21 +21,21 @@ Since the only difference between the NDE and glitched pastes is for technicalit
 
 The Dialogue string:
 `blah @ blah`
-Player name:
+1) The game substitutes the player name into the string.
 `blah¦%favorite}%farm ][ blah` 
-1) The game substitutes the farm name `%favoriteJoja}[279]` into `%farm`.
+2) The game substitutes the farm name `%favoriteJoja}[279]` into `%farm`.
 `blah¦%favorite}%favoriteJoja}[279] ][ blah`
-2) The game substitutes the favourite thing `ccMovieTheater` into `%favorite`
+3) The game substitutes the favourite thing `ccMovieTheater` into `%favorite`
 `blah ¦ccMovieTheater}ccMovieTheaterJoja}[279] ][ blah`
-3) Being female -> Game deletes all previous text in the dialogue box due to the gender switch statement `¦`
+4) Being female -> Game deletes all previous text in the dialogue box due to the gender switch statement `¦`
 `ccMovieTheater}ccMovieTheaterJoja}[279] ][ blah`
-4) The game parses `ccMovieTheater` as a mail flag.
+5) The game parses `ccMovieTheater` as a mail flag.
 `ccMovieTheaterJoja}[279] ][ blah`
-5) The game parses `[279]` as an item to inject
+6) The game parses `[279]` as an item to inject
 `ccMovieTheaterJoja} ][ blah`
-6) The game parses `ccMovieTheaterJoja` as a mail flag.
+7) The game parses `ccMovieTheaterJoja` as a mail flag.
 ` ][ blah`
-7) The game attempts to parse ` ][` to look for items to inject, bypasses the check for starting a string with `]` due to the space, resulting in getting a substring of length -1, triggering crash handling.
+8) The game attempts to parse ` ][` to look for items to inject, bypasses the check for starting a string with `]` due to the space, resulting in getting a substring of length -1, triggering crash handling.
 
 
 
