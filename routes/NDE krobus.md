@@ -13,8 +13,10 @@ All the pastes for this are [here](/routes/Pastes/NDEKrobus.txt).
 ### File Setup
 Player:
 `%farm%farm[446]`
+
 Farm:
 `%favorite%favorite`
+
 Favorite:
 `[StardropTea][446]`
 - Male gender, meadowlands farm, **skip** introduction.
@@ -31,8 +33,11 @@ Favorite:
 `}[688]@@@@@@¦`
 - Sell The rabbit feet you get given.
 - Get Remaining chickens.(last chicken teleports you to Robin's desk).
+
 `}[690]¦`
+
 `#OpenedSewer}`
+
 `[808]#$v 6 false `
 
 ### House upgrade

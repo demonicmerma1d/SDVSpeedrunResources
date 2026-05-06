@@ -9,11 +9,11 @@ The main mechanic is to repeatedly read the mail to get different effects applie
 ## File Creation
 You need to be in Chinese, select Meadowlands Farm, Legacy RNG, and Male character. Copy paste the shorter name into the player's name, and use whatever you want for farm name / favorite. Don't skip the intro cutscene, and watch it until Robin first says the player's name (at which point you skip)
 ## Day 1
-Leave the house, moving the bed closer to the door as you do. Immidiately read your first mail.
+Leave the house, moving the bed closer to the door as you do. Immediately read your first mail.
 ### Read 1
 Your inventory contains the following items
- - Magic Rock Candy and Triple Shot Espresso: Immidiately Eat
- - Napalm Ring: Immidiately Equip
+ - Magic Rock Candy and Triple Shot Espresso: Immediately Eat
+ - Napalm Ring: Immediately Equip
  - 99 Mega Bombs: Place 1 row of bombs to clear the front yard for obelisks and pond later
  - Beach Warp: Use after placing bombs
 Run to Marnie (through the opened community shortcut) and buy the first chicken. Note that the paste begins with a newline, so you don't need to delete the randomly generated chicken name.
@@ -36,7 +36,7 @@ Beach warp, and run to Marnie again. Note again that the paste begins with a new
 ### Chicken 2
 This chicken warps you into the sewers, with a cutscene. Wait until the Dwarf dialogue box appears, and then skip. Say hi to Krobus (you can't gift until you talk once, so there's no risk with what item you hold [unless it's a warp totem. I recommend switching to slot 1 beforehand due to this]). Run out of the sewers, and go to Pierre's to get 2 backpack upgrades. Gift Pierre a Stardrop Tea (do not talk to him - he says your name).
 
-Use the Island Warp Totem to run to Leo's Hut. Skip the cutscene immidiately, and use the Mountain Warp (this is enough to meet Leo). Run to Robin's, and create a Fish Pond. Return Scepter back home. Equip the Golden Spur, and place the Junimo Chest with 999 UndoButtons somewhere semi-convenient but out of the way.
+Use the Island Warp Totem to run to Leo's Hut. Skip the cutscene Immediately, and use the Mountain Warp (this is enough to meet Leo). Run to Robin's, and create a Fish Pond. Return Scepter back home. Equip the Golden Spur, and place the Junimo Chest with 999 UndoButtons somewhere semi-convenient but out of the way.
 
 ### Read 2
 This read empties your inventory and gives you items to ship. Ship them all (you can drag with left+right click, or shift+right click, to do it quickly).
@@ -94,7 +94,7 @@ Eat buffs, and swap to row 1 [combat row] (it's important to be on this row when
  - Row 2: Fishing + Warps.
  - - Fishing Rod, for the Jelly fishing performed on Day 3.
  - - Magic Rock Candy and Triple Shot Expresso, to consume every morning (and often refill on TSE partway through the day).
- - - Staircase, to leave floor 20 immidiately after fishing on Day 3.
+ - - Staircase, to leave floor 20 Immediately after fishing on Day 3.
  - - Mountain Warp, to leave the Volcano with on Days 2 & 3.
  - - Desert Warp, to leave the Volcano with on Day 4.
  - - 5 stacks of Mega Bombs.
@@ -165,7 +165,7 @@ This mail removes the 2 extra rods, and gives you a (useless) Mountain Warp, som
 After catching Sea Jelly and Seaweed, run to the Egg Festival. Meet everybody (Pierre+Robin+Lewis are already met, and depending on timings it's possible you met Jodi if you didn't do Move Breaking Accelerated Kent PTSD). 
 
 ### Spring 14th, Read 25
-Leave, and read your mail. This will give you 8/10 hearts with everybody, and so you can now immidiately warp to the mountain and place a tent kit just below the summit.
+Leave, and read your mail. This will give you 8/10 hearts with everybody, and so you can now Immediately warp to the mountain and place a tent kit just below the summit.
 
 Because perfection only gets updated overnight (and we injected the boulder away so we can run up to the summit despite that), we sleep. Running up would lead to Mr. Qi. Killing You.
 
