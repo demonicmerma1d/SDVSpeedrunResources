@@ -63,3 +63,16 @@ This is explained with an example in the route document for [Joja Movie Theater]
 If you have a full inventory, and pick something up out of a chest, when you click the inventory sort button the stack size of that item will double. If the stack size goes over 999, it keeps going regardless, but will appear as multiple "linked" stacks of items that if you interact with most ways will just delete themselves and you will be left with eg 1 stack of 24 instead.
 
 The item stacks unlink if you can seperate them into different inventories, for example putting one stack in chest A and a second in chest B, or you can safely ship the stacks one at a time into the shipping bin without them merging. 
+
+# Stardrop Duplication
+## Notes
+- Works on versions 1.0 - 1.2
+- Requires three stardrops
+
+## Mechanic
+1) Build a chest (preferably next to the shipping bin) and make sure that the shipping bin has no return item.
+2) Place the Stardrops in the chest and remove them by right-clicking then left-clicking to remove 1 and then the rest.
+3) Interacting with the shipping bin will cause the selected hotbar item to become a stack of Stardrops 2 less than the original stack and starts the eating a Stardrop cutscene, you can regain control/cancel out this cutscene either via WSC or journal control.
+4) Repeat until enough Stardrops have been acquired.
+any other item into the shipping bin, and then place the Stardrops in the bin to sell them without triggering the cutscene.
+
