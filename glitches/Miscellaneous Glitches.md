@@ -57,7 +57,7 @@ This is explained with an example in the route document for [Joja Movie Theater]
 
 # Chest Duping
 ## Notes
-- Works on version 1.4
+- Works on version 1.4.
 
 ## Mechanic
 If you have a full inventory, and pick something up out of a chest, when you click the inventory sort button the stack size of that item will double. If the stack size goes over 999, it keeps going regardless, but will appear as multiple "linked" stacks of items that if you interact with most ways will just delete themselves and you will be left with eg 1 stack of 24 instead.
@@ -66,8 +66,8 @@ The item stacks unlink if you can seperate them into different inventories, for 
 
 # Stardrop Duplication
 ## Notes
-- Works on versions 1.0 - 1.2
-- Requires three stardrops
+- Works on versions 1.0 - 1.2.
+- Requires three stardrops.
 
 ## Mechanic
 1) Build a chest (preferably next to the shipping bin) and make sure that the shipping bin has no return item.
