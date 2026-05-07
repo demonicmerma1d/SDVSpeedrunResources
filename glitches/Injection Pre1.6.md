@@ -1,5 +1,7 @@
 # Injection
 One of the main types of glitches in stardew is "injection". This is  preformed by putting what can be thought of as code in a name textbox, that is then read through a dialogue box and the game processes it as code. This is commonly done in the player name, farm name, favourite thing and animal names. There are a few types of injection: item injection, mail injection, flag injection and cutscene injection.
+## Cutscene Injection
+See [this page](/glitches/Cutscene%20Injection.md) for details.
 
 ## Item Injection
 
@@ -37,11 +39,11 @@ Note there are other replacements, but no other player inputtable ones, and real
 ## Flag Injection
 ### Overview:
 
-A lot of variables are secretly controlled by “invisible” pieces of mail (such as being able to read junimo text), and these invisible pieces are called Flags. In versions 1.0-1.5, whenever the game seeds a } in dialogue, it thinks all text before it is a flag it should send to the player. We can abuse this by including `FLAG}` in our name.
+A lot of variables are secretly controlled by “invisible” pieces of mail (such as being able to read junimo text), and these invisible pieces are called Flags. In versions 1.0-1.5, whenever the game seeds a `}` in dialogue, it thinks all text before it is a flag it should send to the player. We can abuse this by including `FLAG}` in our name.
 
 Notably, however, it does *all* text previously. As such, if we want it to be a simple string and not an entire sentence, we need to make it so that our FLAG are the first characters in the text box.
 
-There are two main ways to do this. The historical way has been to name the player `}FLAG}`, as this causes the game to see the first } as a flag, send that, and then on a second pass notice our FLAG. 
+There are two main ways to do this. The historical way has been to name the player `}FLAG}`, as this causes the game to see the first `}` as a flag, send that, and then on a second pass notice our FLAG. 
 
 The second (and better) way is to name ourselves `¦FLAG}` while playing as a girl. The `¦` (or `^`, but that's wider) is read as a gender switch to consider all dialogue to the left of it male-exclusive, causing all text to the left of it being deleted without using up a flag-pass.
 

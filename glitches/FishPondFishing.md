@@ -1,5 +1,5 @@
 # Fish Pond Fishing
-This glitch enables adding fish to the fishing collection via fishing in the fish pond.
+This glitch enables adding fish to the fishing collection via fishing in the fish pond. This works on versions 1.4 - 1.6.
 ## How to perform
 If you fish at the very top of a fish pond, it is possible that when you click during the ! ring rather than getting the normal instant pull out, you can get the entire fishing minigame.
 
