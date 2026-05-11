@@ -1,0 +1,13 @@
+farmer name:
+%farm
+/speak Shane "
+[460]"
+/friendship Shane 
+9999
+/addTool Wand 
+/skippable 
+/end warpOut .
+
+farm name:
+[288][0288][00288]
+[000288][0000288]

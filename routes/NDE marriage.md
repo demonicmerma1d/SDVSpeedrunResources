@@ -25,7 +25,7 @@ Note: House should be upgraded between the first and second day.
 1) Near exhaust on the parsnip box(you will not have time to exhaust otherwise for faster candidates), wait outside Marnie's door for Shane to leave, preexhaust using a tool to -14 energy.
 2) Gift Shane a MRC.
 3) Gift Shane 8 stardrop tea, the bouquet, 2 more stardrop tea, then the mermaid pendant.
-4) Passout and sleep until the wedding, time on kiss(there is a marriage autosplit).
+4) Passout and sleep until the wedding, time ends on kiss (there is a marriage autosplit).
 
 ## Maru
 - On the second active day(Spring 4), run up to Robin's and preexhaust outside there instead of going down to Marnie's, giving the MRC, stardrop tea and other items to Maru instead of Shane.
@@ -86,3 +86,6 @@ Note: House should be upgraded between the first and second day.
 
 ## Krobus
 - Does not fit this basic pattern route wise, see the seperate route [here](/routes/NDE%20krobus.md).
+
+## Player Marriage
+- This is a multiplayer exclusive catagory, see [here](NDE-Glitched%20Player%20Marriage.md)

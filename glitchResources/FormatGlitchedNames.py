@@ -7,28 +7,38 @@
 #   Languages: All languages are supported, but admittedly only Chinese has been stress tested (and even then there is sometimes not understood nuances)
 #   Gender: True Gender is Female, and False Gender is Male. You can also do ///BOY and ///GIRL in the paste to set it.
 #   Optimizations: There are various optimization methods split into different functions.
+import pandas as pd
 
 global pixelWidths
 pixelWidths = dict()
-def updateWidths(language = 'zh'):
-    #Note: Character widths is not fully understood; if you pick a non-english/chinese language, it won't be fully accurate. The scraping data, however, claimed they had identical pixel widths.
-    #Call this function to chose the language used to calculate character widths; defaults to zh [chinese] as that is optimal
+
+def updateWidths(language:str = 'zh') -> None:
+    if not language in {"ru","pt","es","de","fr","it","tr","hu","en","zh","jp","ko"}:
+        raise Exception(f'{language} is not a supported language by stardew.')
     if language in ["ru","pt","es","de","fr","it","tr","hu"]:
         language = "en"
     global pixelWidths
-    pixelWidths = dict()
-    languageFile = open('character_widths.csv')
-    text = languageFile.read()
-    languageFile.close()
-    for item in text.split('\n'):
-        if item.split(',')[0] == language:
-            if ',,,' in item:
-                pixelWidths[','] = int(item.split(',')[4])
-            else:
-                pixelWidths[item.split(',')[2]] = int(item.split(',')[3])
+    charDataAll = pd.read_csv('glitchResources/character_widths.csv',on_bad_lines='warn')
+    charDataLang = charDataAll[charDataAll['lang'] == language][['char','width']]
+    charDataLang = pd.concat([charDataLang,pd.DataFrame.from_dict(_hardCodedEntries(language))])
+    charDataLang.set_index('char',inplace=True)
+    pixelWidths = charDataLang.to_dict()['width']
+    return
+
+def _hardCodedEntries(language:str) -> dict:
+    # if the language is wrong here, it literally doesnt matter, this just looks prettier.
+    match (language):
+        case "zh":
+            return {'char': [',','"'], 'width' :[6,11]}
+        case "jp":
+            return {'char':[',','"'],'width':[12,12]}
+        case _:
+            return {'char':[',','"'],'width':[8,10]}
+
+
 updateWidths()
 
-def lastLineLength(string):
+def lastLineLength(string:str):
     #Calculates the width of the last line in the paste
     #Note: ø is a hardcoded empty-character, whose functionality is to guard functional newlines.
     lastLine = string.split('\n')[-1]
@@ -39,7 +49,7 @@ def lastLineLength(string):
     length+=1
     return(length)
 
-def makeLegal(string,gender = True, width = 171):
+def makeLegal(string:str,gender:bool = True, width:int = 171) -> str:
     #Automatically adds gender switch blocks to make a name fit in the current lange
     #A False gender is male, a True gender is female, and the default width of 171 is the width of the player name textbox. 159 is the width of the pet/animal names.
     string+='\n'
@@ -72,7 +82,7 @@ def makeLegal(string,gender = True, width = 171):
     outPut.append(tempOutput)
     return(''.join(outPut))
 
-def removeLines(string, width = 171):
+def removeLines(string:str, width:int = 171) -> str:
     #Automatically removes all newline characters that are not necessary for the name to fit
     #Any newline character surrounded by ø characters (as in ø\nø) is considered functional and is not trimmed.
     while '  ' in string:
@@ -91,7 +101,7 @@ def removeLines(string, width = 171):
             i+=1
     return('\n'.join(currentVersion))
 
-def removeQualifiers(string, width = 171):
+def removeQualifiers(string:str, width:int = 171) -> str:
     # Removes all (\n) item qualifiers that are not actually productive
     currentVersion = string.split('\n')
     i = 1
@@ -107,10 +117,10 @@ def removeQualifiers(string, width = 171):
     return('\n'.join(currentVersion))
     
 
-def trimComments(text,startingText = '///START'):
+def trimComments(text:str,startingText:str = '///START') -> tuple[str,list]:
     # Removes all comments. Any text before the starting text (defaulted to ///START) is considered a preamble and removed. 
     # Multiline comments of the form /* blah blah */ is supported, along with end-of-line comments formatted as functional//Comment
-    if "///START" in text:
+    if startingText in text:
         text = text.split('///START')[1]
     while "/*" in text:
         commentStart = text.index("/*")
@@ -127,7 +137,7 @@ def trimComments(text,startingText = '///START'):
                 foundVariables.append(line.split(' ')[1])
     return('\n'.join(newText),foundVariables)
 
-def lowercaseCommands(text):
+def lowercaseCommands(text:str) -> str:
     # Lowercases all TriggerActions and GameStateQueries, as they are case-insensitive
     triggerActions = ['NULL', 'IF', 'ADDBUFF', 'REMOVEBUFF', 'ADDMAIL', 'REMOVEMAIL', 'ADDQUEST', 'REMOVEQUEST', 'ADDSPECIALORDER', 'REMOVESPECIALORDER', 'ADDITEM', 'REMOVEITEM', 'ADDMONEY', 'ADDFRIENDSHIPPOINTS', 'ADDCONVERSATIONTOPIC', 'REMOVECONVERSATIONTOPIC', 'INCREMENTSTAT', 'MARKACTIONAPPLIED', 'MARKCOOKINGRECIPEKNOWN', 'MARKCRAFTINGRECIPEKNOWN', 'MARKEVENTSEEN', 'MARKQUESTIONANSWERED', 'MARKSONGHEARD', 'REMOVETEMPORARYANIMATEDSPRITES', 'SETNPCINVISIBLE', 'SETNPCVISIBLE', 'AddBuff', 'IncrementStat', 'AddMail', 'MarkEventSeen', 'RemoveSpecialOrder', 'RemoveMail', 'RemoveItem', 'If','AddItem',"Null"]
     gameStateQueries = ["ANY", "DATE_RANGE", "SEASON_DAY", "DAY_OF_MONTH", "DAY_OF_WEEK", "DAYS_PLAYED", "IS_GREEN_RAIN_DAY", "IS_FESTIVAL_DAY", "IS_PASSIVE_FESTIVAL_OPEN", "IS_PASSIVE_FESTIVAL_TODAY", "SEASON", "YEAR", "TIME", "IS_EVENT", "CAN_BUILD_CABIN", "CAN_BUILD_FOR_CABINS", "BUILDINGS_CONSTRUCTED", "FARM_CAVE", "FARM_NAME", "FARM_TYPE", "FOUND_ALL_LOST_BOOKS", "HAS_TARGET_LOCATION", "IS_COMMUNITY_CENTER_COMPLETE", "IS_CUSTOM_FARM_TYPE", "IS_HOST", "IS_ISLAND_NORTH_BRIDGE_FIXED", "IS_JOJA_MART_COMPLETE", "IS_MULTIPLAYER", "IS_VISITING_ISLAND", "LOCATION_ACCESSIBLE", "LOCATION_CONTEXT", "LOCATION_HAS_CUSTOM_FIELD", "LOCATION_IS_INDOORS", "LOCATION_IS_OUTDOORS", "LOCATION_IS_MINES", "LOCATION_IS_SKULL_CAVE", "LOCATION_NAME", "LOCATION_UNIQUE_NAME", "LOCATION_SEASON", "MUSEUM_DONATIONS", "WEATHER", "WORLD_STATE_FIELD", "WORLD_STATE_ID", "MINE_LOWEST_LEVEL_REACHED", "PLAYER_BASE_COMBAT_LEVEL", "PLAYER_BASE_FARMING_LEVEL", "PLAYER_BASE_FISHING_LEVEL", "PLAYER_BASE_FORAGING_LEVEL", "PLAYER_BASE_LUCK_LEVEL", "PLAYER_BASE_MINING_LEVEL", "PLAYER_COMBAT_LEVEL", "PLAYER_FARMING_LEVEL", "PLAYER_FISHING_LEVEL", "PLAYER_FORAGING_LEVEL", "PLAYER_LUCK_LEVEL", "PLAYER_MINING_LEVEL", "PLAYER_CURRENT_MONEY", "PLAYER_FARMHOUSE_UPGRADE", "PLAYER_GENDER", "PLAYER_HAS_ACHIEVEMENT", "PLAYER_HAS_ALL_ACHIEVEMENTS", "PLAYER_HAS_BUFF", "PLAYER_HAS_CAUGHT_FISH", "PLAYER_HAS_CONVERSATION_TOPIC", "PLAYER_HAS_CRAFTING_RECIPE", "PLAYER_HAS_COOKING_RECIPE", "PLAYER_HAS_DIALOGUE_ANSWER", "PLAYER_HAS_HEARD_SONG", "PLAYER_HAS_ITEM", "PLAYER_HAS_MAIL", "PLAYER_HAS_PROFESSION", "PLAYER_HAS_RUN_TRIGGER_ACTION", "PLAYER_HAS_SECRET_NOTE", "PLAYER_HAS_SEEN_EVENT", "PLAYER_HAS_TOWN_KEY", "PLAYER_HAS_TRASH_CAN_LEVEL", "PLAYER_HAS_TRINKET", "PLAYER_LOCATION_CONTEXT", "PLAYER_LOCATION_NAME", "PLAYER_LOCATION_UNIQUE_NAME", "PLAYER_MOD_DATA", "PLAYER_MONEY_EARNED", "PLAYER_SHIPPED_BASIC_ITEM", "PLAYER_SPECIAL_ORDER_ACTIVE", "PLAYER_SPECIAL_ORDER_RULE_ACTIVE", "PLAYER_SPECIAL_ORDER_COMPLETE", "PLAYER_KILLED_MONSTERS", "PLAYER_STAT", "PLAYER_VISITED_LOCATION", "PLAYER_FRIENDSHIP_POINTS", "PLAYER_HAS_CHILDREN", "PLAYER_HAS_PET", "PLAYER_HEARTS", "PLAYER_HAS_MET", "PLAYER_NPC_RELATIONSHIP", "PLAYER_PLAYER_RELATIONSHIP", "PLAYER_PREFERRED_PET", "RANDOM", "SYNCED_CHOICE", "SYNCED_RANDOM", "SYNCED_SUMMER_RAIN_RANDOM", "ITEM_CONTEXT_TAG", "ITEM_CATEGORY", "ITEM_HAS_EXPLICIT_OBJECT_CATEGORY", "ITEM_ID", "ITEM_ID_PREFIX", "ITEM_NUMERIC_ID", "ITEM_OBJECT_TYPE", "ITEM_PRICE", "ITEM_QUALITY", "ITEM_STACK", "ITEM_TYPE", "ITEM_EDIBILITY", "TRUE", "FALSE"]
@@ -136,21 +146,21 @@ def lowercaseCommands(text):
         text = text.replace('!'+action+' ','!'+action.lower().replace('m','M')+' ')
     return text
 
-def addNewlines(text):
+def addNewlines(text:str) -> str:
     # Automatically trims whitespace and adds newline characters around %action and %%, along with several known places for safe newlines
     while '%action ' in text:
-        text = text.replace('%action ','%action')
+        text = text.replace(r'%action ',r'%action')
     while '%% ' in text:
-       text = text.replace('%% ', '%%')
+       text = text.replace(r'%% ', r'%%')
     newLines = []
     for line in text.split('\n'):
         if '%action' in line: #Only %action commands have newlines trimmed, %item commands do not.
-            line = line.replace('%%','\n%%\n')
+            line = line.replace(r'%%','\n%%\n')
         else:
-            line = line.replace('%%','%%\n')
+            line = line.replace(r'%%','%%\n')
         newLines.append(line)
     text = '\n'.join(newLines)
-    text = text.replace('%action','%action\n')
+    text = text.replace(r'%action','%action\n')
     text = text.replace('$action ','$action \n')
     text = text.replace("Received", "\nReceived\n")
     text = text.replace("null", "null \n")
@@ -159,7 +169,7 @@ def addNewlines(text):
     text = text.replace(" ## ", " \n ## \n")
     return text
 
-def qualifyAddItems(text):
+def qualifyAddItems(text:str) -> str:
     #AddItem commands for objects keep functionality with non-functional itemid qualifiers. If you're using any un-qualified non-objects, list them blow.
     #Example: %action additem 74%% -> %action additem (\n)74%%
     dontQualify = ['MiniForge','AdvancedIridiumRod',"ReturnScepter"]
@@ -190,7 +200,7 @@ def getOfWidth(width):
     return results
     
 
-def getSmallNames(quantityDesired):
+def getSmallNames(quantityDesired:int) -> list[str]:
     found = []
     maxWidth = 0
     while len(found) < quantityDesired:
@@ -202,7 +212,7 @@ def getSmallNames(quantityDesired):
 
 global amountNamed
 amountNamed = 0
-def renameVariables(text,variableList):
+def renameVariables(text:str,variableList:list[str]) -> str:
     #Renames all occurences of existing variables with newline-smuggling variables.
     #To avoid the same variable being used for multiple players, has a global count of the quantity used
     global amountNamed
@@ -218,13 +228,14 @@ def renameVariables(text,variableList):
     amountNamed += len(variableList)
     return text
 
-def formatText(text,optimize = True,gender = True,noFormat = False, width = 171,verboseFormat = True): #171 is regular, 159 is marnie ... but 159 doesn't always work so 156?
+def formatText(text:str,optimize:bool = True,gender:bool = True,noFormat:bool = False, width:int = 171,verboseFormat:bool = True) -> str: 
+    #171 is regular, 159 is marnie ... but 159 doesn't always work so 156?
     if verboseFormat:
         print(f"The file has {len(text)} characters")
     text,declaredVariables = trimComments(text)
     if verboseFormat:
         print(f"After removing comments, we have {len(text)} characters")
-    if True:
+    if optimize:
         text = addNewlines(text)
         text = renameVariables(text,declaredVariables)
         text = lowercaseCommands(text)
@@ -245,10 +256,10 @@ def formatText(text,optimize = True,gender = True,noFormat = False, width = 171,
         print(f"After removing all excess newlines, we have {len(text)} characters and {text.count('${')} genders")
     return(text)
 
-def formatFile(filePath,optimize = True,gender = True,noFormat = False, width = 171, marnieWidth = 156,verboseFormat = True, justPrint = True):
-    file = open(filePath)
-    text = file.read()
-    file.close()
+def formatFile(filePath:str,optimize:bool = True,gender:bool = True,noFormat:bool = False,
+ width:int = 171, marnieWidth:int = 156,verboseFormat:bool = True, justPrint:bool = True):
+    with open(filePath) as f:
+        text = f.read()
     if '///PASTE' not in text:
         text = '///PASTE' + text
     result = []
@@ -277,14 +288,16 @@ def formatFile(filePath,optimize = True,gender = True,noFormat = False, width = 
             return(result[0])
         return(result)
 
-def transform(paste):
-    if '#$' in paste and '%%' not in paste:
+def transform(paste:str) -> str:
+    if '#$' in paste and r'%%' not in paste:
         paste = paste.replace('\n#$','%%\n%') #less reliable
-        paste+=('%%')
+        paste+=(r'%%')
     else:
-        paste = paste.replace('%action','#$action')
-        paste = paste.replace('%%','')
+        paste = paste.replace(r'%action','#$action')
+        paste = paste.replace(r'%%','')
     return paste
-
+if __name__ == '__main__':
 #Example code that, with a file path, prints out formatted versions
-formatFile("~/Desktop/GlitchedTruePerf.txt", verboseFormat = False, justPrint = True)
+# The file path here is a local gitignored folder, change the paste as needed
+    updateWidths()
+    formatFile(r'glitchResources\WorkingPastes\GlitchedSebastianUncompiled.txt', verboseFormat = False, justPrint = True)

@@ -1,0 +1,13 @@
+farmer name:
+%farm
+/speak Penny "
+[460]"
+/friendship Penny 
+9999
+/addTool Wand 
+/skippable 
+/end warpOut .
+
+farm name:
+[288][0288][00288]
+[000288][0000288]

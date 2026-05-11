@@ -40,7 +40,7 @@ On versions 1.0 - 1.2 if you open and close the journal as you are passing out, 
 
 # Pause Fishing
 ## Notes
-- Works in versions 1.0 - 1.2.
+- Works in versions 1.0 - 1.3.
 
 ## Mechanic
 If you open the journal while casting the fishing rod, the game will be paused, but the fishing bite time still counts down. You can then close the journal and start the fishing minigame from a mouse click. Note the journal will be covering the screen so you will be forced to only use audio cues for knowing if you have a fishing ring.
@@ -76,3 +76,24 @@ The item stacks unlink if you can seperate them into different inventories, for 
 4) Repeat until enough Stardrops have been acquired.
 any other item into the shipping bin, and then place the Stardrops in the bin to sell them without triggering the cutscene.
 
+# Item ID Overlap:
+## Notes
+- Works 1.0 - 1.3 (Galaxy sword shrine, dino egg incubator)
+- Works 1.0 - 1.4 (Wallpaper and flooring in Bundles)
+- Works 1.0 - 1.5 (Furniture in machines)
+
+## Mechanic
+Prior to 1.6, item IDs were numeric, and the only indication on what type of item something is was via the catagory. As a result if an interaction does not check the catagory of the item in the code, you can instead utilise an item of a different type, typically wallpaper, flooring or furniture from one of the catalogues with the same numeric item ID in its place.
+
+### Useful IDs
+(Almost) All useful items can be found [here](https://tinyurl.com/overlapItems) with an image of the relevent wallpaper if applicible.
+Most significantly, this works with wallpapers for the all the Spring Foraging Bundle, and the Geologist's Bundle.
+
+# House Upgradeless Marriage
+## Notes 
+- Works 1.0 - 1.2
+
+## Mechanic
+The game does not check for the player having any house upgrades or having given a bouquet to start dating an NPC before letting you give them a mermaid pendant to marry them, if you are at 10 hearts of friendship. On the flip side of this, since the player is married, the game crashes if you enter the house since it gets very confused over how to place the NPC's special marriage area of the house, however this occurs after the end time in glitched marriage runs so it does not matter.
+
+ 
