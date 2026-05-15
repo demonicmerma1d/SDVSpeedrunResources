@@ -2,7 +2,12 @@
 ## Notes
 - Works on all versions.
 ## Mechanic
-Swinging a weapon pushes you in that direction slightly (more significant if you animation cancel to prevent the backwards momentum in the latter half of the animation). This advances you through loadzones without triggering you going the transition. You can then safely walk around out of bounds.
+- Swinging a weapon pushes you in that direction slightly. This advances you through loadzones without triggering you going the transition, as transitions are only triggered by walking. You can then safely walk around out of bounds, enabling access to blocked parts of the map or otherwise inaccessible transitions.
+## Methods
+- The typical weapon used is the Scythe, as you start with that weapon. Weapons with faster swing speeds can have faster movement, and daggers behave differently too.
+- Animation cancelling helps substantially, as it can allow you to skip the backwards movement *and* keep some of the momentum. Optimal animation cancelling is when the weapon is halfway-swung, at which point using a scythe moves you at about 30 pixels per second.
+- A chair can be used to get closer to the transition, saving approximately a second in movement.
+- Leftwards and Upwards transitions rotate the player when the player attempts to swing past them which blocks going oob, however using a chair can bypass this allowing for going oob in all directions.
 
 # Bouquet Friendship
 ## Notes
