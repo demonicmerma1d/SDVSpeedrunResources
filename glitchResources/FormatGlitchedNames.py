@@ -1,9 +1,9 @@
-#This python program is made to automatically change a human-readable paste into an optimized, fits inside text-box paste.
+#This python program is made to automatically change a human-readable paste into an optimized string which fits inside text-box paste by adding gender switch blocks.
 #Features included: 
 #   Comments: single line with //blah and multiline with /* blah blah */
-#   Variables: declare a variable with ///Variable myFavoriteVar
+#   Variables: declare a variable with ///Variable myFavoriteVar, or multiple variables with ///Variables myVar myVar2 myVar3
 #   Preambles: If there exists multiple ///PASTE files, each one gets formatted and only that after it. Additionally, any text before a ///START command gets ignored.
-#   Chickens: Doing ///MARNIE makes the paste use a reduced with.
+#   Chickens: Doing ///MARNIE makes the paste use a reduced width.
 #   Languages: All languages are supported, but admittedly only Chinese has been stress tested (and even then there is sometimes not understood nuances)
 #   Gender: True Gender is Female, and False Gender is Male. You can also do ///BOY and ///GIRL in the paste to set it.
 #   Optimizations: There are various optimization methods split into different functions.
@@ -134,7 +134,11 @@ def trimComments(text:str,startingText:str = '///START') -> tuple[str,list]:
         newText.append(line.split('//')[0])
         if '///' in line:
             if line.split(' ')[0].split('///')[-1].lower()=='variable':
-                foundVariables.append(line.split(' ')[1])
+                foundVariables.append(line.split(' ')[1])              
+            if line.split(' ')[0].split('///')[-1].lower() == 'variables':
+                for thing in line.split(' ')[1:]:
+                    if thing!='':
+                        foundVariables.append(thing)
     return('\n'.join(newText),foundVariables)
 
 def lowercaseCommands(text:str) -> str:
@@ -144,6 +148,9 @@ def lowercaseCommands(text:str) -> str:
     for action in triggerActions+gameStateQueries:
         text = text.replace(' '+action+' ',' '+action.lower().replace('m','M')+' ')
         text = text.replace('!'+action+' ','!'+action.lower().replace('m','M')+' ')
+    text = text.replace("player_has_item", "player_has_iteM")
+    text = text.replace("player_has_mail Any", "player_has_Mail any")
+    text = text.replace("player_stat Any DaysPlayed", "days_played")
     return text
 
 def addNewlines(text:str) -> str:
@@ -160,11 +167,15 @@ def addNewlines(text:str) -> str:
             line = line.replace(r'%%','%%\n')
         newLines.append(line)
     text = '\n'.join(newLines)
-    text = text.replace(r'%action','%action\n')
+    text = text.replace('%action','%action\n')
     text = text.replace('$action ','$action \n')
     text = text.replace("Received", "\nReceived\n")
     text = text.replace("null", "null \n")
+    text = text.replace("IncrementStat DaysPlayed ", "IncrementStat daysplayed \n")
+    text = text.replace("IncrementStat stepsTaken ", "IncrementStat stepstaken \n")
     text = text.replace(" All ", " \nall\n ")
+    text = text.replace('player_stat Any', 'player_stat all')
+    text = text.replace('IncrementStat', 'increMentstat')
     #text = text.replace(" Any ", " all ")
     text = text.replace(" ## ", " \n ## \n")
     return text
@@ -194,8 +205,8 @@ def getOfWidth(width):
     for char in  '!$()*+-/:;<=>?abcdefghijklMnopqrstuvwxyz|':
         for previous in getOfWidth(width - pixelWidths[char]):
              results.append(previous+char)
-    if len(results)!=len(set(results)):
-        print(results)
+    #if len(results)!=len(set(results)):
+    #    raise Exception(f'Duplicated string when trying to make statement of size {width}.')
     phrasesOfWidth[width] = results
     return results
     
@@ -207,7 +218,9 @@ def getSmallNames(quantityDesired:int) -> list[str]:
         maxWidth += 1
         for phrase in getOfWidth(maxWidth):
             for i in range(len(phrase)): #Going to phrase+1 starts losing uniqueness, likely some kind of whitespace trimming I'm not smart enough to spot
-                found.append(phrase[:i]+'ø\nø'+phrase[i:])
+                newPhrase= phrase[:i]+'ø\nø'+phrase[i:]
+                if '||' not in newPhrase:
+                    found.append(newPhrase)
     return found
 
 global amountNamed
@@ -230,6 +243,7 @@ def renameVariables(text:str,variableList:list[str]) -> str:
 
 def formatText(text:str,optimize:bool = True,gender:bool = True,noFormat:bool = False, width:int = 171,verboseFormat:bool = True) -> str: 
     #171 is regular, 159 is marnie ... but 159 doesn't always work so 156?
+    text = text.replace('√','ø\nø')
     if verboseFormat:
         print(f"The file has {len(text)} characters")
     text,declaredVariables = trimComments(text)
@@ -296,8 +310,9 @@ def transform(paste:str) -> str:
         paste = paste.replace(r'%action','#$action')
         paste = paste.replace(r'%%','')
     return paste
+
 if __name__ == '__main__':
 #Example code that, with a file path, prints out formatted versions
 # The file path here is a local gitignored folder, change the paste as needed
     updateWidths()
-    formatFile(r'glitchResources\WorkingPastes\GlitchedSebastianUncompiled.txt', verboseFormat = False, justPrint = True)
+    formatFile("/Users/alexa/Desktop/1P Glitched Perf/1pGlitched postVolcano.txt", verboseFormat= True, justPrint = True)
