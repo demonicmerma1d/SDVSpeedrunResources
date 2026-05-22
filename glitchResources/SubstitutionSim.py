@@ -55,7 +55,6 @@ def renderedString1_6(baseString:str,*substitutions:str) -> tuple[str,dict[str,i
         if close_index < 0:
             break
         if open_index+1 == close_index:
-            print("Crash")
             return #crash
         itemIds = baseString[open_index+1:close_index].split(' ')
         fail = False
@@ -74,7 +73,8 @@ def renderedString1_6(baseString:str,*substitutions:str) -> tuple[str,dict[str,i
         baseString = baseString[:open_index] + baseString[close_index+1:] if close_index < len(baseString) - 1 else baseString[:open_index]
     return baseString,items
 
-def EvaluateDialogueStr1_6(baseStr:str,*substitutions:str,printFileState = True):
+def EvaluateDialogueStr1_6(baseStr:str,*substitutions:str,showExpanded = True):
+    print(f'Base dialogue string:\n{baseStr}\n')
     variables = ['Player Name','Farm','Favorite','Pet']
     subCount = len(substitutions)
     for i in range(4):
@@ -83,20 +83,20 @@ def EvaluateDialogueStr1_6(baseStr:str,*substitutions:str,printFileState = True)
         else:
             print(f'{variables[i]}:\n{substitutions[i]}')
     print('\nExpanded Name:')
-    crashTest1_6(baseStr,True,*substitutions)
+    crashTest1_6(baseStr,showExpanded,*substitutions)
     res = renderedString1_6(baseStr,*substitutions)
     if res != None:
         rendered,items = res
-    print(f'\nRendered Name:\n{rendered}')
-    print('\nItems:')
-    for key,value in items.items():
-        print(f'{key}:{value}')
+        print(f'\nRendered Name:\n{rendered}')
+        print('\nItems:')
+        for key,value in items.items():
+            print(f'{key}:{value}')
 
 if __name__ == '__main__':
-    baseStr = '@'
+    baseStr = '@@@@@@@@@@@@@@'
     playerName = r'3%farmet3%farmet'
-    farmName = r']%favoritet%favorit'
-    favoriteName = r'[279]%pet%pet%pe'
-    petName = r'[857][857][857][7'
+    farmName = r'%favoritet%favorit'
+    favoriteName = r'%pet[279]%pet%pe'
+    petName = r'][857][857][857][7'
     nameInfo = [playerName,farmName,favoriteName,petName]
     EvaluateDialogueStr1_6(baseStr,*nameInfo)
