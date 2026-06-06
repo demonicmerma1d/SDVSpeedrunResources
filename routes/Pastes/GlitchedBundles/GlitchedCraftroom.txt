@@ -1,0 +1,131 @@
+[279][253]
+%action AddMail${
+^}$ All dad1${
+^}$ Now%%
+%action AddMail${
+^}$ All ccDoorUnlo${
+^}$ck Received%%
+%action AddMail${
+^}$ All canReadJu${
+^}$nimoText${
+^}$ Received%%
+%action RemoveI${
+^}$tem (T)Axe%%
+%action RemoveI${
+^}$tem (T)Hoe%%
+%action RemoveI${
+^}$tem (T)Pick${
+^}$axe%%
+%action RemoveI${
+^}$tem (T)Water${
+^}$ingCan%%
+%action RemoveI${
+^}$tem (W)47%%
+%action Incremen${
+^}$tStat book_${
+^}$speed 1%%
+%action Incremen${
+^}$tStat book_${
+^}$speed2 1%%
+%action AddBuff ${
+^}$22 -2%%
+%action AddBuff ${
+^}$statue_of_ble${
+^}$ssings_0%%
+
+
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem ${
+^}$(BC)256 2%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 422${
+^}$ 5%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 259${
+^}$ 5%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 157${
+^}$ 5%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 412%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 414%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 416%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 418%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 283%%
+%action If DAYS_P${
+^}$LAYED 1 1 ## A${
+^}$ddItem 92${
+^}$ 500%%
+
+
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 16%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 18%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 20%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 22%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 396%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 398%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 402%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 404%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 406%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 408%%
+%action If DAYS_P${
+^}$LAYED 2 2 ## A${
+^}$ddItem 410%%
+
+
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action Incremen${
+^}$tStat DaysPlay${
+^}$ed%%

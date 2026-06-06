@@ -1,0 +1,69 @@
+///START
+///GIRL
+%action AddMail All dad1 Now%%
+%action AddMail All ccDoorUnlock Received%%
+%action AddMail All canReadJunimoText Received%%
+%action AddMail All HasTownKey Received%%
+%action IncrementStat book_speed 1%%
+%action IncrementStat book_speed2 1%%
+%action RemoveItem (T)Axe%%
+%action RemoveItem (T)Hoe%%
+%action RemoveItem (T)Pickaxe%%
+%action RemoveItem (T)WateringCan%%
+%action RemoveItem (W)47%%
+%action AddBuff 22 -2%%
+%action AddBuff statue_of_blessings_0%%
+%action If TIME 620 ## RemoveItem (T)ReturnScepter%%
+// cc item trip
+//Row 1
+%action If TIME 620 ## AddItem 716%%
+%action If TIME 620 ## AddItem (H)40%%
+%action If TIME 620 ## AddItem 143%%
+%action If TIME 620 ## AddItem 698%%
+%action If TIME 620 ## AddItem 142%%
+%action If TIME 620 ## AddItem 131%%
+//Row 2
+%action If TIME 620 ## AddItem 717%%
+%action If TIME 620 ## AddItem 148%%
+%action If TIME 620 ## AddItem 145%%
+%action If TIME 620 ## AddItem 699%%
+%action If TIME 620 ## AddItem 700%%
+%action If TIME 620 ## AddItem 150%%
+//Row 3
+%action If TIME 620 ## AddItem 715%%
+%action If TIME 620 ## AddItem 132%%
+%action If TIME 620 ## AddItem 130 2 4%%
+%action If TIME 620 ## AddItem 140 2 4%%
+%action If TIME 620 ## AddItem 706 2 4%%
+%action If TIME 620 ## AddItem 136 2 4%%
+
+//Row 4
+%action If TIME 620 ## AddItem 718%%
+%action If TIME 620 ## AddItem 719%%
+%action If TIME 620 ## AddItem 396%%
+%action If TIME 620 ## AddItem 398%%
+%action If TIME 620 ## AddItem 402%%
+%action If TIME 620 ## AddItem 701%%
+
+[253]
+[ReturnScepter]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]

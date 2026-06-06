@@ -35,6 +35,7 @@ Sometimes(for example in NDE aka no dialogue extension catagories) we are limite
 - `%pet` - replaced with the name of the 1st pet on the farm
 
 Note there are other replacements, but no other player inputtable ones, and realistically `%kid1` and `%kid2` are not practical to use in any speed context.
+Due to overall dialogue processing order, in 1.5 and below you can contain gender switch statements `¦`, parcial flag injections, and parcial item injections in substitutions.
 
 ## Flag Injection
 ### Overview:
@@ -51,6 +52,11 @@ The reason we are concerned about the extra `}` is because, just as for [ID], th
 
 (It also means that if you're using [WSC](Window%Shift%Cancel.md) there's no point to using `¦` - as you aren't subject to the injection per box limit)
 
-### Useful flag names and how to implement longer flags:
+### Useful flag names:
 
-- list of useful flags and where more can be found(modding wiki) 
+TODO
+
+
+### Implementing long mail flags:
+Some flag names are too long to fit in one line of text. To counter this you can split flags over substitutions, eg `%farmPantry}` if you had `%farm` as `¦cc` to inject the flag `ccPantry`.
+

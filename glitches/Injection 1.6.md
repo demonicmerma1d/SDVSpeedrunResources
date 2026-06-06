@@ -27,6 +27,7 @@ Useful Items this enables you to spawn in that were previously impossible includ
 
 ### Substitutions:
 Underlying in the code some substitutions were moved to a different point in the process, for example `%adj` which generates a random adjective, however all of the functional ones still work.
+Code processing order also changed, you are no longer able to substitute in gender switch blocks, which also now only work with animal naming at Marnie's.
 
 ## Flag Injection
 ### Flag Injection Differences:

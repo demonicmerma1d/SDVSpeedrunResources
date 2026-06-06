@@ -53,12 +53,17 @@ If you open the journal while casting the fishing rod, the game will be paused, 
 
 # Cutscene Crashing
 ## Notes 
-- Works in version 1.5.
+- Works in version 1.5 and 1.6 differently.
 - Prior to 1.5 there was no safety handling in the code and the game would crash.
-- 1.6 refactored how items are injected during dialogue and fixed the crash properly.
+- 1.6 refactored how items are injected during dialogue and fixed the 1.5 crash properly, and added a new crash.
+- In non cutscene situations, the crashes will still happen, however there is no error handling for it, so the game hard crashes.
 
 ## Mechanic
+### 1.5
 This is explained with an example in the route document for [Joja Movie Theater](/routes/NDE-Glitched%20Joja%20Movie%20Theater.md), however the core mechanic is that when the game attempts to parse something of the form `anything][`, the first thing the game does is check if the dialogue starts with a `]`, which it doesn't. Then it finds there is a `[` in the dialogue, so looks for a closing `]` to match it, and it attempts to get what is in between the two characters. This results in the game attempting to get a substring of negative length, which fails, and the game falls into the error handling for the cutscene, which autoends it.
+
+### 1.6
+Similar to how the 1.5 crash works, if the game encounters and tries to parse `[]`, it attempts to read a -1 length string for item IDs, which triggers the crash handling in a cutscene.
 
 # Chest Duping
 ## Notes
