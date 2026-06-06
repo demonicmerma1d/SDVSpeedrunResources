@@ -54,7 +54,7 @@ The reason we are concerned about the extra `}` is because, just as for [ID], th
 
 ### Useful flag names:
 
-TODO
+A (hopefully) comprehensive list of relevent mail flags can be found [here](Mail%20Flags%20Reference.md).
 
 
 ### Implementing long mail flags:

@@ -31,7 +31,7 @@ Code processing order also changed, you are no longer able to substitute in gend
 
 ## Flag Injection
 ### Flag Injection Differences:
-Due to where mail flags are now processed inside dialogue, the only way to inject a mail flag is in an animal name at Marnie's. This is by doing something either of the form `#FLAG}`, which works regardless of gender, and you can prepend with other injections, or with the female gender you can do `¦FLAG}`. This has a limit of 1 flag per dialogue.
+Due to where mail flags are now processed inside dialogue, the only way to inject a mail flag is in an animal name at Marnie's. This is by doing something either of the form `#FLAG}`, which works regardless of gender, and you can prepend with other injections, or with the female gender you can do `¦FLAG}`. This has a limit of 1 flag per dialogue, and a list of the glitch helpful ones can be found [here](Mail%20Flags%20Reference.md).
 
 ### Non Flag uses:
 Due to other changes in dialogue code (specifically the fact there is now a second check for voiding and not showing a textbox if it is blank), if you name an animal something of the form `}[128][74][16]#`, the game will parse out all the dialogue it would play, execute it but also skip the dialogue box since there is nothing remaining to show, which is a small timesave. This can be done more space efficiently with the male gender, with the format `}[128][74][16]¦`.
