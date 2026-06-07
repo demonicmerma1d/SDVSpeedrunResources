@@ -1,0 +1,17 @@
+Player, Farm, Favorite, Pet
+3%farmet3%farmet
+%favoritet%favorit
+%pet[279]%pet%pe
+][857][857][857][7
+
+Chickens 1 -> 7
+[(BC)238][689]@
+[(BC)238][25@@@
+[288][886][886]
+[ReturnScepter]
+@@@@#FizzIntro}
+@#Farm_Eternal}
+#gotMaxStamina}
+
+Chickens 8 -> 16
+@@@@@@@@@@@@@@
