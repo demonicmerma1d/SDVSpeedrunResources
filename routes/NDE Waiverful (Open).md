@@ -25,7 +25,7 @@ Buy another 4 chickens. The 4th chicken will be the start of the 14/15 @ pastes.
 
 Buy another 4 chickens. 1 of these 4 must be a 15 @ (so paste twice), and for 2 of the other 4 you need to type an extra disambiguating character (like v) - any character works, as long as you don't pick the same one twice. Return scepter, sell, return.
 
-Buy another 4 chickens, with the same instructions as above. Return Scepter home, and sell the Magic Rock Candies and all of the Tiger Slime Eggs. Pick up the other items, and use the Island Warp Totem. This opens up an inventory slot, where the last furniture item enters.
+Buy another 4 chickens, with the same instructions as above. Return Scepter home, and sell the Magic Rock Candies and all of the Tiger Slime Eggs. Pick up the other items, and use the Island Warp Totem.
 
 Run to the right, and go to the Tent Kits in Island East. The inventory is full, allowing for quick obtaining of the tent kits. Run up to Leo's Hut, instant skip the cutscene, then give the parrot 1 Golden Walnut and instant skip. Use the Island Warp totem.
 
