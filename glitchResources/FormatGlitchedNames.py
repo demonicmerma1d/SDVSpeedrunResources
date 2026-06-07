@@ -1,9 +1,9 @@
-#This python program is made to automatically change a human-readable paste into an optimized string which fits inside text-box paste by adding gender switch blocks.
+#This python program is made to automatically change a human-readable paste into an optimized, fits inside text-box paste.
 #Features included: 
 #   Comments: single line with //blah and multiline with /* blah blah */
-#   Variables: declare a variable with ///Variable myFavoriteVar, or multiple variables with ///Variables myVar myVar2 myVar3
+#   Variables: declare a variable with ///Variable myFavoriteVar
 #   Preambles: If there exists multiple ///PASTE files, each one gets formatted and only that after it. Additionally, any text before a ///START command gets ignored.
-#   Chickens: Doing ///MARNIE makes the paste use a reduced width.
+#   Chickens: Doing ///MARNIE makes the paste use a reduced with.
 #   Languages: All languages are supported, but admittedly only Chinese has been stress tested (and even then there is sometimes not understood nuances)
 #   Gender: True Gender is Female, and False Gender is Male. You can also do ///BOY and ///GIRL in the paste to set it.
 #   Optimizations: There are various optimization methods split into different functions.
@@ -13,12 +13,12 @@ global pixelWidths
 pixelWidths = dict()
 
 def updateWidths(language:str = 'zh') -> None:
-    if not language in {"ru","pt","es","de","fr","it","tr","hu","en","zh","jp","ko"}:
+    if not language in {"ru","pt","es","de","fr","it","tr","hu","en","zh","ja","ko"}:
         raise Exception(f'{language} is not a supported language by stardew.')
     if language in ["ru","pt","es","de","fr","it","tr","hu"]:
         language = "en"
     global pixelWidths
-    charDataAll = pd.read_csv('glitchResources/character_widths.csv',on_bad_lines='warn')
+    charDataAll = pd.read_csv(r'glitchResources/character_widths.csv',on_bad_lines='warn')
     charDataLang = charDataAll[charDataAll['lang'] == language][['char','width']]
     charDataLang = pd.concat([charDataLang,pd.DataFrame.from_dict(_hardCodedEntries(language))])
     charDataLang.set_index('char',inplace=True)
@@ -30,7 +30,7 @@ def _hardCodedEntries(language:str) -> dict:
     match (language):
         case "zh":
             return {'char': [',','"'], 'width' :[6,11]}
-        case "jp":
+        case "ja":
             return {'char':[',','"'],'width':[12,12]}
         case _:
             return {'char':[',','"'],'width':[8,10]}
@@ -120,6 +120,7 @@ def removeQualifiers(string:str, width:int = 171) -> str:
 def trimComments(text:str,startingText:str = '///START') -> tuple[str,list]:
     # Removes all comments. Any text before the starting text (defaulted to ///START) is considered a preamble and removed. 
     # Multiline comments of the form /* blah blah */ is supported, along with end-of-line comments formatted as functional//Comment
+    # Logs ///Variable and ///Variables declarations.
     if startingText in text:
         text = text.split('///START')[1]
     while "/*" in text:
@@ -134,7 +135,7 @@ def trimComments(text:str,startingText:str = '///START') -> tuple[str,list]:
         newText.append(line.split('//')[0])
         if '///' in line:
             if line.split(' ')[0].split('///')[-1].lower()=='variable':
-                foundVariables.append(line.split(' ')[1])              
+                foundVariables.append(line.split(' ')[1])             
             if line.split(' ')[0].split('///')[-1].lower() == 'variables':
                 for thing in line.split(' ')[1:]:
                     if thing!='':
@@ -143,14 +144,18 @@ def trimComments(text:str,startingText:str = '///START') -> tuple[str,list]:
 
 def lowercaseCommands(text:str) -> str:
     # Lowercases all TriggerActions and GameStateQueries, as they are case-insensitive
-    triggerActions = ['NULL', 'IF', 'ADDBUFF', 'REMOVEBUFF', 'ADDMAIL', 'REMOVEMAIL', 'ADDQUEST', 'REMOVEQUEST', 'ADDSPECIALORDER', 'REMOVESPECIALORDER', 'ADDITEM', 'REMOVEITEM', 'ADDMONEY', 'ADDFRIENDSHIPPOINTS', 'ADDCONVERSATIONTOPIC', 'REMOVECONVERSATIONTOPIC', 'INCREMENTSTAT', 'MARKACTIONAPPLIED', 'MARKCOOKINGRECIPEKNOWN', 'MARKCRAFTINGRECIPEKNOWN', 'MARKEVENTSEEN', 'MARKQUESTIONANSWERED', 'MARKSONGHEARD', 'REMOVETEMPORARYANIMATEDSPRITES', 'SETNPCINVISIBLE', 'SETNPCVISIBLE', 'AddBuff', 'IncrementStat', 'AddMail', 'MarkEventSeen', 'RemoveSpecialOrder', 'RemoveMail', 'RemoveItem', 'If','AddItem',"Null"]
-    gameStateQueries = ["ANY", "DATE_RANGE", "SEASON_DAY", "DAY_OF_MONTH", "DAY_OF_WEEK", "DAYS_PLAYED", "IS_GREEN_RAIN_DAY", "IS_FESTIVAL_DAY", "IS_PASSIVE_FESTIVAL_OPEN", "IS_PASSIVE_FESTIVAL_TODAY", "SEASON", "YEAR", "TIME", "IS_EVENT", "CAN_BUILD_CABIN", "CAN_BUILD_FOR_CABINS", "BUILDINGS_CONSTRUCTED", "FARM_CAVE", "FARM_NAME", "FARM_TYPE", "FOUND_ALL_LOST_BOOKS", "HAS_TARGET_LOCATION", "IS_COMMUNITY_CENTER_COMPLETE", "IS_CUSTOM_FARM_TYPE", "IS_HOST", "IS_ISLAND_NORTH_BRIDGE_FIXED", "IS_JOJA_MART_COMPLETE", "IS_MULTIPLAYER", "IS_VISITING_ISLAND", "LOCATION_ACCESSIBLE", "LOCATION_CONTEXT", "LOCATION_HAS_CUSTOM_FIELD", "LOCATION_IS_INDOORS", "LOCATION_IS_OUTDOORS", "LOCATION_IS_MINES", "LOCATION_IS_SKULL_CAVE", "LOCATION_NAME", "LOCATION_UNIQUE_NAME", "LOCATION_SEASON", "MUSEUM_DONATIONS", "WEATHER", "WORLD_STATE_FIELD", "WORLD_STATE_ID", "MINE_LOWEST_LEVEL_REACHED", "PLAYER_BASE_COMBAT_LEVEL", "PLAYER_BASE_FARMING_LEVEL", "PLAYER_BASE_FISHING_LEVEL", "PLAYER_BASE_FORAGING_LEVEL", "PLAYER_BASE_LUCK_LEVEL", "PLAYER_BASE_MINING_LEVEL", "PLAYER_COMBAT_LEVEL", "PLAYER_FARMING_LEVEL", "PLAYER_FISHING_LEVEL", "PLAYER_FORAGING_LEVEL", "PLAYER_LUCK_LEVEL", "PLAYER_MINING_LEVEL", "PLAYER_CURRENT_MONEY", "PLAYER_FARMHOUSE_UPGRADE", "PLAYER_GENDER", "PLAYER_HAS_ACHIEVEMENT", "PLAYER_HAS_ALL_ACHIEVEMENTS", "PLAYER_HAS_BUFF", "PLAYER_HAS_CAUGHT_FISH", "PLAYER_HAS_CONVERSATION_TOPIC", "PLAYER_HAS_CRAFTING_RECIPE", "PLAYER_HAS_COOKING_RECIPE", "PLAYER_HAS_DIALOGUE_ANSWER", "PLAYER_HAS_HEARD_SONG", "PLAYER_HAS_ITEM", "PLAYER_HAS_MAIL", "PLAYER_HAS_PROFESSION", "PLAYER_HAS_RUN_TRIGGER_ACTION", "PLAYER_HAS_SECRET_NOTE", "PLAYER_HAS_SEEN_EVENT", "PLAYER_HAS_TOWN_KEY", "PLAYER_HAS_TRASH_CAN_LEVEL", "PLAYER_HAS_TRINKET", "PLAYER_LOCATION_CONTEXT", "PLAYER_LOCATION_NAME", "PLAYER_LOCATION_UNIQUE_NAME", "PLAYER_MOD_DATA", "PLAYER_MONEY_EARNED", "PLAYER_SHIPPED_BASIC_ITEM", "PLAYER_SPECIAL_ORDER_ACTIVE", "PLAYER_SPECIAL_ORDER_RULE_ACTIVE", "PLAYER_SPECIAL_ORDER_COMPLETE", "PLAYER_KILLED_MONSTERS", "PLAYER_STAT", "PLAYER_VISITED_LOCATION", "PLAYER_FRIENDSHIP_POINTS", "PLAYER_HAS_CHILDREN", "PLAYER_HAS_PET", "PLAYER_HEARTS", "PLAYER_HAS_MET", "PLAYER_NPC_RELATIONSHIP", "PLAYER_PLAYER_RELATIONSHIP", "PLAYER_PREFERRED_PET", "RANDOM", "SYNCED_CHOICE", "SYNCED_RANDOM", "SYNCED_SUMMER_RAIN_RANDOM", "ITEM_CONTEXT_TAG", "ITEM_CATEGORY", "ITEM_HAS_EXPLICIT_OBJECT_CATEGORY", "ITEM_ID", "ITEM_ID_PREFIX", "ITEM_NUMERIC_ID", "ITEM_OBJECT_TYPE", "ITEM_PRICE", "ITEM_QUALITY", "ITEM_STACK", "ITEM_TYPE", "ITEM_EDIBILITY", "TRUE", "FALSE"]
+    # Furthermore, replaces DaysPlayed player_stat checks with days_played checks.
+    triggerActions = ['NULL', 'IF', 'ADDBUFF', 'REMOVEBUFF', 'ADDMAIL', 'REMOVEMAIL', 'ADDQUEST', 'REMOVEQUEST', 'ADDSPECIALORDER', 'REMOVESPECIALORDER', 'ADDITEM', 'REMOVEITEM', 'ADDMONEY', 'ADDFRIENDSHIPPOINTS', 'ADDCONVERSATIONTOPIC', 'REMOVECONVERSATIONTOPIC', 'INCREMENTSTAT', 'MARKACTIONAPPLIED', 'MARKCOOKINGRECIPEKNOWN', 'MARKCRAFTINGRECIPEKNOWN', 'MARKEVENTSEEN', 'MARKQUESTIONANSWERED', 'MARKSONGHEARD', 'REMOVETEMPORARYANIMATEDSPRITES', 'SETNPCINVISIBLE', 'SETNPCVISIBLE', 'AddBuff', 'IncrementStat', 'AddMail', 'MarkEventSeen', 'RemoveSpecialOrder', 'RemoveMail', 'RemoveItem', 'If','AddItem',"Null", "AddFriendshipPoints", 'MarkCookingRecipeKnown','MarkCraftingRecipeKnown']
+    gameStateQueries = ["ANY", "DATE_RANGE", "SEASON_DAY", "DAY_OF_MONTH", "DAY_OF_WEEK", "DAYS_PLAYED", "IS_GREEN_RAIN_DAY", "IS_FESTIVAL_DAY", "IS_PASSIVE_FESTIVAL_OPEN", "IS_PASSIVE_FESTIVAL_TODAY", "SEASON", "YEAR", "TIME", "IS_EVENT", "CAN_BUILD_CABIN", "CAN_BUILD_FOR_CABINS", "BUILDINGS_CONSTRUCTED", "FARM_CAVE", "FARM_NAME", "FARM_TYPE", "FOUND_ALL_LOST_BOOKS", "HAS_TARGET_LOCATION", "IS_COMMUNITY_CENTER_COMPLETE", "IS_CUSTOM_FARM_TYPE", "IS_HOST", "IS_ISLAND_NORTH_BRIDGE_FIXED", "IS_JOJA_MART_COMPLETE", "IS_MULTIPLAYER", "IS_VISITING_ISLAND", "LOCATION_ACCESSIBLE", "LOCATION_CONTEXT", "LOCATION_HAS_CUSTOM_FIELD", "LOCATION_IS_INDOORS", "LOCATION_IS_OUTDOORS", "LOCATION_IS_MINES", "LOCATION_IS_SKULL_CAVE", "LOCATION_NAME", "LOCATION_UNIQUE_NAME", "LOCATION_SEASON", "MUSEUM_DONATIONS", "WEATHER", "WORLD_STATE_FIELD", "WORLD_STATE_ID", "MINE_LOWEST_LEVEL_REACHED", "PLAYER_BASE_COMBAT_LEVEL", "PLAYER_BASE_FARMING_LEVEL", "PLAYER_BASE_FISHING_LEVEL", "PLAYER_BASE_FORAGING_LEVEL", "PLAYER_BASE_LUCK_LEVEL", "PLAYER_BASE_MINING_LEVEL", "PLAYER_COMBAT_LEVEL", "PLAYER_FARMING_LEVEL", "PLAYER_FISHING_LEVEL", "PLAYER_FORAGING_LEVEL", "PLAYER_LUCK_LEVEL", "PLAYER_MINING_LEVEL", "PLAYER_CURRENT_MONEY", "PLAYER_FARMHOUSE_UPGRADE", "PLAYER_GENDER", "PLAYER_HAS_ACHIEVEMENT", "PLAYER_HAS_ALL_ACHIEVEMENTS", "PLAYER_HAS_BUFF", "PLAYER_HAS_CAUGHT_FISH", "PLAYER_HAS_CONVERSATION_TOPIC", "PLAYER_HAS_CRAFTING_RECIPE", "PLAYER_HAS_COOKING_RECIPE", "PLAYER_HAS_DIALOGUE_ANSWER", "PLAYER_HAS_HEARD_SONG", "PLAYER_HAS_ITEM", "PLAYER_HAS_MAIL", "PLAYER_HAS_PROFESSION", "PLAYER_HAS_RUN_TRIGGER_ACTION", "PLAYER_HAS_SECRET_NOTE", "PLAYER_HAS_SEEN_EVENT", "PLAYER_HAS_TOWN_KEY", "PLAYER_HAS_TRASH_CAN_LEVEL", "PLAYER_HAS_TRINKET", "PLAYER_LOCATION_CONTEXT", "PLAYER_LOCATION_NAME", "PLAYER_LOCATION_UNIQUE_NAME", "PLAYER_MOD_DATA", "PLAYER_MONEY_EARNED", "PLAYER_SHIPPED_BASIC_ITEM", "PLAYER_SPECIAL_ORDER_ACTIVE", "PLAYER_SPECIAL_ORDER_RULE_ACTIVE", "PLAYER_SPECIAL_ORDER_COMPLETE", "PLAYER_KILLED_MONSTERS", "PLAYER_STAT", "PLAYER_VISITED_LOCATION", "PLAYER_FRIENDSHIP_POINTS", "PLAYER_HAS_CHILDREN", "PLAYER_HAS_PET", "PLAYER_HEARTS", "PLAYER_HAS_MET", "PLAYER_NPC_RELATIONSHIP", "PLAYER_PLAYER_RELATIONSHIP", "PLAYER_PREFERRED_PET", "RANDOM", "SYNCED_CHOICE", "SYNCED_RANDOM", "SYNCED_SUMMER_RAIN_RANDOM", "ITEM_CONTEXT_TAG", "ITEM_CATEGORY", "ITEM_HAS_EXPLICIT_OBJECT_CATEGORY", "ITEM_ID", "ITEM_ID_PREFIX", "ITEM_NUMERIC_ID", "ITEM_OBJECT_TYPE", "ITEM_PRICE", "ITEM_QUALITY", "ITEM_STACK", "ITEM_TYPE", "ITEM_EDIBILITY", "TRUE", "FALSE", "player_has_item"]
     for action in triggerActions+gameStateQueries:
         text = text.replace(' '+action+' ',' '+action.lower().replace('m','M')+' ')
         text = text.replace('!'+action+' ','!'+action.lower().replace('m','M')+' ')
-    text = text.replace("player_has_item", "player_has_iteM")
-    text = text.replace("player_has_mail Any", "player_has_Mail any")
-    text = text.replace("player_stat Any DaysPlayed", "days_played")
+        text = text.replace('\n'+action+' ','\n'+action.lower().replace('m','M')+' ')
+    text = text.replace("player_has_mail Any", "player_has_Mail any") #This any can be lowercased
+    text = text.replace('player_stat Any', 'player_stat all') #Equivalent but thinner
+    text = text.replace("player_stat all DaysPlayed ", "days_played \n") 
+    text = text.replace("player_stat \nall\n DaysPlayed ", "days_played \n")
+    text = text.replace("DaysPlayed", "daysplayed") #Stats are case insensitive.
     return text
 
 def addNewlines(text:str) -> str:
@@ -161,23 +166,29 @@ def addNewlines(text:str) -> str:
        text = text.replace(r'%% ', r'%%')
     newLines = []
     for line in text.split('\n'):
-        if '%action' in line: #Only %action commands have newlines trimmed, %item commands do not.
-            line = line.replace(r'%%','\n%%\n')
-        else:
+        if '%item' in line: #Only %action commands have newlines trimmed, %item commands do not.
             line = line.replace(r'%%','%%\n')
+        else:
+            line = line.replace(r'%%','\n%%\n')
         newLines.append(line)
     text = '\n'.join(newLines)
-    text = text.replace('%action','%action\n')
+    text = text.replace(r'%action','%action\n')
     text = text.replace('$action ','$action \n')
     text = text.replace("Received", "\nReceived\n")
     text = text.replace("null", "null \n")
     text = text.replace("IncrementStat DaysPlayed ", "IncrementStat daysplayed \n")
     text = text.replace("IncrementStat stepsTaken ", "IncrementStat stepstaken \n")
-    text = text.replace(" All ", " \nall\n ")
-    text = text.replace('player_stat Any', 'player_stat all')
     text = text.replace('IncrementStat', 'increMentstat')
-    #text = text.replace(" Any ", " all ")
+    text = text.replace(" All ", " \nall\n ")
     text = text.replace(" ## ", " \n ## \n")
+    text = text.replace(',','\n,\n')
+    text = text.replace(' . ', ' \n.\n ')
+    text = text.replace("UndergroundMine", "undergroundMine\n")
+    text = text.replace("VolcanoDungeon", "volcanodungeon\n")
+    #In theory, every time the game parses numbers they could have newlines. However, item ids *can't* have newlines, and thus there's an issue with detecting if something is an item id or not.
+    #As such, this simply takes 2 of the low hanging fruit (no 999 or 2600 items, while these do appear in the pastes)
+    text = text.replace(' 2600', ' \n2600')
+    text = text.replace(' 999 ', ' \n999\n ')
     return text
 
 def qualifyAddItems(text:str) -> str:
@@ -205,8 +216,8 @@ def getOfWidth(width):
     for char in  '!$()*+-/:;<=>?abcdefghijklMnopqrstuvwxyz|':
         for previous in getOfWidth(width - pixelWidths[char]):
              results.append(previous+char)
-    #if len(results)!=len(set(results)):
-    #    raise Exception(f'Duplicated string when trying to make statement of size {width}.')
+    if len(results)!=len(set(results)):
+        print(results)
     phrasesOfWidth[width] = results
     return results
     
@@ -217,22 +228,79 @@ def getSmallNames(quantityDesired:int) -> list[str]:
     while len(found) < quantityDesired:
         maxWidth += 1
         for phrase in getOfWidth(maxWidth):
-            for i in range(len(phrase)): #Going to phrase+1 starts losing uniqueness, likely some kind of whitespace trimming I'm not smart enough to spot
-                newPhrase= phrase[:i]+'ø\nø'+phrase[i:]
-                if '||' not in newPhrase:
-                    found.append(newPhrase)
+            for i in range(len(phrase)): #Going to phrase+1 starts losing uniqueness, likely some kind of whitespace trimming I'm not spotting
+                found.append(phrase[:i]+'ø\nø'+phrase[i:])
     return found
+
+
+
+def measureStringOperations(text:str, gender:bool = True):
+    #Assumes the cost of each string operation as the length of the resulting text
+    #Sums up all string operations done, and returns the time, each individual sections time, and the final text.
+    totalGenderCost = 0
+    i = 0
+    while True:
+        try:
+            startLoc = text.index('${',i)
+        except ValueError:
+            break
+        try:
+            endLoc = text.index('}$',startLoc)
+        except ValueError:
+            break
+        contents = text[startLoc+2:endLoc]
+        splitChar = "¦" if "¦" in contents else "^"
+        results = contents.split(splitChar)[1] if gender else contents.split(splitChar)[0]
+        text = text[:startLoc] + results + text[endLoc+2:]
+        totalGenderCost+=len(text)
+        i = startLoc+len(results)  
+    totalActionCost = 0      
+    i = 0
+    while True:
+        try:
+            startLoc = text.index('%action',i)
+        except ValueError:
+            break
+        try:
+            endLoc = text.index('%%',startLoc)
+        except ValueError:
+            break
+        text = text[:startLoc] + text[endLoc+2:]
+        totalActionCost+=len(text)
+        i = startLoc
+    totalItemCost = 0
+    i = 0
+    while True:
+        try:
+            startLoc = text.index('%item',i)
+        except ValueError:
+            break
+        try:
+            endLoc = text.index('%%',startLoc)
+        except ValueError:
+            break
+        text = text[:startLoc] + text[endLoc+2:]
+        totalItemCost+=len(text)
+        i = startLoc
+    return(totalGenderCost+totalActionCost+totalItemCost, totalGenderCost, totalActionCost, totalItemCost, text)
+        
 
 global amountNamed
 amountNamed = 0
 def renameVariables(text:str,variableList:list[str]) -> str:
     #Renames all occurences of existing variables with newline-smuggling variables.
     #To avoid the same variable being used for multiple players, has a global count of the quantity used
+    #Variable names that contain other variable names can cause issues; this code does its best to avoid those issues, but the warning stands.
     global amountNamed
+    for item in variableList:
+        for thing in variableList:
+            if item!=thing and item in thing:
+                print(f"Warning; you have variable names that are subsets of each other. This can cause issues. Subset; {item} and {thing}")
     newNames = getSmallNames(len(variableList) + amountNamed)[amountNamed:]
     myVL = sorted(variableList,key = lambda x: -text.count(x))
-    for i in range(len(variableList)):
-        text = text.replace(' '+myVL[i]+' ',' '+newNames[i]+' ')
+    for endingChar in ' %,':
+        for i in range(len(variableList)):
+            text = text.replace(' '+myVL[i]+endingChar,' '+newNames[i]+endingChar)
     for i in range(len(variableList)):
         text = text.replace(' '+myVL[i],' '+newNames[i])
     for i in range(len(variableList)):
@@ -243,9 +311,9 @@ def renameVariables(text:str,variableList:list[str]) -> str:
 
 def formatText(text:str,optimize:bool = True,gender:bool = True,noFormat:bool = False, width:int = 171,verboseFormat:bool = True) -> str: 
     #171 is regular, 159 is marnie ... but 159 doesn't always work so 156?
-    text = text.replace('√','ø\nø')
     if verboseFormat:
         print(f"The file has {len(text)} characters")
+    text = text.replace('√','ø\nø') #A hardcoded shortcut for functional newline.
     text,declaredVariables = trimComments(text)
     if verboseFormat:
         print(f"After removing comments, we have {len(text)} characters")
@@ -253,7 +321,7 @@ def formatText(text:str,optimize:bool = True,gender:bool = True,noFormat:bool = 
         text = addNewlines(text)
         text = renameVariables(text,declaredVariables)
         text = lowercaseCommands(text)
-        #text = qualifyAddItems(text)
+        text = qualifyAddItems(text)
         if verboseFormat:
             print(f"After renanming variables, we have {len(text) - text.count('ø')} characters")
     if noFormat:
@@ -264,10 +332,8 @@ def formatText(text:str,optimize:bool = True,gender:bool = True,noFormat:bool = 
     text = removeQualifiers(text, width)
     text = removeLines(text, width)
     text = text.replace('ø','')
-    text = text.replace("[7${^\n}$9]","[79]") #Hardcoded "hey, 4 [79]'s fit, though my code doesn't think so"
-    text = text.replace("[79]${\n^}$","[79]")
     if verboseFormat:
-        print(f"After removing all excess newlines, we have {len(text)} characters and {text.count('${')} genders")
+        print(f"After removing all excess newlines, we have {len(text)} characters and {text.count('${')} genders, taking {measureStringOperations(text,gender)[0]} time")
     return(text)
 
 def formatFile(filePath:str,optimize:bool = True,gender:bool = True,noFormat:bool = False,
@@ -303,6 +369,8 @@ def formatFile(filePath:str,optimize:bool = True,gender:bool = True,noFormat:boo
         return(result)
 
 def transform(paste:str) -> str:
+    #Transforms an unformatted line meant for Marnie to one meant for the Mail, and vice versa.
+    #Should check manually since it's imperfect.
     if '#$' in paste and r'%%' not in paste:
         paste = paste.replace('\n#$','%%\n%') #less reliable
         paste+=(r'%%')
@@ -310,9 +378,7 @@ def transform(paste:str) -> str:
         paste = paste.replace(r'%action','#$action')
         paste = paste.replace(r'%%','')
     return paste
-
 if __name__ == '__main__':
 #Example code that, with a file path, prints out formatted versions
-# The file path here is a local gitignored folder, change the paste as needed
     updateWidths()
-    formatFile("glitchResources/WorkingPastes/GlitchedBullitenBoardUncompiled.txt", verboseFormat= True, justPrint = True)
+    formatFile(r'PathToFile.txt', verboseFormat = False, justPrint = True)
