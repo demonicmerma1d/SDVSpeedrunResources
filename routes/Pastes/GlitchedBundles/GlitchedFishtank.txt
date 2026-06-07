@@ -1,3 +1,5 @@
+Glitched
+Fishies
 %actionAddMail all
  dad1 Now%%
 %actionAddMail all
@@ -32,62 +34,62 @@ AddBuff 22 -2%%
 %action
 AddBuff statue_of${
 ¦}$_blessings_0%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## 
 RemoveItem (T)R${
 ¦}$eturnScepter%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 716%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem (H)40
 %%%action
-If tiMe 620 ## 
+If tiMe 610 ## 
 AddItem 143%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 698%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 142%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 131%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 717%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 148%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 145%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 699%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 700%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 150%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 715%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 132%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 130 2 4
 %%%action
-If tiMe 620 ## 
+If tiMe 610 ## 
 AddItem 140 2 4%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 706 2 4
 %%%action
-If tiMe 620 ## 
+If tiMe 610 ## 
 AddItem 136 2 4%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 718%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 719%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 396%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 398%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 402%%
-%actionIf tiMe 620 
+%actionIf tiMe 610 
  ## AddItem 701%%
-[253]
+[253][279]
 [ReturnScepter]
 [GoldCoin]
 [GoldCoin]
@@ -109,3 +111,4 @@ AddItem 136 2 4%%
 [GoldCoin]
 [GoldCoin]
 [GoldCoin]
+[]

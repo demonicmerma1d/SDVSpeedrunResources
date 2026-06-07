@@ -1,95 +1,52 @@
-Glitched
-Fishies
-%actionAddMail all
- dad1 Now%%
-%actionAddMail all
- ccDoorUnlock 
-Received%%
-%actionAddMail all
- canReadJunimoT${
-¦}$ext Received%%
-%actionAddMail all
- HasTownKey 
-Received%%
-%action
-increMentstat boo${
-¦}$k_speed 1%%
-%action
-increMentstat boo${
-¦}$k_speed2 1%%
-%action
-RemoveItem (T)Axe
-%%%action
-RemoveItem (T)Hoe
-%%%action
-RemoveItem (T)Pi${
-¦}$ckaxe%%
-%action
-RemoveItem (T)W${
-¦}$ateringCan%%
-%action
-RemoveItem (W)47
-%%%action
-AddBuff 22 -2%%
-%action
-AddBuff statue_of${
-¦}$_blessings_0%%
-%actionIf tiMe 610 
- ## 
-RemoveItem (T)R${
-¦}$eturnScepter%%
-%actionIf tiMe 610 
- ## AddItem 716%%
-%actionIf tiMe 610 
- ## AddItem (H)40
-%%%action
-If tiMe 610 ## 
-AddItem 143%%
-%actionIf tiMe 610 
- ## AddItem 698%%
-%actionIf tiMe 610 
- ## AddItem 142%%
-%actionIf tiMe 610 
- ## AddItem 131%%
-%actionIf tiMe 610 
- ## AddItem 717%%
-%actionIf tiMe 610 
- ## AddItem 148%%
-%actionIf tiMe 610 
- ## AddItem 145%%
-%actionIf tiMe 610 
- ## AddItem 699%%
-%actionIf tiMe 610 
- ## AddItem 700%%
-%actionIf tiMe 610 
- ## AddItem 150%%
-%actionIf tiMe 610 
- ## AddItem 715%%
-%actionIf tiMe 610 
- ## AddItem 132%%
-%actionIf tiMe 610 
- ## AddItem 130 2 4
-%%%action
-If tiMe 610 ## 
-AddItem 140 2 4%%
-%actionIf tiMe 610 
- ## AddItem 706 2 4
-%%%action
-If tiMe 610 ## 
-AddItem 136 2 4%%
-%actionIf tiMe 610 
- ## AddItem 718%%
-%actionIf tiMe 610 
- ## AddItem 719%%
-%actionIf tiMe 610 
- ## AddItem 396%%
-%actionIf tiMe 610 
- ## AddItem 398%%
-%actionIf tiMe 610 
- ## AddItem 402%%
-%actionIf tiMe 610 
- ## AddItem 701%%
-[253][279]
+///START
+///GIRL
+%action AddMail All dad1 Now%%
+%action AddMail All ccDoorUnlock Received%%
+%action AddMail$ All canReadJunimoText Received%%
+%action AddMail All HasTownKey Received%%
+%action IncrementStat book_speed 1%%
+%action IncrementStat book_speed2 1%%
+%action RemoveItem (T)Axe%%
+%action RemoveItem (T)Hoe%%
+%action RemoveItem (T)Pickaxe%%
+%action RemoveItem (T)WateringCan%%
+%action RemoveItem (W)47%%
+%action AddBuff 22 -2%%
+%action AddBuff statue_of_blessings_0%%
+// cc item trip
+%action If TIME 620 ## RemoveItem (T)ReturnScepter%%
+//Row 1
+%action If TIME 620 ## AddItem 174%%
+%action If TIME 620 ## AddItem 182%%
+%action If TIME 620 ## AddItem 270 6 2%%
+%action If TIME 620 ## AddItem 188%%
+%action If TIME 620 ## AddItem 192%%
+%action If TIME 620 ## AddItem 190%%
+//Row 2
+%action If TIME 620 ## AddItem 440%%
+%action If TIME 620 ## AddItem 280%%
+%action If TIME 620 ## AddItem 276 6 4%%
+%action If TIME 620 ## AddItem 24 6 4%%
+%action If TIME 620 ## AddItem 272%%
+//Junimo Chest
+//Row 3
+%action If TIME 620 ## AddItem 438%%
+%action If TIME 620 ## AddItem 186%%
+%action If TIME 620 ## AddItem 428%%
+%action If TIME 620 ## AddItem 426%%
+%action If TIME 620 ## AddItem 432%%
+%action If TIME 620 ## AddItem 613%%
+//Row 4
+%action If TIME 620 ## AddItem 637%%
+%action If TIME 620 ## AddItem 424%%
+%action If TIME 620 ## AddItem 396%%
+%action If TIME 620 ## AddItem 398%%
+%action If TIME 620 ## AddItem 402%%
+%action If TIME 620 ## AddItem 254%%
+
+[253][(BC)256]
+[(BC)256][(BC)256]
+[256][258][260]
 [ReturnScepter]
 [GoldCoin]
 [GoldCoin]
@@ -111,4 +68,3 @@ AddItem 136 2 4%%
 [GoldCoin]
 [GoldCoin]
 [GoldCoin]
-[]

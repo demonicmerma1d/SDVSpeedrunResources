@@ -1,5 +1,7 @@
 ///START
 ///GIRL
+Glitched
+Fishies
 %action AddMail All dad1 Now%%
 %action AddMail All ccDoorUnlock Received%%
 %action AddMail All canReadJunimoText Received%%
