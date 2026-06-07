@@ -315,4 +315,4 @@ if __name__ == '__main__':
 #Example code that, with a file path, prints out formatted versions
 # The file path here is a local gitignored folder, change the paste as needed
     updateWidths()
-    formatFile("/Users/alexa/Desktop/1P Glitched Perf/1pGlitched postVolcano.txt", verboseFormat= True, justPrint = True)
+    formatFile("glitchResources/WorkingPastes/GlitchedBullitenBoardUncompiled.txt", verboseFormat= True, justPrint = True)
