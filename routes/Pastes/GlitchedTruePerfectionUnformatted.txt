@@ -1,10 +1,10 @@
 ///PASTE
 ///BOY
 ///NAME Starting Name:
-%action AddMail All HasTownKey All%%
-%action AddMail All communityUpgradeShortcuts All%%
 %action AddBuff 22 -2%%
+%action AddMail All communityUpgradeShortcuts All%%//Outside the ${ because nested ${'s don't work
 ${
+%action AddMail All HasTownKey All%%
 %item id 279%%
 %item id 253%%
 %item id 710 99%%
@@ -981,7 +981,7 @@ ${
 #$action AddMail All hasPickedUpMagicInk Received
 #$action AddMail All HasUnlockedSkullDoor Received
 #$action AddMail All HasSkullKey Received
-#$action AddMail All HasSpecialCharm Received
+//#$action AddMail All HasSpecialCharm Received //Bad; messes up later rng manip
 #$action AddMail All HasDwarvishTranslationGuide Received
 #$action AddMail All raccoonTreeFallen Received
 #$action AddMail All reachedBottomOfHardMines Received
@@ -991,6 +991,8 @@ ${
 #$action AddMail All henchmanGone Received
 #$action AddMail All lostWalnutFound Received
 #$action AddMail All volcanoShortcutUnlocked Received
+#$action AddMail All addedParrotBoy Received
+
 
 
 //General events
@@ -1128,11 +1130,11 @@ i//i here to ensure there's no silly trimming happening
 ///PASTE
 ///GIRL
 ///NAME Name To Append On Rename
-///Variable MAILREAD
+///Variables MAILREAD storedMR
 ///Variables CaughtSunfish CaughtStonefish
 ///Variables pot372 pot715 pot716 pot717 pot718 pot719 pot720 pot721 pot722 pot723
 ///Variable stepMaRem
-///Variables halvedBit00 halvedBit01 halvedBit02 halvedBit03 halvedBit04 halvedBit05 halvedBit06 halvedBit07 halvedBit08 halvedBit09 halvedBit10 halvedBit11 halvedBit12 halvedBit13 halvedBit14 halvedBit15 halvedBit16 halvedBit17 halvedBit18 halvedBit19 halvedBit20 halvedBit21 halvedBit22 halvedBit23 halvedBit24 halvedBit25 halvedBit26 halvedBit27 halvedBit28 halvedBit29
+///Variables halvedBit-1 halvedBit00 halvedBit01 halvedBit02 halvedBit03 halvedBit04 halvedBit05 halvedBit06 halvedBit07 halvedBit08 halvedBit09 halvedBit10 halvedBit11 halvedBit12 halvedBit13 halvedBit14 halvedBit15 halvedBit16 halvedBit17 halvedBit18 halvedBit19 halvedBit20 halvedBit21 halvedBit22 halvedBit23 halvedBit24 halvedBit25 halvedBit26 halvedBit27 halvedBit28
 ///Variables floor1Rem floor2Rem floor3Rem floor4Rem floor6Rem floor7Rem floor8Rem floor9Rem
 ///Variable halvedDP
 ø
@@ -1164,7 +1166,7 @@ MAILREAD values:
 //Remove random garbage from inventory
 %action RemoveItem 388 999%% //Wood
 %action If !player_stat Any MAILREAD 16 18 ## RemoveItem 390 999%% //Stone
-%action RemoveItem 770 999%% //Mixed Seed
+%action RemoveItem 770 99%% //Mixed Seed
 %action RemoveItem 771 999%% //Fiber
 %action RemoveItem 92 999%% //Sap
 %action RemoveItem 382 99%% //Coal
@@ -1176,13 +1178,14 @@ MAILREAD values:
 %action RemoveItem 380 99%% //Iron Ore
 %action RemoveItem 384 99%% //Gold Ore
 %action RemoveItem 386 99%% //Iridium Ore
+%action RemoveItem 749 99%% //Omni Geode
 %action RemoveItem 848 99%% //Cinder Shard
 %action RemoveItem 827 9%% //Mummified Bat
 %action RemoveItem 79 9%% //Secret Note
 %action RemoveItem 842 9%% //Journal Scrap
 //%action RemoveItem StardropTea 9%%
-%action RemoveItem 152%% //Seaweed
-%action RemoveItem 153%% //Green Algae
+%action RemoveItem 152 3%% //Seaweed
+%action RemoveItem 153 3%% //Green Algae
 %action RemoveItem 168 9%% //Various crab pot trash
 %action RemoveItem 169 9%%
 %action RemoveItem 170 9%%
@@ -1205,6 +1208,47 @@ MAILREAD values:
 %action If player_has_item all 722 ## AddMail All pot722 Received%% // Periwinkle
 %action If player_has_item all 723 ## AddMail All pot723 Received%% // Oyster
 
+//No fancy monster detection since you just don't mess up!
+%action If player_stat Any MAILREAD 0 26 ## IncrementStat MAILREAD%%
+%action If player_stat Any MAILREAD 1 1 ## IncrementStat MAILREAD%% //To not have to decrease all numbers by 1 after implementing Kent
+%action If player_stat Any MAILREAD 23 23, player_has_mail Any pot372, player_has_mail Any pot715, player_has_mail Any pot716, player_has_mail Any pot717, player_has_mail Any pot718, player_has_mail Any pot719, player_has_mail Any pot720, player_has_mail Any pot721, player_has_mail Any pot722, player_has_mail Any pot723 ## IncrementStat MAILREAD%%
+//Detect if you have all the crab pot fish and skip that mail if so.
+
+//Execute undo-buttons [up to 7]
+%action If player_has_item all (O)Undo 4 ## IncrementStat MAILREAD -4%%
+%action If player_has_item all (O)Undo 4 ## RemoveItem (O)Undo 4%%
+%action If player_has_item all (O)Undo 2 ## IncrementStat MAILREAD -2%%
+%action If player_has_item all (O)Undo 2 ## RemoveItem (O)Undo 2%%
+%action If player_has_item all (O)Undo ## IncrementStat MAILREAD -1%%
+%action RemoveItem (O)Undo%%
+
+//It's more efficient to pack MAILREAD into days_played so
+%action IncrementStat DaysPlayed -2147483647%%
+%action If player_stat Any MAILREAD 16 ## IncrementStat storedMR 16%%
+%action If player_stat Any MAILREAD 16 ## IncrementStat DaysPlayed 16%%
+%action If player_stat Any MAILREAD 16 ## IncrementStat MAILREAD -16%%
+%action If player_stat Any MAILREAD 8 ## IncrementStat storedMR 8%%
+%action If player_stat Any MAILREAD 8 ## IncrementStat DaysPlayed 8%%
+%action If player_stat Any MAILREAD 8 ## IncrementStat MAILREAD -8%%
+%action If player_stat Any MAILREAD 4 ## IncrementStat storedMR 4%%
+%action If player_stat Any MAILREAD 4 ## IncrementStat DaysPlayed 4%%
+%action If player_stat Any MAILREAD 4 ## IncrementStat MAILREAD -4%%
+%action If player_stat Any MAILREAD 2 ## IncrementStat storedMR 2%%
+%action If player_stat Any MAILREAD 2 ## IncrementStat DaysPlayed 2%%
+%action If player_stat Any MAILREAD 2 ## IncrementStat MAILREAD -2%%
+%action If player_stat Any MAILREAD 1 ## IncrementStat storedMR%%
+%action If player_stat Any MAILREAD 1 ## IncrementStat DaysPlayed%%
+%action IncrementStat MAILREAD -1%%
+%action If player_stat Any storedMR 16 ## IncrementStat MAILREAD 16%%
+%action If player_stat Any storedMR 16 ## IncrementStat storedMR -16%%
+%action If player_stat Any storedMR 8 ## IncrementStat MAILREAD 8%%
+%action If player_stat Any storedMR 8 ## IncrementStat storedMR -8%%
+%action If player_stat Any storedMR 4 ## IncrementStat MAILREAD 4%%
+%action If player_stat Any storedMR 4 ## IncrementStat storedMR -4%%
+%action If player_stat Any storedMR 2 ## IncrementStat MAILREAD 2%%
+%action If player_stat Any storedMR 2 ## IncrementStat storedMR -2%%
+%action If player_stat Any storedMR 1 ## IncrementStat MAILREAD%%
+%action IncrementStat storedMR -1%%
 
 
 //Remove any leftover fishies [intended for reads 22+1, 23+1]
@@ -1222,7 +1266,7 @@ MAILREAD values:
 %action RemoveItem 142%%
 %action RemoveItem 143%%
 %action RemoveItem 144%%
-%action If player_stat Any MAILREAD 20 ## RemoveItem 145%% //Sunfish, don't remove it to allow for fancy mines
+%action If days_played 20 ## RemoveItem 145%% //Sunfish, don't remove it to allow for fancy mines
 %action RemoveItem 146%%
 %action RemoveItem 147%%
 %action RemoveItem 148%%
@@ -1232,7 +1276,7 @@ MAILREAD values:
 %action RemoveItem 154%%
 %action RemoveItem 155%%
 %action RemoveItem 156%%
-%action If player_stat Any MAILREAD 20 ## RemoveItem 158%% //Stonefish, don't remove it to allow for fancy mines
+%action If days_played 20 ## RemoveItem 158%% //Stonefish, don't remove it to allow for fancy mines
 %action RemoveItem 159%%
 %action RemoveItem 160%%
 %action RemoveItem 161%%
@@ -1278,7 +1322,7 @@ MAILREAD values:
 //Add every buff that's useful
 %action AddBuff 20 -2%%
 %action AddBuff 21 -2%%
-%action AddBuff 22 -2%%
+//%action AddBuff 22 -2%%//Already exists in intro name
 %action AddBuff 24 -2%%
 %action AddBuff 28 -2%%
 %action AddBuff statue_of_blessings_0 -2%%
@@ -1289,25 +1333,9 @@ MAILREAD values:
 //Give Blessings of Waters for the day
 %action IncrementStat blessingOfWaters 999%%
 
-//No fancy monster detection since you just don't mess up!
-%action If player_stat Any MAILREAD 0 26 ## IncrementStat MAILREAD%%
-%action If player_stat Any MAILREAD 23 23, player_has_mail Any pot372, player_has_mail Any pot715, player_has_mail Any pot716, player_has_mail Any pot717, player_has_mail Any pot718, player_has_mail Any pot719, player_has_mail Any pot720, player_has_mail Any pot721, player_has_mail Any pot722, player_has_mail Any pot723 ## IncrementStat MAILREAD%%
-
-%action If days_played 0 9 ## IncrementStat DaysPlayed 123456789%%
-
-//Execute undo-buttons [up to 15]
-%action If player_has_item all (O)UndoButton 8 ## IncrementStat MAILREAD -8%%
-%action If player_has_item all (O)UndoButton 8 ## RemoveItem (O)UndoButton 8%%
-%action If player_has_item all (O)UndoButton 4 ## IncrementStat MAILREAD -4%%
-%action If player_has_item all (O)UndoButton 4 ## RemoveItem (O)UndoButton 4%%
-%action If player_has_item all (O)UndoButton 2 ## IncrementStat MAILREAD -2%%
-%action If player_has_item all (O)UndoButton 2 ## RemoveItem (O)UndoButton 2%%
-%action If player_has_item all (O)UndoButton ## IncrementStat MAILREAD -1%%
-%action If player_has_item all (O)UndoButton ## RemoveItem (O)UndoButton%%
-
 //All crafting/cooking recipes used to be here, but are now in Marnie.
 
-//Gives friendship with every NPC
+//Gives friendship with every NPC (lewis/robin/wizard in chicken #2)
 %action AddFriendshipPoints Alex 2600%%
 %action AddFriendshipPoints Elliott 2600%%
 %action AddFriendshipPoints Harvey 2600%%
@@ -1332,734 +1360,732 @@ MAILREAD values:
 %action AddFriendshipPoints Kent 2600%%
 %action AddFriendshipPoints Krobus 2600%%
 %action AddFriendshipPoints Leo 2600%%
-%action AddFriendshipPoints Lewis 2600%%
+//%action AddFriendshipPoints Lewis 2600%%
 %action AddFriendshipPoints Linus 2600%%
 %action AddFriendshipPoints Marnie 2600%%
 %action AddFriendshipPoints Pam 2600%%
 %action AddFriendshipPoints Pierre 2600%%
-%action AddFriendshipPoints Robin 2600%%
+//%action AddFriendshipPoints Robin 2600%%
 %action AddFriendshipPoints Sandy 2600%%
 %action AddFriendshipPoints Vincent 2600%%
 %action AddFriendshipPoints Willy 2600%%
-%action AddFriendshipPoints Wizard 2600%%
+//%action AddFriendshipPoints Wizard 2600%%
 
 
-%action If player_stat Any MAILREAD 1 1 ## RemoveItem (T)ReturnScepter%%
+
+//All "player_stat Any MAILREAD x y" got replaced with "days_played x y"
+
+%action If days_played 2 2 ## RemoveItem (T)ReturnScepter%%
 
 //Shipping collection - bit over 4 inventories.
 
-%action If player_stat Any MAILREAD 1 1 ## IncrementStat MAILREAD 1%% //To not have to decrease all numbers by 1 after implementing Kent
+%action If days_played 2 2 ## AddItem 16%%
+%action If days_played 2 2 ## AddItem 18%%
+%action If days_played 2 2 ## AddItem 20%%
+%action If days_played 2 2 ## AddItem 22%%
+%action If days_played 2 2 ## AddItem 24%%
+%action If days_played 2 2 ## AddItem 78%%
+%action If days_played 2 2 ## AddItem 88%%
+%action If days_played 2 2 ## AddItem 90%%
+%action If days_played 2 2 ## AddItem 92%%
+%action If days_played 2 2 ## AddItem 176%%
+%action If days_played 2 2 ## AddItem 174%%
+%action If days_played 2 2 ## AddItem 180%%
+%action If days_played 2 2 ## AddItem 182%%
+%action If days_played 2 2 ## AddItem 184%%
+%action If days_played 2 2 ## AddItem 186%%
+%action If days_played 2 2 ## AddItem 188%%
+%action If days_played 2 2 ## AddItem 190%%
+%action If days_played 2 2 ## AddItem 192%%
+%action If days_played 2 2 ## AddItem 248%%
+%action If days_played 2 2 ## AddItem 250%%
+%action If days_played 2 2 ## AddItem 252%%
+%action If days_played 2 2 ## AddItem 254%%
+%action If days_played 2 2 ## AddItem 256%%
+%action If days_played 2 2 ## AddItem 257%%
+%action If days_played 2 2 ## AddItem 258%%
+%action If days_played 2 2 ## AddItem 259%%
+%action If days_played 2 2 ## AddItem 260%%
+%action If days_played 2 2 ## AddItem 262%%
+%action If days_played 2 2 ## AddItem 264%%
+%action If days_played 2 2 ## AddItem 266%%
+%action If days_played 2 2 ## AddItem 268%%
+%action If days_played 2 2 ## AddItem 270%%
+%action If days_played 2 2 ## AddItem 271%%
+%action If days_played 2 2 ## AddItem 272%%
+%action If days_played 2 2 ## AddItem 274%%
+%action If days_played 2 2 ## AddItem 276%%
+%action If days_played 3 3 ## AddItem 278%%
+%action If days_played 3 3 ## AddItem 280%%
+%action If days_played 3 3 ## AddItem 281%%
+%action If days_played 3 3 ## AddItem 282%%
+%action If days_played 3 3 ## AddItem 283%%
+%action If days_played 3 3 ## AddItem 284%%
+%action If days_played 3 3 ## AddItem 296%%
+%action If days_played 3 3 ## AddItem 300%%
+%action If days_played 3 3 ## AddItem 303%%
+%action If days_played 3 3 ## AddItem 304%%
+%action If days_played 3 3 ## AddItem 305%%
+%action If days_played 3 3 ## AddItem 306%%
+%action If days_played 3 3 ## AddItem 307%%
+%action If days_played 3 3 ## AddItem 308%%
+%action If days_played 3 3 ## AddItem 330%%
+%action If days_played 3 3 ## AddItem 334%%
+%action If days_played 3 3 ## AddItem 335%%
+%action If days_played 3 3 ## AddItem 336%%
+%action If days_played 3 3 ## AddItem 337%%
+%action If days_played 3 3 ## AddItem 338%%
+%action If days_played 3 3 ## AddItem 340%%
+%action If days_played 3 3 ## AddItem 342%%
+%action If days_played 3 3 ## AddItem 344%%
+%action If days_played 3 3 ## AddItem 346%%
+%action If days_played 3 3 ## AddItem 348%%
+%action If days_played 3 3 ## AddItem 350%%
+%action If days_played 3 3 ## AddItem 378%%
+%action If days_played 3 3 ## AddItem 380%%
+%action If days_played 3 3 ## AddItem 382%%
+%action If days_played 3 3 ## AddItem 384%%
+%action If days_played 3 3 ## AddItem 386%%
+%action If days_played 3 3 ## AddItem 388%%
+%action If days_played 3 3 ## AddItem 390%%
+%action If days_played 3 3 ## AddItem 392%%
+%action If days_played 3 3 ## AddItem 393%%
+%action If days_played 3 3 ## AddItem 394%%
+%action If days_played 4 4 ## AddItem 396%%
+%action If days_played 4 4 ## AddItem 397%%
+%action If days_played 4 4 ## AddItem 398%%
+%action If days_played 4 4 ## AddItem 399%%
+%action If days_played 4 4 ## AddItem 400%%
+%action If days_played 4 4 ## AddItem 402%%
+%action If days_played 4 4 ## AddItem 404%%
+%action If days_played 4 4 ## AddItem 406%%
+%action If days_played 4 4 ## AddItem 408%%
+%action If days_played 4 4 ## AddItem 410%%
+%action If days_played 4 4 ## AddItem 412%%
+%action If days_played 4 4 ## AddItem 414%%
+%action If days_played 4 4 ## AddItem 416%%
+%action If days_played 4 4 ## AddItem 417%%
+%action If days_played 4 4 ## AddItem 418%%
+%action If days_played 4 4 ## AddItem 420%%
+%action If days_played 4 4 ## AddItem 421%%
+%action If days_played 4 4 ## AddItem 422%%
+%action If days_played 4 4 ## AddItem 424%%
+%action If days_played 4 4 ## AddItem 426%%
+%action If days_played 4 4 ## AddItem 428%%
+%action If days_played 4 4 ## AddItem 430%%
+%action If days_played 4 4 ## AddItem 432%%
+%action If days_played 4 4 ## AddItem 433%%
+%action If days_played 4 4 ## AddItem 436%%
+%action If days_played 4 4 ## AddItem 438%%
+%action If days_played 4 4 ## AddItem 440%%
+%action If days_played 4 4 ## AddItem 442%%
+%action If days_played 4 4 ## AddItem 444%%
+%action If days_played 4 4 ## AddItem 446%%
+%action If days_played 4 4 ## AddItem 447%%
+%action If days_played 4 4 ## AddItem 454%%
+%action If days_played 4 4 ## AddItem 459%%
+%action If days_played 4 4 ## AddItem 591%%
+%action If days_played 4 4 ## AddItem 593%%
+%action If days_played 4 4 ## AddItem 595%%
+%action If days_played 5 5 ## AddItem 597%%
+%action If days_played 5 5 ## AddItem 376%%
+%action If days_played 5 5 ## AddItem 613%%
+%action If days_played 5 5 ## AddItem 614%%
+%action If days_played 5 5 ## AddItem 634%%
+%action If days_played 5 5 ## AddItem 635%%
+%action If days_played 5 5 ## AddItem 636%%
+%action If days_played 5 5 ## AddItem 637%%
+%action If days_played 5 5 ## AddItem 638%%
+%action If days_played 5 5 ## AddItem 684%%
+%action If days_played 5 5 ## AddItem 709%%
+%action If days_played 5 5 ## AddItem 724%%
+%action If days_played 5 5 ## AddItem 725%%
+%action If days_played 5 5 ## AddItem 726%%
+%action If days_played 5 5 ## AddItem 766%%
+%action If days_played 5 5 ## AddItem 767%%
+%action If days_played 5 5 ## AddItem 768%%
+%action If days_played 5 5 ## AddItem 769%%
+%action If days_played 5 5 ## AddItem 771%%
+%action If days_played 5 5 ## AddItem 787%%
+%action If days_played 5 5 ## AddItem 807%%
+%action If days_played 5 5 ## AddItem 812%%
+%action If days_played 5 5 ## AddItem 445%%
+%action If days_played 5 5 ## AddItem 814%%
+%action If days_played 5 5 ## AddItem 815%%
+%action If days_played 5 5 ## AddItem 289%%
+%action If days_played 5 5 ## AddItem 91%%
+%action If days_played 5 5 ## AddItem 829%%
+%action If days_played 5 5 ## AddItem 830%%
+%action If days_played 5 5 ## AddItem 832%%
+%action If days_played 5 5 ## AddItem 834%%
+%action If days_played 5 5 ## AddItem 848%%
+%action If days_played 5 5 ## AddItem 851%%
+%action If days_played 5 5 ## AddItem 881%%
+%action If days_played 5 5 ## AddItem 909%%
+%action If days_played 5 5 ## AddItem 910%%
 
-%action If player_stat Any MAILREAD 2 2 ## AddItem 16%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 18%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 20%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 22%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 24%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 78%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 88%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 90%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 92%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 176%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 174%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 180%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 182%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 184%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 186%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 188%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 190%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 192%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 248%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 250%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 252%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 254%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 256%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 257%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 258%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 259%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 260%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 262%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 264%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 266%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 268%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 270%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 271%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 272%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 274%%
-%action If player_stat Any MAILREAD 2 2 ## AddItem 276%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 278%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 280%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 281%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 282%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 283%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 284%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 296%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 300%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 303%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 304%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 305%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 306%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 307%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 308%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 330%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 334%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 335%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 336%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 337%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 338%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 340%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 342%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 344%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 346%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 348%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 350%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 378%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 380%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 382%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 384%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 386%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 388%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 390%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 392%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 393%%
-%action If player_stat Any MAILREAD 3 3 ## AddItem 394%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 396%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 397%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 398%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 399%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 400%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 402%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 404%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 406%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 408%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 410%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 412%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 414%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 416%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 417%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 418%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 420%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 421%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 422%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 424%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 426%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 428%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 430%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 432%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 433%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 436%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 438%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 440%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 442%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 444%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 446%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 447%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 454%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 459%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 591%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 593%%
-%action If player_stat Any MAILREAD 4 4 ## AddItem 595%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 597%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 376%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 613%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 614%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 634%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 635%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 636%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 637%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 638%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 684%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 709%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 724%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 725%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 726%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 766%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 767%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 768%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 769%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 771%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 787%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 807%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 812%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 445%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 814%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 815%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 289%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 91%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 829%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 830%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 832%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 834%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 848%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 851%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 881%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 909%%
-%action If player_stat Any MAILREAD 5 5 ## AddItem 910%%
-
-%action If player_stat Any MAILREAD 6 6 ## AddItem Moss%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem MysticSyrup%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem Raisins%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem DriedFruit%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem DriedMushrooms%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem Carrot%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem SummerSquash%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem Broccoli%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem Powdermelon%%
-%action If player_stat Any MAILREAD 6 6 ## AddItem SmokedFish%%
+%action If days_played 6 6 ## AddItem Moss%%
+%action If days_played 6 6 ## AddItem MysticSyrup%%
+%action If days_played 6 6 ## AddItem Raisins%%
+%action If days_played 6 6 ## AddItem DriedFruit%%
+%action If days_played 6 6 ## AddItem DriedMushrooms%%
+%action If days_played 6 6 ## AddItem Carrot%%
+%action If days_played 6 6 ## AddItem SummerSquash%%
+%action If days_played 6 6 ## AddItem Broccoli%%
+%action If days_played 6 6 ## AddItem Powdermelon%%
+%action If days_played 6 6 ## AddItem SmokedFish%%
 
 
 //All of crafting
 //Page 1 & 2
-%action If player_stat Any MAILREAD 7 7 ## AddItem 926%% //Cookout kit for cooking
-%action If player_stat Any MAILREAD 7 7 ## AddItem (BC)208%% //Workbench for crafting
-%action If player_stat Any MAILREAD 7 7 ## AddItem 767 5%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 881 5%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem CaveJelly 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 330 3%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 382 27%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 334 9%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 378 20%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 393 3%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 852 5%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 86 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 771 175%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 82 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem (BC)13 2%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 336 13%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 709 67%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 337 5%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 386 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 335 71%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 724 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem Moss 50%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem MysticSyrup 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 725 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 726 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 338 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem RiverJelly 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 92 2%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem SeaJelly 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 397 1%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 766 50%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 390 537%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem 388 733%%
-%action If player_stat Any MAILREAD 7 7 ## AddItem (BC)154%%
+%action If days_played 7 7 ## AddItem 926%% //Cookout kit for cooking
+%action If days_played 7 7 ## AddItem (BC)208%% //Workbench for crafting
+%action If days_played 7 7 ## AddItem 767 5%%
+%action If days_played 7 7 ## AddItem 881 5%%
+%action If days_played 7 7 ## AddItem CaveJelly%%
+%action If days_played 7 7 ## AddItem 330 3%%
+%action If days_played 7 7 ## AddItem 382 27%%
+%action If days_played 7 7 ## AddItem 334 9%%
+%action If days_played 7 7 ## AddItem 378 20%%
+%action If days_played 7 7 ## AddItem 393 3%%
+%action If days_played 7 7 ## AddItem 852 5%%
+%action If days_played 7 7 ## AddItem 86%%
+%action If days_played 7 7 ## AddItem 771 175%%
+%action If days_played 7 7 ## AddItem 82%%
+%action If days_played 7 7 ## AddItem (BC)13 2%%
+%action If days_played 7 7 ## AddItem 336 13%%
+%action If days_played 7 7 ## AddItem 709 67%%
+%action If days_played 7 7 ## AddItem 337 5%%
+%action If days_played 7 7 ## AddItem 386%%
+%action If days_played 7 7 ## AddItem 335 71%%
+%action If days_played 7 7 ## AddItem 724%%
+%action If days_played 7 7 ## AddItem Moss 50%%
+%action If days_played 7 7 ## AddItem MysticSyrup%%
+%action If days_played 7 7 ## AddItem 725%%
+%action If days_played 7 7 ## AddItem 726%%
+%action If days_played 7 7 ## AddItem 338%%
+%action If days_played 7 7 ## AddItem RiverJelly%%
+%action If days_played 7 7 ## AddItem 92 2%%
+%action If days_played 7 7 ## AddItem SeaJelly%%
+%action If days_played 7 7 ## AddItem 397%%
+%action If days_played 7 7 ## AddItem 766 50%%
+%action If days_played 7 7 ## AddItem 390 537%%
+%action If days_played 7 7 ## AddItem 388 733%%
+%action If days_played 7 7 ## AddItem (BC)154%%
 
 //Page 3 - wild seeds
-%action If player_stat Any MAILREAD 8 8 ## AddItem 309 5%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 114 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 719 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 82 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 767 5%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 787 4%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 881 8%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 330 3%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 382 29%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 334 4%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 378 8%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 771 48%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 336 7%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 384 4%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 337 6%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 335 8%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 380 4%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 292 5%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 310 5%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 770 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem Moss 5%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 725 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 311 5%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 726 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 909 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 338 2%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 92 51%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 766 100%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 768 2%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 390 223%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 769 1%%
-%action If player_stat Any MAILREAD 8 8 ## AddItem 388 10%%
+%action If days_played 8 8 ## AddItem 309 5%%
+%action If days_played 8 8 ## AddItem 114%%
+%action If days_played 8 8 ## AddItem 719%%
+%action If days_played 8 8 ## AddItem 82%%
+%action If days_played 8 8 ## AddItem 767 5%%
+%action If days_played 8 8 ## AddItem 787 4%%
+%action If days_played 8 8 ## AddItem 881 8%%
+%action If days_played 8 8 ## AddItem 330 3%%
+%action If days_played 8 8 ## AddItem 382 29%%
+%action If days_played 8 8 ## AddItem 334 4%%
+%action If days_played 8 8 ## AddItem 378 8%%
+%action If days_played 8 8 ## AddItem 771 48%%
+%action If days_played 8 8 ## AddItem 336 7%%
+%action If days_played 8 8 ## AddItem 384 4%%
+%action If days_played 8 8 ## AddItem 337 6%%
+%action If days_played 8 8 ## AddItem 335 8%%
+%action If days_played 8 8 ## AddItem 380 4%%
+%action If days_played 8 8 ## AddItem 292 5%%
+%action If days_played 8 8 ## AddItem 310 5%%
+%action If days_played 8 8 ## AddItem 770%%
+%action If days_played 8 8 ## AddItem Moss 5%%
+%action If days_played 8 8 ## AddItem 725%%
+%action If days_played 8 8 ## AddItem 311 5%%
+%action If days_played 8 8 ## AddItem 726%%
+%action If days_played 8 8 ## AddItem 909%%
+%action If days_played 8 8 ## AddItem 338 2%%
+%action If days_played 8 8 ## AddItem 92 51%%
+%action If days_played 8 8 ## AddItem 766 100%%
+%action If days_played 8 8 ## AddItem 768 2%%
+%action If days_played 8 8 ## AddItem 390 223%%
+%action If days_played 8 8 ## AddItem 769%%
+%action If days_played 8 8 ## AddItem 388 10%%
 
 
 //Page 4
-%action If player_stat Any MAILREAD 9 9 ## AddItem 309 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 685 5%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 881 5%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 684 6%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 330 2%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 428 2%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 382 3%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 88 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 334 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 393 2%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 852 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 771 999%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 771 81%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 829 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 336 2%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 709 31%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 340 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 337 20%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 386 4%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 335 7%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 310 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem Moss 347%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem MysticSyrup 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 311 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 726 5%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 276 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 338 4%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 92 999%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 92 10%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 766 15%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 390 999%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 390 35%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 93 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 432 1%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 495 2%%
-%action If player_stat Any MAILREAD 9 9 ## AddItem 388 35%%
+%action If days_played 9 9 ## AddItem 309%%
+%action If days_played 9 9 ## AddItem 685 5%%
+%action If days_played 9 9 ## AddItem 881 5%%
+%action If days_played 9 9 ## AddItem 684 6%%
+%action If days_played 9 9 ## AddItem 330 2%%
+%action If days_played 9 9 ## AddItem 428 2%%
+%action If days_played 9 9 ## AddItem 382 3%%
+%action If days_played 9 9 ## AddItem 88%%
+%action If days_played 9 9 ## AddItem 334%%
+%action If days_played 9 9 ## AddItem 393 2%%
+%action If days_played 9 9 ## AddItem 852%%
+%action If days_played 9 9 ## AddItem 771 999%%
+%action If days_played 9 9 ## AddItem 771 81%%
+%action If days_played 9 9 ## AddItem 829%%
+%action If days_played 9 9 ## AddItem 336 2%%
+%action If days_played 9 9 ## AddItem 709 31%%
+%action If days_played 9 9 ## AddItem 340%%
+%action If days_played 9 9 ## AddItem 337 20%%
+%action If days_played 9 9 ## AddItem 386 4%%
+%action If days_played 9 9 ## AddItem 335 7%%
+%action If days_played 9 9 ## AddItem 310%%
+%action If days_played 9 9 ## AddItem Moss 347%%
+%action If days_played 9 9 ## AddItem MysticSyrup%%
+%action If days_played 9 9 ## AddItem 311%%
+%action If days_played 9 9 ## AddItem 726 5%%
+%action If days_played 9 9 ## AddItem 276%%
+%action If days_played 9 9 ## AddItem 338 4%%
+%action If days_played 9 9 ## AddItem 92 999%%
+%action If days_played 9 9 ## AddItem 92 10%%
+%action If days_played 9 9 ## AddItem 766 15%%
+%action If days_played 9 9 ## AddItem 390 999%%
+%action If days_played 9 9 ## AddItem 390 35%%
+%action If days_played 9 9 ## AddItem 93%%
+%action If days_played 9 9 ## AddItem 432%%
+%action If days_played 9 9 ## AddItem 495 2%%
+%action If days_played 9 9 ## AddItem 388 35%%
 
 //Page 5
-%action If player_stat Any MAILREAD 10 10 ## AddItem 62 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 787 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 684 25%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 281 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 382 36%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 881 10%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 334 3%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 72 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 771 25%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 84 10%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 248 10%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 336 7%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 709 15%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 337 5%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 335 19%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 429 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 567 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 257 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 247 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 453 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 422 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 420 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 766 25%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 768 51%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 455 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 390 145%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 427 1%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 769 50%%
-%action If player_stat Any MAILREAD 10 10 ## AddItem 388 175%%
+%action If days_played 10 10 ## AddItem 62%%
+%action If days_played 10 10 ## AddItem 787%%
+%action If days_played 10 10 ## AddItem 684 25%%
+%action If days_played 10 10 ## AddItem 281%%
+%action If days_played 10 10 ## AddItem 382 36%%
+%action If days_played 10 10 ## AddItem 881 10%%
+%action If days_played 10 10 ## AddItem 334 3%%
+%action If days_played 10 10 ## AddItem 72%%
+%action If days_played 10 10 ## AddItem 771 25%%
+%action If days_played 10 10 ## AddItem 84 10%%
+%action If days_played 10 10 ## AddItem 248 10%%
+%action If days_played 10 10 ## AddItem 336 7%%
+%action If days_played 10 10 ## AddItem 709 15%%
+%action If days_played 10 10 ## AddItem 337 5%%
+%action If days_played 10 10 ## AddItem 335 19%%
+%action If days_played 10 10 ## AddItem 429%%
+%action If days_played 10 10 ## AddItem 567%%
+%action If days_played 10 10 ## AddItem 257%%
+%action If days_played 10 10 ## AddItem 247%%
+%action If days_played 10 10 ## AddItem 453%%
+%action If days_played 10 10 ## AddItem 422%%
+%action If days_played 10 10 ## AddItem 420%%
+%action If days_played 10 10 ## AddItem 766 25%%
+%action If days_played 10 10 ## AddItem 768 51%%
+%action If days_played 10 10 ## AddItem 455%%
+%action If days_played 10 10 ## AddItem 390 145%%
+%action If days_played 10 10 ## AddItem 427%%
+%action If days_played 10 10 ## AddItem 769 50%%
+%action If days_played 10 10 ## AddItem 388 175%%
 
 //Wild seeds (page 3) + Page 6
-%action If player_stat Any MAILREAD 11 11 ## AddItem 767 30%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 787 2%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 881 110%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 684 13%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 848 20%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 330 3%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 334 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 72 2%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 122 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 595 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 336 11%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 709 120%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 337 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 335 11%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 910 2%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 909 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 338 20%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 92 20%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 766 30%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 768 30%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 390 120%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 410 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 404 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 418 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 414 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 16 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 18 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 20 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 22 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 398 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 408 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 416 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 396 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 402 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 406 1%%
-%action If player_stat Any MAILREAD 11 11 ## AddItem 412 1%%
+%action If days_played 11 11 ## AddItem 767 30%%
+%action If days_played 11 11 ## AddItem 787 2%%
+%action If days_played 11 11 ## AddItem 881 110%%
+%action If days_played 11 11 ## AddItem 684 13%%
+%action If days_played 11 11 ## AddItem 848 20%%
+%action If days_played 11 11 ## AddItem 330 3%%
+%action If days_played 11 11 ## AddItem 334%%
+%action If days_played 11 11 ## AddItem 72 2%%
+%action If days_played 11 11 ## AddItem 122%%
+%action If days_played 11 11 ## AddItem 595%%
+%action If days_played 11 11 ## AddItem 336 11%%
+%action If days_played 11 11 ## AddItem 709 120%%
+%action If days_played 11 11 ## AddItem 337%%
+%action If days_played 11 11 ## AddItem 335 11%%
+%action If days_played 11 11 ## AddItem 910 2%%
+%action If days_played 11 11 ## AddItem 909%%
+%action If days_played 11 11 ## AddItem 338 20%%
+%action If days_played 11 11 ## AddItem 92 20%%
+%action If days_played 11 11 ## AddItem 766 30%%
+%action If days_played 11 11 ## AddItem 768 30%%
+%action If days_played 11 11 ## AddItem 390 120%%
+%action If days_played 11 11 ## AddItem 410%%
+%action If days_played 11 11 ## AddItem 404%%
+%action If days_played 11 11 ## AddItem 418%%
+%action If days_played 11 11 ## AddItem 414%%
+%action If days_played 11 11 ## AddItem 16%%
+%action If days_played 11 11 ## AddItem 18%%
+%action If days_played 11 11 ## AddItem 20%%
+%action If days_played 11 11 ## AddItem 22%%
+%action If days_played 11 11 ## AddItem 398%%
+%action If days_played 11 11 ## AddItem 408%%
+%action If days_played 11 11 ## AddItem 416%%
+%action If days_played 11 11 ## AddItem 396%%
+%action If days_played 11 11 ## AddItem 402%%
+%action If days_played 11 11 ## AddItem 406%%
+%action If days_played 11 11 ## AddItem 412%%
 
 
 //All cooking - requires using cookout kit, and 4 inventories of items [would be 3 without inventory limits]
-%action If player_stat Any MAILREAD 12 12 ## AddItem 300%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 284%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 597%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 132%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 142 4%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 190%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 424 2%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 404%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 22%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 176 3%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 194%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 188 2%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 210%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 250%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 20%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 306%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 184 3%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 257%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 247 3%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 211%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 24%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 722%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 192%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 266%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 139%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 154%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 151%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 245%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 145%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 256 2%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 229 2%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 130%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 419 2%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 308%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 246 5%%
-%action If player_stat Any MAILREAD 12 12 ## AddItem 280%%
+%action If days_played 12 12 ## AddItem 300%%
+%action If days_played 12 12 ## AddItem 284%%
+%action If days_played 12 12 ## AddItem 597%%
+%action If days_played 12 12 ## AddItem 132%%
+%action If days_played 12 12 ## AddItem 142 4%%
+%action If days_played 12 12 ## AddItem 190%%
+%action If days_played 12 12 ## AddItem 424 2%%
+%action If days_played 12 12 ## AddItem 404%%
+%action If days_played 12 12 ## AddItem 22%%
+%action If days_played 12 12 ## AddItem 176 3%%
+%action If days_played 12 12 ## AddItem 194%%
+%action If days_played 12 12 ## AddItem 188 2%%
+%action If days_played 12 12 ## AddItem 210%%
+%action If days_played 12 12 ## AddItem 250%%
+%action If days_played 12 12 ## AddItem 20%%
+%action If days_played 12 12 ## AddItem 306%%
+%action If days_played 12 12 ## AddItem 184 3%%
+%action If days_played 12 12 ## AddItem 257%%
+%action If days_played 12 12 ## AddItem 247 3%%
+%action If days_played 12 12 ## AddItem 211%%
+%action If days_played 12 12 ## AddItem 24%%
+%action If days_played 12 12 ## AddItem 722%%
+%action If days_played 12 12 ## AddItem 192%%
+%action If days_played 12 12 ## AddItem 266%%
+%action If days_played 12 12 ## AddItem 139%%
+%action If days_played 12 12 ## AddItem 154%%
+%action If days_played 12 12 ## AddItem 151%%
+%action If days_played 12 12 ## AddItem 245%%
+%action If days_played 12 12 ## AddItem 145%%
+%action If days_played 12 12 ## AddItem 256 2%%
+%action If days_played 12 12 ## AddItem 229 2%%
+%action If days_played 12 12 ## AddItem 130%%
+%action If days_played 12 12 ## AddItem 419 2%%
+%action If days_played 12 12 ## AddItem 308%%
+%action If days_played 12 12 ## AddItem 246 5%%
+%action If days_played 12 12 ## AddItem 280%%
 
-%action If player_stat Any MAILREAD 13 13 ## AddItem 274%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 258%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 278%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 216 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 78 3%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 424%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 88%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 404%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 270%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 282 3%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 148 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 176 4%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 272 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 153%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 210%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 408%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 260 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 136%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 254%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 184 4%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 247 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 195%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 24%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 276 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 264%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 138%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 266%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 252%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 423 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 131 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 152%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 720 3%% //+2 to get the any fish
-%action If player_stat Any MAILREAD 13 13 ## AddItem 245 9%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 256 2%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 246 8%%
-%action If player_stat Any MAILREAD 13 13 ## AddItem 280%%
+%action If days_played 13 13 ## AddItem 274%%
+%action If days_played 13 13 ## AddItem 258%%
+%action If days_played 13 13 ## AddItem 278%%
+%action If days_played 13 13 ## AddItem 216 2%%
+%action If days_played 13 13 ## AddItem 78 3%%
+%action If days_played 13 13 ## AddItem 424%%
+%action If days_played 13 13 ## AddItem 88%%
+%action If days_played 13 13 ## AddItem 404%%
+%action If days_played 13 13 ## AddItem 270%%
+%action If days_played 13 13 ## AddItem 282 3%%
+%action If days_played 13 13 ## AddItem 148 2%%
+%action If days_played 13 13 ## AddItem 176 4%%
+%action If days_played 13 13 ## AddItem 272 2%%
+%action If days_played 13 13 ## AddItem 153%%
+%action If days_played 13 13 ## AddItem 210%%
+%action If days_played 13 13 ## AddItem 408%%
+%action If days_played 13 13 ## AddItem 260 2%%
+%action If days_played 13 13 ## AddItem 136%%
+%action If days_played 13 13 ## AddItem 254%%
+%action If days_played 13 13 ## AddItem 184 4%%
+%action If days_played 13 13 ## AddItem 247 2%%
+%action If days_played 13 13 ## AddItem 195%%
+%action If days_played 13 13 ## AddItem 24%%
+%action If days_played 13 13 ## AddItem 276 2%%
+%action If days_played 13 13 ## AddItem 264%%
+%action If days_played 13 13 ## AddItem 138%%
+%action If days_played 13 13 ## AddItem 266%%
+%action If days_played 13 13 ## AddItem 252%%
+%action If days_played 13 13 ## AddItem 423 2%%
+%action If days_played 13 13 ## AddItem 131 2%%
+%action If days_played 13 13 ## AddItem 152%%
+%action If days_played 13 13 ## AddItem 720 3%% //+2 to get the any fish
+%action If days_played 13 13 ## AddItem 245 9%%
+%action If days_played 13 13 ## AddItem 256 2%%
+%action If days_played 13 13 ## AddItem 246 8%%
+%action If days_played 13 13 ## AddItem 280%%
 
-%action If player_stat Any MAILREAD 14 14 ## AddItem 613%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 634%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 274%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 410 2%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 258%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 216%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 78 2%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 372%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 395 3%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 404%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 282%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 259%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 267%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 248%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 153 4%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 408 3%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 250%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 306%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 254%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 269%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 184 3%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 247 4%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 376%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 276%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 264%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 266%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 814%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 245 5%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 256%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 419 2%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 246 4%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 157 2%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 406 2%%
-%action If player_stat Any MAILREAD 14 14 ## AddItem 412%%
+%action If days_played 14 14 ## AddItem 613%%
+%action If days_played 14 14 ## AddItem 634%%
+%action If days_played 14 14 ## AddItem 274%%
+%action If days_played 14 14 ## AddItem 410 2%%
+%action If days_played 14 14 ## AddItem 258%%
+%action If days_played 14 14 ## AddItem 216%%
+%action If days_played 14 14 ## AddItem 78 2%%
+%action If days_played 14 14 ## AddItem 372%%
+%action If days_played 14 14 ## AddItem 395 3%%
+%action If days_played 14 14 ## AddItem 404%%
+%action If days_played 14 14 ## AddItem 282%%
+%action If days_played 14 14 ## AddItem 259%%
+%action If days_played 14 14 ## AddItem 267%%
+%action If days_played 14 14 ## AddItem 248%%
+%action If days_played 14 14 ## AddItem 153 4%%
+%action If days_played 14 14 ## AddItem 408 3%%
+%action If days_played 14 14 ## AddItem 250%%
+%action If days_played 14 14 ## AddItem 306%%
+%action If days_played 14 14 ## AddItem 254%%
+%action If days_played 14 14 ## AddItem 269%%
+%action If days_played 14 14 ## AddItem 184 3%%
+%action If days_played 14 14 ## AddItem 247 4%%
+%action If days_played 14 14 ## AddItem 376%%
+%action If days_played 14 14 ## AddItem 276%%
+%action If days_played 14 14 ## AddItem 264%%
+%action If days_played 14 14 ## AddItem 266%%
+%action If days_played 14 14 ## AddItem 814%%
+%action If days_played 14 14 ## AddItem 245 5%%
+%action If days_played 14 14 ## AddItem 256%%
+%action If days_played 14 14 ## AddItem 419 2%%
+%action If days_played 14 14 ## AddItem 246 4%%
+%action If days_played 14 14 ## AddItem 157 2%%
+%action If days_played 14 14 ## AddItem 406 2%%
+%action If days_played 14 14 ## AddItem 412%%
 
-%action If player_stat Any MAILREAD 15 15 ## AddItem TentKit%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 279 1 4%%
+%action If days_played 15 15 ## AddItem TentKit%%
+%action If days_played 15 15 ## AddItem 279 1 4%%
 
 //Rest of cooking
-%action If player_stat Any MAILREAD 15 15 ## AddItem 91%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 88 2%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 717%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 716%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 176%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 248%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 829 3%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 260%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 715%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 834%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 724%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 184 2%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem Moss 20%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 719%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 247%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 722%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 832%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 423%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 720%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 721%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 814%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 245 3%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 830 4%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 256 3%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 246 3%%
-%action If player_stat Any MAILREAD 15 15 ## AddItem 16%%
+%action If days_played 15 15 ## AddItem 91%%
+%action If days_played 15 15 ## AddItem 88 2%%
+%action If days_played 15 15 ## AddItem 717%%
+%action If days_played 15 15 ## AddItem 716%%
+%action If days_played 15 15 ## AddItem 176%%
+%action If days_played 15 15 ## AddItem 248%%
+%action If days_played 15 15 ## AddItem 829 3%%
+%action If days_played 15 15 ## AddItem 260%%
+%action If days_played 15 15 ## AddItem 715%%
+%action If days_played 15 15 ## AddItem 834%%
+%action If days_played 15 15 ## AddItem 724%%
+%action If days_played 15 15 ## AddItem 184 2%%
+%action If days_played 15 15 ## AddItem Moss 20%%
+%action If days_played 15 15 ## AddItem 719%%
+%action If days_played 15 15 ## AddItem 247%%
+%action If days_played 15 15 ## AddItem 722%%
+%action If days_played 15 15 ## AddItem 832%%
+%action If days_played 15 15 ## AddItem 423%%
+%action If days_played 15 15 ## AddItem 720%%
+%action If days_played 15 15 ## AddItem 721%%
+%action If days_played 15 15 ## AddItem 814%%
+%action If days_played 15 15 ## AddItem 245 3%%
+%action If days_played 15 15 ## AddItem 830 4%%
+%action If days_played 15 15 ## AddItem 256 3%%
+%action If days_played 15 15 ## AddItem 246 3%%
+%action If days_played 15 15 ## AddItem 16%%
 
-%action If player_stat Any MAILREAD 16 16 ## AddItem (T)IridiumPickaxe 1 4%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem (BC)71 999 4%% //Staircases
-%action If player_stat Any MAILREAD 16 16 ## AddItem (W)63 1 4%% //Infinity Gavel
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 886 3 4%% //Island Warp
-%action If player_stat Any MAILREAD 16 16 ## AddItem 279 999 4%% //MRC
-%action If player_stat Any MAILREAD 16 16 ## AddItem 253 999 4%% //Triple shot
-//%action If player_stat Any MAILREAD 16 16 ## AddItem (W)34 1 4%% //Galaxy Slingshot
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem ReturnScepter%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 689 9%% //Mountain Warp
+%action If days_played 16 16 ## AddItem (T)IridiumPickaxe 1 4%%
+%action If days_played 16 16 ## AddItem (BC)71 999 4%% //Staircases
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem (W)63 1 4%% //Infinity Gavel
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 689 9%% //Mountain Warp
+%action If days_played 16 16 ## AddItem 279 999 4%% //MRC
+%action If days_played 16 16 ## AddItem 253 999 4%% //Triple shot
+%action If days_played 16 16 ## AddItem ReturnScepter%%
 
-%action If player_stat Any MAILREAD 16 16 ## AddItem AdvancedIridiumRod%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 279 999 4%% //MRC
-%action If player_stat Any MAILREAD 16 16 ## AddItem 253 999 4%% //Triple shot
-%action If player_stat Any MAILREAD 16 16 ## AddItem (BC)71 999%% //Staircases (for floor 20 -> 23)
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-//%action If player_stat Any MAILREAD 16 16 ## AddItem 441 999 4%% //explosive ammo
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 811%% //Napalm Ring
-%action If player_stat Any MAILREAD 16 16 ## AddItem ReturnScepter%%
+%action If days_played 16 16 ## AddItem AdvancedIridiumRod%%
+%action If days_played 16 16 ## AddItem 279 999 4%% //MRC
+%action If days_played 16 16 ## AddItem 253 999 4%% //Triple shot
+%action If days_played 16 16 ## AddItem (BC)71 999%% //Staircases (for floor 20 -> 23)
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+//%action If days_played 16 16 ## AddItem 441 999 4%% //explosive ammo
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 811%% //Napalm Ring
+%action If days_played 16 16 ## AddItem ReturnScepter%%
 
-%action If player_stat Any MAILREAD 16 16 ## AddItem DeluxeBait 999 4%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 687 1 4%% //Dressed spinner
-%action If player_stat Any MAILREAD 16 16 ## AddItem 687 1 4%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 16 16 ## AddItem 145%% //Sunfish of various qualities
-%action If player_stat Any MAILREAD 16 16 ## AddItem 145 1 1%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 145 1 2%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 145 1 3%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 158%% //Stonefish of various qualities
-%action If player_stat Any MAILREAD 16 16 ## AddItem 158 1 1%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 158 1 2%%
-%action If player_stat Any MAILREAD 16 16 ## AddItem 158 1 3%%
+%action If days_played 16 16 ## AddItem DeluxeBait 999 4%%
+%action If days_played 16 16 ## AddItem 687 1 4%% //Dressed spinner
+%action If days_played 16 16 ## AddItem 687 1 4%%
+%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 16 16 ## AddItem 145%% //Sunfish of various qualities
+%action If days_played 16 16 ## AddItem 145 1 1%%
+%action If days_played 16 16 ## AddItem 145 1 2%%
+%action If days_played 16 16 ## AddItem 145 1 3%%
+%action If days_played 16 16 ## AddItem 158%% //Stonefish of various qualities
+%action If days_played 16 16 ## AddItem 158 1 1%%
+%action If days_played 16 16 ## AddItem 158 1 2%%
+%action If days_played 16 16 ## AddItem 158 1 3%%
 
 //Explosive ammo, mountain warp, deluxe bait, and 2x dressed spinners have been removed from inventory
 
 //Fish pond components, one extra to keep inventory slots. 
-%action If player_stat Any MAILREAD 17 17 ## RemoveItem (T)ReturnScepter%%
-%action If player_stat Any MAILREAD 17 17 ## AddItem TentKit%%
-%action If player_stat Any MAILREAD 17 17 ## RemoveItem 886 9%%
-%action If player_stat Any MAILREAD 17 17 ## RemoveItem 689 9%%
-%action If player_stat Any MAILREAD 17 17 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 17 17 ## AddItem 390 201%%
-%action If player_stat Any MAILREAD 17 17 ## AddItem 152 8%%
-%action If player_stat Any MAILREAD 17 17 ## AddItem 153 8%%
+%action If days_played 17 17 ## RemoveItem (T)ReturnScepter%%
+%action If days_played 17 17 ## AddItem TentKit%%
+%action If days_played 17 17 ## RemoveItem 689 9%%
+%action If days_played 17 17 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 17 17 ## AddItem 390 201%%
+%action If days_played 17 17 ## AddItem 152 12%%//We remove 3 every read automatically. There are 2 scripted reads between here and 
+%action If days_played 17 17 ## AddItem 153 12%%
 
 
-%action If player_stat Any MAILREAD 18 18 ## AddItem ReturnScepter%%
-%action If player_stat Any MAILREAD 17 19, !player_has_item all 288 9990 ## AddItem 288 999 4%%
-%action If player_stat Any MAILREAD 17 19, !player_has_item all 288 10989 ## AddItem 288 999 4%%
-%action If player_stat Any MAILREAD 17 19, !player_has_item all 288 11988 ## AddItem 288 999 4%%
-%action If player_stat Any MAILREAD 18 19, !player_has_item all 288 12987 ## AddItem 288 999 4%%
-//%action If player_stat Any MAILREAD 18 19, !player_has_item all 288 13986 ## AddItem 288 999 4%%
-//%action If player_stat Any MAILREAD 18 19, !player_has_item all 288 14985 ## AddItem 288 999 4%% //Assumes the idea amount of mega bombs is 16 stacks ((16-1) * 999)
-%action If player_stat Any MAILREAD 17 19 ## AddItem 288 999 4%% //Excess mega bombs to ensure full supply. Thankfully first overflow menu doesn't show up
+%action If days_played 18 18 ## AddItem ReturnScepter%%
+%action If days_played 17 19, !player_has_item all 288 9990 ## AddItem 288 999 4%%
+%action If days_played 17 19, !player_has_item all 288 10989 ## AddItem 288 999 4%%
+%action If days_played 17 19, !player_has_item all 288 11988 ## AddItem 288 999 4%%
+%action If days_played 18 19, !player_has_item all 288 12987 ## AddItem 288 999 4%%
+//%action If days_played 18 19, !player_has_item all 288 13986 ## AddItem 288 999 4%%
+//%action If days_played 18 19, !player_has_item all 288 14985 ## AddItem 288 999 4%% //Assumes the idea amount of mega bombs is 16 stacks ((16-1) * 999)
+%action If days_played 17 19 ## AddItem 288 999 4%% //Excess mega bombs to ensure full supply. Thankfully first overflow menu doesn't show up
 
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem (T)IridiumPickaxe%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem (BC)71 9999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem (W)63%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem (W)61%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem (W)34%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem ReturnScepter 2%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 279 9999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 253 9999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 265 999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 690 999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 886 999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 689 999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 261 999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 288 99999%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 145 9%%
-%action If player_stat Any MAILREAD 20 20 ## RemoveItem 158 9%%
+%action If days_played 20 20 ## RemoveItem (T)IridiumPickaxe%%
+%action If days_played 20 20 ## RemoveItem (BC)71 9999%%
+%action If days_played 20 20 ## RemoveItem (W)63%%
+%action If days_played 20 20 ## RemoveItem (W)61%%
+%action If days_played 20 20 ## RemoveItem (W)34%%
+%action If days_played 20 20 ## RemoveItem ReturnScepter 2%%
+%action If days_played 20 20 ## RemoveItem 279 9999%%
+%action If days_played 20 20 ## RemoveItem 253 9999%%
+%action If days_played 20 20 ## RemoveItem 265 999%%
+%action If days_played 20 20 ## RemoveItem 690 999%%
+%action If days_played 20 20 ## RemoveItem 689 999%%
+%action If days_played 20 20 ## RemoveItem 261 999%%
+%action If days_played 20 20 ## RemoveItem 288 99999%%
+%action If days_played 20 20 ## RemoveItem 145 9%%
+%action If days_played 20 20 ## RemoveItem 158 9%%
 
-%action If player_stat Any MAILREAD 20 20 ## AddItem (F)9%% // Chair to use to setup good positioning [chair facing up placed 1 tile below top, get in, get out, face towards pond]
-%action If player_stat Any MAILREAD 20 20 ## AddItem 128%% // Pufferfish
-%action If player_stat Any MAILREAD 20 20 ## AddItem 129%% // Anchovy
-%action If player_stat Any MAILREAD 20 20 ## AddItem 130%% // Tuna
-%action If player_stat Any MAILREAD 20 20 ## AddItem 131%% // Sardine
-%action If player_stat Any MAILREAD 20 20 ## AddItem 132%% // Bream
-%action If player_stat Any MAILREAD 20 20 ## AddItem 136%% // Largemouth Bass
-%action If player_stat Any MAILREAD 20 20 ## AddItem 137%% // Smallmouth Bass
-%action If player_stat Any MAILREAD 20 20 ## AddItem 138%% // Rainbow Trout
-%action If player_stat Any MAILREAD 20 20 ## AddItem 139%% // Salmon
-%action If player_stat Any MAILREAD 20 20 ## AddItem 140%% // Walleye
+%action If days_played 20 20 ## AddItem (F)9%% // Chair to use to setup good positioning [chair facing up placed 1 tile below top, get in, get out, face towards pond]
+%action If days_played 20 20 ## AddItem 128%% // Pufferfish
+%action If days_played 20 20 ## AddItem 129%% // Anchovy
+%action If days_played 20 20 ## AddItem 130%% // Tuna
+%action If days_played 20 20 ## AddItem 131%% // Sardine
+%action If days_played 20 20 ## AddItem 132%% // Bream
+%action If days_played 20 20 ## AddItem 136%% // Largemouth Bass
+%action If days_played 20 20 ## AddItem 137%% // Smallmouth Bass
+%action If days_played 20 20 ## AddItem 138%% // Rainbow Trout
+%action If days_played 20 20 ## AddItem 139%% // Salmon
+%action If days_played 20 20 ## AddItem 140%% // Walleye
 
-%action If player_stat Any MAILREAD 20 20 ## AddItem IridiumRod%%
-%action If player_stat Any MAILREAD 20 20 ## AddItem 141%% // Perch
-%action If player_stat Any MAILREAD 20 20 ## AddItem 142%% // Carp
-%action If player_stat Any MAILREAD 20 20 ## AddItem 143%% // Catfish
-%action If player_stat Any MAILREAD 20 20 ## AddItem 144%% // Pike
-%action If player_stat Any MAILREAD 20 20, !player_has_mail Current CaughtSunfish ## AddItem 145%% // Sunfish
-%action If player_stat Any MAILREAD 20 20, !player_has_mail Current CaughtStonefish ## AddItem 158%% // Stonefish
-%action If player_stat Any MAILREAD 20 20 ## AddItem 146%% // Red Mullet
-%action If player_stat Any MAILREAD 20 20 ## AddItem 147%% // Herring
-%action If player_stat Any MAILREAD 20 20 ## AddItem 148%% // Eel
-%action If player_stat Any MAILREAD 20 20 ## AddItem 149%% // Octopus
-%action If player_stat Any MAILREAD 20 20 ## AddItem 150%% // Red Snapper
-%action If player_stat Any MAILREAD 20 20 ## AddItem 151%% // Squid
+%action If days_played 20 20 ## AddItem IridiumRod%%
+%action If days_played 20 20 ## AddItem 141%% // Perch
+%action If days_played 20 20 ## AddItem 142%% // Carp
+%action If days_played 20 20 ## AddItem 143%% // Catfish
+%action If days_played 20 20 ## AddItem 144%% // Pike
+%action If days_played 20 20, !player_has_mail Current CaughtSunfish ## AddItem 145%% // Sunfish
+%action If days_played 20 20, !player_has_mail Current CaughtStonefish ## AddItem 158%% // Stonefish
+%action If days_played 20 20 ## AddItem 146%% // Red Mullet
+%action If days_played 20 20 ## AddItem 147%% // Herring
+%action If days_played 20 20 ## AddItem 148%% // Eel
+%action If days_played 20 20 ## AddItem 149%% // Octopus
+%action If days_played 20 20 ## AddItem 150%% // Red Snapper
+%action If days_played 20 20 ## AddItem 151%% // Squid
 
-%action If player_stat Any MAILREAD 20 20 ## AddItem IridiumRod%%
-%action If player_stat Any MAILREAD 20 20 ## AddItem 154%% // Sea Cucumber
-%action If player_stat Any MAILREAD 20 20 ## AddItem 155%% // Super Cucumber
-%action If player_stat Any MAILREAD 20 20 ## AddItem 156%% // Ghostfish
-%action If player_stat Any MAILREAD 20 20 ## AddItem 159%% // Crimsonfish
-%action If player_stat Any MAILREAD 20 20 ## AddItem 160%% // Angler
-%action If player_stat Any MAILREAD 20 20 ## AddItem 161%% // Ice Pip
-%action If player_stat Any MAILREAD 20 20 ## AddItem 162%% // Lava Eel
-%action If player_stat Any MAILREAD 20 20 ## AddItem 163%% // Legend
+%action If days_played 20 20 ## AddItem IridiumRod%%
+%action If days_played 20 20 ## AddItem 154%% // Sea Cucumber
+%action If days_played 20 20 ## AddItem 155%% // Super Cucumber
+%action If days_played 20 20 ## AddItem 156%% // Ghostfish
+%action If days_played 20 20 ## AddItem 159%% // Crimsonfish
+%action If days_played 20 20 ## AddItem 160%% // Angler
+%action If days_played 20 20 ## AddItem 161%% // Ice Pip
+%action If days_played 20 20 ## AddItem 162%% // Lava Eel
+%action If days_played 20 20 ## AddItem 163%% // Legend
 
-%action If player_stat Any MAILREAD 21 21 ## AddItem 164%% // Sandfish
-%action If player_stat Any MAILREAD 21 21 ## AddItem 165%% // Scorpion Carp
-%action If player_stat Any MAILREAD 21 21 ## AddItem 267%% // Flounder
-%action If player_stat Any MAILREAD 21 21 ## AddItem 269%% // Midnight Carp
-%action If player_stat Any MAILREAD 21 21 ## AddItem 682%% // Mutant Carp
-%action If player_stat Any MAILREAD 21 21 ## AddItem 698%% // Sturgeon
-%action If player_stat Any MAILREAD 21 21 ## AddItem 699%% // Tiger Trout
-%action If player_stat Any MAILREAD 21 21 ## AddItem 700%% // Bullhead
-%action If player_stat Any MAILREAD 21 21 ## AddItem 701%% // Tilapia
-%action If player_stat Any MAILREAD 21 21 ## AddItem 702%% // Chub
-%action If player_stat Any MAILREAD 21 21 ## AddItem 704%% // Dorado
+%action If days_played 21 21 ## AddItem 164%% // Sandfish
+%action If days_played 21 21 ## AddItem 165%% // Scorpion Carp
+%action If days_played 21 21 ## AddItem 267%% // Flounder
+%action If days_played 21 21 ## AddItem 269%% // Midnight Carp
+%action If days_played 21 21 ## AddItem 682%% // Mutant Carp
+%action If days_played 21 21 ## AddItem 698%% // Sturgeon
+%action If days_played 21 21 ## AddItem 699%% // Tiger Trout
+%action If days_played 21 21 ## AddItem 700%% // Bullhead
+%action If days_played 21 21 ## AddItem 701%% // Tilapia
+%action If days_played 21 21 ## AddItem 702%% // Chub
+%action If days_played 21 21 ## AddItem 704%% // Dorado
 
-%action If player_stat Any MAILREAD 21 21 ## AddItem 705%% // Albacore
-%action If player_stat Any MAILREAD 21 21 ## AddItem 706%% // Shad
-%action If player_stat Any MAILREAD 21 21 ## AddItem 707%% // Lingcod
-%action If player_stat Any MAILREAD 21 21 ## AddItem 708%% // Halibut
+%action If days_played 21 21 ## AddItem 705%% // Albacore
+%action If days_played 21 21 ## AddItem 706%% // Shad
+%action If days_played 21 21 ## AddItem 707%% // Lingcod
+%action If days_played 21 21 ## AddItem 708%% // Halibut
 /*
-%action If player_stat Any MAILREAD 21 21 ## AddItem 372%% // Clam
-%action If player_stat Any MAILREAD 21 21 ## AddItem 715%% // Lobster
-%action If player_stat Any MAILREAD 21 21 ## AddItem 716%% // Crayfish
-%action If player_stat Any MAILREAD 21 21 ## AddItem 717%% // Crab
-%action If player_stat Any MAILREAD 21 21 ## AddItem 718%% // Cockle
-%action If player_stat Any MAILREAD 21 21 ## AddItem 719%% // Mussel
-%action If player_stat Any MAILREAD 21 21 ## AddItem 720%% // Shrimp
-%action If player_stat Any MAILREAD 21 21 ## AddItem 721%% // Snail
-%action If player_stat Any MAILREAD 21 21 ## AddItem 722%% // Periwinkle
-%action If player_stat Any MAILREAD 21 21 ## AddItem 723%% // Oyster
+%action If days_played 21 21 ## AddItem 372%% // Clam
+%action If days_played 21 21 ## AddItem 715%% // Lobster
+%action If days_played 21 21 ## AddItem 716%% // Crayfish
+%action If days_played 21 21 ## AddItem 717%% // Crab
+%action If days_played 21 21 ## AddItem 718%% // Cockle
+%action If days_played 21 21 ## AddItem 719%% // Mussel
+%action If days_played 21 21 ## AddItem 720%% // Shrimp
+%action If days_played 21 21 ## AddItem 721%% // Snail
+%action If days_played 21 21 ## AddItem 722%% // Periwinkle
+%action If days_played 21 21 ## AddItem 723%% // Oyster
 */
-%action If player_stat Any MAILREAD 21 21 ## AddItem 734%% // Woodskip
-%action If player_stat Any MAILREAD 21 21 ## AddItem 775%% // Glacierfish
-%action If player_stat Any MAILREAD 21 21 ## AddItem 795%% // Void Salmon
-%action If player_stat Any MAILREAD 21 21 ## AddItem 796%% // Slimejack
-%action If player_stat Any MAILREAD 21 21 ## AddItem 798%% // Midnight Squid
-%action If player_stat Any MAILREAD 21 21 ## AddItem 799%% // Spook Fish
-%action If player_stat Any MAILREAD 21 21 ## AddItem 800%% // Blobfish
+%action If days_played 21 21 ## AddItem 734%% // Woodskip
+%action If days_played 21 21 ## AddItem 775%% // Glacierfish
+%action If days_played 21 21 ## AddItem 795%% // Void Salmon
+%action If days_played 21 21 ## AddItem 796%% // Slimejack
+%action If days_played 21 21 ## AddItem 798%% // Midnight Squid
+%action If days_played 21 21 ## AddItem 799%% // Spook Fish
+%action If days_played 21 21 ## AddItem 800%% // Blobfish
 
-%action If player_stat Any MAILREAD 21 21 ## AddItem 836%% // Stingray
-%action If player_stat Any MAILREAD 21 21 ## AddItem 837%% // Lionfish
-%action If player_stat Any MAILREAD 21 21 ## AddItem 838%% // Blue Discus
-%action If player_stat Any MAILREAD 21 21 ## AddItem Goby%% // Goby
+%action If days_played 21 21 ## AddItem 836%% // Stingray
+%action If days_played 21 21 ## AddItem 837%% // Lionfish
+%action If days_played 21 21 ## AddItem 838%% // Blue Discus
+%action If days_played 21 21 ## AddItem Goby%% // Goby
 
-%action If player_stat Any MAILREAD 22 22 ## AddItem 279 1 4%%
-%action If player_stat Any MAILREAD 22 22 ## AddItem 253 1 4%%
-%action If player_stat Any MAILREAD 22 22 ## AddItem (W)64%%
+%action If days_played 22 22 ## AddItem 279 1 4%%
+%action If days_played 22 22 ## AddItem 253 1 4%%
+%action If days_played 22 22 ## AddItem (W)64%%
 
-%action If player_stat Any MAILREAD 23 24 ## RemoveItem (W)64%%
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot372 ## AddItem 372%% // Clam
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot715 ## AddItem 715%% // Lobster
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot716 ## AddItem 716%% // Crayfish
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot717 ## AddItem 717%% // Crab
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot718 ## AddItem 718%% // Cockle
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot719 ## AddItem 719%% // Mussel
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot720 ## AddItem 720%% // Shrimp
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot721 ## AddItem 721%% // Snail
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot722 ## AddItem 722%% // Periwinkle
-%action If player_stat Any MAILREAD 23 23, !player_has_mail Any pot723 ## AddItem 723%% // Oyster
+%action If days_played 23 24 ## RemoveItem (W)64%%
+%action If days_played 23 23, !player_has_mail Any pot372 ## AddItem 372%% // Clam
+%action If days_played 23 23, !player_has_mail Any pot715 ## AddItem 715%% // Lobster
+%action If days_played 23 23, !player_has_mail Any pot716 ## AddItem 716%% // Crayfish
+%action If days_played 23 23, !player_has_mail Any pot717 ## AddItem 717%% // Crab
+%action If days_played 23 23, !player_has_mail Any pot718 ## AddItem 718%% // Cockle
+%action If days_played 23 23, !player_has_mail Any pot719 ## AddItem 719%% // Mussel
+%action If days_played 23 23, !player_has_mail Any pot720 ## AddItem 720%% // Shrimp
+%action If days_played 23 23, !player_has_mail Any pot721 ## AddItem 721%% // Snail
+%action If days_played 23 23, !player_has_mail Any pot722 ## AddItem 722%% // Periwinkle
+%action If days_played 23 23, !player_has_mail Any pot723 ## AddItem 723%% // Oyster
 
-%action If player_stat Any MAILREAD 24 24 ## RemoveItem IridiumRod 2%%
-%action If player_stat Any MAILREAD 24 24 ## RemoveItem AdvancedIridiumRod%%
-%action If player_stat Any MAILREAD 24 24 ## AddItem TentKit 999 4%%
-%action If player_stat Any MAILREAD 24 24 ## AddItem 279 999 4%% //MRC
-%action If player_stat Any MAILREAD 24 24 ## AddItem 253 999 4%% //Triple shot
+%action If days_played 24 24 ## RemoveItem IridiumRod 2%%
+%action If days_played 24 24 ## RemoveItem AdvancedIridiumRod%%
+%action If days_played 24 24 ## AddItem TentKit 999 4%%
+%action If days_played 24 24 ## AddItem 279 999 4%% //MRC
+%action If days_played 24 24 ## AddItem 253 999 4%% //Triple shot
 
-%action If player_stat Any MAILREAD 25 25 ## RemoveItem TentKit 999%%
-%action If player_stat Any MAILREAD 25 25 ## RemoveItem 279 999%%
-%action If player_stat Any MAILREAD 25 25 ## RemoveItem 253 999%%
+%action If days_played 25 25 ## RemoveItem TentKit 999%%
+%action If days_played 25 25 ## RemoveItem 279 999%%
+%action If days_played 25 25 ## RemoveItem 253 999%%
 
-%action If player_stat Any MAILREAD 25 25 ## AddSpecialOrder QiChallenge10%%
-%action If player_stat Any MAILREAD 25 25 ## AddItem (T)IridiumPickaxe 1 4%%
-%action If player_stat Any MAILREAD 25 25 ## AddItem (BC)71 999 4%% //Staircases
-%action If player_stat Any MAILREAD 25 25 ## AddItem (W)63 1 4%% //Infinity Gavel
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 279 999 4%% //MRC
-%action If player_stat Any MAILREAD 25 25 ## AddItem 253 999 4%% //Triple shot
-//%action If player_stat Any MAILREAD 25 25 ## AddItem (W)34 1 4%% //Galaxy Slingshot
-%action If player_stat Any MAILREAD 25 25 ## AddItem ReturnScepter%%
+%action If days_played 25 25 ## AddSpecialOrder QiChallenge10%%
+%action If days_played 25 25 ## AddItem (T)IridiumPickaxe 1 4%%
+%action If days_played 25 25 ## AddItem (BC)71 999 4%% //Staircases
+%action If days_played 25 25 ## AddItem (W)63 1 4%% //Infinity Gavel
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 279 999 4%% //MRC
+%action If days_played 25 25 ## AddItem 253 999 4%% //Triple shot
+//%action If days_played 25 25 ## AddItem (W)34 1 4%% //Galaxy Slingshot
+%action If days_played 25 25 ## AddItem ReturnScepter%%
 
 /*
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 288 999 4%% //Mega Bomb
-%action If player_stat Any MAILREAD 25 25 ## AddItem 441 999 4%% //explosive ammo
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 288 999 4%% //Mega Bomb
+%action If days_played 25 25 ## AddItem 441 999 4%% //explosive ammo
 
-%action If player_stat Any MAILREAD 26 26, !player_has_item all 288 999 ## AddItem 288 999 4%%
-%action If player_stat Any MAILREAD 26 26, !player_has_item all 288 1998 ## AddItem 288 999 4%%
-%action If player_stat Any MAILREAD 26 26, !player_has_item all 288 2997 ## AddItem 288 999 4%%
+%action If days_played 26 26, !player_has_item all 288 999 ## AddItem 288 999 4%%
+%action If days_played 26 26, !player_has_item all 288 1998 ## AddItem 288 999 4%%
+%action If days_played 26 26, !player_has_item all 288 2997 ## AddItem 288 999 4%%
 */
-%action If player_stat Any MAILREAD 25 26 ## AddItem 288 999 4%%
+%action If days_played 25 26 ## AddItem 288 999 4%%
 
 
 
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem 288 9999%%
+%action If days_played 27 27 ## RemoveItem 288 9999%%
 /*
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem IridiumPickaxe%%
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem (BC)71 999%%
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem (W)63%%
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem 279 999%%
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem 253 999%%
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem (W)34%%
-%action If player_stat Any MAILREAD 27 27 ## RemoveItem ReturnScepter%%
+%action If days_played 27 27 ## RemoveItem IridiumPickaxe%%
+%action If days_played 27 27 ## RemoveItem (BC)71 999%%
+%action If days_played 27 27 ## RemoveItem (W)63%%
+%action If days_played 27 27 ## RemoveItem 279 999%%
+%action If days_played 27 27 ## RemoveItem 253 999%%
+%action If days_played 27 27 ## RemoveItem (W)34%%
+%action If days_played 27 27 ## RemoveItem ReturnScepter%%
 */
-%action If player_stat Any MAILREAD 27 27 ## AddItem TentKit 999%%
+%action If days_played 27 27 ## AddItem TentKit 999%%
 
-//%action If player_stat Any MAILREAD 100 ## IncrementStat MAILREAD -100%%
+//%action If days_played 100 ## IncrementStat MAILREAD -100%%
 
 //The Great Rng Manip Section
 /*
@@ -2088,10 +2114,8 @@ In this run, the following specific controls are performed:
 	h) On the second read of Spring 15th, we make floor 1 infested and ensure the next 4 calico statues are good
 */
 
-
-%action IncrementStat DaysPlayed -2147483647%%
-/*
-//Rather than resetting data, we make it only run on MAILREAD 16 16
+//Reset everything
+//%action IncrementStat DaysPlayed -99%% //Unnecessary since it's already at most 27, all this breaks is 20 seconds in 2046 (which is when the rng stops working)
 //%action IncrementStat floor9Rem -9%%
 %action IncrementStat floor8Rem -9%%
 %action IncrementStat floor7Rem -9%%
@@ -2099,7 +2123,11 @@ In this run, the following specific controls are performed:
 %action IncrementStat floor4Rem -9%%
 %action IncrementStat floor3Rem -9%%
 %action IncrementStat floor2Rem -9%%
-//%action IncrementStat floor1Rem -9%%
+%action IncrementStat floor1Rem -9%%
+%action IncrementStat stepMaRem -50%%
+/*
+//Doesn't need to be reset!
+%action IncrementStat halvedBit-1 -9%%
 %action IncrementStat halvedBit00 -9%%
 %action IncrementStat halvedBit01 -9%%
 %action IncrementStat halvedBit02 -9%%
@@ -2129,15 +2157,16 @@ In this run, the following specific controls are performed:
 %action IncrementStat halvedBit26 -9%%
 %action IncrementStat halvedBit27 -9%%
 %action IncrementStat halvedBit28 -9%%
-%action IncrementStat halvedBit29 -9%%
+//%action IncrementStat halvedBit29 -9%%
 */
-
+/*
+//Only relevant for 12 minutes in 2012, so for efficiencies sake
 %action IncrementStat DaysPlayed 1073741824%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -1073741835%%
-
+*/
 %action IncrementStat DaysPlayed 536870912%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
@@ -2247,8 +2276,8 @@ In this run, the following specific controls are performed:
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -4101%%
 
 %action IncrementStat DaysPlayed 2039%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -2051%%
 
@@ -2265,38 +2294,38 @@ In this run, the following specific controls are performed:
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -512%%
 
 %action IncrementStat DaysPlayed 244%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -255%%
 
 %action IncrementStat DaysPlayed 116%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -127%%
 
 %action IncrementStat DaysPlayed 53%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -64%%
 
 %action IncrementStat DaysPlayed 20%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -31%%
 
 %action IncrementStat DaysPlayed 5%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -16%%
 
 %action IncrementStat DaysPlayed -3%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
-%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed 1%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
+%action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -8%%
 
@@ -2307,8 +2336,7 @@ In this run, the following specific controls are performed:
 %action If !SYNCED_RANDOM day b√OOL 0.72624, SYNCED_RANDOM day b√OOL 0.72625 ## Null ## IncrementStat DaysPlayed%%
 %action If !SYNCED_RANDOM day b√OOL 0.72624, SYNCED_RANDOM day b√OOL 0.72625 ## Null ## IncrementStat DaysPlayed%%
 
-%action If !player_stat Any MAILREAD 16 16 ## IncrementStat DaysPlayed -2147483647%%
-
+/*
 %action If player_stat Any DaysPlayed 1073741824 ## IncrementStat halvedBit29%%
 %action If player_stat Any DaysPlayed 1073741824 ## IncrementStat floor2Rem 536870912%%
 %action If player_stat Any DaysPlayed 1073741824 ## IncrementStat floor4Rem 536870912%%
@@ -2317,6 +2345,7 @@ In this run, the following specific controls are performed:
 //%action If player_stat Any DaysPlayed 1073741824 ## IncrementStat floor9Rem 536870912%%
 %action If player_stat Any DaysPlayed 1073741824 ## IncrementStat stepMaRem 536870912%%
 %action If player_stat Any DaysPlayed 1073741824 ## IncrementStat DaysPlayed -1073741824%%
+*/
 
 %action If player_stat Any DaysPlayed 536870912 ## IncrementStat halvedBit28%%
 %action If player_stat Any DaysPlayed 536870912 ## IncrementStat floor2Rem 268435456%%
@@ -2571,85 +2600,24 @@ In this run, the following specific controls are performed:
 %action If player_stat Any DaysPlayed 4 ## IncrementStat DaysPlayed -4%%
 
 %action If player_stat Any DaysPlayed 2 ## IncrementStat halvedBit00%%
-%action If player_stat Any DaysPlayed 2 ## IncrementStat floor2Rem 1%%
-%action If player_stat Any DaysPlayed 2 ## IncrementStat floor4Rem 1%%
-%action If player_stat Any DaysPlayed 2 ## IncrementStat floor6Rem 1%%
-%action If player_stat Any DaysPlayed 2 ## IncrementStat floor8Rem 1%%
-//%action If player_stat Any DaysPlayed 2 ## IncrementStat floor9Rem 1%%
-%action If player_stat Any DaysPlayed 2 ## IncrementStat stepMaRem 1%%
+%action If player_stat Any DaysPlayed 2 ## IncrementStat floor2Rem%%
+%action If player_stat Any DaysPlayed 2 ## IncrementStat floor4Rem%%
+%action If player_stat Any DaysPlayed 2 ## IncrementStat floor6Rem%%
+%action If player_stat Any DaysPlayed 2 ## IncrementStat floor8Rem%%
+//%action If player_stat Any DaysPlayed 2 ## IncrementStat floor9Rem%%
+%action If player_stat Any DaysPlayed 2 ## IncrementStat stepMaRem%%
 %action If player_stat Any DaysPlayed 2 ## IncrementStat DaysPlayed -2%%
 
-%action If player_stat Any DaysPlayed 1 ## IncrementStat halvedBit00%%
-%action If player_stat Any DaysPlayed 1 ## IncrementStat floor2Rem 1%%
-%action If player_stat Any DaysPlayed 1 ## IncrementStat floor4Rem 1%%
-%action If player_stat Any DaysPlayed 1 ## IncrementStat floor6Rem 1%%
-%action If player_stat Any DaysPlayed 1 ## IncrementStat floor8Rem 1%%
-//%action If player_stat Any DaysPlayed 1 ## IncrementStat floor9Rem 1%%
-%action If player_stat Any DaysPlayed 1 ## IncrementStat stepMaRem 1%%
+%action If player_stat Any DaysPlayed 1 ## IncrementStat halvedBit-1%%
+%action If player_stat Any DaysPlayed 1 ## IncrementStat floor2Rem%%
+%action If player_stat Any DaysPlayed 1 ## IncrementStat floor4Rem%%
+%action If player_stat Any DaysPlayed 1 ## IncrementStat floor6Rem%%
+%action If player_stat Any DaysPlayed 1 ## IncrementStat floor8Rem%%
+//%action If player_stat Any DaysPlayed 1 ## IncrementStat floor9Rem%%
+%action If player_stat Any DaysPlayed 1 ## IncrementStat stepMaRem%%
 %action IncrementStat DaysPlayed -1%%
 
-
-%action If player_stat Any halvedBit00 2 ## IncrementStat halvedBit01%%
-%action If player_stat Any halvedBit00 2 ## IncrementStat halvedBit00 -2%%
-%action If player_stat Any halvedBit01 2 ## IncrementStat halvedBit02%%
-%action If player_stat Any halvedBit01 2 ## IncrementStat halvedBit01 -2%%
-%action If player_stat Any halvedBit02 2 ## IncrementStat halvedBit03%%
-%action If player_stat Any halvedBit02 2 ## IncrementStat halvedBit02 -2%%
-%action If player_stat Any halvedBit03 2 ## IncrementStat halvedBit04%%
-%action If player_stat Any halvedBit03 2 ## IncrementStat halvedBit03 -2%%
-%action If player_stat Any halvedBit04 2 ## IncrementStat halvedBit05%%
-%action If player_stat Any halvedBit04 2 ## IncrementStat halvedBit04 -2%%
-%action If player_stat Any halvedBit05 2 ## IncrementStat halvedBit06%%
-%action If player_stat Any halvedBit05 2 ## IncrementStat halvedBit05 -2%%
-%action If player_stat Any halvedBit06 2 ## IncrementStat halvedBit07%%
-%action If player_stat Any halvedBit06 2 ## IncrementStat halvedBit06 -2%%
-%action If player_stat Any halvedBit07 2 ## IncrementStat halvedBit08%%
-%action If player_stat Any halvedBit07 2 ## IncrementStat halvedBit07 -2%%
-%action If player_stat Any halvedBit08 2 ## IncrementStat halvedBit09%%
-%action If player_stat Any halvedBit08 2 ## IncrementStat halvedBit08 -2%%
-%action If player_stat Any halvedBit09 2 ## IncrementStat halvedBit10%%
-%action If player_stat Any halvedBit09 2 ## IncrementStat halvedBit09 -2%%
-%action If player_stat Any halvedBit10 2 ## IncrementStat halvedBit11%%
-%action If player_stat Any halvedBit10 2 ## IncrementStat halvedBit10 -2%%
-%action If player_stat Any halvedBit11 2 ## IncrementStat halvedBit12%%
-%action If player_stat Any halvedBit11 2 ## IncrementStat halvedBit11 -2%%
-%action If player_stat Any halvedBit12 2 ## IncrementStat halvedBit13%%
-%action If player_stat Any halvedBit12 2 ## IncrementStat halvedBit12 -2%%
-%action If player_stat Any halvedBit13 2 ## IncrementStat halvedBit14%%
-%action If player_stat Any halvedBit13 2 ## IncrementStat halvedBit13 -2%%
-%action If player_stat Any halvedBit14 2 ## IncrementStat halvedBit15%%
-%action If player_stat Any halvedBit14 2 ## IncrementStat halvedBit14 -2%%
-%action If player_stat Any halvedBit15 2 ## IncrementStat halvedBit16%%
-%action If player_stat Any halvedBit15 2 ## IncrementStat halvedBit15 -2%%
-%action If player_stat Any halvedBit16 2 ## IncrementStat halvedBit17%%
-%action If player_stat Any halvedBit16 2 ## IncrementStat halvedBit16 -2%%
-%action If player_stat Any halvedBit17 2 ## IncrementStat halvedBit18%%
-%action If player_stat Any halvedBit17 2 ## IncrementStat halvedBit17 -2%%
-%action If player_stat Any halvedBit18 2 ## IncrementStat halvedBit19%%
-%action If player_stat Any halvedBit18 2 ## IncrementStat halvedBit18 -2%%
-%action If player_stat Any halvedBit19 2 ## IncrementStat halvedBit20%%
-%action If player_stat Any halvedBit19 2 ## IncrementStat halvedBit19 -2%%
-%action If player_stat Any halvedBit20 2 ## IncrementStat halvedBit21%%
-%action If player_stat Any halvedBit20 2 ## IncrementStat halvedBit20 -2%%
-%action If player_stat Any halvedBit21 2 ## IncrementStat halvedBit22%%
-%action If player_stat Any halvedBit21 2 ## IncrementStat halvedBit21 -2%%
-%action If player_stat Any halvedBit22 2 ## IncrementStat halvedBit23%%
-%action If player_stat Any halvedBit22 2 ## IncrementStat halvedBit22 -2%%
-%action If player_stat Any halvedBit23 2 ## IncrementStat halvedBit24%%
-%action If player_stat Any halvedBit23 2 ## IncrementStat halvedBit23 -2%%
-%action If player_stat Any halvedBit24 2 ## IncrementStat halvedBit25%%
-%action If player_stat Any halvedBit24 2 ## IncrementStat halvedBit24 -2%%
-%action If player_stat Any halvedBit25 2 ## IncrementStat halvedBit26%%
-%action If player_stat Any halvedBit25 2 ## IncrementStat halvedBit25 -2%%
-%action If player_stat Any halvedBit26 2 ## IncrementStat halvedBit27%%
-%action If player_stat Any halvedBit26 2 ## IncrementStat halvedBit26 -2%%
-%action If player_stat Any halvedBit27 2 ## IncrementStat halvedBit28%%
-%action If player_stat Any halvedBit27 2 ## IncrementStat halvedBit27 -2%%
-%action If player_stat Any halvedBit28 2 ## IncrementStat halvedBit29%%
-%action If player_stat Any halvedBit28 2 ## IncrementStat halvedBit28 -2%%
-
-
-%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 134217728%%
+//%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 134217728%%
 %action If player_stat Any halvedBit28 1 ## IncrementStat DaysPlayed 67108864%%
 %action If player_stat Any halvedBit27 1 ## IncrementStat DaysPlayed 33554432%%
 %action If player_stat Any halvedBit26 1 ## IncrementStat DaysPlayed 16777216%%
@@ -2676,15 +2644,20 @@ In this run, the following specific controls are performed:
 %action If player_stat Any halvedBit05 1 ## IncrementStat DaysPlayed 8%%
 %action If player_stat Any halvedBit04 1 ## IncrementStat DaysPlayed 4%%
 %action If player_stat Any halvedBit03 1 ## IncrementStat DaysPlayed 2%%
-%action If player_stat Any halvedBit02 1 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any halvedBit02 1 ## IncrementStat DaysPlayed%%
 
 %action If player_stat Any halvedBit01 1 ## IncrementStat floor3Rem 2%%
-%action If player_stat Any halvedBit00 1 ## IncrementStat floor3Rem 1%%
+%action If player_stat Any halvedBit00 1 ## IncrementStat floor3Rem%%
+%action If player_stat Any halvedBit-1 1 ## IncrementStat floor3Rem%%
 
+//%action If player_stat Any floor3Rem 4 ## IncrementStat DaysPlayed%%
+//%action If player_stat Any floor3Rem 4 ## IncrementStat floor3Rem -4%%
+
+%action If player_stat Any floor3Rem 4 ## IncrementStat DaysPlayed 267656698%%
 %action If player_stat Any floor3Rem 0 0 ## IncrementStat DaysPlayed 267656697%%
 %action If player_stat Any floor3Rem 1 1 ## IncrementStat DaysPlayed 333356755%%
 %action If player_stat Any floor3Rem 2 2 ## IncrementStat DaysPlayed 393837436%%
-%action If player_stat Any floor3Rem 3 3 ## IncrementStat DaysPlayed 254520481%%
+%action If player_stat Any floor3Rem 3 3 ## IncrementStat DaysPlayed 92233484%%
 
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon3 . ## Null%%
 %action IncrementStat DaysPlayed -2147483647%%
@@ -2692,8 +2665,8 @@ In this run, the following specific controls are performed:
 
 /*
 %action IncrementStat DaysPlayed -2147483647%%
-%action If player_stat Any floor9Rem 671088640 ## IncrementStat DaysPlayed 67108864%%
-%action If player_stat Any floor9Rem 671088640 ## IncrementStat floor9Rem -671088640%%
+//%action If player_stat Any floor9Rem 671088640 ## IncrementStat DaysPlayed 67108864%%
+//%action If player_stat Any floor9Rem 671088640 ## IncrementStat floor9Rem -671088640%%
 %action If player_stat Any floor9Rem 335544320 ## IncrementStat DaysPlayed 33554432%%
 %action If player_stat Any floor9Rem 335544320 ## IncrementStat floor9Rem -335544320%%
 %action If player_stat Any floor9Rem 167772160 ## IncrementStat DaysPlayed 16777216%%
@@ -2744,7 +2717,7 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor9Rem 40 ## IncrementStat floor9Rem -40%%
 %action If player_stat Any floor9Rem 20 ## IncrementStat DaysPlayed 2%%
 %action If player_stat Any floor9Rem 20 ## IncrementStat floor9Rem -20%%
-%action If player_stat Any floor9Rem 10 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any floor9Rem 10 ## IncrementStat DaysPlayed%%
 %action If player_stat Any floor9Rem 10 ## IncrementStat floor9Rem -10%%
 %action If player_stat Any floor9Rem 0 0 ## IncrementStat DaysPlayed 583335%%
 %action If player_stat Any floor9Rem 1 1 ## IncrementStat DaysPlayed 448487%%
@@ -2755,13 +2728,13 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor9Rem 6 6 ## IncrementStat DaysPlayed 439470%%
 %action If player_stat Any floor9Rem 7 7 ## IncrementStat DaysPlayed 417362%%
 %action If player_stat Any floor9Rem 8 8 ## IncrementStat DaysPlayed 433274%%
-%action If player_stat Any floor9Rem 9 9 ## IncrementStat DaysPlayed 475104%%
+%action If player_stat Any floor9Rem 9 ## IncrementStat DaysPlayed 475104%%
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon9 . ## Null%%
 */
 
 %action IncrementStat DaysPlayed -2147483647%%
-%action If player_stat Any floor8Rem 603979776 ## IncrementStat DaysPlayed 67108864%%
-%action If player_stat Any floor8Rem 603979776 ## IncrementStat floor8Rem -603979776%%
+//%action If player_stat Any floor8Rem 603979776 ## IncrementStat DaysPlayed 67108864%%
+//%action If player_stat Any floor8Rem 603979776 ## IncrementStat floor8Rem -603979776%%
 %action If player_stat Any floor8Rem 301989888 ## IncrementStat DaysPlayed 33554432%%
 %action If player_stat Any floor8Rem 301989888 ## IncrementStat floor8Rem -301989888%%
 %action If player_stat Any floor8Rem 150994944 ## IncrementStat DaysPlayed 16777216%%
@@ -2812,7 +2785,7 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor8Rem 36 ## IncrementStat floor8Rem -36%%
 %action If player_stat Any floor8Rem 18 ## IncrementStat DaysPlayed 2%%
 %action If player_stat Any floor8Rem 18 ## IncrementStat floor8Rem -18%%
-%action If player_stat Any floor8Rem 9 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any floor8Rem 9 ## IncrementStat DaysPlayed%%
 %action If player_stat Any floor8Rem 9 ## IncrementStat floor8Rem -9%%
 %action If player_stat Any floor8Rem 0 0 ## IncrementStat DaysPlayed 117390562%%
 %action If player_stat Any floor8Rem 1 1 ## IncrementStat DaysPlayed 67590624%%
@@ -2822,11 +2795,11 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor8Rem 5 5 ## IncrementStat DaysPlayed 101895396%%
 %action If player_stat Any floor8Rem 6 6 ## IncrementStat DaysPlayed 125746993%%
 %action If player_stat Any floor8Rem 7 7 ## IncrementStat DaysPlayed 87551757%%
-%action If player_stat Any floor8Rem 8 8 ## IncrementStat DaysPlayed 116087489%%
+%action If player_stat Any floor8Rem 8 ## IncrementStat DaysPlayed 116087489%%
 
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon8 . ## Null%%
 %action IncrementStat DaysPlayed -2147483647%%
-%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 67108864%%
+//%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 67108864%%
 %action If player_stat Any halvedBit28 1 ## IncrementStat DaysPlayed 33554432%%
 %action If player_stat Any halvedBit27 1 ## IncrementStat DaysPlayed 16777216%%
 %action If player_stat Any halvedBit26 1 ## IncrementStat DaysPlayed 8388608%%
@@ -2852,12 +2825,17 @@ In this run, the following specific controls are performed:
 %action If player_stat Any halvedBit06 1 ## IncrementStat DaysPlayed 8%%
 %action If player_stat Any halvedBit05 1 ## IncrementStat DaysPlayed 4%%
 %action If player_stat Any halvedBit04 1 ## IncrementStat DaysPlayed 2%%
-%action If player_stat Any halvedBit03 1 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any halvedBit03 1 ## IncrementStat DaysPlayed%%
 
 %action If player_stat Any halvedBit02 1 ## IncrementStat floor7Rem 4%%
 %action If player_stat Any halvedBit01 1 ## IncrementStat floor7Rem 2%%
-%action If player_stat Any halvedBit00 1 ## IncrementStat floor7Rem 1%%
+%action If player_stat Any halvedBit00 1 ## IncrementStat floor7Rem%%
+%action If player_stat Any halvedBit-1 1 ## IncrementStat floor7Rem%%
 
+//%action If player_stat Any floor7Rem 8 ## IncrementStat DaysPlayed%%
+//%action If player_stat Any floor7Rem 8 ## IncrementStat floor7Rem -8%%
+
+%action If player_stat Any floor7Rem 8 ## IncrementStat DaysPlayed 88016477%%
 %action If player_stat Any floor7Rem 0 0 ## IncrementStat DaysPlayed 88016476%%
 %action If player_stat Any floor7Rem 1 1 ## IncrementStat DaysPlayed 67760085%%
 %action If player_stat Any floor7Rem 2 2 ## IncrementStat DaysPlayed 150023996%%
@@ -2869,8 +2847,8 @@ In this run, the following specific controls are performed:
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon7 . ## Null%%
 %action IncrementStat DaysPlayed -2147483647%%
 
-%action If player_stat Any floor6Rem 939524096 ## IncrementStat DaysPlayed 134217728%%
-%action If player_stat Any floor6Rem 939524096 ## IncrementStat floor6Rem -939524096%%
+//%action If player_stat Any floor6Rem 939524096 ## IncrementStat DaysPlayed 134217728%%
+//%action If player_stat Any floor6Rem 939524096 ## IncrementStat floor6Rem -939524096%%
 %action If player_stat Any floor6Rem 469762048 ## IncrementStat DaysPlayed 67108864%%
 %action If player_stat Any floor6Rem 469762048 ## IncrementStat floor6Rem -469762048%%
 %action If player_stat Any floor6Rem 234881024 ## IncrementStat DaysPlayed 33554432%%
@@ -2923,7 +2901,7 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor6Rem 28 ## IncrementStat floor6Rem -28%%
 %action If player_stat Any floor6Rem 14 ## IncrementStat DaysPlayed 2%%
 %action If player_stat Any floor6Rem 14 ## IncrementStat floor6Rem -14%%
-%action If player_stat Any floor6Rem 7 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any floor6Rem 7 ## IncrementStat DaysPlayed%%
 %action If player_stat Any floor6Rem 7 ## IncrementStat floor6Rem -7%%
 %action If player_stat Any floor6Rem 0 0 ## IncrementStat DaysPlayed 156223263%%
 %action If player_stat Any floor6Rem 1 1 ## IncrementStat DaysPlayed 149256814%%
@@ -2931,12 +2909,12 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor6Rem 3 3 ## IncrementStat DaysPlayed 162481168%%
 %action If player_stat Any floor6Rem 4 4 ## IncrementStat DaysPlayed 160797671%%
 %action If player_stat Any floor6Rem 5 5 ## IncrementStat DaysPlayed 119127441%%
-%action If player_stat Any floor6Rem 6 6 ## IncrementStat DaysPlayed 98079924%%
+%action If player_stat Any floor6Rem 6 ## IncrementStat DaysPlayed 98079924%%
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon6 . ## Null%%
 %action IncrementStat DaysPlayed -2147483647%%
 
-%action If player_stat Any floor4Rem 671088640 ## IncrementStat DaysPlayed 134217728%%
-%action If player_stat Any floor4Rem 671088640 ## IncrementStat floor4Rem -671088640%%
+//%action If player_stat Any floor4Rem 671088640 ## IncrementStat DaysPlayed 134217728%%
+//%action If player_stat Any floor4Rem 671088640 ## IncrementStat floor4Rem -671088640%%
 %action If player_stat Any floor4Rem 335544320 ## IncrementStat DaysPlayed 67108864%%
 %action If player_stat Any floor4Rem 335544320 ## IncrementStat floor4Rem -335544320%%
 %action If player_stat Any floor4Rem 167772160 ## IncrementStat DaysPlayed 33554432%%
@@ -2989,19 +2967,19 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor4Rem 20 ## IncrementStat floor4Rem -20%%
 %action If player_stat Any floor4Rem 10 ## IncrementStat DaysPlayed 2%%
 %action If player_stat Any floor4Rem 10 ## IncrementStat floor4Rem -10%%
-%action If player_stat Any floor4Rem 5 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any floor4Rem 5 ## IncrementStat DaysPlayed%%
 %action If player_stat Any floor4Rem 5 ## IncrementStat floor4Rem -5%%
 %action If player_stat Any floor4Rem 0 0 ## IncrementStat DaysPlayed 265141467%%
 %action If player_stat Any floor4Rem 1 1 ## IncrementStat DaysPlayed 303093539%%
 %action If player_stat Any floor4Rem 2 2 ## IncrementStat DaysPlayed 200749899%%
 %action If player_stat Any floor4Rem 3 3 ## IncrementStat DaysPlayed 296057561%%
-%action If player_stat Any floor4Rem 4 4 ## IncrementStat DaysPlayed 208963579%%
+%action If player_stat Any floor4Rem 4 ## IncrementStat DaysPlayed 208963579%%
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon4 . ## Null%%
 %action IncrementStat DaysPlayed -2147483647%%
 
 
-%action If player_stat Any floor2Rem 805306368 ## IncrementStat DaysPlayed 268435456%%
-%action If player_stat Any floor2Rem 805306368 ## IncrementStat floor2Rem -805306368%%
+//%action If player_stat Any floor2Rem 805306368 ## IncrementStat DaysPlayed 268435456%%
+//%action If player_stat Any floor2Rem 805306368 ## IncrementStat floor2Rem -805306368%%
 %action If player_stat Any floor2Rem 402653184 ## IncrementStat DaysPlayed 134217728%%
 %action If player_stat Any floor2Rem 402653184 ## IncrementStat floor2Rem -402653184%%
 %action If player_stat Any floor2Rem 201326592 ## IncrementStat DaysPlayed 67108864%%
@@ -3056,15 +3034,15 @@ In this run, the following specific controls are performed:
 %action If player_stat Any floor2Rem 12 ## IncrementStat floor2Rem -12%%
 %action If player_stat Any floor2Rem 6 ## IncrementStat DaysPlayed 2%%
 %action If player_stat Any floor2Rem 6 ## IncrementStat floor2Rem -6%%
-%action If player_stat Any floor2Rem 3 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any floor2Rem 3 ## IncrementStat DaysPlayed%%
 %action If player_stat Any floor2Rem 3 ## IncrementStat floor2Rem -3%%
 %action If player_stat Any floor2Rem 0 0 ## IncrementStat DaysPlayed 447829836%%
 %action If player_stat Any floor2Rem 1 1 ## IncrementStat DaysPlayed 465020156%%
-%action If player_stat Any floor2Rem 2 2 ## IncrementStat DaysPlayed 201798024%%
+%action If player_stat Any floor2Rem 2 ## IncrementStat DaysPlayed 201798024%%
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon2 . ## Null%%
 %action IncrementStat DaysPlayed -2147483647%%
 
-%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 268435456%%
+//%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 268435456%%
 %action If player_stat Any halvedBit28 1 ## IncrementStat DaysPlayed 134217728%%
 %action If player_stat Any halvedBit27 1 ## IncrementStat DaysPlayed 67108864%%
 %action If player_stat Any halvedBit26 1 ## IncrementStat DaysPlayed 33554432%%
@@ -3092,12 +3070,17 @@ In this run, the following specific controls are performed:
 %action If player_stat Any halvedBit04 1 ## IncrementStat DaysPlayed 8%%
 %action If player_stat Any halvedBit03 1 ## IncrementStat DaysPlayed 4%%
 %action If player_stat Any halvedBit02 1 ## IncrementStat DaysPlayed 2%%
-%action If player_stat Any halvedBit01 1 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any halvedBit01 1 ## IncrementStat DaysPlayed%%
 
-//%action If player_stat Any halvedBit00 1 ## IncrementStat floor1Rem 1%%
+%action If player_stat Any halvedBit00 1 ## IncrementStat floor1Rem%%
+%action If player_stat Any halvedBit-1 1 ## IncrementStat floor1Rem%%
 
-%action If player_stat Any halvedBit00 0 0 ## IncrementStat DaysPlayed 561013997%%
-%action If player_stat Any halvedBit00 1 1 ## IncrementStat DaysPlayed 649878541%%
+//%action If player_stat Any floor1Rem 2 ## IncrementStat DaysPlayed%%
+//%action If player_stat Any floor1Rem 2 ## IncrementStat floor7Rem -2%%
+
+%action If player_stat Any floor1Rem 2 ## IncrementStat DaysPlayed 561013998%%
+%action If player_stat Any floor1Rem 0 0 ## IncrementStat DaysPlayed 561013997%%
+%action If player_stat Any floor1Rem 1 1 ## IncrementStat DaysPlayed 649878541%%
 %action If !DAY_OF_MONTH 2 ## Null ## If LOCATION_NAME VolcanoDungeon1 . ## Null%%
 
 //Delayed luck buff to avoid messing up volcano floors
@@ -3124,41 +3107,12 @@ In this run, the following specific controls are performed:
 
 %action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught 9%%
 %action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 7731%%
-/*
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
 
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat PreciseFishCaught%%
-%action If !SYNCED_RANDOM day gtyp .15 ## IncrementStat DaysPlayed 859%%
-*/
 //Should now be guaranteed to be in the correct position
 //Warns if fails.
 %action If !SYNCED_RANDOM day gtyp .15 ## AddItem Oh
-No Fish%%
+No 
+Legacy?%%
 
 //If you still need to catch the tutorial fish, go one back
 %action If !player_has_mail Current CaughtSunfish, !player_has_mail Current CaughtStonefish ## IncrementStat PreciseFishCaught -1%%
@@ -3173,7 +3127,7 @@ No Fish%%
 //MR24 (spring15th) wants dino+statues 
 //MR25 (spring15th) wants sc1 and maybe more statues
 %action IncrementStat DaysPlayed -2147483647%%
-%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 536870912%%
+//%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 536870912%%
 %action If player_stat Any halvedBit28 1 ## IncrementStat DaysPlayed 268435456%%
 %action If player_stat Any halvedBit27 1 ## IncrementStat DaysPlayed 134217728%%
 %action If player_stat Any halvedBit26 1 ## IncrementStat DaysPlayed 67108864%%
@@ -3202,7 +3156,8 @@ No Fish%%
 %action If player_stat Any halvedBit03 1 ## IncrementStat DaysPlayed 8%%
 %action If player_stat Any halvedBit02 1 ## IncrementStat DaysPlayed 4%%
 %action If player_stat Any halvedBit01 1 ## IncrementStat DaysPlayed 2%%
-%action If player_stat Any halvedBit00 1 ## IncrementStat DaysPlayed 1%%
+%action If player_stat Any halvedBit00 1 ## IncrementStat DaysPlayed%%
+%action If player_stat Any halvedBit-1 1 ## IncrementStat DaysPlayed%%
 
 %action IncrementStat stepsTaken -2147483647%%
 %action If player_stat Any MAILREAD 16 16 ## IncrementStat DaysPlayed 70%%//Dust Sprites
@@ -3211,10 +3166,10 @@ No Fish%%
 %action If player_stat Any MAILREAD 19 19 ## IncrementStat DaysPlayed 17%%//Duggies
 %action If player_stat Any MAILREAD 24 24 ## IncrementStat DaysPlayed -2147483647%%//Rng manip in steps
 %action If player_stat Any MAILREAD 25 25 ## IncrementStat DaysPlayed 159159%%//Dinos on floor 7, 12 statues for 4 more monsters.
-%action If player_stat Any MAILREAD 26 26 ## IncrementStat DaysPlayed 1120%%//Infested on floor 1, 4 statues for 2 more monsters.
+%action If player_stat Any MAILREAD 26 26 ## IncrementStat DaysPlayed 1455%%//Infested on floor 1, 3 statues for 2 more monsters.
 
-%action If player_stat Any stepMaRem 838860800 ## IncrementStat stepsTaken 16777216%%
-%action If player_stat Any stepMaRem 838860800 ## IncrementStat stepMaRem -838860800%%
+//%action If player_stat Any stepMaRem 838860800 ## IncrementStat stepsTaken 16777216%%
+//%action If player_stat Any stepMaRem 838860800 ## IncrementStat stepMaRem -838860800%%
 %action If player_stat Any stepMaRem 419430400 ## IncrementStat stepsTaken 8388608%%
 %action If player_stat Any stepMaRem 419430400 ## IncrementStat stepMaRem -419430400%%
 %action If player_stat Any stepMaRem 209715200 ## IncrementStat stepsTaken 4194304%%
@@ -3261,10 +3216,9 @@ No Fish%%
 %action If player_stat Any stepMaRem 200 ## IncrementStat stepMaRem -200%%
 %action If player_stat Any stepMaRem 100 ## IncrementStat stepsTaken 2%%
 %action If player_stat Any stepMaRem 100 ## IncrementStat stepMaRem -100%%
-%action If player_stat Any stepMaRem 50 ## IncrementStat stepsTaken 1%%
+%action If player_stat Any stepMaRem 50 ## IncrementStat stepsTaken%%
 %action If player_stat Any stepMaRem 50 ## IncrementStat stepMaRem -50%%
-%action If player_stat Any stepMaRem 34 ## IncrementStat stepsTaken 1%%//Guarantees a rounding towards 107374266/100 - .66 and not -1.66
-%action IncrementStat stepMaRem -50%%
+%action If player_stat Any stepMaRem 34 ## IncrementStat stepsTaken%%//Guarantees a rounding towards 107374266/100 - .66 and not -1.66
 %action IncrementStat stepsTaken 22490%%
 
 [letterbg LooseSprites/Cursors 33]
@@ -3289,16 +3243,24 @@ No Fish%%
 #$action RemoveItem IridiumSpur 9
 #$action RemoveItem BasiliskPaw 9
 
+//Trigger the artifact cutscene at a moment where it doesn't lose time
+#$action AddItem 96
+#$action RemoveItem 96
+
+//Friendship with known people to remove some stuff from main name
+#$action AddFriendshipPoints Wizard 2600
+#$action AddFriendshipPoints Robin 2600
+#$action AddFriendshipPoints Lewis 2600
+
+
 //New items for Pierre trip
 
 #$action AddItem StardropTea//Could be any item but stardrop tea gives obvious gift vibes
-//#$action AddItem 886 //Island Warp
-//#$action AddItem 689 //Mountain Warp
 #$action AddItem ReturnScepter
 #$action AddItem (TR)IridiumSpur
 
 //Undo buttons and a junimo chest to put them in
-#$action AddItem (O)UndoButton 999
+#$action AddItem (O)Undo 999
 #$action AddItem (BC)256
 /*
 //Fish pond components

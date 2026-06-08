@@ -37,7 +37,7 @@ Once the Obelisks have been built, run to the Wizard's basement. There, you can 
 Beach warp, and run to Marnie again. Note again that the paste begins with a newline, so you don't need to delete the randomly generated chicken name.
 
 ### Chicken 2
-This chicken warps you into the sewers, with a cutscene. Wait until the Dwarf dialogue box appears, and then skip. Say hi to Krobus (you can't gift until you talk once, so there's no risk with what item you hold [unless it's a warp totem. I recommend switching to slot 1 beforehand due to this]). Run out of the sewers, and go to Pierre's to get 2 backpack upgrades. Gift Pierre a Stardrop Tea (do not talk to him - he says your name). At this point, you use the Return Scepter to return home. Equip the Golden Spur in your inventory at some point. Place the Junimo Chest with the 999 UndoButtons somewhere accessible (for if anything goes wrong), and read the mail.
+This chicken warps you into the sewers, with a cutscene. Wait until the Dwarf dialogue box appears, and then skip. Say hi to Krobus (you can't gift until you talk once, so there's no risk with what item you hold [unless it's a warp totem. I recommend switching to slot 1 beforehand due to this]). Run out of the sewers, and go to Pierre's to get 2 backpack upgrades. Gift Pierre a Stardrop Tea (do not talk to him - he says your name). At this point, you use the Return Scepter to return home. Equip the Golden Spur in your inventory at some point. Place the Junimo Chest with the 999 Undo somewhere accessible (for if anything goes wrong), and read the mail.
 
 ### Read 2 (Shipping)
 This read empties your inventory and gives you items to ship. Ship them all (you can drag with left+right click, or shift+right click, to do it quickly).
@@ -86,19 +86,17 @@ This leaves your inventory as following:
  - Row 1: Combat.
  - - Iridium Pickaxe, for the rare rocks it's faster to break than to bomb or slingshot.
  - - Staircases
- - - Infinity Gavel, for rare use. Occasionally, use to kill enemies rather than wait for bombs to explode.
  - - 3 stacks of Mega Bombs. Always avoid allowing a stack to empty, and swap to another.
- - - 3 Island Warp Totems. 1 is enough, but there's extra for misclicks.
+ - - Infinity Gavel, for rare use. Occasionally, use to kill enemies rather than wait for bombs to explode.
+ - - 2 stacks of Mega Bombs. Always avoid allowing a stack to empty, and swap to another.
+ - - Mountain Warp Totems
  - - Magic Rock Candy and Triple Shot Expresso.
- - - Galaxy Slingshot, filled with Explosive Ammo. Use to aggro far away Magma Sprites, or to break rocks in the Volcano.
  - - Return Scepter
- - - Mountain Warp Totem
  - Row 2: Fishing + Warps.
  - - Advanced Iridium Rod, for the Jelly fishing performed on Day 3.
  - - Magic Rock Candy and Triple Shot Expresso
  - - Staircase, to leave floor 20 Immediately after fishing on Day 3.
- - - 5 stacks of Mega Bombs, as surplus.
- - - Explosive Ammo; equip to the slingshot.
+ - - 6 stacks of Mega Bombs, as surplus.
  - - Napalm Ring; equip.
  - - Return Scepter
  - Row 3: Extra Inventory
@@ -108,7 +106,7 @@ This leaves your inventory as following:
  - - 4 stacks of different quality Stonefish, to ensure you can pick one up if you catch it when fishing.
  - - 4 stacks of different quality Sunfish, to ensure you can pick one up if you catch it while fishing.
 
-Use the Island Obelisk to warp to the Island. Run to Leo, and skip the cutscene immidiately (sufficient to meet him as long as you open your inventory at any point in the entire rest of the run). Use the Island Warp to leave, as that is faster than running back. Run up to the Volcano, where oodles of Magma Sprites will be available for killing.
+Use the Island Obelisk to warp to the Island. Run up to the Volcano, where oodles of Magma Sprites will be available for killing.
 
 Once 150 have been killed, Mountain Warp and run to the Mines. Use the elevator to go to floor 45, and ladder down to an infested floor 49 and eradicate Dust Sprites (the first eradication message will be Grubs, so ignore that). Once Dust Sprites have been eradicated, take the elevator to floor 75, and eradicate skeletons. Return Scepter once eradicated.
 
@@ -138,7 +136,7 @@ Switch to the Fishing row. Read your mail. This creates the following inventory
 
 Perform [fish pond fishing](/glitches/FishPondFishing.md). In summary, place the chair facing the top row of the fish pond, get in, get out, and fish into the pond. Once a fish is caught, you can animation cancel when the fish is fully caught (held in the white box above your head) to delete it or allow it into your inventory and don't forget. Empty the pond, and switch to the next fish. All left over fish will get trashed by the paste, so as long as it doesn't lead to catching fish multiple times it's fine. Once a row is complete, swap to the next row.
 
-Once every fish is caught, sleep.
+Once every fish is caught, sleep. Swap row twice as you sleep, to ensure the Advanced Iridium Rod is in the final row when doing read 22.
 
 ## Day 13
 ### Read 21 (Fishing)
@@ -147,11 +145,11 @@ Read your mail, which refills the inventory with fish. Get in and out of the cha
 
 ### Read 22 (Ocean Jelly + Crab Pots + Friendship)
 
-Read the mail again, and eat the speed buffs. Use the Ocean Obelisk to go to the ocean, and fish for the Sea Jelly and Seaweed. Then, use the dagger to make harvesting the crab pots slightly faster, and run into the festival. 
+Read the mail again, and eat the speed buffs (actually, probably slow?). Use the Ocean Obelisk to go to the ocean, and fish for the Sea Jelly and Seaweed. Then, use the dagger to make harvesting the crab pots slightly faster, and run into the festival. 
 
 ### Read 23 (Crab Pot Fish, Optional)
 
-This mail only executes if you didn't get all 7 crab pot fish in the crab pots. It gives the remaining crab pot fish to use the [fish pond fishing](/glitches/FishPondFishing.md) glitch for.
+This mail only executes if you didn't get all 7 crab pot fish in the crab pots. It gives the remaining crab pot fish to use the [fish pond fishing](/glitches/FishPondFishing.md) glitch for. If you got the fishing achievement in the crab pots, this mail will be automatically skipped and read 24 happens.
 
 ### Read 24 (RNG Manip)
 
@@ -168,7 +166,7 @@ Read the mail, which sets up a combat inventory. Desert Obelisk to the desert, a
 Depending on the current RNG manip, the contents of the Calico Statues are liable to change. Currently, you must touch 12 statues to get Serpent Invasion, Speed, 4 More Monsters buffs, and 6 irrelevant buffs. Floor 7 (127) is filled with Dinosaurs. Once you have both eradicated Dinos and touched 12 statues, warp home.
 
 ### Read 26 (Sandy, Slimes, Serpents, Mummies)
-Read mail, desert obelisk, and speak to Sandy. Then run to the caverns, and eradicate Mummies, Serpents, and Slimes. Additionally, the next 4 statues contain 2 More-Monsters buffs, so if you wish to click them, you can.
+Read mail, desert obelisk, and speak to Sandy. Then run to the caverns, and eradicate Mummies, Serpents, and Slimes. Additionally, the next 3 statues contain 2 More-Monsters buffs, so if you wish to click them, you can.
 
 ### Read 27 (Summit)
 This mail gives you 10 hearts with Sandy (who you just met), along with tent kits so you can use the Mountain Obelisk and run to Railroad. Use a tent kit just below the summit.
