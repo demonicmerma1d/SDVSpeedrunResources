@@ -381,4 +381,5 @@ def transform(paste:str) -> str:
 if __name__ == '__main__':
 #Example code that, with a file path, prints out formatted versions
     updateWidths()
+    # put the filepath for compiling into PathToFile.txt, this is primarily a quality of life thing for syncing to github 
     formatFile(r'PathToFile.txt', verboseFormat = False, justPrint = True)

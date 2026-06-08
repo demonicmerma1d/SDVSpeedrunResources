@@ -19,7 +19,7 @@ Watch the introduction until Robin starts saying the name, then click the skip c
 ### Day 1
 1) Drink the triple shot expresso and eat the magic rock candy you have been given.
 2) Go outside, place the junimo chest down next to the mail and read the mail once.
-3) Place the 7 donation items into the junimo chest, left to right(in order these are fried egg, poppy, pomegranate, wine, aquamarine, duck feather, rabbits foot)
+3) Place the 7 donation items into the junimo chest, left to right(in order these are fried egg, poppy, pomegranate, wine, aquamarine, duck feather, rabbit foot)
 4) Run to Pierre's and buy the first backpack upgrade, then return scepter home.
 5) Read the mail again then run to the Community Center to turn your items in.
 6) At the crafts room, turn in the summer foraging, construction and exotic foraging bundles. 
