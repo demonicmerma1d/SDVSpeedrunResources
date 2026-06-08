@@ -1,0 +1,161 @@
+%actionAddMail all
+ dad1 Now%%
+%actionAddMail all
+ ccDoorUnlock 
+Received%%
+%actionAddMail all
+ canReadJunimoT${
+¦}$ext Received%%
+%actionAddMail all
+ HasTownKey 
+Received%%
+%action
+increMentstat boo${
+¦}$k_speed 1%%
+%action
+increMentstat boo${
+¦}$k_speed2 1%%
+%action
+RemoveItem (T)Axe
+%%%action
+RemoveItem (T)Hoe
+%%%action
+RemoveItem (T)Pi${
+¦}$ckaxe%%
+%action
+RemoveItem (T)W${
+¦}$ateringCan%%
+%action
+RemoveItem (W)47
+%%%action
+AddBuff 22 -2%%
+%action
+AddBuff statue_of${
+¦}$_blessings_0%%
+%action
+If days_played 1 1 
+ ## 
+AddItem (T)Retur${
+¦}$nScepter%%
+%action
+If days_played 1 1 
+ ## AddItem 228%%
+%action
+If days_played 1 1 
+ ## AddItem 376%%
+%action
+If days_played 1 1 
+ ## AddItem 637%%
+%action
+If days_played 1 1 
+ ## AddItem 348%%
+%action
+If days_played 1 1 
+ ## AddItem 62%%
+%action
+If days_played 1 1 
+ ## AddItem 444%%
+%action
+If days_played 1 1 
+ ## AddItem 446%%
+%action
+if days_played 2 ## 
+RemoveItem (T)R${
+¦}$eturnScepter%%
+%action
+If days_played 2 ## 
+AddItem 430%%
+%action
+If days_played 2 ## 
+AddItem 259%%
+%action
+If days_played 2 ## 
+AddItem 194%%
+%action
+If days_played 2 ## 
+AddItem 725 2%%
+%action
+If days_played 2 ## 
+AddItem 388 198 1
+%%%action
+If days_played 2 ## 
+AddItem 390 99 2
+%%%action
+If days_played 2 ## 
+AddItem 392%%
+%action
+If days_played 2 ## 
+AddItem 536%%
+%action
+If days_played 2 ## 
+AddItem 702%%
+%action
+If days_played 2 ## 
+AddItem 724 2%%
+%action
+If days_played ad${
+¦}$diteM (BC)256 2 2
+%%%action
+If days_played 2 ## 
+AddItem 709 10 4
+%%%action
+If days_played 2 ## 
+AddItem 178 10%%
+%action
+If days_played 2 ## 
+AddItem 397%%
+%action
+If days_played 2 ## 
+AddItem 421%%
+%action
+If days_played 2 ## 
+AddItem 422 2%%
+%action
+If days_played 2 ## 
+AddItem 420 2%%
+%action
+If days_played 2 ## 
+AddItem 78%%
+%action
+If days_played 1 1 
+ ## AddItem 262 10
+%%%action
+If days_played 1 1 
+ ## AddItem 613 3
+%%%action
+If days_played 2 ## 
+AddItem 266%%
+%action
+If days_played 2 ## 
+AddItem 396%%
+%action
+If days_played 2 ## 
+AddItem 398%%
+%action
+If days_played 2 ## 
+AddItem 402%%
+%action
+increMentstat day${
+¦}$sPlayed 1%%
+[253][279]
+[(BC)256]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
