@@ -1160,7 +1160,7 @@ MAILREAD values:
 26 = summit inventory
 */
 //Ensure skull caverns buffs don't reset
-%action If LOCATION_NAME UndergroundMine
+%action If !DAY_OF_MONTH 15 ## Null ## If LOCATION_NAME UndergroundMine
 -1 . ## Null%%
 
 //Remove random garbage from inventory
@@ -2125,8 +2125,8 @@ In this run, the following specific controls are performed:
 %action IncrementStat floor2Rem -9%%
 %action IncrementStat floor1Rem -9%%
 %action IncrementStat stepMaRem -50%%
-/*
-//Doesn't need to be reset!
+
+//Doesn't need to be reset! ... except for the fact that there's some stupid platform specific bug (maybe LF / CRLF?) that is causing
 %action IncrementStat halvedBit-1 -9%%
 %action IncrementStat halvedBit00 -9%%
 %action IncrementStat halvedBit01 -9%%
@@ -2158,7 +2158,7 @@ In this run, the following specific controls are performed:
 %action IncrementStat halvedBit27 -9%%
 %action IncrementStat halvedBit28 -9%%
 //%action IncrementStat halvedBit29 -9%%
-*/
+
 /*
 //Only relevant for 12 minutes in 2012, so for efficiencies sake
 %action IncrementStat DaysPlayed 1073741824%%
