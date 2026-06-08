@@ -14,40 +14,41 @@
 %action AddBuff 22 -2%%
 %action AddBuff statue_of_blessings_0%%
 // cc item trip
-%action If TIME 620 ## RemoveItem (T)ReturnScepter%%
+%action If TIME 610 ## RemoveItem (T)ReturnScepter%%
 //Row 1
-%action If TIME 620 ## AddItem 174%%
-%action If TIME 620 ## AddItem 182%%
-%action If TIME 620 ## AddItem 270 6 2%%
-%action If TIME 620 ## AddItem 188%%
-%action If TIME 620 ## AddItem 192%%
-%action If TIME 620 ## AddItem 190%%
+%action If TIME 610 ## AddItem 174%%
+%action If TIME 610 ## AddItem 182%%
+%action If TIME 610 ## AddItem 270 6 2%%
+%action If TIME 610 ## AddItem 188%%
+%action If TIME 610 ## AddItem 192%%
+%action If TIME 610 ## AddItem 190%%
 //Row 2
-%action If TIME 620 ## AddItem 440%%
-%action If TIME 620 ## AddItem 280%%
-%action If TIME 620 ## AddItem 276 6 4%%
-%action If TIME 620 ## AddItem 24 6 4%%
-%action If TIME 620 ## AddItem 272%%
+%action If TIME 610 ## AddItem 440%%
+%action If TIME 610 ## AddItem 280%%
+%action If TIME 610 ## AddItem 276 6 4%%
+%action If TIME 610 ## AddItem 24 6 4%%
+%action If TIME 610 ## AddItem 272%%
 //Junimo Chest
 //Row 3
-%action If TIME 620 ## AddItem 438%%
-%action If TIME 620 ## AddItem 186%%
-%action If TIME 620 ## AddItem 428%%
-%action If TIME 620 ## AddItem 426%%
-%action If TIME 620 ## AddItem 432%%
-%action If TIME 620 ## AddItem 613%%
+%action If TIME 610 ## AddItem 438%%
+%action If TIME 610 ## AddItem 186%%
+%action If TIME 610 ## AddItem 428%%
+%action If TIME 610 ## AddItem 426%%
+%action If TIME 610 ## AddItem 432%%
+%action If TIME 610 ## AddItem 613%%
 //Row 4
-%action If TIME 620 ## AddItem 637%%
-%action If TIME 620 ## AddItem 424%%
-%action If TIME 620 ## AddItem 396%%
-%action If TIME 620 ## AddItem 398%%
-%action If TIME 620 ## AddItem 402%%
-%action If TIME 620 ## AddItem 254%%
+%action If TIME 610 ## AddItem 637%%
+%action If TIME 610 ## AddItem 424%%
+%action If TIME 610 ## AddItem 396%%
+%action If TIME 610 ## AddItem 398%%
+%action If TIME 610 ## AddItem 402%%
+%action If TIME 610 ## AddItem 254%%
 
 [253][(BC)256]
 [(BC)256][(BC)256]
 [256][258][260]
 [ReturnScepter]
+[279]
 [GoldCoin]
 [GoldCoin]
 [GoldCoin]
