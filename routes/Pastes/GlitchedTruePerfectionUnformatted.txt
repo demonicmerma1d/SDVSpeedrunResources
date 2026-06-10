@@ -2126,7 +2126,8 @@ In this run, the following specific controls are performed:
 %action IncrementStat floor1Rem -9%%
 %action IncrementStat stepMaRem -50%%
 
-//Doesn't need to be reset! ... except for the fact that there's some stupid platform specific bug (maybe LF / CRLF?) that is causing
+//Doesn't need to be reset!
+/*
 %action IncrementStat halvedBit-1 -9%%
 %action IncrementStat halvedBit00 -9%%
 %action IncrementStat halvedBit01 -9%%
@@ -2158,15 +2159,15 @@ In this run, the following specific controls are performed:
 %action IncrementStat halvedBit27 -9%%
 %action IncrementStat halvedBit28 -9%%
 //%action IncrementStat halvedBit29 -9%%
+*/
 
-/*
-//Only relevant for 12 minutes in 2012, so for efficiencies sake
+//To guarantee success on seeds less than 300 million on windows or less than 900 on mac ...
 %action IncrementStat DaysPlayed 1073741824%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
 %action IncrementStat DaysPlayed 11%%
 %action If SYNCED_RANDOM day b√OOL 0.739, !SYNCED_RANDOM day b√OOL 0.241 ## Null ## IncrementStat DaysPlayed -1073741835%%
-*/
+
 %action IncrementStat DaysPlayed 536870912%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
 %action If !SYNCED_RANDOM day b√OOL 0.48 ## IncrementStat DaysPlayed -1%%
@@ -2335,6 +2336,9 @@ In this run, the following specific controls are performed:
 %action If !SYNCED_RANDOM day b√OOL 0.72624, SYNCED_RANDOM day b√OOL 0.72625 ## Null ## IncrementStat DaysPlayed%%
 %action If !SYNCED_RANDOM day b√OOL 0.72624, SYNCED_RANDOM day b√OOL 0.72625 ## Null ## IncrementStat DaysPlayed%%
 %action If !SYNCED_RANDOM day b√OOL 0.72624, SYNCED_RANDOM day b√OOL 0.72625 ## Null ## IncrementStat DaysPlayed%%
+
+//At this point, if we have carriage return line feeds, daysplayed is exactly 228106407 too big.
+%action If SYNCED_RANDOM day lf 0.1 ## IncrementStat DaysPlayed -228106407%%
 
 /*
 %action If player_stat Any DaysPlayed 1073741824 ## IncrementStat halvedBit29%%
