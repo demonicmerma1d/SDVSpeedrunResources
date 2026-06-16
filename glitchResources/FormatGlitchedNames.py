@@ -339,6 +339,8 @@ def formatText(text:str,optimize:bool = True,gender:bool = True,noFormat:bool = 
 def formatFile(filePath:str,optimize:bool = True,gender:bool = True,noFormat:bool = False,
  width:int = 171, marnieWidth:int = 156,verboseFormat:bool = True, justPrint:bool = True):
     with open(filePath) as f:
+        pastePath = f.read()
+    with open(pastePath) as f:
         text = f.read()
     if '///PASTE' not in text:
         text = '///PASTE' + text
@@ -382,4 +384,4 @@ if __name__ == '__main__':
 #Example code that, with a file path, prints out formatted versions
     updateWidths()
     # put the filepath for compiling into PathToFile.txt, this is primarily a quality of life thing for syncing to github 
-    formatFile(r'PathToFile.txt', verboseFormat = False, justPrint = True)
+    formatFile(r'glitchResources/PathToFile.txt', verboseFormat = False, justPrint = True)
