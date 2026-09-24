@@ -163,12 +163,15 @@ Tent kit to sleep, ensure no steps are taken.
 ### Read 25 (Pepper Rex, Calico Statues)
 Read the mail, which sets up a combat inventory. Desert Obelisk to the desert, and run to the Skull Caverns. 
 
-Depending on the current RNG manip, the contents of the Calico Statues are liable to change. Currently, you must touch 12 statues to get Serpent Invasion, Speed, 4 More Monsters buffs, and 6 irrelevant buffs. Floor 7 (127) is filled with Dinosaurs. Once you have both eradicated Dinos and touched 12 statues, warp home.
+Depending on the current RNG manip, the contents of the Calico Statues are liable to change. Currently, you need to click 3 or 4 statues; #1 and #3 have More Monsters, and #2 has Magic Shoes. Floor 7 (127) is prehistoric, and once you've touched 3/4 statues, warp home. 
 
-### Read 26 (Sandy, Slimes, Serpents, Mummies)
-Read mail, desert obelisk, and speak to Sandy. Then run to the caverns, and eradicate Mummies, Serpents, and Slimes. Additionally, the next 3 statues contain 2 More-Monsters buffs, so if you wish to click them, you can.
+### Read 26 (More Pepper Rex, More Calico Statues)
+Read mail, desert obelisk, and touch 4 or 3 statues. You need to touch a total of 7 statues between here and previous reads; with #5 and #7 being more monsters. Floor 7 (127) is still prehistoric, and once you've touched 7 statues and eradicated Pepper Rex's warp home.
 
-### Read 27 (Summit)
+### Read 27 (Sandy, Slimes, Serpents, Mummies, Even More Calico Statues)
+Read mail, desert obelisk, and speak to Sandy (or visit Sandy after finishing eradication, if she's not outside yet). Then run to the caverns, and eradicate Mummies, Serpents, and Slimes. The next statue contains Serpent Invasion, and then the following 4 statues have 2 more more monsters. 
+
+### Read 28 (Summit)
 This mail gives you 10 hearts with Sandy (who you just met), along with tent kits so you can use the Mountain Obelisk and run to Railroad. Use a tent kit just below the summit.
 
 Because perfection only gets updated overnight (and we injected the boulder away so we can run up to the summit despite that), we sleep. Running up would lead to Mr. Qi. Killing You.
@@ -176,6 +179,6 @@ Because perfection only gets updated overnight (and we injected the boulder away
 ## Spring 16th
 Hold up and enter the summit!!! Time ends upon on the Perfection cutscene fade in on mountain. Receive bonus points if you
 
-a) Click through the entire name in the cutscene (about 15 minutes, Lewis says it twice), or 
+a) Click through the entire name in the cutscene (about 10 minutes, the name skips the second iteration of the name), or 
 
 b) Wait for 300 Doves to show up

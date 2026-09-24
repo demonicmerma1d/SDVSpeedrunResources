@@ -1159,13 +1159,58 @@ MAILREAD values:
 25 = serpents (sc1) + statues
 26 = summit inventory
 */
-//Ensure skull caverns buffs don't reset
-%action If !DAY_OF_MONTH 15 ## Null ## If LOCATION_NAME UndergroundMine
--1 . ## Null%%
+
+${
+
+//6 inventories of secret notes to skip the second summit dialogue. Putting it at the top rather than the bottom speeds up name execution time by about 0.5%
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79]
+¦}$
 
 //Remove random garbage from inventory
 %action RemoveItem 388 999%% //Wood
-%action If !player_stat Any MAILREAD 16 18 ## RemoveItem 390 999%% //Stone
 %action RemoveItem 770 99%% //Mixed Seed
 %action RemoveItem 771 999%% //Fiber
 %action RemoveItem 92 999%% //Sap
@@ -1183,7 +1228,6 @@ MAILREAD values:
 %action RemoveItem 827 9%% //Mummified Bat
 %action RemoveItem 79 9%% //Secret Note
 %action RemoveItem 842 9%% //Journal Scrap
-//%action RemoveItem StardropTea 9%%
 %action RemoveItem 152 3%% //Seaweed
 %action RemoveItem 153 3%% //Green Algae
 %action RemoveItem 168 9%% //Various crab pot trash
@@ -1191,7 +1235,23 @@ MAILREAD values:
 %action RemoveItem 170 9%%
 %action RemoveItem 171 9%% 
 %action RemoveItem 172 9%% //End crab pot trash
+%action RemoveItem 710 9%% //Crab pot itself
 %action RemoveItem 709 999%% //Hardwood
+%action RemoveItem 769 99%% //Void Essence
+%action RemoveItem FrogEgg 9%%
+%action RemoveItem MagicQuiver 9%%
+%action RemoveItem FairyBox 9%%
+%action RemoveItem ParrotEgg 9%%
+%action RemoveItem IceRod 9%%
+%action RemoveItem IridiumSpur 9%%
+%action RemoveItem BasiliskPaw 9%%
+%action RemoveItem MysteryBox 99%%
+
+%action If !player_stat Any MAILREAD 16 18 ## RemoveItem 390 999%% //Stone
+
+//Ensure skull caverns buffs don't reset
+%action If !DAY_OF_MONTH 15 ## Null ## If LOCATION_NAME UndergroundMine
+-1 . ## Null%%
 
 //Detect if you caught a sunfish/stonefish
 %action If player_has_item all 145 5 ## AddMail All CaughtSunfish Received%%
@@ -1209,7 +1269,7 @@ MAILREAD values:
 %action If player_has_item all 723 ## AddMail All pot723 Received%% // Oyster
 
 //No fancy monster detection since you just don't mess up!
-%action If player_stat Any MAILREAD 0 26 ## IncrementStat MAILREAD%%
+%action If player_stat Any MAILREAD 0 27 ## IncrementStat MAILREAD%%
 %action If player_stat Any MAILREAD 1 1 ## IncrementStat MAILREAD%% //To not have to decrease all numbers by 1 after implementing Kent
 %action If player_stat Any MAILREAD 23 23, player_has_mail Any pot372, player_has_mail Any pot715, player_has_mail Any pot716, player_has_mail Any pot717, player_has_mail Any pot718, player_has_mail Any pot719, player_has_mail Any pot720, player_has_mail Any pot721, player_has_mail Any pot722, player_has_mail Any pot723 ## IncrementStat MAILREAD%%
 //Detect if you have all the crab pot fish and skip that mail if so.
@@ -1870,7 +1930,7 @@ MAILREAD values:
 %action If days_played 16 16 ## AddItem 253 999 4%% //Triple shot
 %action If days_played 16 16 ## AddItem ReturnScepter%%
 
-%action If days_played 16 16 ## AddItem AdvancedIridiumRod%%
+%action If days_played 16 16 ## AddItem AdvancedIridiumRod 1 4%%
 %action If days_played 16 16 ## AddItem 279 999 4%% //MRC
 %action If days_played 16 16 ## AddItem 253 999 4%% //Triple shot
 %action If days_played 16 16 ## AddItem (BC)71 999%% //Staircases (for floor 20 -> 23)
@@ -1880,8 +1940,8 @@ MAILREAD values:
 %action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
 %action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
 //%action If days_played 16 16 ## AddItem 441 999 4%% //explosive ammo
-%action If days_played 16 16 ## AddItem 288 999 4%% //Mega Bomb
-%action If days_played 16 16 ## AddItem 811%% //Napalm Ring
+%action If days_played 16 16 ## AddItem RiverJelly%%
+%action If days_played 16 16 ## AddItem CaveJelly%%
 %action If days_played 16 16 ## AddItem ReturnScepter%%
 
 %action If days_played 16 16 ## AddItem DeluxeBait 999 4%%
@@ -1912,8 +1972,8 @@ MAILREAD values:
 %action If days_played 18 18 ## AddItem ReturnScepter%%
 %action If days_played 17 19, !player_has_item all 288 9990 ## AddItem 288 999 4%%
 %action If days_played 17 19, !player_has_item all 288 10989 ## AddItem 288 999 4%%
-%action If days_played 17 19, !player_has_item all 288 11988 ## AddItem 288 999 4%%
-%action If days_played 18 19, !player_has_item all 288 12987 ## AddItem 288 999 4%%
+//%action If days_played 17 19, !player_has_item all 288 11988 ## AddItem 288 999 4%%
+//%action If days_played 18 19, !player_has_item all 288 12987 ## AddItem 288 999 4%%
 //%action If days_played 18 19, !player_has_item all 288 13986 ## AddItem 288 999 4%%
 //%action If days_played 18 19, !player_has_item all 288 14985 ## AddItem 288 999 4%% //Assumes the idea amount of mega bombs is 16 stacks ((16-1) * 999)
 %action If days_played 17 19 ## AddItem 288 999 4%% //Excess mega bombs to ensure full supply. Thankfully first overflow menu doesn't show up
@@ -1933,6 +1993,12 @@ MAILREAD values:
 %action If days_played 20 20 ## RemoveItem 288 99999%%
 %action If days_played 20 20 ## RemoveItem 145 9%%
 %action If days_played 20 20 ## RemoveItem 158 9%%
+%action If days_played 20 20 ## RemoveItem CaveJelly 9%%
+%action If days_played 20 20 ## RemoveItem RiverJelly 9%%
+
+
+%action If days_played 20 20 ## RemoveItem IridiumRod 2%% //In case you're undoing, ensure you don't have excess rods and chairs. 
+%action If days_played 20 20 ## RemoveItem (F)9%%
 
 %action If days_played 20 20 ## AddItem (F)9%% // Chair to use to setup good positioning [chair facing up placed 1 tile below top, get in, get out, face towards pond]
 %action If days_played 20 20 ## AddItem 128%% // Pufferfish
@@ -2073,7 +2139,7 @@ MAILREAD values:
 
 
 
-%action If days_played 27 27 ## RemoveItem 288 9999%%
+%action If days_played 28 28 ## RemoveItem 288 9999%%
 /*
 %action If days_played 27 27 ## RemoveItem IridiumPickaxe%%
 %action If days_played 27 27 ## RemoveItem (BC)71 999%%
@@ -2083,7 +2149,7 @@ MAILREAD values:
 %action If days_played 27 27 ## RemoveItem (W)34%%
 %action If days_played 27 27 ## RemoveItem ReturnScepter%%
 */
-%action If days_played 27 27 ## AddItem TentKit 999%%
+%action If days_played 28 28 ## AddItem TentKit 999%%
 
 //%action If days_played 100 ## IncrementStat MAILREAD -100%%
 
@@ -3128,8 +3194,9 @@ Legacy?%%
 //MR18 (spring3rd) wants 96 infested
 //MR19 (spring3rd) wants 23 infested
 //MR23 (spring13th) wants good steps
-//MR24 (spring15th) wants dino+statues 
-//MR25 (spring15th) wants sc1 and maybe more statues
+//MR24 (spring15th) wants dino7+statues 
+//MR25 (spring15th) wants dino7+statues 
+//MR26 (spring15th) wants sc1 and more statues
 %action IncrementStat DaysPlayed -2147483647%%
 //%action If player_stat Any halvedBit29 1 ## IncrementStat DaysPlayed 536870912%%
 %action If player_stat Any halvedBit28 1 ## IncrementStat DaysPlayed 268435456%%
@@ -3169,8 +3236,9 @@ Legacy?%%
 %action If player_stat Any MAILREAD 18 18 ## IncrementStat DaysPlayed 8%%//Void Spirits
 %action If player_stat Any MAILREAD 19 19 ## IncrementStat DaysPlayed 17%%//Duggies
 %action If player_stat Any MAILREAD 24 24 ## IncrementStat DaysPlayed -2147483647%%//Rng manip in steps
-%action If player_stat Any MAILREAD 25 25 ## IncrementStat DaysPlayed 159159%%//Dinos on floor 7, 12 statues for 4 more monsters.
-%action If player_stat Any MAILREAD 26 26 ## IncrementStat DaysPlayed 1455%%//Infested on floor 1, 3 statues for 2 more monsters.
+%action If player_stat Any MAILREAD 25 25 ## IncrementStat DaysPlayed 6674%%// Dinos on floor 7, 3/4 statues for 2 more monsters.
+%action If player_stat Any MAILREAD 26 26 ## IncrementStat DaysPlayed 13408%%//Dinos on floor 7, 4/3 statues for 2 more monsters.
+%action If player_stat Any MAILREAD 27 27 ## IncrementStat DaysPlayed 19159%%//Infested on floor 1, 5 statues for 2 more monsters.
 
 //%action If player_stat Any stepMaRem 838860800 ## IncrementStat stepsTaken 16777216%%
 //%action If player_stat Any stepMaRem 838860800 ## IncrementStat stepMaRem -838860800%%
@@ -3223,7 +3291,9 @@ Legacy?%%
 %action If player_stat Any stepMaRem 50 ## IncrementStat stepsTaken%%
 %action If player_stat Any stepMaRem 50 ## IncrementStat stepMaRem -50%%
 %action If player_stat Any stepMaRem 34 ## IncrementStat stepsTaken%%//Guarantees a rounding towards 107374266/100 - .66 and not -1.66
-%action IncrementStat stepsTaken 22490%%
+%action IncrementStat stepsTaken 95723%%//95743-2*10
+
+
 
 [letterbg LooseSprites/Cursors 33]
 [textcolor white]
@@ -3262,6 +3332,7 @@ Legacy?%%
 #$action AddItem StardropTea//Could be any item but stardrop tea gives obvious gift vibes
 #$action AddItem ReturnScepter
 #$action AddItem (TR)IridiumSpur
+#$action AddItem 811//Napalm Ring since you're doing the spur anyway
 
 //Undo buttons and a junimo chest to put them in
 #$action AddItem (O)Undo 999

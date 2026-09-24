@@ -2002,18 +2002,52 @@ i
 Paste 3, Appended Name:
 ```
 
-%action
-if !day_of_Month ${
-¦}$15 ## null ## 
-if location_naMe u${
-¦}$ndergroundMine
--1 . ## Null%%
-%action
+${
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79][79][79][79][79]
+[79]¦}$%action
 reMoveiteM 388 999
-%%%action
-if !player_stat all 
-! 16 18 ## 
-reMoveiteM 390 999
 %%%action
 reMoveiteM 770 99
 %%%action
@@ -2063,8 +2097,44 @@ reMoveiteM 171 9
 %%%action
 reMoveiteM 172 9
 %%%action
+reMoveiteM 710 9
+%%%action
 reMoveiteM 709 999
 %%%action
+reMoveiteM 769 99
+%%%action
+reMoveiteM FrogE${
+¦}$gg 9%%%action
+reMoveiteM Magic${
+¦}$Quiver 9%%
+%action
+reMoveiteM Fairy${
+¦}$Box 9%%
+%action
+reMoveiteM Parro${
+¦}$tEgg 9%%
+%action
+reMoveiteM IceRo${
+¦}$d 9%%%action
+reMoveiteM Iridiu${
+¦}$mSpur 9%%
+%action
+reMoveiteM Basili${
+¦}$skPaw 9%%
+%action
+reMoveiteM Myste${
+¦}$ryBox 99%%
+%action
+if !player_stat Any 
+! 16 18 ## 
+reMoveiteM 390 999
+%%%action
+if !day_of_Month ${
+¦}$15 ## null ## 
+if location_naMe u${
+¦}$ndergroundMine
+-1 . ## Null%%
+%action
 if player_has_iteM${
 ¦}$ all 145 5 ## 
 addMail all |
@@ -2125,15 +2195,15 @@ if player_has_iteM${
 addMail all 
 b Received%%
 %action
-if player_stat all 
-! 0 26 ## 
+if player_stat Any 
+! 0 27 ## 
 increMentstat 
 !%%%action
-if player_stat all 
+if player_stat Any 
 ! 1 1 ## 
 increMentstat 
 !%%%action
-if player_stat all 
+if player_stat Any 
 ! 23 23,
  player_has_Mail a${
 ¦}$ny :
@@ -2192,89 +2262,89 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 16 ## 
 increMentstat 
 ( 16%%%action
-if player_stat all 
+if player_stat Any 
 ! 16 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 16 ## 
 increMentstat 
 ! -16%%%action
-if player_stat all 
+if player_stat Any 
 ! 8 ## increMentstat 
 ( 8%%%action
-if player_stat all 
+if player_stat Any 
 ! 8 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 8 ## increMentstat 
 ! -8%%%action
-if player_stat all 
+if player_stat Any 
 ! 4 ## increMentstat 
 ( 4%%%action
-if player_stat all 
+if player_stat Any 
 ! 4 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 4 ## increMentstat 
 ! -4%%%action
-if player_stat all 
+if player_stat Any 
 ! 2 ## increMentstat 
 ( 2%%%action
-if player_stat all 
+if player_stat Any 
 ! 2 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 2 ## increMentstat 
 ! -2%%%action
-if player_stat all 
+if player_stat Any 
 ! 1 ## increMentstat 
 (%%%action
-if player_stat all 
+if player_stat Any 
 ! 1 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
 increMentstat 
 ! -1%%%action
-if player_stat all 
+if player_stat Any 
 ( 16 ## 
 increMentstat 
 ! 16%%%action
-if player_stat all 
+if player_stat Any 
 ( 16 ## 
 increMentstat 
 ( -16%%%action
-if player_stat all 
+if player_stat Any 
 ( 8 ## increMentstat 
 ! 8%%%action
-if player_stat all 
+if player_stat Any 
 ( 8 ## increMentstat 
 ( -8%%%action
-if player_stat all 
+if player_stat Any 
 ( 4 ## increMentstat 
 ! 4%%%action
-if player_stat all 
+if player_stat Any 
 ( 4 ## increMentstat 
 ( -4%%%action
-if player_stat all 
+if player_stat Any 
 ( 2 ## increMentstat 
 ! 2%%%action
-if player_stat all 
+if player_stat Any 
 ( 2 ## increMentstat 
 ( -2%%%action
-if player_stat all 
+if player_stat Any 
 ( 1 ## increMentstat 
 !%%%action
 increMentstat 
@@ -3950,8 +4020,8 @@ additeM ReturnSc${
 if days_played 16 16 
  ## 
 additeM Advance${
-¦}$dIridiumRod%%
-%action
+¦}$dIridiumRod 1 4
+%%%action
 if days_played 16 16 
  ## additeM 279 999
  4%%%action
@@ -3978,11 +4048,13 @@ if days_played 16 16
  ## additeM 288 999
  4%%%action
 if days_played 16 16 
- ## additeM 288 999
- 4%%%action
+ ## 
+additeM RiverJelly
+%%%action
 if days_played 16 16 
- ## additeM 811%%
-%action
+ ## 
+additeM CaveJelly
+%%%action
 if days_played 16 16 
  ## 
 additeM ReturnSc${
@@ -4064,18 +4136,6 @@ if days_played 17 19
 ¦}$all 288 10989 ## 
 additeM 288 999 4
 %%%action
-if days_played 17 19
-,
- !player_has_iteM ${
-¦}$all 288 11988 ## 
-additeM 288 999 4
-%%%action
-if days_played 18 19
-,
- !player_has_iteM ${
-¦}$all 288 12987 ## 
-additeM 288 999 4
-%%%action
 if days_played 17 19 
  ## additeM 288 999
  4%%%action
@@ -4141,6 +4201,23 @@ reMoveiteM 145 9
 if days_played 20 20 
  ## 
 reMoveiteM 158 9
+%%%action
+if days_played 20 20 
+ ## 
+reMoveiteM CaveJ${
+¦}$elly 9%%%action
+if days_played 20 20 
+ ## 
+reMoveiteM River${
+¦}$Jelly 9%%
+%action
+if days_played 20 20 
+ ## 
+reMoveiteM Iridiu${
+¦}$mRod 2%%
+%action
+if days_played 20 20 
+ ## reMoveiteM (F)9
 %%%action
 if days_played 20 20 
  ## additeM (F)9%%
@@ -4469,11 +4546,11 @@ additeM ReturnSc${
 if days_played 25 26 
  ## additeM 288 999
  4%%%action
-if days_played 27 27 
+if days_played 28 28 
  ## 
 reMoveiteM 288 9${
 ¦}$999%%%action
-if days_played 27 27 
+if days_played 28 28 
  ## 
 additeM TentKit 999
 %%%action
@@ -6201,175 +6278,175 @@ increMentstat
 increMentstat day${
 ¦}$splayed -1%%
 %action
-if player_stat all 
+if player_stat Any 
 |: 1 ## 
 increMentstat day${
 ¦}$splayed 67108864
 %%%action
-if player_stat all l
+if player_stat Any l
 : 1 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all 
+if player_stat Any 
 l: 1 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all i
+if player_stat Any i
 : 1 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 i: 1 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all ;
+if player_stat Any ;
 : 1 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 ;: 1 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all :
+if player_stat Any :
 : 1 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 :: 1 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 y 1 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 x 1 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 v 1 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 k 1 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 g 1 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 e 1 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 a 1 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 > 1 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 = 1 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 < 1 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 + 1 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 $ 1 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 z 1 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 c 1 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 ? 1 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 * 1 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 s 1 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 t 1 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 r 1 ## increMentstat 
 - 2%%%action
-if player_stat all 
+if player_stat Any 
 f 1 ## increMentstat 
 -%%%action
-if player_stat all 
+if player_stat Any 
 j 1 ## increMentstat 
 -%%%action
-if player_stat all 
+if player_stat Any 
 - 4 ## 
 increMentstat day${
 ¦}$splayed 
 267656698%%
 %action
-if player_stat all 
+if player_stat Any 
 - 0 0 ## 
 increMentstat day${
 ¦}$splayed 
 267656697%%
 %action
-if player_stat all 
+if player_stat Any 
 - 1 1 ## 
 increMentstat day${
 ¦}$splayed 
 333356755%%
 %action
-if player_stat all 
+if player_stat Any 
 - 2 2 ## 
 increMentstat day${
 ¦}$splayed 
 393837436%%
 %action
-if player_stat all 
+if player_stat Any 
 - 3 3 ## 
 increMentstat day${
 ¦}$splayed 92233484
@@ -6387,296 +6464,296 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 i 301989888 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all 
+if player_stat Any 
 i 301989888 ## 
 increMentstat 
 i -301989888%%
 %action
-if player_stat all 
+if player_stat Any 
 i 150994944 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all 
+if player_stat Any 
 i 150994944 ## 
 increMentstat 
 i -150994944%%
 %action
-if player_stat all 
+if player_stat Any 
 i 75497472 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 i 75497472 ## 
 increMentstat 
 i -75497472%%
 %action
-if player_stat all 
+if player_stat Any 
 i 37748736 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 i 37748736 ## 
 increMentstat 
 i -37748736%%
 %action
-if player_stat all 
+if player_stat Any 
 i 18874368 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 i 18874368 ## 
 increMentstat 
 i -18874368%%
 %action
-if player_stat all 
+if player_stat Any 
 i 9437184 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 i 9437184 ## 
 increMentstat 
 i -9437184%%
 %action
-if player_stat all 
+if player_stat Any 
 i 4718592 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 i 4718592 ## 
 increMentstat 
 i -4718592%%
 %action
-if player_stat all 
+if player_stat Any 
 i 2359296 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 i 2359296 ## 
 increMentstat 
 i -2359296%%
 %action
-if player_stat all 
+if player_stat Any 
 i 1179648 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 i 1179648 ## 
 increMentstat 
 i -1179648%%
 %action
-if player_stat all 
+if player_stat Any 
 i 589824 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 i 589824 ## 
 increMentstat 
 i -589824%%
 %action
-if player_stat all 
+if player_stat Any 
 i 294912 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 i 294912 ## 
 increMentstat 
 i -294912%%
 %action
-if player_stat all 
+if player_stat Any 
 i 147456 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 i 147456 ## 
 increMentstat 
 i -147456%%
 %action
-if player_stat all 
+if player_stat Any 
 i 73728 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 i 73728 ## 
 increMentstat 
 i -73728%%%action
-if player_stat all 
+if player_stat Any 
 i 36864 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 i 36864 ## 
 increMentstat 
 i -36864%%%action
-if player_stat all 
+if player_stat Any 
 i 18432 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 i 18432 ## 
 increMentstat 
 i -18432%%%action
-if player_stat all 
+if player_stat Any 
 i 9216 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 i 9216 ## 
 increMentstat 
 i -9216%%%action
-if player_stat all 
+if player_stat Any 
 i 4608 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 i 4608 ## 
 increMentstat 
 i -4608%%%action
-if player_stat all 
+if player_stat Any 
 i 2304 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 i 2304 ## 
 increMentstat 
 i -2304%%%action
-if player_stat all 
+if player_stat Any 
 i 1152 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 i 1152 ## 
 increMentstat 
 i -1152%%%action
-if player_stat all 
+if player_stat Any 
 i 576 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 i 576 ## 
 increMentstat 
 i -576%%%action
-if player_stat all 
+if player_stat Any 
 i 288 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 i 288 ## 
 increMentstat 
 i -288%%%action
-if player_stat all 
+if player_stat Any 
 i 144 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 i 144 ## 
 increMentstat 
 i -144%%%action
-if player_stat all 
+if player_stat Any 
 i 72 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 i 72 ## 
 increMentstat 
 i -72%%%action
-if player_stat all 
+if player_stat Any 
 i 36 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 i 36 ## 
 increMentstat 
 i -36%%%action
-if player_stat all 
+if player_stat Any 
 i 18 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 i 18 ## 
 increMentstat 
 i -18%%%action
-if player_stat all 
+if player_stat Any 
 i 9 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 i 9 ## increMentstat 
 i -9%%%action
-if player_stat all 
+if player_stat Any 
 i 0 0 ## 
 increMentstat day${
 ¦}$splayed 
 117390562%%
 %action
-if player_stat all 
+if player_stat Any 
 i 1 1 ## 
 increMentstat day${
 ¦}$splayed 67590624
 %%%action
-if player_stat all 
+if player_stat Any 
 i 2 2 ## 
 increMentstat day${
 ¦}$splayed 67162739
 %%%action
-if player_stat all 
+if player_stat Any 
 i 3 3 ## 
 increMentstat day${
 ¦}$splayed 
 158719267%%
 %action
-if player_stat all 
+if player_stat Any 
 i 4 4 ## 
 increMentstat day${
 ¦}$splayed 87298783
 %%%action
-if player_stat all 
+if player_stat Any 
 i 5 5 ## 
 increMentstat day${
 ¦}$splayed 
 101895396%%
 %action
-if player_stat all 
+if player_stat Any 
 i 6 6 ## 
 increMentstat day${
 ¦}$splayed 
 125746993%%
 %action
-if player_stat all 
+if player_stat Any 
 i 7 7 ## 
 increMentstat day${
 ¦}$splayed 87551757
 %%%action
-if player_stat all 
+if player_stat Any 
 i 8 ## 
 increMentstat day${
 ¦}$splayed 
@@ -6691,193 +6768,193 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 |: 1 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all l
+if player_stat Any l
 : 1 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all 
+if player_stat Any 
 l: 1 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all i
+if player_stat Any i
 : 1 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 i: 1 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all ;
+if player_stat Any ;
 : 1 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 ;: 1 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all :
+if player_stat Any :
 : 1 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 :: 1 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 y 1 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 x 1 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 v 1 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 k 1 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 g 1 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 e 1 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 a 1 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 > 1 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 = 1 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 < 1 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 + 1 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 $ 1 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 z 1 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 c 1 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 ? 1 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 * 1 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 s 1 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 t 1 ## increMentstat 
 ) 4%%%action
-if player_stat all 
+if player_stat Any 
 r 1 ## increMentstat 
 ) 2%%%action
-if player_stat all 
+if player_stat Any 
 f 1 ## increMentstat 
 )%%%action
-if player_stat all 
+if player_stat Any 
 j 1 ## increMentstat 
 )%%%action
-if player_stat all 
+if player_stat Any 
 ) 8 ## 
 increMentstat day${
 ¦}$splayed 88016477
 %%%action
-if player_stat all 
+if player_stat Any 
 ) 0 0 ## 
 increMentstat day${
 ¦}$splayed 88016476
 %%%action
-if player_stat all 
+if player_stat Any 
 ) 1 1 ## 
 increMentstat day${
 ¦}$splayed 67760085
 %%%action
-if player_stat all 
+if player_stat Any 
 ) 2 2 ## 
 increMentstat day${
 ¦}$splayed 
 150023996%%
 %action
-if player_stat all 
+if player_stat Any 
 ) 3 3 ## 
 increMentstat day${
 ¦}$splayed 
 189440166%%
 %action
-if player_stat all 
+if player_stat Any 
 ) 4 4 ## 
 increMentstat day${
 ¦}$splayed 97906922
 %%%action
-if player_stat all 
+if player_stat Any 
 ) 5 5 ## 
 increMentstat day${
 ¦}$splayed 
 172806675%%
 %action
-if player_stat all 
+if player_stat Any 
 ) 6 6 ## 
 increMentstat day${
 ¦}$splayed 
 130175494%%
 %action
-if player_stat all 
+if player_stat Any 
 ) 7 7 ## 
 increMentstat day${
 ¦}$splayed 
@@ -6892,298 +6969,298 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 : 469762048 ## 
 increMentstat day${
 ¦}$splayed 67108864
 %%%action
-if player_stat all 
+if player_stat Any 
 : 469762048 ## 
 increMentstat 
 : -469762048%%
 %action
-if player_stat all 
+if player_stat Any 
 : 234881024 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all 
+if player_stat Any 
 : 234881024 ## 
 increMentstat 
 : -234881024%%
 %action
-if player_stat all 
+if player_stat Any 
 : 117440512 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all 
+if player_stat Any 
 : 117440512 ## 
 increMentstat 
 : -117440512%%
 %action
-if player_stat all 
+if player_stat Any 
 : 58720256 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 : 58720256 ## 
 increMentstat 
 : -58720256%%
 %action
-if player_stat all 
+if player_stat Any 
 : 29360128 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 : 29360128 ## 
 increMentstat 
 : -29360128%%
 %action
-if player_stat all 
+if player_stat Any 
 : 14680064 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 : 14680064 ## 
 increMentstat 
 : -14680064%%
 %action
-if player_stat all 
+if player_stat Any 
 : 7340032 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 : 7340032 ## 
 increMentstat 
 : -7340032%%
 %action
-if player_stat all 
+if player_stat Any 
 : 3670016 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 : 3670016 ## 
 increMentstat 
 : -3670016%%
 %action
-if player_stat all 
+if player_stat Any 
 : 1835008 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 : 1835008 ## 
 increMentstat 
 : -1835008%%
 %action
-if player_stat all 
+if player_stat Any 
 : 917504 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 : 917504 ## 
 increMentstat 
 : -917504%%
 %action
-if player_stat all 
+if player_stat Any 
 : 458752 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 : 458752 ## 
 increMentstat 
 : -458752%%
 %action
-if player_stat all 
+if player_stat Any 
 : 229376 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 : 229376 ## 
 increMentstat 
 : -229376%%
 %action
-if player_stat all 
+if player_stat Any 
 : 114688 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 : 114688 ## 
 increMentstat 
 : -114688%%
 %action
-if player_stat all 
+if player_stat Any 
 : 57344 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 : 57344 ## 
 increMentstat 
 : -57344%%%action
-if player_stat all 
+if player_stat Any 
 : 28672 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 : 28672 ## 
 increMentstat 
 : -28672%%%action
-if player_stat all 
+if player_stat Any 
 : 14336 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 : 14336 ## 
 increMentstat 
 : -14336%%%action
-if player_stat all 
+if player_stat Any 
 : 7168 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 : 7168 ## 
 increMentstat 
 : -7168%%%action
-if player_stat all 
+if player_stat Any 
 : 3584 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 : 3584 ## 
 increMentstat 
 : -3584%%%action
-if player_stat all 
+if player_stat Any 
 : 1792 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 : 1792 ## 
 increMentstat 
 : -1792%%%action
-if player_stat all 
+if player_stat Any 
 : 896 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 : 896 ## 
 increMentstat 
 : -896%%%action
-if player_stat all 
+if player_stat Any 
 : 448 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 : 448 ## 
 increMentstat 
 : -448%%%action
-if player_stat all 
+if player_stat Any 
 : 224 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 : 224 ## 
 increMentstat 
 : -224%%%action
-if player_stat all 
+if player_stat Any 
 : 112 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 : 112 ## 
 increMentstat 
 : -112%%%action
-if player_stat all 
+if player_stat Any 
 : 56 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 : 56 ## 
 increMentstat 
 : -56%%%action
-if player_stat all 
+if player_stat Any 
 : 28 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 : 28 ## 
 increMentstat 
 : -28%%%action
-if player_stat all 
+if player_stat Any 
 : 14 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 : 14 ## 
 increMentstat 
 : -14%%%action
-if player_stat all 
+if player_stat Any 
 : 7 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 : 7 ## increMentstat 
 : -7%%%action
-if player_stat all 
+if player_stat Any 
 : 0 0 ## 
 increMentstat day${
 ¦}$splayed 
 156223263%%
 %action
-if player_stat all 
+if player_stat Any 
 : 1 1 ## 
 increMentstat day${
 ¦}$splayed 
 149256814%%
 %action
-if player_stat all 
+if player_stat Any 
 : 2 2 ## 
 increMentstat day${
 ¦}$splayed 
 221770686%%
 %action
-if player_stat all 
+if player_stat Any 
 : 3 3 ## 
 increMentstat day${
 ¦}$splayed 
 162481168%%
 %action
-if player_stat all 
+if player_stat Any 
 : 4 4 ## 
 increMentstat day${
 ¦}$splayed 
 160797671%%
 %action
-if player_stat all 
+if player_stat Any 
 : 5 5 ## 
 increMentstat day${
 ¦}$splayed 
 119127441%%
 %action
-if player_stat all 
+if player_stat Any 
 : 6 ## 
 increMentstat day${
 ¦}$splayed 98079924
@@ -7197,285 +7274,285 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 l 335544320 ## 
 increMentstat day${
 ¦}$splayed 67108864
 %%%action
-if player_stat all 
+if player_stat Any 
 l 335544320 ## 
 increMentstat 
 l -335544320%%
 %action
-if player_stat all 
+if player_stat Any 
 l 167772160 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all 
+if player_stat Any 
 l 167772160 ## 
 increMentstat 
 l -167772160%%
 %action
-if player_stat all 
+if player_stat Any 
 l 83886080 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all 
+if player_stat Any 
 l 83886080 ## 
 increMentstat 
 l -83886080%%
 %action
-if player_stat all 
+if player_stat Any 
 l 41943040 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 l 41943040 ## 
 increMentstat 
 l -41943040%%
 %action
-if player_stat all 
+if player_stat Any 
 l 20971520 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 l 20971520 ## 
 increMentstat 
 l -20971520%%
 %action
-if player_stat all 
+if player_stat Any 
 l 10485760 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 l 10485760 ## 
 increMentstat 
 l -10485760%%
 %action
-if player_stat all 
+if player_stat Any 
 l 5242880 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 l 5242880 ## 
 increMentstat 
 l -5242880%%
 %action
-if player_stat all 
+if player_stat Any 
 l 2621440 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 l 2621440 ## 
 increMentstat 
 l -2621440%%
 %action
-if player_stat all 
+if player_stat Any 
 l 1310720 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 l 1310720 ## 
 increMentstat 
 l -1310720%%
 %action
-if player_stat all 
+if player_stat Any 
 l 655360 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 l 655360 ## 
 increMentstat 
 l -655360%%
 %action
-if player_stat all 
+if player_stat Any 
 l 327680 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 l 327680 ## 
 increMentstat 
 l -327680%%
 %action
-if player_stat all 
+if player_stat Any 
 l 163840 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 l 163840 ## 
 increMentstat 
 l -163840%%
 %action
-if player_stat all 
+if player_stat Any 
 l 81920 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 l 81920 ## 
 increMentstat 
 l -81920%%%action
-if player_stat all 
+if player_stat Any 
 l 40960 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 l 40960 ## 
 increMentstat 
 l -40960%%%action
-if player_stat all 
+if player_stat Any 
 l 20480 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 l 20480 ## 
 increMentstat 
 l -20480%%%action
-if player_stat all 
+if player_stat Any 
 l 10240 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 l 10240 ## 
 increMentstat 
 l -10240%%%action
-if player_stat all 
+if player_stat Any 
 l 5120 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 l 5120 ## 
 increMentstat 
 l -5120%%%action
-if player_stat all 
+if player_stat Any 
 l 2560 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 l 2560 ## 
 increMentstat 
 l -2560%%%action
-if player_stat all 
+if player_stat Any 
 l 1280 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 l 1280 ## 
 increMentstat 
 l -1280%%%action
-if player_stat all 
+if player_stat Any 
 l 640 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 l 640 ## 
 increMentstat 
 l -640%%%action
-if player_stat all 
+if player_stat Any 
 l 320 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 l 320 ## 
 increMentstat 
 l -320%%%action
-if player_stat all 
+if player_stat Any 
 l 160 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 l 160 ## 
 increMentstat 
 l -160%%%action
-if player_stat all 
+if player_stat Any 
 l 80 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 l 80 ## 
 increMentstat 
 l -80%%%action
-if player_stat all 
+if player_stat Any 
 l 40 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 l 40 ## 
 increMentstat 
 l -40%%%action
-if player_stat all 
+if player_stat Any 
 l 20 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 l 20 ## 
 increMentstat 
 l -20%%%action
-if player_stat all 
+if player_stat Any 
 l 10 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 l 10 ## 
 increMentstat 
 l -10%%%action
-if player_stat all 
+if player_stat Any 
 l 5 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 l 5 ## increMentstat 
 l -5%%%action
-if player_stat all 
+if player_stat Any 
 l 0 0 ## 
 increMentstat day${
 ¦}$splayed 
 265141467%%
 %action
-if player_stat all 
+if player_stat Any 
 l 1 1 ## 
 increMentstat day${
 ¦}$splayed 
 303093539%%
 %action
-if player_stat all 
+if player_stat Any 
 l 2 2 ## 
 increMentstat day${
 ¦}$splayed 
 200749899%%
 %action
-if player_stat all 
+if player_stat Any 
 l 3 3 ## 
 increMentstat day${
 ¦}$splayed 
 296057561%%
 %action
-if player_stat all 
+if player_stat Any 
 l 4 ## 
 increMentstat day${
 ¦}$splayed 
@@ -7490,282 +7567,282 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 402653184 ## 
 increMentstat day${
 ¦}$splayed 
 134217728%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 402653184 ## 
 increMentstat 
 ; -402653184%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 201326592 ## 
 increMentstat day${
 ¦}$splayed 67108864
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 201326592 ## 
 increMentstat 
 ; -201326592%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 100663296 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 100663296 ## 
 increMentstat 
 ; -100663296%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 50331648 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 50331648 ## 
 increMentstat 
 ; -50331648%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 25165824 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 25165824 ## 
 increMentstat 
 ; -25165824%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 12582912 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 12582912 ## 
 increMentstat 
 ; -12582912%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 6291456 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 6291456 ## 
 increMentstat 
 ; -6291456%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 3145728 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 3145728 ## 
 increMentstat 
 ; -3145728%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 1572864 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 1572864 ## 
 increMentstat 
 ; -1572864%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 786432 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 786432 ## 
 increMentstat 
 ; -786432%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 393216 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 393216 ## 
 increMentstat 
 ; -393216%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 196608 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 196608 ## 
 increMentstat 
 ; -196608%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 98304 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 98304 ## 
 increMentstat 
 ; -98304%%%action
-if player_stat all 
+if player_stat Any 
 ; 49152 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 ; 49152 ## 
 increMentstat 
 ; -49152%%%action
-if player_stat all 
+if player_stat Any 
 ; 24576 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 24576 ## 
 increMentstat 
 ; -24576%%%action
-if player_stat all 
+if player_stat Any 
 ; 12288 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 12288 ## 
 increMentstat 
 ; -12288%%%action
-if player_stat all 
+if player_stat Any 
 ; 6144 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 6144 ## 
 increMentstat 
 ; -6144%%%action
-if player_stat all 
+if player_stat Any 
 ; 3072 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 3072 ## 
 increMentstat 
 ; -3072%%%action
-if player_stat all 
+if player_stat Any 
 ; 1536 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 1536 ## 
 increMentstat 
 ; -1536%%%action
-if player_stat all 
+if player_stat Any 
 ; 768 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 768 ## 
 increMentstat 
 ; -768%%%action
-if player_stat all 
+if player_stat Any 
 ; 384 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 384 ## 
 increMentstat 
 ; -384%%%action
-if player_stat all 
+if player_stat Any 
 ; 192 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 192 ## 
 increMentstat 
 ; -192%%%action
-if player_stat all 
+if player_stat Any 
 ; 96 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 96 ## 
 increMentstat 
 ; -96%%%action
-if player_stat all 
+if player_stat Any 
 ; 48 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 48 ## 
 increMentstat 
 ; -48%%%action
-if player_stat all 
+if player_stat Any 
 ; 24 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 24 ## 
 increMentstat 
 ; -24%%%action
-if player_stat all 
+if player_stat Any 
 ; 12 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 12 ## 
 increMentstat 
 ; -12%%%action
-if player_stat all 
+if player_stat Any 
 ; 6 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 6 ## increMentstat 
 ; -6%%%action
-if player_stat all 
+if player_stat Any 
 ; 3 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 3 ## increMentstat 
 ; -3%%%action
-if player_stat all 
+if player_stat Any 
 ; 0 0 ## 
 increMentstat day${
 ¦}$splayed 
 447829836%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 1 1 ## 
 increMentstat day${
 ¦}$splayed 
 465020156%%
 %action
-if player_stat all 
+if player_stat Any 
 ; 2 ## 
 increMentstat day${
 ¦}$splayed 
@@ -7780,166 +7857,166 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 |: 1 ## 
 increMentstat day${
 ¦}$splayed 
 134217728%%
 %action
-if player_stat all l
+if player_stat Any l
 : 1 ## 
 increMentstat day${
 ¦}$splayed 67108864
 %%%action
-if player_stat all 
+if player_stat Any 
 l: 1 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all i
+if player_stat Any i
 : 1 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all 
+if player_stat Any 
 i: 1 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all ;
+if player_stat Any ;
 : 1 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 ;: 1 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all :
+if player_stat Any :
 : 1 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 :: 1 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 y 1 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 x 1 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 v 1 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 k 1 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 g 1 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 e 1 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 a 1 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 > 1 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 = 1 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 < 1 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 + 1 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 $ 1 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 z 1 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 c 1 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 ? 1 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 * 1 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 s 1 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 t 1 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 r 1 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 f 1 ## increMentstat 
 /%%%action
-if player_stat all 
+if player_stat Any 
 j 1 ## increMentstat 
 /%%%action
-if player_stat all 
+if player_stat Any 
 / 2 ## 
 increMentstat day${
 ¦}$splayed 
 561013998%%
 %action
-if player_stat all 
+if player_stat Any 
 / 0 0 ## 
 increMentstat day${
 ¦}$splayed 
 561013997%%
 %action
-if player_stat all 
+if player_stat Any 
 / 1 1 ## 
 increMentstat day${
 ¦}$splayed 
@@ -8018,154 +8095,154 @@ increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 |: 1 ## 
 increMentstat day${
 ¦}$splayed 
 268435456%%
 %action
-if player_stat all l
+if player_stat Any l
 : 1 ## 
 increMentstat day${
 ¦}$splayed 
 134217728%%
 %action
-if player_stat all 
+if player_stat Any 
 l: 1 ## 
 increMentstat day${
 ¦}$splayed 67108864
 %%%action
-if player_stat all i
+if player_stat Any i
 : 1 ## 
 increMentstat day${
 ¦}$splayed 33554432
 %%%action
-if player_stat all 
+if player_stat Any 
 i: 1 ## 
 increMentstat day${
 ¦}$splayed 16777216
 %%%action
-if player_stat all ;
+if player_stat Any ;
 : 1 ## 
 increMentstat day${
 ¦}$splayed 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 ;: 1 ## 
 increMentstat day${
 ¦}$splayed 4194304
 %%%action
-if player_stat all :
+if player_stat Any :
 : 1 ## 
 increMentstat day${
 ¦}$splayed 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 :: 1 ## 
 increMentstat day${
 ¦}$splayed 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 y 1 ## 
 increMentstat day${
 ¦}$splayed 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 x 1 ## 
 increMentstat day${
 ¦}$splayed 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 v 1 ## 
 increMentstat day${
 ¦}$splayed 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 k 1 ## 
 increMentstat day${
 ¦}$splayed 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 g 1 ## 
 increMentstat day${
 ¦}$splayed 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 e 1 ## 
 increMentstat day${
 ¦}$splayed 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 a 1 ## 
 increMentstat day${
 ¦}$splayed 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 > 1 ## 
 increMentstat day${
 ¦}$splayed 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 = 1 ## 
 increMentstat day${
 ¦}$splayed 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 < 1 ## 
 increMentstat day${
 ¦}$splayed 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 + 1 ## 
 increMentstat day${
 ¦}$splayed 512%%
 %action
-if player_stat all 
+if player_stat Any 
 $ 1 ## 
 increMentstat day${
 ¦}$splayed 256%%
 %action
-if player_stat all 
+if player_stat Any 
 z 1 ## 
 increMentstat day${
 ¦}$splayed 128%%
 %action
-if player_stat all 
+if player_stat Any 
 c 1 ## 
 increMentstat day${
 ¦}$splayed 64%%
 %action
-if player_stat all 
+if player_stat Any 
 ? 1 ## 
 increMentstat day${
 ¦}$splayed 32%%
 %action
-if player_stat all 
+if player_stat Any 
 * 1 ## 
 increMentstat day${
 ¦}$splayed 16%%
 %action
-if player_stat all 
+if player_stat Any 
 s 1 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 t 1 ## 
 increMentstat day${
 ¦}$splayed 4%%
 %action
-if player_stat all 
+if player_stat Any 
 r 1 ## 
 increMentstat day${
 ¦}$splayed 2%%
 %action
-if player_stat all 
+if player_stat Any 
 f 1 ## 
 increMentstat day${
 ¦}$splayed%%
 %action
-if player_stat all 
+if player_stat Any 
 j 1 ## 
 increMentstat day${
 ¦}$splayed%%
@@ -8174,278 +8251,283 @@ increMentstat ste${
 ¦}$pstaken 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 16 16 ## 
 increMentstat day${
 ¦}$splayed 70%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 17 17 ## 
 increMentstat day${
 ¦}$splayed 599%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 18 18 ## 
 increMentstat day${
 ¦}$splayed 8%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 19 19 ## 
 increMentstat day${
 ¦}$splayed 17%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 24 24 ## 
 increMentstat day${
 ¦}$splayed 
 -2147483647%%
 %action
-if player_stat all 
+if player_stat Any 
 ! 25 25 ## 
 increMentstat day${
-¦}$splayed 159159
-%%%action
-if player_stat all 
+¦}$splayed 6674%%
+%action
+if player_stat Any 
 ! 26 26 ## 
 increMentstat day${
-¦}$splayed 1455%%
-%action
-if player_stat all 
+¦}$splayed 13408
+%%%action
+if player_stat Any 
+! 27 27 ## 
+increMentstat day${
+¦}$splayed 19159
+%%%action
+if player_stat Any 
 | 419430400 ## 
 increMentstat ste${
 ¦}$pstaken 8388608
 %%%action
-if player_stat all 
+if player_stat Any 
 | 419430400 ## 
 increMentstat 
 | -419430400%%
 %action
-if player_stat all 
+if player_stat Any 
 | 209715200 ## 
 increMentstat ste${
 ¦}$pstaken 4194304
 %%%action
-if player_stat all 
+if player_stat Any 
 | 209715200 ## 
 increMentstat 
 | -209715200%%
 %action
-if player_stat all 
+if player_stat Any 
 | 104857600 ## 
 increMentstat ste${
 ¦}$pstaken 2097152
 %%%action
-if player_stat all 
+if player_stat Any 
 | 104857600 ## 
 increMentstat 
 | -104857600%%
 %action
-if player_stat all 
+if player_stat Any 
 | 52428800 ## 
 increMentstat ste${
 ¦}$pstaken 1048576
 %%%action
-if player_stat all 
+if player_stat Any 
 | 52428800 ## 
 increMentstat 
 | -52428800%%
 %action
-if player_stat all 
+if player_stat Any 
 | 26214400 ## 
 increMentstat ste${
 ¦}$pstaken 524288
 %%%action
-if player_stat all 
+if player_stat Any 
 | 26214400 ## 
 increMentstat 
 | -26214400%%
 %action
-if player_stat all 
+if player_stat Any 
 | 13107200 ## 
 increMentstat ste${
 ¦}$pstaken 262144
 %%%action
-if player_stat all 
+if player_stat Any 
 | 13107200 ## 
 increMentstat 
 | -13107200%%
 %action
-if player_stat all 
+if player_stat Any 
 | 6553600 ## 
 increMentstat ste${
 ¦}$pstaken 131072
 %%%action
-if player_stat all 
+if player_stat Any 
 | 6553600 ## 
 increMentstat 
 | -6553600%%
 %action
-if player_stat all 
+if player_stat Any 
 | 3276800 ## 
 increMentstat ste${
 ¦}$pstaken 65536
 %%%action
-if player_stat all 
+if player_stat Any 
 | 3276800 ## 
 increMentstat 
 | -3276800%%
 %action
-if player_stat all 
+if player_stat Any 
 | 1638400 ## 
 increMentstat ste${
 ¦}$pstaken 32768
 %%%action
-if player_stat all 
+if player_stat Any 
 | 1638400 ## 
 increMentstat 
 | -1638400%%
 %action
-if player_stat all 
+if player_stat Any 
 | 819200 ## 
 increMentstat ste${
 ¦}$pstaken 16384
 %%%action
-if player_stat all 
+if player_stat Any 
 | 819200 ## 
 increMentstat 
 | -819200%%
 %action
-if player_stat all 
+if player_stat Any 
 | 409600 ## 
 increMentstat ste${
 ¦}$pstaken 8192%%
 %action
-if player_stat all 
+if player_stat Any 
 | 409600 ## 
 increMentstat 
 | -409600%%
 %action
-if player_stat all 
+if player_stat Any 
 | 204800 ## 
 increMentstat ste${
 ¦}$pstaken 4096%%
 %action
-if player_stat all 
+if player_stat Any 
 | 204800 ## 
 increMentstat 
 | -204800%%
 %action
-if player_stat all 
+if player_stat Any 
 | 102400 ## 
 increMentstat ste${
 ¦}$pstaken 2048%%
 %action
-if player_stat all 
+if player_stat Any 
 | 102400 ## 
 increMentstat 
 | -102400%%
 %action
-if player_stat all 
+if player_stat Any 
 | 51200 ## 
 increMentstat ste${
 ¦}$pstaken 1024%%
 %action
-if player_stat all 
+if player_stat Any 
 | 51200 ## 
 increMentstat 
 | -51200%%%action
-if player_stat all 
+if player_stat Any 
 | 25600 ## 
 increMentstat ste${
 ¦}$pstaken 512%%
 %action
-if player_stat all 
+if player_stat Any 
 | 25600 ## 
 increMentstat 
 | -25600%%%action
-if player_stat all 
+if player_stat Any 
 | 12800 ## 
 increMentstat ste${
 ¦}$pstaken 256%%
 %action
-if player_stat all 
+if player_stat Any 
 | 12800 ## 
 increMentstat 
 | -12800%%%action
-if player_stat all 
+if player_stat Any 
 | 6400 ## 
 increMentstat ste${
 ¦}$pstaken 128%%
 %action
-if player_stat all 
+if player_stat Any 
 | 6400 ## 
 increMentstat 
 | -6400%%%action
-if player_stat all 
+if player_stat Any 
 | 3200 ## 
 increMentstat ste${
 ¦}$pstaken 64%%
 %action
-if player_stat all 
+if player_stat Any 
 | 3200 ## 
 increMentstat 
 | -3200%%%action
-if player_stat all 
+if player_stat Any 
 | 1600 ## 
 increMentstat ste${
 ¦}$pstaken 32%%
 %action
-if player_stat all 
+if player_stat Any 
 | 1600 ## 
 increMentstat 
 | -1600%%%action
-if player_stat all 
+if player_stat Any 
 | 800 ## 
 increMentstat ste${
 ¦}$pstaken 16%%
 %action
-if player_stat all 
+if player_stat Any 
 | 800 ## 
 increMentstat 
 | -800%%%action
-if player_stat all 
+if player_stat Any 
 | 400 ## 
 increMentstat ste${
 ¦}$pstaken 8%%
 %action
-if player_stat all 
+if player_stat Any 
 | 400 ## 
 increMentstat 
 | -400%%%action
-if player_stat all 
+if player_stat Any 
 | 200 ## 
 increMentstat ste${
 ¦}$pstaken 4%%
 %action
-if player_stat all 
+if player_stat Any 
 | 200 ## 
 increMentstat 
 | -200%%%action
-if player_stat all 
+if player_stat Any 
 | 100 ## 
 increMentstat ste${
 ¦}$pstaken 2%%
 %action
-if player_stat all 
+if player_stat Any 
 | 100 ## 
 increMentstat 
 | -100%%%action
-if player_stat all 
+if player_stat Any 
 | 50 ## 
 increMentstat ste${
 ¦}$psTaken%%
 %action
-if player_stat all 
+if player_stat Any 
 | 50 ## 
 increMentstat 
 | -50%%%action
-if player_stat all 
+if player_stat Any 
 | 34 ## 
 increMentstat ste${
 ¦}$psTaken%%
 %action
 increMentstat ste${
-¦}$pstaken 22490
+¦}$pstaken 95723
 %%
 [letterbg LooseSp${
 ¦}$rites/Cursors 33]
@@ -8506,6 +8588,8 @@ additeM Return${
 #$action 
 additeM (TR)Irid${
 ¦}$iumSpur
+#$action 
+additeM 811
 #$action 
 additeM (O)Und${
 ¦}$o 999#$action 
