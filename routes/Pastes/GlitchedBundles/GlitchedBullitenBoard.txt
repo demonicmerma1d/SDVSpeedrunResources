@@ -1,161 +1,165 @@
-%actionAddMail all
- dad1 Now%%
-%actionAddMail all
- ccDoorUnlock 
-Received%%
-%actionAddMail all
+[279][253]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%actionaddMail 
+all dad1 all%%
+%actionaddMail 
+all HasTownKey 
+all%%
+%actionaddMail 
+all ccDoorUnlock 
+all%%
+%actionaddMail all
  canReadJunimoT${
-¦}$ext Received%%
-%actionAddMail all
- HasTownKey 
-Received%%
-%action
+¦}$ext 
+all%%%action
+if days_played 
+1 1 ## addMoney 
+6000%%%action
+reMoveiteM Axe
+%%%action
+reMoveiteM Hoe
+%%%action
+reMoveiteM Pickaxe
+%%%action
+reMoveiteM Water${
+¦}$ingCan
+%%%action
+reMoveiteM (W)47
+%%%action
+if days_played 
+1 1 ## 
+additeM ReturnSc${
+¦}$epter%%%action
 increMentstat boo${
-¦}$k_speed 1%%
-%action
+¦}$k_speed
+%%%action
 increMentstat boo${
-¦}$k_speed2 1%%
-%action
-RemoveItem (T)Axe
+¦}$k_speed2%%
+%actionaddbuff 22 
+-2%%%action
+addbuff statue_of${
+¦}$_blessings_0
 %%%action
-RemoveItem (T)Hoe
+if days_played 
+2 2 ## additeM 16
 %%%action
-RemoveItem (T)Pi${
-¦}$ckaxe%%
-%action
-RemoveItem (T)W${
-¦}$ateringCan%%
-%action
-RemoveItem (W)47
+if days_played 
+2 2 ## additeM 18
 %%%action
-AddBuff 22 -2%%
-%action
-AddBuff statue_of${
-¦}$_blessings_0%%
-%action
-If days_played 1 1 
- ## 
-AddItem (T)Retur${
-¦}$nScepter%%
-%action
-If days_played 1 1 
- ## AddItem 228%%
-%action
-If days_played 1 1 
- ## AddItem 376%%
-%action
-If days_played 1 1 
- ## AddItem 637%%
-%action
-If days_played 1 1 
- ## AddItem 348%%
-%action
-If days_played 1 1 
- ## AddItem 62%%
-%action
-If days_played 1 1 
- ## AddItem 444%%
-%action
-If days_played 1 1 
- ## AddItem 446%%
-%action
-if days_played 2 ## 
-RemoveItem (T)R${
-¦}$eturnScepter%%
-%action
-If days_played 2 ## 
-AddItem 430%%
-%action
-If days_played 2 ## 
-AddItem 259%%
-%action
-If days_played 2 ## 
-AddItem 194%%
-%action
-If days_played 2 ## 
-AddItem 725 2%%
-%action
-If days_played 2 ## 
-AddItem 388 198 1
+if days_played 
+2 2 ## additeM 20
 %%%action
-If days_played 2 ## 
-AddItem 390 99 2
+if days_played 
+2 2 ## additeM 22
 %%%action
-If days_played 2 ## 
-AddItem 392%%
-%action
-If days_played 2 ## 
-AddItem 536%%
-%action
-If days_played 2 ## 
-AddItem 702%%
-%action
-If days_played 2 ## 
-AddItem 724 2%%
-%action
-If days_played ad${
-¦}$diteM (BC)256 2 2
+if days_played 
+2 2 ## additeM 396
 %%%action
-If days_played 2 ## 
-AddItem 709 10 4
+if days_played 
+2 2 ## additeM 398
 %%%action
-If days_played 2 ## 
-AddItem 178 10%%
-%action
-If days_played 2 ## 
-AddItem 397%%
-%action
-If days_played 2 ## 
-AddItem 421%%
-%action
-If days_played 2 ## 
-AddItem 422 2%%
-%action
-If days_played 2 ## 
-AddItem 420 2%%
-%action
-If days_played 2 ## 
-AddItem 78%%
-%action
-If days_played 1 1 
- ## AddItem 262 10
+if days_played 
+2 2 ## additeM 402
 %%%action
-If days_played 1 1 
- ## AddItem 613 3
+if days_played 
+2 2 ## additeM 412
 %%%action
-If days_played 2 ## 
-AddItem 266%%
-%action
-If days_played 2 ## 
-AddItem 396%%
-%action
-If days_played 2 ## 
-AddItem 398%%
-%action
-If days_played 2 ## 
-AddItem 402%%
-%action
+if days_played 
+2 2 ## additeM 414
+%%%action
+if days_played 
+2 2 ## additeM 416
+%%%action
+if days_played 
+2 2 ## additeM 418
+%%%action
+if days_played 
+2 2 ## additeM 724
+%%%action
+if days_played 
+2 2 ## additeM 259
+%%%action
+if days_played 
+2 2 ## additeM 430
+%%%action
+if days_played 
+2 2 ## additeM 376
+%%%action
+if days_played 
+2 2 ## additeM 228
+%%%action
+if days_played 
+2 2 ## additeM 194
+%%%action
+if days_played 
+2 2 ## additeM 420
+%%%action
+if days_played 
+2 2 ## additeM 397
+%%%action
+if days_played 
+2 2 ## additeM 421
+%%%action
+if days_played 
+2 2 ## additeM 444
+%%%action
+if days_played 
+2 2 ## additeM 62
+%%%action
+if days_played 
+2 2 ## additeM 266
+%%%action
+if days_played 
+2 2 ## additeM 422
+%%%action
+if days_played 
+2 2 ## additeM 392
+%%%action
+if days_played 
+2 2 ## additeM 702
+%%%action
+if days_played 
+2 2 ## additeM 536
+%%%action
+if days_played 
+2 2 ## additeM 262 
+10 4%%%action
+if days_played 
+2 2 ## additeM 178 
+10 4%%%action
+if days_played 
+2 2 ## additeM 613 
+3 4%%%action
+if days_played 
+2 2 ## additeM 725
+%%%action
+if days_played 
+2 2 ## additeM 348
+%%%action
+if days_played 
+2 2 ## additeM 446
+%%%action
+if days_played 
+2 2 ## additeM 637
+%%%action
 increMentstat day${
-¦}$sPlayed 1%%
-[253][279]
-[(BC)256]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
+¦}$splayed%%[]

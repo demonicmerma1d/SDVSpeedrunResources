@@ -1,32 +1,31 @@
-%actionAddMail all
- dad1 Now%%
-%actionAddMail all
- HasTownKey 
-Received%%
-%AddBuff 22 -2%%
-%actionAddMail all
+%actionaddMail 
+all dad1 Now%%
+%actionaddMail 
+all HasTownKey 
+all%%
+%addbuff 22 -2%%
+%actionaddMail all
  doorUnlockSebas${
-¦}$tian Received%%
-%action
-AddFriendshipPoi${
-¦}$nts Sebastian 2${
-¦}$249%%%action
-IncrementStat Bo${
-¦}$ok_Speed%%
-%action
-IncrementStat Bo${
-¦}$ok_Speed2%%
-%action
-AddBuff statue_of${
-¦}$_blessings_0 -2
+¦}$tian 
+all%%%action
+addfriendshippoi${
+¦}$nts Sebastian 
+2249%%%action
+increMentstat boo${
+¦}$k_speed
 %%%action
-AddMoney 4000%%
-%action
-AddItem (T)Retur${
-¦}$nScepter%%
-%action
-AddItem 458%%
-[StardropTea]
+increMentstat boo${
+¦}$k_speed2
+%%%action
+addbuff statue_of${
+¦}$_blessings_0 
+-2%%
+%actionaddMoney 
+4000%%%action
+additeM ReturnSc${
+¦}$epter%%%action
+additeM 458
+%%[StardropTea]
 [TentKit][TentKit]
 [TentKit][460]
 [GoldCoin]

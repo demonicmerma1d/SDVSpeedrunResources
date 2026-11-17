@@ -1,5 +1,5 @@
 # Pastes
-The uncompiled paste for glitched pantry can be found [here](/routes/Pastes/GlitchedBundles/Uncompiled/GlitchedFishtankUncompiled.txt).
+The uncompiled paste for glitched Fishtank can be found [here](/routes/Pastes/GlitchedBundles/Uncompiled/GlitchedFishtankUncompiled.txt).
 The compiled name paste is [here](/routes/Pastes/GlitchedBundles/GlitchedFishtank.txt). When submitting to speedrun.com, make sure to do a permanent link in case the paste improves.
 
 # Route
@@ -14,7 +14,7 @@ The goal of this run is to complete the Fishtank(autosplit available), the third
 
 ### File Creation and Introduction
 Name the player the text in the paste.
-Watch the introduction until Robin starts saying the name, at which point the cutscene crashes automatically skipping it.
+Watch the introduction until Robin starts saying the name(press ESC 2x to skip the start), at which point the cutscene [crashes](/glitches/Miscellaneous%20Glitches) automatically skipping it.
 
 ### Day 1
 1) Drink the triple shot expresso and eat the magic rock candy you have been given.

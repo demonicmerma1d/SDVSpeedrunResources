@@ -1,12 +1,12 @@
 ///GIRL
 %action AddMail All dad1 Now%%
-%action AddMail All HasTownKey Received%%
+%action AddMail All HasTownKey All%%
 %AddBuff 22 -2%%
-%action AddMail All OpenedSewer Received%%
+%action AddMail All OpenedSewer All%%
 %action AddFriendshipPoints Krobus 2500%%
 %action IncrementStat Book_Speed%%
 %action IncrementStat Book_Speed2%%
-%action AddBuff statue_of_blessings_0 -2%%
+%action AddBuff statue_of_blessings_0%%
 %action AddMoney 4500%%
 %action MarkEventSeen All 65%%
 
@@ -31,7 +31,7 @@
 [GoldCoin]
 [GoldCoin]
 [GoldCoin]
-[(T)ReturnScepter]
+[ReturnScepter]
 [388][388][388][388]
 [388][388][388][388]
 [388][388][388][388]

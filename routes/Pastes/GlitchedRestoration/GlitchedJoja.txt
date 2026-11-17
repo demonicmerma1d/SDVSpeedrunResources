@@ -1,0 +1,5 @@
+}JojaMember}[690
+]ccVault}ccPantry}[
+690]ccFishTank}[
+690]ccCraftsRoom}[
+690]ccBoilerRoom}

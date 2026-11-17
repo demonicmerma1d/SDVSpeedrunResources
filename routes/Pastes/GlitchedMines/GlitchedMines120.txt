@@ -1,0 +1,49 @@
+[689][(H)2]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]%action
+increMentstat boo${
+¦}$k_speed
+%%%action
+increMentstat boo${
+¦}$k_speed2%%
+%actionaddbuff 22 
+-2%%%action
+addbuff statue_of${
+¦}$_blessings_0
+%%%action
+increMentstat day${
+¦}$splayed
+%%%action
+increMentstat day${
+¦}$splayed
+%%%action
+increMentstat day${
+¦}$splayed
+%%%action
+increMentstat day${
+¦}$splayed
+%%%action
+if location_is_ind${
+¦}$oors undergrou${
+¦}$ndMine120
+ ## null%%%action
+Markeventseen 
+all 100162%%[]

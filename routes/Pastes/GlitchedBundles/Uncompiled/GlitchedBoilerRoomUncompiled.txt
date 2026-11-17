@@ -1,0 +1,49 @@
+///PASTE
+///GIRL
+
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[253][(BC)256]
+[(BC)256]
+[80][82][84][86]
+%action addbuff statue_of_blessings_0%%
+%action increMentstat book_speed%%
+%action increMentstat book_speed2%%
+%action addbuff 22 -2%%
+%action reMoveiteM Axe%%
+%action reMoveiteM Hoe%%
+%action reMoveiteM Pickaxe%%
+%action reMoveiteM WateringCan%%
+%action reMoveiteM (W)47%%
+%action addMail all ccDoorUnlock All%%
+%action addMail all canReadJunimoText All%%
+%action additeM 396 1 4%%
+%action additeM 398 1 4%%
+%action additeM 402 1 4%%
+%action additeM 388 198 4%%
+%action additeM 390 99 4%%
+%action additeM 709 10 4%%
+%action additeM 335 1 4%%
+%action additeM 334 1 4%%
+%action additeM 336 1 4%%
+%action additeM 766 99 4%%
+%action additeM 767 10 4%%
+[]

@@ -1,0 +1,35 @@
+///PASTE
+///GIRL
+
+[689][(H)2]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action IncrementStat book_speed%%
+%action IncrementStat book_speed2%%
+%action AddBuff 22 -2%%
+%action AddBuff statue_of_blessings_0%%
+%action IncrementStat DaysPlayed%%
+%action IncrementStat DaysPlayed%%
+%action IncrementStat DaysPlayed%%
+%action IncrementStat DaysPlayed%%
+%action If LOCATION_IS_INDOORS UndergroundMine120 ## Null%%
+%action MarkEventSeen All 100162%%
+[]

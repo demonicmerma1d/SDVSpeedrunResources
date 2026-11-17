@@ -1,0 +1,59 @@
+///PASTE
+///GIRL
+
+[253]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action AddMail All dad1 Now%%
+%action AddMail All ccDoorUnlock All%%
+%action AddMail All canReadJunimoText All%%
+%action RemoveItem Axe%%
+%action RemoveItem Hoe%%
+%action RemoveItem Pickaxe%%
+%action RemoveItem WateringCan%%
+%action RemoveItem (W)47%%
+%action IncrementStat book_speed%%
+%action IncrementStat book_speed2%%
+%action AddBuff 22 -2%%
+%action AddBuff statue_of_blessings_0%%
+%action If DAYS_PLAYED 1 1 ## AddItem (BC)256 2%%
+%action If DAYS_PLAYED 1 1 ## AddItem 422 5%%
+%action If DAYS_PLAYED 1 1 ## AddItem 259 5%%
+%action If DAYS_PLAYED 1 1 ## AddItem 157 5%%
+%action If DAYS_PLAYED 1 1 ## AddItem 412%%
+%action If DAYS_PLAYED 1 1 ## AddItem 414%%
+%action If DAYS_PLAYED 1 1 ## AddItem 416%%
+%action If DAYS_PLAYED 1 1 ## AddItem 418%%
+%action If DAYS_PLAYED 1 1 ## AddItem 283%%
+%action If DAYS_PLAYED 1 1 ## AddItem 92 500%%
+%action If DAYS_PLAYED 2 2 ## AddItem 16%%
+%action If DAYS_PLAYED 2 2 ## AddItem 18%%
+%action If DAYS_PLAYED 2 2 ## AddItem 20%%
+%action If DAYS_PLAYED 2 2 ## AddItem 22%%
+%action If DAYS_PLAYED 2 2 ## AddItem 396%%
+%action If DAYS_PLAYED 2 2 ## AddItem 398%%
+%action If DAYS_PLAYED 2 2 ## AddItem 402%%
+%action If DAYS_PLAYED 2 2 ## AddItem 404%%
+%action If DAYS_PLAYED 2 2 ## AddItem 406%%
+%action If DAYS_PLAYED 2 2 ## AddItem 408%%
+%action If DAYS_PLAYED 2 2 ## AddItem 410%%
+%action IncrementStat DaysPlayed%%
+[]

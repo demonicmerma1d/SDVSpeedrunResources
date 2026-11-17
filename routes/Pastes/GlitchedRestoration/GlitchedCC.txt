@@ -1,0 +1,378 @@
+
+[279][253]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%actionaddMail 
+all dad1 Now%%
+%actionaddMail 
+all dad1 Now%%
+%actionaddMail 
+all dad1 Now%%
+%actionaddMail 
+all HasTownKey 
+all%%
+%actionaddMail 
+all ccDoorUnlock 
+all%%
+%actionaddMail all
+ canReadJunimoT${
+¦}$ext 
+all%%%action
+if days_played 
+1 1 ## addMoney 
+6000%%%action
+if days_played 
+4 4 ## addMoney 
+99998500
+%%%action
+reMoveiteM Axe
+%%%action
+reMoveiteM Hoe
+%%%action
+reMoveiteM Pickaxe
+%%%action
+reMoveiteM Water${
+¦}$ingCan
+%%%action
+reMoveiteM (W)47
+%%%action
+if days_played 
+1 1 ## 
+additeM ReturnSc${
+¦}$epter%%%action
+increMentstat boo${
+¦}$k_speed
+%%%action
+increMentstat boo${
+¦}$k_speed2%%
+%actionaddbuff 22 
+-2%%%action
+addbuff statue_of${
+¦}$_blessings_0
+%%%action
+if days_played 
+2 2 ## additeM 16
+%%%action
+if days_played 
+2 2 ## additeM 18
+%%%action
+if days_played 
+2 2 ## additeM 20
+%%%action
+if days_played 
+2 2 ## additeM 22
+%%%action
+if days_played 
+2 2 ## additeM 412
+%%%action
+if days_played 
+2 2 ## additeM 396
+%%%action
+if days_played 
+2 2 ## additeM 398
+%%%action
+if days_played 
+2 2 ## additeM 402
+%%%action
+if days_played 
+2 2 ## additeM 414
+%%%action
+if days_played 
+2 2 ## additeM 416
+%%%action
+if days_played 
+2 2 ## additeM 418
+%%%action
+if days_played 
+2 2 ## additeM 404
+%%%action
+if days_played 
+2 2 ## additeM 406
+%%%action
+if days_played 
+2 2 ## additeM 408
+%%%action
+if days_played 
+2 2 ## additeM 410
+%%%action
+if days_played 
+2 2 ## additeM 420
+%%%action
+if days_played 
+2 2 ## additeM 422
+%%%action
+if days_played 
+2 2 ## additeM 388 
+198%%%action
+if days_played 
+2 2 ## additeM 709 
+10%%%action
+if days_played 
+2 2 ## additeM 390 
+99%%%action
+if days_played 
+2 2 ## additeM 78
+%%%action
+if days_played 
+2 2 ## additeM 88
+%%%action
+if days_played 
+2 2 ## additeM 90
+%%%action
+if days_played 
+2 2 ## additeM 24 
+6 4%%%action
+if days_played 
+2 2 ## additeM 188
+%%%action
+if days_played 
+2 2 ## additeM 190
+%%%action
+if days_played 
+2 2 ## additeM 192
+%%%action
+if days_played 
+2 2 ## additeM 256
+%%%action
+if days_played 
+2 2 ## additeM 260
+%%%action
+if days_played 
+2 2 ## additeM 270 
+6 4%%%action
+if days_played 
+2 2 ## additeM 272
+%%%action
+if days_played 
+2 2 ## additeM 276
+%%%action
+if days_played 
+2 2 ## additeM 280
+%%%action
+if days_played 
+2 2 ## additeM 254 
+6 4%%%action
+if days_played 
+2 2 ## additeM 258
+%%%action
+if days_played 
+3 3 ## additeM 186
+%%%action
+if days_played 
+3 3 ## additeM 174
+%%%action
+if days_played 
+3 3 ## additeM 182
+%%%action
+if days_played 
+3 3 ## additeM 438
+%%%action
+if days_played 
+3 3 ## additeM 440
+%%%action
+if days_played 
+3 3 ## additeM 613
+%%%action
+if days_played 
+3 3 ## additeM 634
+%%%action
+if days_played 
+3 3 ## additeM 635
+%%%action
+if days_played 
+3 3 ## additeM 636
+%%%action
+if days_played 
+3 3 ## additeM 637
+%%%action
+if days_played 
+3 3 ## additeM 638
+%%%action
+if days_played 
+3 3 ## additeM 145
+%%%action
+if days_played 
+3 3 ## additeM 143
+%%%action
+if days_played 
+3 3 ## additeM 699
+%%%action
+if days_played 
+3 3 ## additeM 706
+%%%action
+if days_played 
+3 3 ## additeM 132
+%%%action
+if days_played 
+3 3 ## additeM 140
+%%%action
+if days_played 
+3 3 ## additeM 130
+%%%action
+if days_played 
+3 3 ## additeM 142
+%%%action
+if days_played 
+3 3 ## additeM 136
+%%%action
+if days_played 
+3 3 ## additeM 698
+%%%action
+if days_played 
+3 3 ## additeM 700
+%%%action
+if days_played 
+3 3 ## additeM 148
+%%%action
+if days_played 
+3 3 ## additeM 131
+%%%action
+if days_played 
+3 3 ## additeM 150
+%%%action
+if days_played 
+3 3 ## additeM 701
+%%%action
+if days_played 
+3 3 ## additeM 128
+%%%action
+if days_played 
+3 3 ## additeM 156
+%%%action
+if days_played 
+3 3 ## additeM 164
+%%%action
+if days_played 
+3 3 ## additeM 715
+%%%action
+if days_played 
+3 3 ## additeM 716
+%%%action
+if days_played 
+3 3 ## additeM 717
+%%%action
+if days_played 
+3 3 ## additeM 718
+%%%action
+if days_played 
+3 3 ## additeM 719
+%%%action
+if days_played 
+3 3 ## additeM 734
+%%%action
+if days_played 
+4 4 ## additeM 724
+%%%action
+if days_played 
+4 4 ## additeM 259
+%%%action
+if days_played 
+4 4 ## additeM 430
+%%%action
+if days_played 
+4 4 ## additeM 376
+%%%action
+if days_played 
+4 4 ## additeM 228
+%%%action
+if days_played 
+4 4 ## additeM 397
+%%%action
+if days_played 
+4 4 ## additeM 421
+%%%action
+if days_played 
+4 4 ## additeM 444
+%%%action
+if days_played 
+4 4 ## additeM 62
+%%%action
+if days_played 
+4 4 ## additeM 266
+%%%action
+if days_played 
+4 4 ## additeM 194
+%%%action
+if days_played 
+4 4 ## additeM 420
+%%%action
+if days_played 
+4 4 ## additeM 422
+%%%action
+if days_played 
+4 4 ## additeM 392
+%%%action
+if days_played 
+4 4 ## additeM 702
+%%%action
+if days_played 
+4 4 ## additeM 536
+%%%action
+if days_played 
+4 4 ## additeM 725
+%%%action
+if days_played 
+4 4 ## additeM 262 
+10%%%action
+if days_played 
+4 4 ## additeM 178 
+10%%%action
+if days_played 
+4 4 ## additeM 613 
+3%%%action
+if days_played 
+4 4 ## additeM 348
+%%%action
+if days_played 
+4 4 ## additeM 446
+%%%action
+if days_played 
+4 4 ## additeM 637
+%%%action
+if days_played 
+4 4 ## additeM 768
+%%%action
+if days_played 
+4 4 ## additeM 769
+%%%action
+if days_played 
+4 4 ## additeM 80
+%%%action
+if days_played 
+4 4 ## additeM 82
+%%%action
+if days_played 
+4 4 ## additeM 84
+%%%action
+if days_played 
+4 4 ## additeM 86
+%%%action
+if days_played 
+4 4 ## additeM 334
+%%%action
+if days_played 
+4 4 ## additeM 335
+%%%action
+if days_played 
+4 4 ## additeM 336
+%%%action
+increMentstat day${
+¦}$splayed%%[]

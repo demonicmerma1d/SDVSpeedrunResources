@@ -2,20 +2,42 @@
 ///GIRL
 Glitched
 Fishies
-%action AddMail All dad1 Now%%
-%action AddMail All ccDoorUnlock Received%%
-%action AddMail All canReadJunimoText Received%%
-%action AddMail All HasTownKey Received%%
-%action IncrementStat book_speed 1%%
-%action IncrementStat book_speed2 1%%
-%action RemoveItem (T)Axe%%
-%action RemoveItem (T)Hoe%%
-%action RemoveItem (T)Pickaxe%%
-%action RemoveItem (T)WateringCan%%
+[253][279]
+[ReturnScepter]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action AddMail All dad1 All%%
+%action AddMail All ccDoorUnlock All%%
+%action AddMail All canReadJunimoText All%%
+%action AddMail All HasTownKey All%%
+%action IncrementStat book_speed%%
+%action IncrementStat book_speed2%%
+%action RemoveItem Axe%%
+%action RemoveItem Hoe%%
+%action RemoveItem Pickaxe%%
+%action RemoveItem WateringCan%%
 %action RemoveItem (W)47%%
 %action AddBuff 22 -2%%
 %action AddBuff statue_of_blessings_0%%
-%action If TIME 610 ## RemoveItem (T)ReturnScepter%%
+%action If TIME 610 ## RemoveItem ReturnScepter%%
 // cc item trip
 //Row 1
 %action If TIME 610 ## AddItem 716%%
@@ -46,26 +68,4 @@ Fishies
 %action If TIME 610 ## AddItem 398%%
 %action If TIME 610 ## AddItem 402%%
 %action If TIME 610 ## AddItem 701%%
-
-[253][279]
-[ReturnScepter]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
+[]

@@ -1,5 +1,5 @@
 # Pastes
-The uncompiled paste for glitched pantry can be found [here](/routes/Pastes/GlitchedBundles/Uncompiled/GlitchedPantryUncompiled.txt).
+The uncompiled paste for glitched Pantry can be found [here](/routes/Pastes/GlitchedBundles/Uncompiled/GlitchedPantryUncompiled.txt).
 The compiled name paste is [here](/routes/Pastes/GlitchedBundles/GlitchedPantry.txt) and a pastebin link for submitting to speedrun.com is below:
 - https://pastebin.com/UurZjswX 
 
@@ -15,7 +15,7 @@ The goal of this run is to complete the Pantry(autosplit available), the second 
 
 ### File Creation and Introduction
 Name the player the text in the paste.
-Watch the introduction until Robin starts saying the name, then click the skip cutscene button. 
+Watch the introduction until Robin starts saying the name(press ESC 2x to skip the start), then click the skip cutscene button. With the current paste the cutscene should [crash](/glitches/Miscellaneous%20Glitches) and autoend.
 
 ### Day 1
 1) Drink the triple shot expresso and eat the magic rock candy you have been given.
@@ -25,5 +25,5 @@ Watch the introduction until Robin starts saying the name, then click the skip c
 5) Read the mail again(it should be 6:20am by this point in time, this is important), then run to the Community Center to turn your items in.
 6) Turn the summer foraging bundle into the Crafts Room(yellow, bottom left) then exit the menu.
 7) [Animation Cancel](/Animation%20Cancelling.md) to regain control, and walk to the Pantry, place the junimo chest and take the 3 items out while the plaque is appearing.(Alteratively I recommend placing the junimo chest by the passage to the pantry while walking past to the crafts room)
-8) Turn in all the Pantry items.  
+8) Turn in all the Pantry items.
 

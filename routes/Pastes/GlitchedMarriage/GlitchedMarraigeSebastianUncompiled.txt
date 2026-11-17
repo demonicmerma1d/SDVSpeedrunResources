@@ -1,14 +1,14 @@
 ///GIRL
 %action AddMail All dad1 Now%%
-%action AddMail All HasTownKey Received%%
+%action AddMail All HasTownKey All%%
 %AddBuff 22 -2%%
-%action AddMail All doorUnlockSebastian Received%%
+%action AddMail All doorUnlockSebastian All%%
 %action AddFriendshipPoints Sebastian 2249%%
 %action IncrementStat Book_Speed%%
 %action IncrementStat Book_Speed2%%
 %action AddBuff statue_of_blessings_0 -2%%
 %action AddMoney 4000%%
-%action AddItem (T)ReturnScepter%%
+%action AddItem ReturnScepter%%
 %action AddItem 458%%
 [StardropTea]
 [TentKit][TentKit]

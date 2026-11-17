@@ -1,0 +1,76 @@
+
+[253]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]%action
+addbuff statue_of${
+¦}$_blessings_0
+%%%action
+increMentstat boo${
+¦}$k_speed
+%%%action
+increMentstat boo${
+¦}$k_speed2%%
+%actionaddbuff 
+22 -2%%%action
+reMoveiteM (T)Axe
+%%%action
+reMoveiteM (T)Hoe
+%%%action
+reMoveiteM (T)Pic${
+¦}$kaxe%%%action
+reMoveiteM (T)Wa${
+¦}$teringCan
+%%%action
+reMoveiteM (W)47
+%%
+%actionaddMail 
+all ccDoorUnlock All
+%%
+%actionaddMail all
+ canReadJunimoT${
+¦}$ext All
+%%%action
+addMoney 111920
+%%%action
+additeM 396 
+1 4%%%action
+additeM 398 
+1 4%%%action
+additeM 402 
+1 4%%%action
+additeM 388 
+198 4%%%action
+additeM 390 
+99 4%%%action
+additeM 709 
+10 4%%%action
+additeM 132 
+1 4%%%action
+additeM 140 
+1 4%%%action
+additeM 148 
+1 4%%%action
+additeM 178 
+10 4%%%action
+additeM 262 
+10 4%%%action
+additeM 613 
+3 4%%[]

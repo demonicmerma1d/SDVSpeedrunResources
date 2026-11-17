@@ -1,0 +1,38 @@
+///PASTE
+///GIRL
+
+%action addMail all canReadJunimoText All%%
+%action addMail all ccBoilerRoom All%%
+%action addMail all abandonedJojaMartAccessible All%%
+%action addbuff 22 -2%%
+%action addbuff statue_of_blessings_0%%
+%action increMentstat Book_Speed%%
+%action increMentstat Book_Speed2%%
+%action Markeventseen all 191393%%
+%action additeM 807%%
+%action additeM 74%%
+%action additeM 348 1 4%%
+%action additeM 454 5 4%%
+%action additeM 445%%
+%action additeM 795 1 4%%
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[]

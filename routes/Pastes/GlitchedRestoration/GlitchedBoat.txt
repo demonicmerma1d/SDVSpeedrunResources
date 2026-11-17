@@ -1,0 +1,37 @@
+[886][GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%actionaddMail 
+all willyBoatFixed 
+all%%
+%actionaddMail all
+ willyBoatTicketM${
+¦}$achine 
+all%%%action
+increMentstat boo${
+¦}$k_speed
+%%%action
+increMentstat boo${
+¦}$k_speed2%%
+%actionaddbuff 22 
+-2%%%action
+addbuff statue_of${
+¦}$_blessings_0
+%%[]

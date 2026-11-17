@@ -1,6 +1,6 @@
 # Pastes
-The pastes for remixed glitched Crafts Room can be found [here](/routes/Pastes/GlitchedBundles/GlitchedCraftroom.txt), and a link for submitting to speedrun.com for showing the paste is:
-- https://pastebin.com/9ftHPdnT
+The uncompiled paste for remixed glitched Craft Room can be found [here](/routes/Pastes/GlitchedBundles/Uncompiled/GlitchedCraftRoomUncompiled.txt).
+The compiled name paste is [here](/routes/Pastes/GlitchedBundles/GlitchedCraftRoom.txt).
 
 # Route
 ## Notes
@@ -14,10 +14,10 @@ The goal of this run is to complete the Craft Room, the first room in the Commun
 
 ### File Creation and Introduction
 Name the player the text in the paste.
-Watch the introduction until Robin starts saying the name, then click the skip cutscene button. 
+Watch the introduction until Robin starts saying the name(press ESC 2x to skip the start), then click the skip cutscene button. With the current paste the cutscene should [crash](/glitches/Miscellaneous%20Glitches) and autoend.
 
 ### Day 1
-1) Eat the 2 speedbuff items you have been given.
+1) Drink the triple shot expresso you have been given(2nd speedbuff is slower).
 2) Go outside, read the mail 1 time and place down the junimo chest.
 3) Place all 9 items you were given in the junimo chest, and read the mail again.
 4) Run to the community center, go to the crafts room and place the junimo chest by the plack.
@@ -25,3 +25,5 @@ Watch the introduction until Robin starts saying the name, then click the skip c
 6) Finish turning the items in.
 
 Note: if you cannot turn the items in because the bundle is wrong, this is a reset. For a non remixed route, see the [Glitched Community Center]() route, and stop after completing the crafts room.
+
+Credits to zachary20XX for developing the remixed bundle route.

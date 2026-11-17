@@ -1,0 +1,31 @@
+///PASTE
+///GIRL
+
+[886]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action AddMail All willyBoatFixed All%%
+%action AddMail All willyBoatTicketMachine All%%
+%action IncrementStat book_speed%%
+%action IncrementStat book_speed2%%
+%action AddBuff 22 -2%%
+%action AddBuff statue_of_blessings_0%%
+[]

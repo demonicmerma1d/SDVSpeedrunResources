@@ -1,0 +1,6 @@
+Player:
+%itemid 70 999%%
+Farm:
+[261][689]%favorite
+Favorite:
+[253][(H)32][896][]

@@ -1,111 +1,4 @@
-[279][253]
-%action AddMail${
-^}$ All dad1${
-^}$ Now%%
-%action AddMail${
-^}$ All ccDoorUnlo${
-^}$ck Received%%
-%action AddMail${
-^}$ All canReadJu${
-^}$nimoText${
-^}$ Received%%
-%action RemoveI${
-^}$tem (T)Axe%%
-%action RemoveI${
-^}$tem (T)Hoe%%
-%action RemoveI${
-^}$tem (T)Pick${
-^}$axe%%
-%action RemoveI${
-^}$tem (T)Water${
-^}$ingCan%%
-%action RemoveI${
-^}$tem (W)47%%
-%action Incremen${
-^}$tStat book_${
-^}$speed 1%%
-%action Incremen${
-^}$tStat book_${
-^}$speed2 1%%
-%action AddBuff ${
-^}$22 -2%%
-%action AddBuff ${
-^}$statue_of_ble${
-^}$ssings_0%%
-
-
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem ${
-^}$(BC)256 2%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 422${
-^}$ 5%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 259${
-^}$ 5%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 157${
-^}$ 5%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 412%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 414%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 416%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 418%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 283%%
-%action If DAYS_P${
-^}$LAYED 1 1 ## A${
-^}$ddItem 92${
-^}$ 500%%
-
-
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 16%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 18%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 20%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 22%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 396%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 398%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 402%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 404%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 406%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 408%%
-%action If DAYS_P${
-^}$LAYED 2 2 ## A${
-^}$ddItem 410%%
-
-
+[253][GoldCoin]
 [GoldCoin]
 [GoldCoin]
 [GoldCoin]
@@ -125,7 +18,98 @@
 [GoldCoin]
 [GoldCoin]
 [GoldCoin]
-[GoldCoin]
-%action Incremen${
-^}$tStat DaysPlay${
-^}$ed%%
+%actionaddMail 
+all dad1 Now%%
+%actionaddMail 
+all ccDoorUnlock 
+all%%
+%actionaddMail all
+ canReadJunimoT${
+¦}$ext 
+all%%%action
+reMoveiteM Axe
+%%%action
+reMoveiteM Hoe
+%%%action
+reMoveiteM Pickaxe
+%%%action
+reMoveiteM Water${
+¦}$ingCan
+%%%action
+reMoveiteM (W)47
+%%%action
+increMentstat boo${
+¦}$k_speed
+%%%action
+increMentstat boo${
+¦}$k_speed2%%
+%actionaddbuff 22 
+-2%%%action
+addbuff statue_of${
+¦}$_blessings_0
+%%%action
+if days_played 1 1
+ ## additeM (BC)256 
+2%%%action
+if days_played 
+1 1 ## additeM 422 
+5%%%action
+if days_played 
+1 1 ## additeM 259 
+5%%%action
+if days_played 
+1 1 ## additeM 157 
+5%%%action
+if days_played 
+1 1 ## additeM 412
+%%%action
+if days_played 
+1 1 ## additeM 414
+%%%action
+if days_played 
+1 1 ## additeM 416
+%%%action
+if days_played 
+1 1 ## additeM 418
+%%%action
+if days_played 
+1 1 ## additeM 283
+%%%action
+if days_played 
+1 1 ## additeM 92 
+500%%%action
+if days_played 
+2 2 ## additeM 16
+%%%action
+if days_played 
+2 2 ## additeM 18
+%%%action
+if days_played 
+2 2 ## additeM 20
+%%%action
+if days_played 
+2 2 ## additeM 22
+%%%action
+if days_played 
+2 2 ## additeM 396
+%%%action
+if days_played 
+2 2 ## additeM 398
+%%%action
+if days_played 
+2 2 ## additeM 402
+%%%action
+if days_played 
+2 2 ## additeM 404
+%%%action
+if days_played 
+2 2 ## additeM 406
+%%%action
+if days_played 
+2 2 ## additeM 408
+%%%action
+if days_played 
+2 2 ## additeM 410
+%%%action
+increMentstat day${
+¦}$splayed%%[]

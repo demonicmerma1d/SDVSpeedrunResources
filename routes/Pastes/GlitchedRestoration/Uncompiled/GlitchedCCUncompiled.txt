@@ -1,0 +1,146 @@
+///PASTE
+///GIRL
+///NAME
+[279][253]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action AddMail All dad1 Now%%
+%action AddMail All dad1 Now%%
+%action AddMail All dad1 Now%%
+%action AddMail All HasTownKey All%%
+%action AddMail All ccDoorUnlock All%%
+%action AddMail All canReadJunimoText All%%
+%action If DAYS_PLAYED 1 1 ## AddMoney 6000%%
+%action If DAYS_PLAYED 4 4 ## AddMoney 99998500%%
+%action RemoveItem Axe%%
+%action RemoveItem Hoe%%
+%action RemoveItem Pickaxe%%
+%action RemoveItem WateringCan%%
+%action RemoveItem (W)47%%
+%action If DAYS_PLAYED 1 1 ## AddItem ReturnScepter%%
+%action IncrementStat book_speed%%
+%action IncrementStat book_speed2%%
+%action AddBuff 22 -2%%
+%action AddBuff statue_of_blessings_0%%
+%action If DAYS_PLAYED 2 2 ## AddItem 16%%
+%action If DAYS_PLAYED 2 2 ## AddItem 18%%
+%action If DAYS_PLAYED 2 2 ## AddItem 20%%
+%action If DAYS_PLAYED 2 2 ## AddItem 22%%
+%action If DAYS_PLAYED 2 2 ## AddItem 412%%
+%action If DAYS_PLAYED 2 2 ## AddItem 396%%
+%action If DAYS_PLAYED 2 2 ## AddItem 398%%
+%action If DAYS_PLAYED 2 2 ## AddItem 402%%
+%action If DAYS_PLAYED 2 2 ## AddItem 414%%
+%action If DAYS_PLAYED 2 2 ## AddItem 416%%
+%action If DAYS_PLAYED 2 2 ## AddItem 418%%
+%action If DAYS_PLAYED 2 2 ## AddItem 404%%
+%action If DAYS_PLAYED 2 2 ## AddItem 406%%
+%action If DAYS_PLAYED 2 2 ## AddItem 408%%
+%action If DAYS_PLAYED 2 2 ## AddItem 410%%
+%action If DAYS_PLAYED 2 2 ## AddItem 420%%
+%action If DAYS_PLAYED 2 2 ## AddItem 422%%
+%action If DAYS_PLAYED 2 2 ## AddItem 388 198%%
+%action If DAYS_PLAYED 2 2 ## AddItem 709 10%%
+%action If DAYS_PLAYED 2 2 ## AddItem 390 99%%
+%action If DAYS_PLAYED 2 2 ## AddItem 78%%
+%action If DAYS_PLAYED 2 2 ## AddItem 88%%
+%action If DAYS_PLAYED 2 2 ## AddItem 90%%
+%action If DAYS_PLAYED 2 2 ## AddItem 24 6 4%%
+%action If DAYS_PLAYED 2 2 ## AddItem 188%%
+%action If DAYS_PLAYED 2 2 ## AddItem 190%%
+%action If DAYS_PLAYED 2 2 ## AddItem 192%%
+%action If DAYS_PLAYED 2 2 ## AddItem 256%%
+%action If DAYS_PLAYED 2 2 ## AddItem 260%%
+%action If DAYS_PLAYED 2 2 ## AddItem 270 6 4%%
+%action If DAYS_PLAYED 2 2 ## AddItem 272%%
+%action If DAYS_PLAYED 2 2 ## AddItem 276%%
+%action If DAYS_PLAYED 2 2 ## AddItem 280%%
+%action If DAYS_PLAYED 2 2 ## AddItem 254 6 4%%
+%action If DAYS_PLAYED 2 2 ## AddItem 258%%
+%action If DAYS_PLAYED 3 3 ## AddItem 186%%
+%action If DAYS_PLAYED 3 3 ## AddItem 174%%
+%action If DAYS_PLAYED 3 3 ## AddItem 182%%
+%action If DAYS_PLAYED 3 3 ## AddItem 438%%
+%action If DAYS_PLAYED 3 3 ## AddItem 440%%
+%action If DAYS_PLAYED 3 3 ## AddItem 613%%
+%action If DAYS_PLAYED 3 3 ## AddItem 634%%
+%action If DAYS_PLAYED 3 3 ## AddItem 635%%
+%action If DAYS_PLAYED 3 3 ## AddItem 636%%
+%action If DAYS_PLAYED 3 3 ## AddItem 637%%
+%action If DAYS_PLAYED 3 3 ## AddItem 638%%
+%action If DAYS_PLAYED 3 3 ## AddItem 145%%
+%action If DAYS_PLAYED 3 3 ## AddItem 143%%
+%action If DAYS_PLAYED 3 3 ## AddItem 699%%
+%action If DAYS_PLAYED 3 3 ## AddItem 706%%
+%action If DAYS_PLAYED 3 3 ## AddItem 132%%
+%action If DAYS_PLAYED 3 3 ## AddItem 140%%
+%action If DAYS_PLAYED 3 3 ## AddItem 130%%
+%action If DAYS_PLAYED 3 3 ## AddItem 142%%
+%action If DAYS_PLAYED 3 3 ## AddItem 136%%
+%action If DAYS_PLAYED 3 3 ## AddItem 698%%
+%action If DAYS_PLAYED 3 3 ## AddItem 700%%
+%action If DAYS_PLAYED 3 3 ## AddItem 148%%
+%action If DAYS_PLAYED 3 3 ## AddItem 131%%
+%action If DAYS_PLAYED 3 3 ## AddItem 150%%
+%action If DAYS_PLAYED 3 3 ## AddItem 701%%
+%action If DAYS_PLAYED 3 3 ## AddItem 128%%
+%action If DAYS_PLAYED 3 3 ## AddItem 156%%
+%action If DAYS_PLAYED 3 3 ## AddItem 164%%
+%action If DAYS_PLAYED 3 3 ## AddItem 715%%
+%action If DAYS_PLAYED 3 3 ## AddItem 716%%
+%action If DAYS_PLAYED 3 3 ## AddItem 717%%
+%action If DAYS_PLAYED 3 3 ## AddItem 718%%
+%action If DAYS_PLAYED 3 3 ## AddItem 719%%
+%action If DAYS_PLAYED 3 3 ## AddItem 734%%
+%action If DAYS_PLAYED 4 4 ## AddItem 724%%
+%action If DAYS_PLAYED 4 4 ## AddItem 259%%
+%action If DAYS_PLAYED 4 4 ## AddItem 430%%
+%action If DAYS_PLAYED 4 4 ## AddItem 376%%
+%action If DAYS_PLAYED 4 4 ## AddItem 228%%
+%action If DAYS_PLAYED 4 4 ## AddItem 397%%
+%action If DAYS_PLAYED 4 4 ## AddItem 421%%
+%action If DAYS_PLAYED 4 4 ## AddItem 444%%
+%action If DAYS_PLAYED 4 4 ## AddItem 62%%
+%action If DAYS_PLAYED 4 4 ## AddItem 266%%
+%action If DAYS_PLAYED 4 4 ## AddItem 194%%
+%action If DAYS_PLAYED 4 4 ## AddItem 420%%
+%action If DAYS_PLAYED 4 4 ## AddItem 422%%
+%action If DAYS_PLAYED 4 4 ## AddItem 392%%
+%action If DAYS_PLAYED 4 4 ## AddItem 702%%
+%action If DAYS_PLAYED 4 4 ## AddItem 536%%
+%action If DAYS_PLAYED 4 4 ## AddItem 725%%
+%action If DAYS_PLAYED 4 4 ## AddItem 262 10%%
+%action If DAYS_PLAYED 4 4 ## AddItem 178 10%%
+%action If DAYS_PLAYED 4 4 ## AddItem 613 3%%
+%action If DAYS_PLAYED 4 4 ## AddItem 348%%
+%action If DAYS_PLAYED 4 4 ## AddItem 446%%
+%action If DAYS_PLAYED 4 4 ## AddItem 637%%
+%action If DAYS_PLAYED 4 4 ## AddItem 768%%
+%action If DAYS_PLAYED 4 4 ## AddItem 769%%
+%action If DAYS_PLAYED 4 4 ## AddItem 80%%
+%action If DAYS_PLAYED 4 4 ## AddItem 82%%
+%action If DAYS_PLAYED 4 4 ## AddItem 84%%
+%action If DAYS_PLAYED 4 4 ## AddItem 86%%
+%action If DAYS_PLAYED 4 4 ## AddItem 334%%
+%action If DAYS_PLAYED 4 4 ## AddItem 335%%
+%action If DAYS_PLAYED 4 4 ## AddItem 336%%
+%action IncrementStat DaysPlayed%%
+[]

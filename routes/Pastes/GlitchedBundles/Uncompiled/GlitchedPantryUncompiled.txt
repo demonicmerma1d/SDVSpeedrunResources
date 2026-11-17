@@ -1,20 +1,44 @@
 ///START
 ///GIRL
-%action AddMail All dad1 Now%%
-%action AddMail All ccDoorUnlock Received%%
-%action AddMail$ All canReadJunimoText Received%%
-%action AddMail All HasTownKey Received%%
-%action IncrementStat book_speed 1%%
-%action IncrementStat book_speed2 1%%
-%action RemoveItem (T)Axe%%
-%action RemoveItem (T)Hoe%%
-%action RemoveItem (T)Pickaxe%%
-%action RemoveItem (T)WateringCan%%
+[253][279][(BC)256]
+[(BC)256][(BC)256]
+[256][258][260]
+[ReturnScepter]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+[GoldCoin]
+%action AddMail All dad1 All%%
+%action AddMail All ccDoorUnlock All%%
+%action AddMail$ All canReadJunimoText All%%
+%action AddMail All HasTownKey All%%
+%action IncrementStat book_speed%%
+%action IncrementStat book_speed2%%
+%action RemoveItem Axe%%
+%action RemoveItem Hoe%%
+%action RemoveItem Pickaxe%%
+%action RemoveItem WateringCan%%
 %action RemoveItem (W)47%%
 %action AddBuff 22 -2%%
 %action AddBuff statue_of_blessings_0%%
 // cc item trip
-%action If TIME 610 ## RemoveItem (T)ReturnScepter%%
+%action If TIME 610 ## RemoveItem ReturnScepter%%
 //Row 1
 %action If TIME 610 ## AddItem 174%%
 %action If TIME 610 ## AddItem 182%%
@@ -43,29 +67,4 @@
 %action If TIME 610 ## AddItem 398%%
 %action If TIME 610 ## AddItem 402%%
 %action If TIME 610 ## AddItem 254%%
-
-[253][(BC)256]
-[(BC)256][(BC)256]
-[256][258][260]
-[ReturnScepter]
-[279]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
-[GoldCoin]
+[]
