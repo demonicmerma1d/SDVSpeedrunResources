@@ -24,6 +24,3 @@ Skip after Robin says the player name.(press ESC 2x to skip the start)
 ### Day 4
 - Run inside to Sebastian, gift him the bouquet, then the stardrop tea, then the mermaid pendant. 
 - Teleport home, and sleep 3 days (move the bed) until the marraige cutscene.
-
-# Other NPCs on 1.6
-- [Uncompiled](),[NPC]() - No Difference
