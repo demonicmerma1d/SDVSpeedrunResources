@@ -1,0 +1,2 @@
+# Route
+This is a placeholder file, since the route is identical to NDE, all details for the route can be found [here](/routes/NDE/NDE%20Restoration%20Categories/NDE-Glitched%20Joja%20Movie%20Theater.md).
