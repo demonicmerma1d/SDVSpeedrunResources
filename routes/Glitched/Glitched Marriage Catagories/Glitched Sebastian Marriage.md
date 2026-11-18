@@ -1,5 +1,5 @@
 # Paste
-The formatted paste for this run can be found [here](Pastes/GlitchedMarriage/GlitchedMarriageSebastian.txt), and the unformatted paste [here](Pastes/GlitchedMarriage/GlitchedMarraigeSebastianUncompiled.txt).
+The formatted paste for this run can be found [here](/routes/Pastes/GlitchedMarriage/GlitchedMarriageSebastian.txt), and the unformatted paste [here](/routes/Pastes/GlitchedMarriage/GlitchedMarriageSebastianUncompiled.txt).
 
 # Route
 ## Notes
@@ -24,3 +24,6 @@ Skip after Robin says the player name.(press ESC 2x to skip the start)
 ### Day 4
 - Run inside to Sebastian, gift him the bouquet, then the stardrop tea, then the mermaid pendant. 
 - Teleport home, and sleep 3 days (move the bed) until the marraige cutscene.
+
+# Other NPCs on 1.6
+- [Uncompiled](),[NPC]() - No Difference

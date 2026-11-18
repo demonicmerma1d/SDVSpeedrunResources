@@ -1,16 +1,16 @@
 # Pastes
 The paste for each candidate can be found below.
-- [Alex](Pastes/GlitchedMarriage/GlitchedMarriageAlex.txt)
-- [Elliott](Pastes/GlitchedMarriage/GlitchedMarriageElliott.txt)
-- [Harvey](Pastes/GlitchedMarriage/GlitchedMarriageHarvey.txt)
-- [Sam](Pastes/GlitchedMarriage/GlitchedMarriageSam.txt)
-- [Shane](Pastes/GlitchedMarriage/GlitchedMarraigeShane.txt)
-- [Abigail](Pastes/GlitchedMarriage/GlitchedMarriageAbigail.txt)
-- [Emily](Pastes/GlitchedMarriage/GlitchedMarriageEmily.txt)
-- [Haley](Pastes/GlitchedMarriage/GlitchedMarriageHaley.txt)
-- [Leah](Pastes/GlitchedMarriage/GlitchedMarriageLeah.txt)
-- [Maru](Pastes/GlitchedMarriage/GlitchedMarriageMaru.txt)
-- [Penny](Pastes/GlitchedMarriage/GlitchedMarriagePenny.txt)
+- [Alex](/routes/Pastes/GlitchedMarriage/GlitchedMarriageAlex.txt)
+- [Elliott](/routes/Pastes/GlitchedMarriage/GlitchedMarriageElliott.txt)
+- [Harvey](/routesPastes/GlitchedMarriage/GlitchedMarriageHarvey.txt)
+- [Sam](/routesPastes/GlitchedMarriage/GlitchedMarriageSam.txt)
+- [Shane](/routesPastes/GlitchedMarriage/GlitchedMarraigeShane.txt)
+- [Abigail](/routesPastes/GlitchedMarriage/GlitchedMarriageAbigail.txt)
+- [Emily](/routesPastes/GlitchedMarriage/GlitchedMarriageEmily.txt)
+- [Haley](/routesPastes/GlitchedMarriage/GlitchedMarriageHaley.txt)
+- [Leah](/routesPastes/GlitchedMarriage/GlitchedMarriageLeah.txt)
+- [Maru](/routesPastes/GlitchedMarriage/GlitchedMarriageMaru.txt)
+- [Penny](/routes/Pastes/GlitchedMarriage/GlitchedMarriagePenny.txt)
 
 # Route
 
@@ -46,3 +46,6 @@ If the NPC is not mentioned here, the default is following the blueprint above. 
 - Sebastian : His name is too long to have a functioning glitch paste with this route, see [here](Glitched%20Sebastian%20Marriage.md) for a route.
 - Player marriage : This is multiplayer only, marrying another player which was only added in 1.3. See [here](NDE-Glitched%20Player%20Marriage.md) for a route.
 - Krobus roommate : Krobus is not roommatable until version 1.4, a route for Glitched Krobus is [here](Glitched%20Krobus.md).
+
+## Notes for not downpatching
+If you dont't want to downpatch, the route for Sebastian approximately works for every other marriage candidate on 1.6, see the Sebastian route page for details.

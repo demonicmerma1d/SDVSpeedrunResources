@@ -1,6 +1,6 @@
 # Pastes
-- The formatted paste can be found [here](Pastes/GlitchedMarriage/GlitchedMarriageKrobus.txt).
-- The unformatted paste can be found [here](Pastes/GlitchedMarriage/GlitchedKrobusUncompiled.txt).
+- The formatted paste can be found [here](/routes/Pastes/GlitchedMarriage/GlitchedMarriageKrobus.txt).
+- The unformatted paste can be found [here](/routes/Pastes/GlitchedMarriage/GlitchedKrobusUncompiled.txt).
 
 # Route
 ## Notes
