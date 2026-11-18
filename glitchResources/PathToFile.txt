@@ -1,0 +1,5 @@
+how to use:
+prepending a line with "input:" marks it as an input filepath, and prepending with "out:" marks it as an output path. This lets you set filepaths from a gitignored file so you dont have to worry about it when PRing, or merging changes. if multiple paths of a type are specified, the 1st one is taken by default(see Util.py for the code reading this file). You can then also have a path be ignored by doing something like "-input:" so it is not recognised as a valid path.(please use this funny kinda overkill thing I added)
+
+input:
+out:
