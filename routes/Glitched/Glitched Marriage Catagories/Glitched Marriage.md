@@ -2,14 +2,14 @@
 The paste for each candidate can be found below.
 - [Alex](/routes/Pastes/GlitchedMarriage/GlitchedMarriageAlex.txt)
 - [Elliott](/routes/Pastes/GlitchedMarriage/GlitchedMarriageElliott.txt)
-- [Harvey](/routesPastes/GlitchedMarriage/GlitchedMarriageHarvey.txt)
-- [Sam](/routesPastes/GlitchedMarriage/GlitchedMarriageSam.txt)
-- [Shane](/routesPastes/GlitchedMarriage/GlitchedMarraigeShane.txt)
-- [Abigail](/routesPastes/GlitchedMarriage/GlitchedMarriageAbigail.txt)
-- [Emily](/routesPastes/GlitchedMarriage/GlitchedMarriageEmily.txt)
-- [Haley](/routesPastes/GlitchedMarriage/GlitchedMarriageHaley.txt)
-- [Leah](/routesPastes/GlitchedMarriage/GlitchedMarriageLeah.txt)
-- [Maru](/routesPastes/GlitchedMarriage/GlitchedMarriageMaru.txt)
+- [Harvey](/routes/Pastes/GlitchedMarriage/GlitchedMarriageHarvey.txt)
+- [Sam](/routes/Pastes/GlitchedMarriage/GlitchedMarriageSam.txt)
+- [Shane](/routes/Pastes/GlitchedMarriage/GlitchedMarraigeShane.txt)
+- [Abigail](/routes/Pastes/GlitchedMarriage/GlitchedMarriageAbigail.txt)
+- [Emily](/routes/Pastes/GlitchedMarriage/GlitchedMarriageEmily.txt)
+- [Haley](/routes/Pastes/GlitchedMarriage/GlitchedMarriageHaley.txt)
+- [Leah](/routes/Pastes/GlitchedMarriage/GlitchedMarriageLeah.txt)
+- [Maru](/routes/Pastes/GlitchedMarriage/GlitchedMarriageMaru.txt)
 - [Penny](/routes/Pastes/GlitchedMarriage/GlitchedMarriagePenny.txt)
 
 # Route
